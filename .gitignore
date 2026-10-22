@@ -1,0 +1,32 @@
+# 默认不入库：公开根文件和公开目录必须显式开放。
+/*
+!/.gitignore
+!/AGENTS.md
+!/README.md
+!/CONTRIBUTING.md
+!/public-files.json
+!/社会系统协议学白皮书.md
+!/核心概念速查手册_CheatSheet.md
+!/socio_protocolics_whitepaper.md
+!/articles/
+!/research/
+!/docs/
+!/tools/
+
+# 即使放进公开目录，也不应误加这些材料。
+**/.local/
+**/.env
+**/.env.*
+**/.git/
+**/__pycache__/
+**/node_modules/
+**/*内部未删节*
+**/*内部删节*
+**/评审*/
+**/审计*/
+**/*工作稿*
+**/*.docx
+**/*.zip
+**/*.tmp
+**/*.log
+**/*.pyc

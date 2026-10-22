@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "description": "Explicit public file list; export current working files without Git history.",
+  "files": [
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "public-files.json",
+    "社会系统协议学白皮书.md",
+    "核心概念速查手册_CheatSheet.md",
+    "socio_protocolics_whitepaper.md",
+    "articles/README.md",
+    "articles/hu-shih/如何评价胡适的作品.md",
+    "articles/hu-shih/来源说明.md",
+    "articles/hu-shih/修订说明.md",
+    "research/README.md",
+    "research/H01_表达与理解成本.md",
+    "research/H02_正式地位与采用.md",
+    "research/H03_规则与实际迁移.md",
+    "research/PR-001_Agent协作规模.md",
+    "research/PR-001_来源与修订说明.md",
+    "docs/发布与目录约定.md",
+    "tools/check_public.py",
+    "tools/export_public.py"
+  ]
+}
