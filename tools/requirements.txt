@@ -1,0 +1,3 @@
+# NumPy is required by the reference engine embedded in the whitepaper.
+# This migration was validated with NumPy 2.4.3; this is not a full environment lockfile.
+numpy>=1.24,<3

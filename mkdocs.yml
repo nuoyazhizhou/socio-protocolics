@@ -1,0 +1,105 @@
+site_name: 社会系统协议学
+site_description: 白皮书、案例文章与可接手检验的开放研究问题
+site_url: https://nuoyazhizhou.github.io/socio-protocolics/
+repo_url: https://github.com/nuoyazhizhou/socio-protocolics
+repo_name: nuoyazhizhou/socio-protocolics
+edit_uri: ''
+docs_dir: .local/site-source
+site_dir: .local/site-build
+use_directory_urls: true
+theme:
+  name: material
+  language: zh
+  font: false
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: 切换深色模式
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: 切换浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+plugins:
+  - search:
+      lang: en
+markdown_extensions:
+  - tables
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+      slugify: !!python/name:markdown.extensions.toc.slugify_unicode
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_javascript:
+  - docs/assets/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+extra_css:
+  - docs/assets/site.css
+nav:
+  - 开始阅读:
+      - 项目首页: README.md
+      - 本次修订: docs/修订记录.md
+      - 章节讨论进度: ROADMAP.md
+      - 参与贡献: CONTRIBUTING.md
+  - 白皮书:
+      - 第一章 · 研究定位与建模基础: chapters/chapter-01.md
+      - 第二章 · 信道与语义边界: chapters/chapter-02.md
+      - 第三章 · 中介与规范选择: chapters/chapter-03.md
+      - 第四章 · 承诺与执行: chapters/chapter-04.md
+      - 第五章 · 权限与退出: chapters/chapter-05.md
+      - 第六章 · 任务与反馈: chapters/chapter-06.md
+      - 第七章 · 迁移与演化: chapters/chapter-07.md
+      - 第八章 · 测量与参考实现: chapters/chapter-08.md
+      - 附录 · RFC入口与证据卡: chapters/appendix.md
+      - 完整权威正文: 社会系统协议学白皮书.md
+      - 核心概念速查: 核心概念速查手册_CheatSheet.md
+  - 案例文章:
+      - 文章与用途说明: articles/README.md
+      - 胡适 · 研究稿: articles/hu-shih/如何评价胡适的作品.md
+      - 胡适 · 知乎候选稿: articles/hu-shih/知乎发布稿.md
+      - 胡适 · 来源与边界: articles/hu-shih/来源说明.md
+      - 审批 · 概念样章: articles/intermediary/删掉两道审批_工作真的少了吗.md
+      - 审批 · 来源与边界: articles/intermediary/来源说明.md
+  - 开放研究:
+      - 研究库: research/README.md
+      - OP-001 · 表达工具的比较: research/OP-001/问题卡.md
+      - OP-001 · 研究设计: research/OP-001/研究说明.md
+      - OP-002 · 认证与组织自主性: research/OP-002/问题卡.md
+      - OP-002 · 研究设计: research/OP-002/研究说明.md
+      - 六组主题计划: research/主题计划/README.md
+      - 案例选择与比较: research/案例选择与比较方法.md
+      - Agent协作研究草案: research/PR-001_Agent协作规模.md
+  - 来源与维护:
+      - 核心案例来源: docs/核心案例来源与边界.md
+      - 框架与案例索引: docs/框架与案例索引.md
+      - v11.2编号对照: docs/v11.2_编号与章节对照.md
+      - 案例写作与检验: docs/案例驱动写作与命题检验.md
+      - 双语与用途分支: docs/双语与写作约定.md
+      - 分块读取与编辑: docs/白皮书分块读取与编辑.md
+      - 发布与网站维护: docs/发布与目录约定.md
+      - Agent协作规则: AGENTS.md
+extra:
+  generator: false
+  release: v11.2-r20261028
+copyright: 本仓库尚未声明统一开放许可证；引文与第三方材料保留各自权利。

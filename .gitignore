@@ -3,6 +3,7 @@
 !/.gitignore
 !/AGENTS.md
 !/README.md
+!/ROADMAP.md
 !/CONTRIBUTING.md
 !/public-files.json
 !/社会系统协议学白皮书.md
@@ -12,6 +13,8 @@
 !/research/
 !/docs/
 !/tools/
+!/mkdocs.yml
+!/.github/
 
 # 即使放进公开目录，也不应误加这些材料。
 **/.local/

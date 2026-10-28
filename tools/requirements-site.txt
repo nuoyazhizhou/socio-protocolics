@@ -1,0 +1,5 @@
+# Website build dependencies; independent from the reference engine dependencies.
+mkdocs-material==9.8.0
+mkdocs==1.6.1
+pymdown-extensions==12.3
+jieba==0.42.1
