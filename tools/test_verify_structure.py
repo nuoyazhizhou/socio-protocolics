@@ -150,6 +150,131 @@ class StructureRegressionTests(unittest.TestCase):
         errors, _ = gate.test_reference_engine(mutated, 'PNR negative fixture')
         self.assertTrue(any('high PNR excludes' in error for error in errors))
 
+    def anchors(self, text):
+        return gate.check_anchor_reachability(text, 'anchor fixture')
+
+    def test_current_book_has_no_unreachable_anchor_link(self):
+        errors, stats = self.anchors(self.main)
+        self.assertEqual([], errors)
+        self.assertEqual(0, stats['missing'])
+        self.assertEqual(0, stats['duplicates'])
+        self.assertGreater(stats['links'], 100)
+
+    def test_dangling_anchor_link_is_rejected(self):
+        errors, _ = self.anchors(self.main.replace('(#sec-2-4-3)', '(#sec-2-4-3-retired)', 1))
+        self.assertTrue(any('has no matching anchor: #sec-2-4-3-retired' in error for error in errors))
+
+    def test_duplicate_anchor_id_is_rejected(self):
+        errors, _ = self.anchors(self.main + '\n<a id="sp-rfc-001"></a>\n')
+        self.assertTrue(any('defined 2 times: #sp-rfc-001' in error for error in errors))
+
+    def test_case_level_anchor_link_is_rejected(self):
+        errors, _ = self.anchors(self.main.replace('(#sec-3-7-1)', '(#sec-3-7-b)', 1))
+        self.assertTrue(any('case-level anchor' in error and '#sec-3-7-b' in error for error in errors))
+        self.assertTrue(any('has no matching anchor: #sec-3-7-b' in error for error in errors))
+
+    def test_case_level_anchor_definition_is_rejected(self):
+        errors, _ = self.anchors(self.main + '\n<a id="sec-9-9-c"></a>\n')
+        self.assertTrue(any('case-level anchor defined' in error for error in errors))
+
+    def test_empty_anchor_target_is_rejected(self):
+        errors, _ = self.anchors(self.main + '\n[nowhere](#)\n')
+        self.assertTrue(any('empty anchor link target' in error for error in errors))
+
+    def test_links_inside_code_fences_are_not_link_resolution(self):
+        errors, _ = self.anchors(self.main + '\n```\nliteral [example](#absent-in-code-block)\n```\n')
+        self.assertEqual([], errors)
+
+    def test_gate_itself_catches_the_20261101_dangling_anchor_incident(self):
+        """Whole-gate regression: the audit must fail end to end on the incident that was missed once."""
+        import shutil
+        import tempfile
+        names = ['社会系统协议学白皮书.md', '核心概念速查手册_CheatSheet.md', 'AGENTS.md']
+        tmp = Path(tempfile.mkdtemp(prefix='incident-anchor-'))
+        try:
+            for name in names:
+                shutil.copy2(ROOT / name, tmp / name)
+            path = tmp / names[0]
+            text = path.read_text(encoding='utf-8')
+            self.assertTrue('(#sec-3-7-1)' in text)
+            path.write_text(text.replace('(#sec-3-7-1)', '(#sec-3-7-b)', 1), encoding='utf-8')
+            gate.ROOT = tmp
+            self.assertNotEqual(0, gate.audit(None))
+            path.write_text(text, encoding='utf-8')
+            self.assertEqual(0, gate.audit(None))
+        finally:
+            gate.ROOT = ROOT
+            shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_anchor_id_is_read_regardless_of_attribute_order_or_quotes(self):
+        cases = {
+            '<a id="attr-1" class="note"></a>': '#attr-1',
+            '<a class="note" id="attr-2"></a>': '#attr-2',
+            '<a id=attr-3></a>': '#attr-3',
+            "<a id='attr-4'></a>": '#attr-4',
+            '<a name="attr-5"></a>': '#attr-5',
+            '<span id="attr-6"></span>': '#attr-6',
+        }
+        for tag, target in cases.items():
+            with self.subTest(tag=tag):
+                errors, _ = self.anchors(self.main + f'\n{tag}\n\n[link]({target})\n')
+                self.assertEqual([], errors)
+
+    def test_anchor_hidden_in_a_comment_cannot_satisfy_a_link(self):
+        errors, _ = self.anchors(self.main + '\n<!-- <a id="hidden-1"></a> -->\n\n[link](#hidden-1)\n')
+        self.assertTrue(any('no matching anchor: #hidden-1' in error for error in errors))
+
+    def test_href_is_read_regardless_of_attribute_order_or_quotes(self):
+        for tag in ['<a class="k" href="#gone-1">x</a>', '<a href=#gone-2>x</a>',
+                    "<a href='#gone-3'>x</a>", '<A HREF="#gone-4">x</A>']:
+            with self.subTest(tag=tag):
+                errors, _ = self.anchors(self.main + f'\n{tag}\n')
+                self.assertTrue(any('no matching anchor' in error for error in errors))
+
+    def test_unclosed_code_fence_is_reported(self):
+        errors, _ = self.anchors(self.main + '\n```\n[not a real link](#ignored-in-fence)\n')
+        self.assertTrue(any('unclosed code fence' in error for error in errors))
+
+    def test_anchor_defined_inside_a_fence_is_not_a_target(self):
+        errors, _ = self.anchors(self.main + '\n```\n<a id="fence-1"></a>\n```\n\n[link](#fence-1)\n')
+        self.assertTrue(any('no matching anchor: #fence-1' in error for error in errors))
+
+    def test_case_level_anchor_hint_is_case_insensitive(self):
+        errors, _ = self.anchors(self.main.replace('(#sec-3-7-1)', '(#sec-3-7-B)', 1))
+        self.assertTrue(any('case-level anchor' in error and '#sec-3-7-B' in error for error in errors))
+
+    def test_link_inside_inline_code_is_not_a_link(self):
+        errors, _ = self.anchors(self.main + '\nliteral `[x](#code-span)` here\n')
+        self.assertEqual([], errors)
+
+    def test_escaped_bracket_is_not_a_link(self):
+        errors, _ = self.anchors(self.main + '\n\\[x\\](#escaped-link)\n')
+        self.assertEqual([], errors)
+
+    def test_angle_bracket_target_is_checked(self):
+        errors, _ = self.anchors(self.main + '\n[link](<#angle-1>)\n')
+        self.assertTrue(any('no matching anchor: #angle-1' in error for error in errors))
+
+    def test_reference_style_link_must_be_rewritten(self):
+        errors, _ = self.anchors(self.main + '\n[text][ref-1]\n')
+        self.assertTrue(any('reference-style links' in error for error in errors))
+
+    def test_image_wrapped_link_is_checked(self):
+        errors, _ = self.anchors(self.main + '\n[![alt](i.png)](#image-1)\n')
+        self.assertTrue(any('no matching anchor: #image-1' in error for error in errors))
+
+    def test_real_link_between_two_code_spans_is_still_checked(self):
+        errors, _ = self.anchors(self.main + '\n用 `公式` 详见 [link](#between-spans) 然后 `收尾`\n')
+        self.assertTrue(any('no matching anchor: #between-spans' in error for error in errors))
+
+    def test_hyphenated_attribute_is_not_an_anchor_id(self):
+        errors, _ = self.anchors(self.main + '\n<a data-node-id="phantom-1">x</a>\n\n[link](#phantom-1)\n')
+        self.assertTrue(any('no matching anchor: #phantom-1' in error for error in errors))
+
+    def test_external_urls_are_out_of_scope(self):
+        errors, _ = self.anchors(self.main + '\n[site](https://example.invalid/nope)\n')
+        self.assertEqual([], errors)
+
     def test_gate_detects_unearned_provenance_verification(self):
         mutated = self.main.replace(
             'provenance_verified: bool = field(default=False, init=False)',

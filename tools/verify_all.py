@@ -17,6 +17,16 @@ Validates:
    - Research review flags, local/global boundaries, and PBR/PNR thresholds.
    - Complete hypothetical inputs, missingness and research-only metadata.
 4. Selected textual regression guards and scope markers; no citation fact-check or empirical validation.
+5. In-document anchor reachability for each checked edition:
+   - every internal link resolves to an anchor in the same edition, reading id/name and
+     href regardless of attribute order, quote style or extra attributes;
+   - anchors and links inside comments or code fences do not count, and an unclosed
+     fence is reported instead of silently disabling the rest of the check;
+   - reference-style links are reported instead of being skipped silently;
+   - anchor ids are unique within a document;
+   - case-level anchors are rejected, because only sections carry anchors.
+   External URLs are never fetched, and an existing target is not evidence that the
+   linked passage supports the claim.
 """
 
 import argparse
@@ -325,6 +335,120 @@ def check_evidence_cards(text):
     return errors
 
 
+HTML_TAG_RE = re.compile(r'<[a-z]+\b[^>]*>', re.I)
+HTML_COMMENT_RE = re.compile(r'<!--.*?-->', re.S)
+ATTR_VALUE_RE = r'\s*=\s*(?:"([^"]*)"|\'([^\']*)\'|([^\s>]+))'
+# Inline link targets, including the angle-bracket form [text](<#target>).
+INLINE_LINK_RE = re.compile(r'\[[^\]\n]*\]\(\s*<?([^)>\s]*)>?')
+IMAGE_LINK_RE = re.compile(r'\[!\[[^\]\n]*\]\([^)\n]*\)\]\(\s*<?([^)>\s]*)>?')
+REFERENCE_LINK_RE = re.compile(r'\[[^\]\n]*\]\[[^\]\n]*\]')
+REFERENCE_DEF_RE = re.compile(r'^\s*\[[^\]\n]+\]\s*:\s*#\S+', re.M)
+INLINE_CODE_LINK_RE = re.compile(r'`\[[^`\n]*\]\(#[^`\n]*\)`')
+# Case labels such as 案例 3.7-B are prose labels only: this book anchors sections, not individual cases.
+CASE_LEVEL_ANCHOR_RE = re.compile(r'^sec-\d+(?:-\d+)*-[a-z]$', re.I)
+
+
+def _attribute(tag, name):
+    """Read one attribute value regardless of attribute order, quote style or extra attributes."""
+    match = re.search(r'(?<![-\w])' + name + ATTR_VALUE_RE, tag, re.I)
+    if match is None:
+        return None
+    return next(group for group in match.groups() if group is not None)
+
+
+def _mask_code_fences(text):
+    """Blank out fenced blocks; Markdown inside them never renders as a link.
+
+    Fences close only on the same marker character at equal or greater length, and
+    an unclosed fence is reported rather than silently disabling the rest of the check.
+    """
+    lines = text.splitlines()
+    masked = []
+    fence = None
+    for line in lines:
+        marker = re.match(r'^(`{3,}|~{3,})', line.lstrip())
+        if fence is None:
+            if marker:
+                fence = marker.group(1)
+                masked.append('')
+                continue
+            masked.append(line)
+            continue
+        masked.append('')
+        if marker and marker.group(1)[0] == fence[0] and len(marker.group(1)) >= len(fence):
+            fence = None
+    return '\n'.join(masked), fence is not None
+
+
+def _anchor_ids(body):
+    """Every id= attribute is a link target, plus legacy <a name=...>; comments are already gone."""
+    ids = []
+    for tag in HTML_TAG_RE.findall(body):
+        ident = _attribute(tag, 'id')
+        if ident is None and tag[:2].lower() == '<a':
+            ident = _attribute(tag, 'name')
+        if ident:
+            ids.append(ident)
+    return ids
+
+
+def check_anchor_reachability(text, label):
+    """Every internal link must resolve to an anchor inside the same edition.
+
+    This is a pointer check only: targets that exist are not proof that the
+    linked passage supports the claim, and external URLs are never fetched.
+    """
+    errors = []
+    body, unclosed = _mask_code_fences(text)
+    # An anchor or link inside a comment does not render, so it must not satisfy the check either.
+    body = HTML_COMMENT_RE.sub(lambda m: ' ' * len(m.group(0)), body)
+    body = INLINE_CODE_LINK_RE.sub(lambda m: ' ' * len(m.group(0)), body)
+    body = body.replace('\\[', '  ')
+    if unclosed:
+        errors.append(f'{label}: unclosed code fence; link masking is unreliable, close the fence')
+    if REFERENCE_LINK_RE.search(body) or REFERENCE_DEF_RE.search(body):
+        errors.append(f'{label}: reference-style links are not checkable; rewrite as inline [text](#target)')
+    defined = _anchor_ids(body)
+    counts = Counter(defined)
+    present = set(defined)
+    links = 0
+    first_line = {}
+    pointed = [(match.group(1), match.start()) for match in IMAGE_LINK_RE.finditer(body)]
+    body = IMAGE_LINK_RE.sub(lambda m: ' ' * len(m.group(0)), body)
+    pointed += [(match.group(1), match.start()) for match in INLINE_LINK_RE.finditer(body)]
+    pointed += [(href, match.start()) for match in HTML_TAG_RE.finditer(body)
+                for href in [_attribute(match.group(0), 'href')] if href]
+    for target, position in pointed:
+        if not target.startswith('#'):
+            continue
+        links += 1
+        ident = target[1:]
+        line = body.count('\n', 0, position) + 1
+        if not ident:
+            errors.append(f'{label}: empty anchor link target at line {line}')
+            continue
+        first_line.setdefault(ident, line)
+    for ident, count in sorted(counts.items()):
+        if count > 1:
+            errors.append(f'{label}: anchor id defined {count} times: #{ident}')
+    for ident in sorted(present):
+        if CASE_LEVEL_ANCHOR_RE.match(ident):
+            errors.append(f'{label}: case-level anchor defined; this book anchors sections only: #{ident}')
+    for ident, line in sorted(first_line.items()):
+        if CASE_LEVEL_ANCHOR_RE.match(ident):
+            errors.append(f'{label}: link at line {line} targets a case-level anchor; cases carry no own anchor, use the section anchor: #{ident}')
+        if ident not in present:
+            errors.append(f'{label}: link at line {line} has no matching anchor: #{ident}')
+    stats = {
+        'links': links,
+        'targets': len(first_line),
+        'anchors': len(present),
+        'missing': len([i for i in first_line if i not in present]),
+        'duplicates': len([i for i, c in counts.items() if c > 1]),
+    }
+    return errors, stats
+
+
 def test_current_text_guards(pub, raw, cs, ag):
     """Finite structural/text checks, not automated semantic or scientific proof."""
     import re
@@ -537,16 +661,30 @@ def audit(internal_path=None):
         except Exception as exc:
             errors.append(f'{label}: reference engine checks could not complete: {exc}')
 
+    # Pointer reachability: every edition is checked against its own anchors only.
+    anchor_reports = []
+    for label, document in engine_docs:
+        try:
+            failures, stats = check_anchor_reachability(document, label)
+            errors.extend(failures)
+            anchor_reports.append((label, stats))
+        except Exception as exc:
+            errors.append(f'{label}: anchor reachability could not complete: {exc}')
+
     print('Mode: ' + ('public + explicit internal edition' if raw is not None else 'public only'))
     print(f'Documents read: {len(paths)}; expected per main edition: 8 chapters, 6 groups, 19 consecutive RFC body sections and 2 nonnumbered materials')
     print('Checks: 9 paired chapter/appendix blocks; versions/postulates; RFC catalog and evidence-card identities/fields; selected scope markers; simulation input completeness.')
     print(f'Reference engine checks executed: {reference_cases}; actual embedded code, including numeric, threshold, missingness, local/global and metadata boundaries.')
     print('AGENTS: selected O4/O5 definition boundaries; simulation distinction; portable gate commands.')
+    print('Anchors: ' + '; '.join(
+        f'{label} {stats["links"]} internal links / {stats["targets"]} unique targets / '
+        f'{stats["missing"]} missing / {stats["duplicates"]} duplicate ids'
+        for label, stats in anchor_reports) + '; same-edition pointer resolution only.')
     if raw is None:
         print('NOT CHECKED: internal edition and public/internal shared-section equality (use --internal PATH).')
     else:
         print('Internal scope: same structural/engine checks; exact shared sections 1.5 and 1.6. Other edition differences are not compared.')
-    print('LIMITS: no whole-text semantic proof, source fact-check, full code coverage, mathematical proof or empirical social validation.')
+    print('LIMITS: anchors are checked for existence only, not for whether the target supports the claim; no whole-text semantic proof, source fact-check, external URL liveness, full code coverage, mathematical proof or empirical social validation.')
     if errors:
         print(f'AUDIT FAILED: {len(errors)} failure(s)')
         for error in errors:
