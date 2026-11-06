@@ -2,7 +2,7 @@
 
 项目地址：[nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics)。
 
-修订发布标识：**v11.2-r20261028**，见[修订记录](docs/修订记录.md)。[在线阅读网站](https://nuoyazhizhou.github.io/socio-protocolics/)由相同公开Markdown生成，提供分章阅读、搜索与公式呈现；白皮书统一版本仍为v11.2。
+修订发布标识：**v11.2-r20261106**，见[修订记录](docs/修订记录.md)。[在线阅读网站](https://nuoyazhizhou.github.io/socio-protocolics/)由相同公开Markdown生成，提供分章阅读、搜索与公式呈现；白皮书统一版本仍为v11.2。
 
 用协议、接口、中间件、迁移和反馈等工程概念，整理社会协作中的问题。这里保存白皮书、面向公众的案例文章，以及可以接手检验的开放问题。
 

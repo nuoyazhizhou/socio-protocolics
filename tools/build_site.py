@@ -15,7 +15,7 @@ from whitepaper_blocks import parse_blocks
 
 SOURCE = ROOT / '.local' / 'site-source'
 OUTPUT = ROOT / '.local' / 'site-build'
-RELEASE = 'v11.2-r20261028'
+RELEASE = 'v11.2-r20261106'
 WHITEPAPER = '社会系统协议学白皮书.md'
 
 
