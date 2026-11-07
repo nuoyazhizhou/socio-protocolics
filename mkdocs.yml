@@ -104,6 +104,8 @@ nav:
       - How to contribute: en/CONTRIBUTING.md
       - Framework and case index: en/FRAMEWORK_GUIDE.md
       - Bilingual glossary: en/GLOSSARY.md
+  - English (phased chapter translations):
+      - Chapter 1 — research positioning, objects, postulates, and the boundaries of the six proposition groups: en/whitepaper/chapter-01.md
 
 extra:
   generator: false
