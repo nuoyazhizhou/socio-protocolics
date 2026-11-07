@@ -106,6 +106,7 @@ nav:
       - Bilingual glossary: en/GLOSSARY.md
   - English (phased chapter translations):
       - Chapter 1 — research positioning, objects, postulates, and the boundaries of the six proposition groups: en/whitepaper/chapter-01.md
+      - Appendix — Navigation and Version Concordance of the 19 SP-RFC Bodies: en/whitepaper/appendix.md
 
 extra:
   generator: false
