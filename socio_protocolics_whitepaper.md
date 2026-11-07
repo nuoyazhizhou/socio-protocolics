@@ -11,6 +11,6 @@
 > - 🔬 **[Open research questions](./research/README.md)**
 > 
 > Architecture: **Dual-Track Unified Monograph (L1 Vernacular Engineering Metaphor + L2 Multi-Agent Theoretical Primitive Spec)**.  
-> The framework contains **3 postulates → 6 core proposition groups → 21 engineering specifications and 1 normative rule**. Components distinguish conditional propositions, mechanism hypotheses and accounting definitions; the document remains a research draft open to review.
+> The framework contains **3 postulates → 6 core proposition groups → 19 numbered SP-RFC items (including the cross-group normative rule SP-RFC-007 and the cross-group research/tooling norm SP-RFC-019)**. Components distinguish conditional propositions, mechanism hypotheses and accounting definitions; the document remains a research draft open to review.
 > Please refer directly to the canonical source above and its [case sources and evidence boundaries](./docs/核心案例来源与边界.md).
 

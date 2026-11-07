@@ -99,6 +99,12 @@ nav:
       - 分块读取与编辑: docs/白皮书分块读取与编辑.md
       - 发布与网站维护: docs/发布与目录约定.md
       - Agent协作规则: AGENTS.md
+  - English (entry layer):
+      - Project introduction: en/README.md
+      - How to contribute: en/CONTRIBUTING.md
+      - Framework and case index: en/FRAMEWORK_GUIDE.md
+      - Bilingual glossary: en/GLOSSARY.md
+
 extra:
   generator: false
   release: v11.2-r20261106

@@ -15,6 +15,7 @@
 !/tools/
 !/mkdocs.yml
 !/.github/
+!/en/
 
 # 即使放进公开目录，也不应误加这些材料。
 **/.local/
