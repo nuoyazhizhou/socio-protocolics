@@ -1,5 +1,5 @@
 <!-- Translation record -->
-<!-- C2 registration: id=chapter-08 / source=社会系统协议学白皮书.md lines 1510-2360 / sha256=d02e3780ff9c155595d1c423405e3c2f4b293f782d9d6601242b7c8bae01915c / status=phased(abridged adaptation) / auditor=待独立只读审计 / date=2026-11-08 -->
+<!-- C2 registration: id=chapter-08 / source=社会系统协议学白皮书.md lines 1510-2360 / sha256=d02e3780ff9c155595d1c423405e3c2f4b293f782d9d6601242b7c8bae01915c / status=phased(abridged adaptation) / auditor=independent read-only audit PASS (first pass BLOCKED-CJK @ draft L161; fixed; re-audit VERDICT PASS; 0 hard errors) / date=2026-11-08 -->
 <!-- Scope: 框架正文 + §8.1–§8.6 全译；本章无本章程案例块，2.2-A/3.1-A/3.3-A/5.4-A/5.5-A 为跨章引用按引用保留 -->
 <!-- claim-identity note: SP-RFC-019 = mechanism hypothesis & exploratory warning (not proven); B-A/B-B = worked pre-registration examples (illustrative); C1/C2/C3 = paired discriminating predictions, 本书预测 B 不升格 -->
 <!-- symbol-scope note: B 三义(B_Hz 带宽 / C_B 介数中心性 / B=10000 bootstrap); R 两义(\mathcal{R}_{deadlock} 综合死锁风险 / R_{drop} 立案驳回率); 均原样保留不合并 -->
