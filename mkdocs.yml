@@ -113,6 +113,7 @@ nav:
       - Chapter 5 — Proposition Group IV — Privilege Ring Isolation & Split-Brain Contagion: en/whitepaper/chapter-05.md
       - Chapter 6 — Proposition Group V — Transport Topology & Task Feedback: en/whitepaper/chapter-06.md
       - Chapter 7 — Proposition Group VI — Debt Accounting & Evolutionary Selection: en/whitepaper/chapter-07.md
+      - Chapter 8 — Measurement Definitions, Reference Implementations, and Research Boundaries: en/whitepaper/chapter-08.md
 
 extra:
   generator: false
