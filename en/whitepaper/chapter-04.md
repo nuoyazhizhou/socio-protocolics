@@ -7,7 +7,7 @@
 > - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: phased translation of this chapter block — the normative framework text, RFC 4.1–4.3 specifications, the conditional derivation III-1, the §4.4 application-boundary note and the comparison table are translated; the case-annotation blocks (cases 4.1-A, 4.1-B, 4.1-C, 4.2-A, 4.3-A, 4.4-A, 4.4-B) are **retained in the original Chinese** by design under the C-1 phased plan (T3 not yet passed), so those blocks are held untranslated inside this file
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
-> - Note on group name: Proposition Group III's name is consistent throughout the SSOT (chapter title line 930, the overview tables and the already-landed appendix / chapter-01 all read "第三组：跨期承诺、记录性质与执行条件" → "Proposition Group III: Intertemporal Finality & Expectation Credibility"); unlike Proposition Group II, no internal inconsistency was found
+> - Note on group name: the SSOT is internally inconsistent about Proposition Group III's name — the chapter title and table of contents (lines 36, 930) read "第三组：跨期承诺、记录性质与执行条件" (Intertemporal Commitment, Record Properties, and Execution Conditions), while the overview tables and evidence cards (lines 275, 304, 2424–2426) and the already-landed appendix / chapter-01 use "第三组核心命题：跨期终局性与预期信誉" → "Proposition Group III: Intertemporal Finality & Expectation Credibility". To keep the English edition internally consistent, this file follows the established landed form "Proposition Group III: Intertemporal Finality & Expectation Credibility"; the SSOT's name inconsistency is flagged for the maintainer to reconcile.
 
 **Scope and edition status.** This file is one block of a **phased** translation. The English edition as a whole is an *abridged adaptation* of the v11.2 whitepaper: the six chapters that carry case-annotation sections are not yet translated, and those annotations remain untranslated by design until the underlying Chinese case materials pass the real-case acceptance stage (T3). Chapter 4 carries case-annotation sections (cases 4.1-A/B/C, 4.2-A, 4.3-A, 4.4-A/B); per the C-1 phased plan those annotations are **retained in the original Chinese** inside this file, so the normative framework text, RFC 4.1–4.3 and the §4.4 application-boundary note are translated while the case-annotation blocks are held in Chinese. Completeness of this block does not imply completeness of the edition, and this translation does not elevate any claim to established status. The block itself runs from the `<!-- SP:BEGIN chapter-04 -->` marker to the `<!-- SP:END chapter-04 -->` marker; the translation record, the chapter glossary and the two notes below precede that boundary and are not part of the translated text.
 
@@ -15,7 +15,7 @@
 
 | Chinese | English used in this file | Remark |
 | :--- | :--- | :--- |
-| 第三组核心命题：跨期承诺、记录性质与执行条件 | Proposition Group III: Intertemporal Finality & Expectation Credibility | group name, unique form in the whole book |
+| 第三组核心命题：跨期终局性与预期信誉 | Proposition Group III: Intertemporal Finality & Expectation Credibility | group name, unique form in the whole book |
 | 6 个核心命题组 | 6 Core Proposition Groups | H3-A landed |
 | 19 项有效 SP-RFC | 19 Effective SP-RFC Items | title-case unique |
 | 条件模型与经验桥接 | conditional model and empirical bridging | claim identity (008) |
