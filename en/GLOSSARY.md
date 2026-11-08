@@ -42,7 +42,7 @@ This is the highest-risk group. The six core proposition groups must not be rend
 | Chinese | Locked English | Avoid |
 |---|---|---|
 | 公设（SP-POSTULATE-1/2/3） | postulate / first-order postulate | axiom, theorem, law, proven principle |
-| 规范条文／项目（SP-RFC-001—019） | SP-RFC item / engineering specification | axiom; renumbering |
+| 规范条文／项目（SP-RFC-001—019） | SP-RFC item | axiom; renumbering; deprecated former rendering "engineering specification" |
 | 六组核心命题 | six core proposition groups | six laws, six proven theorems, axioms |
 | 形式／条件命题 | formal / conditional proposition | theorem (unless the source is a derivation) |
 | 经验机制假说／机制假说 | empirical / mechanism hypothesis | established mechanism, proven cause |
