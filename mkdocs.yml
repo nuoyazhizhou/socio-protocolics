@@ -114,6 +114,15 @@ nav:
       - Chapter 6 — Proposition Group V — Transport Topology & Task Feedback: en/whitepaper/chapter-06.md
       - Chapter 7 — Proposition Group VI — Debt Accounting & Evolutionary Selection: en/whitepaper/chapter-07.md
       - Chapter 8 — Measurement Definitions, Reference Implementations, and Research Boundaries: en/whitepaper/chapter-08.md
+  - English (site layer):
+      - Core concepts CheatSheet: en/CHEATSHEET.md
+      - Agent collaboration rules: en/AGENTS.md
+      - Revision record: en/REVISION_RECORD.md
+      - v11.2 numbering concordance: en/V11_2_NUMBERING.md
+      - Case writing and proposition testing: en/CASE_DRIVEN_TESTING.md
+      - Bilingual conventions: en/BILINGUAL_CONVENTIONS.md
+      - Chunk reading and editing: en/CHUNK_READING_GUIDE.md
+      - Publication and site maintenance: en/PUBLICATION_CONVENTIONS.md
 
 extra:
   generator: false
