@@ -16,7 +16,7 @@
 | :--- | :--- | :--- |
 | 白话文运动宣言 | the Vernacular Manifesto | heading term, source-provided |
 | 三层递进架构 | three-tier progressive architecture | L1 / L2 / L3, a writing coordinate |
-| 胡适悖论 | the Hu Shi Paradox | source-provided |
+| 胡适悖论 | The Hu Shi Paradox | source-provided; the lower-case form "the Hu Shi Paradox" also appears in running prose |
 | 局部结构对应 | structural correspondence | source-provided |
 | 机械还原论 | mechanical reductionism | source-provided |
 | 硬件—协议纠缠 | hardware–protocol entanglement | source-provided |
@@ -32,7 +32,7 @@
 | 中介寄生 | intermediary parasitism | group II |
 | 兼容层衰减 | compatibility-layer decay | group II |
 | 特权环 | privilege ring | group IV |
-| 脑裂 | split-brain | group IV |
+| 脑裂 | Split-Brain | group IV; the lower-case form "split-brain" also appears in running prose |
 | 技术债核算 | technical-debt accounting | group VI |
 | 演化筛选 | evolutionary selection | group VI |
 | 元编译器 | meta-compiler | §1.6 |
@@ -49,7 +49,7 @@
 <!-- SP:BEGIN chapter-01 -->
 <a id="chapter-1"></a>
 
-# Chapter 1: Research Positioning, Objects, Postulates, and the Boundaries of the 6 Core Proposition Groups
+## Chapter 1: Research Positioning, Objects, Postulates, and the Boundaries of the 6 Core Proposition Groups
 
 <a id="-00-白话文运动宣言破解胡适悖论与三层架构路线the-vernacular-manifesto--the-three-tier-architecture"></a>
 <a id="legacy-v11-1-sec-1-1"></a>

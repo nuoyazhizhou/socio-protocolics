@@ -7,7 +7,7 @@
 > - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: phased translation of this chapter block — the normative framework text, RFC 3.1–3.8 specifications, the falsifiability boundary, the architect's conceptual-boundary statement, the comparison tables and the two ASCII diagrams are translated; the case-annotation blocks (cases 3.1-A, 3.2-A, 3.3-A, 3.3-B, 3.5.1-A, 3.5.1-B, 3.5.2-A, 3.5.2-B, 3.5.2-C, 3.6.1-A, 3.6.2-A, 3.6.2-B, 3.6.2-C, 3.7-A, 3.7-B, 3.7-C, 3.7-D) are **retained in the original Chinese** by design under the C-1 phased plan (T3 not yet passed), so those blocks are held untranslated inside this file
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
-> - Note on group name: the SSOT is internally inconsistent about Proposition Group II's name — the chapter title and table of contents (lines 35, 559) read "中介净贡献、复杂性与规范选择", while the overview tables (lines 274, 2420–2422) and the already-landed appendix / chapter-01 use "中介寄生与兼容层衰减" → "Proposition Group II: Intermediary Parasitism & Compatibility Decay". To keep the English edition internally consistent, this file follows the established landed form "Proposition Group II: Intermediary Parasitism & Compatibility Decay"; the SSOT's name inconsistency is flagged for the maintainer to reconcile.
+> - Note on group name: the SSOT is internally inconsistent about Proposition Group II's name — the chapter title and table of contents (lines 35, 559) read "中介净贡献、复杂性与规范选择" (Intermediary Net Contribution, Complexity, and Normative Choice), while the overview tables (lines 274, 2420–2422) and the already-landed appendix / chapter-01 use "中介寄生与兼容层衰减" → "Proposition Group II: Intermediary Parasitism & Compatibility Decay". To keep the English edition internally consistent, this file follows the established landed form "Proposition Group II: Intermediary Parasitism & Compatibility Decay"; the SSOT's name inconsistency is flagged for the maintainer to reconcile.
 
 **Scope and edition status.** This file is one block of a **phased** translation. The English edition as a whole is an *abridged adaptation* of the v11.2 whitepaper: the six chapters that carry case-annotation sections are not yet translated, and those annotations remain untranslated by design until the underlying Chinese case materials pass the real-case acceptance stage (T3). Chapter 3 carries case-annotation sections (the 17 cases listed in the translation record); per the C-1 phased plan those annotations are **retained in the original Chinese** inside this file, so the normative framework text, RFC 3.1–3.8 and the §3.4 architect's conceptual-boundary statement are translated while the case-annotation blocks are held in Chinese. Completeness of this block does not imply completeness of the edition, and this translation does not elevate any claim to established status. The block itself runs from the `<!-- SP:BEGIN chapter-03 -->` marker to the `<!-- SP:END chapter-03 -->` marker; the translation record, the chapter glossary and the two notes below precede that boundary and are not part of the translated text.
 
@@ -31,7 +31,7 @@
 | 任务期限 | mission deadline | RFC-006 |
 | 保护收益 | protection benefit | RFC-006 |
 | 可理解性 | understandability | RFC-007 |
-| 规范守则 | normative precept / rule | RFC-007 (locked title uses "Precepts") |
+| 规范守则 | normative rule | RFC-007 (locked title uses "Precepts"; "precept" where the source says 戒) |
 | 极简人话戒 | The Plain Language Mandate | RFC-007 precept 1 |
 | 斩断寻租戒 | The Proxy Bypass Mandate | RFC-007 precept 2 |
 | 断然重构戒 | The Radical Refactoring Mandate | RFC-007 precept 3 |
@@ -44,7 +44,7 @@
 | WS-* | WS-* | §3.3-B, §3.6, §3.6.1, §3.7-D |
 | 规范膨胀 | normative inflation / bloat | §3.2, §3.6.1 |
 | 寄生 | parasitism | §3.2, §3.6.1, §3.7-D |
-| BGP 路由劫持 | BGP route hijacking | §3.4 meta-annotation |
+| BGP 路由劫持 | BGP Hijacking | §3.4 meta-annotation; the SSOT quotes the Chinese phrase here, while the locked glossary form is the source-provided proper name used in the Chapter 5 glossary and the appendix |
 | 非幂等死锁 | non-idempotent deadlock | §3.4 meta-annotation |
 | Ring-3 内存隔离 | Ring-3 memory isolation | §3.4 meta-annotation |
 | O1–O5 | O1 Agent / O2 Protocol / O3 Expectation & Trust / O4 Middleware / O5 Resource & Physical Constraint | primitive-object codes |
@@ -191,7 +191,7 @@ When the design goal is to reduce unnecessary coordination cost, protect legitim
    When code smells persist, first verify task failure, recovery capacity, rights impact, and migration net benefit. If in-place repair of the original architecture is ineffective or too costly, an alternative protocol may be incubated in an independent user-space sandbox (Ring-3); production traffic is incrementally diverted under SP-RFC-017 with rollback retained. The smell itself does not prove that continuing to patch necessarily accelerates deadlock.
 
 > 💡 **【Architect's meta-annotation · conceptual-boundary statement】(engineering-concept borrowing, comprehension cost, and falsifiability testing)**  
-> Addressing readers' prudent question of whether the whitepaper's own use of "non-idempotent deadlock," "Ring-3 memory isolation," and "BGP route hijacking" also fabricates jargon, this theory establishes a reciprocal testing principle:  
+> Addressing readers' prudent question of whether the whitepaper's own use of "non-idempotent deadlock," "Ring-3 memory isolation," and "BGP Hijacking" also fabricates jargon, this theory establishes a reciprocal testing principle:  
 > 1. **Essential distinction between two kinds of textual feature:**  
 >    - **Rent-Seeking Padding:** vague rhetoric piled up to evade responsibility or monopolise interpretive rights, which independent task testing proves increases comprehension or execution cost; this is a to-be-operationalised semantic classification and is not identical to the white-noise power of a Shannon physical channel. Whether something constitutes rent-seeking requires separate evidence of rights, payoff, and alternative mechanisms.  
 >    - **Architectural Mapping Tokens:** borrow mature symbols from computer science that possess strict state-transition, boundary-condition, and exception-handling mechanisms, attempting to characterise specific dynamic mechanisms in social coordination.  

@@ -1,10 +1,10 @@
 > **Translation record**
-> - Chinese source: `AGENTS.md` (sha256 `3fd935d6fbb3dbebe134b54d7109a635f650b2f7263e03bf1cf97543ab7adc62`), `社会系统协议学白皮书.md` (sha256 `e5c1eb322763a1a571aeae80327393692d00c4ac43baa937fc2c96da9aa9a148`, 338630 bytes), `核心概念速查手册_CheatSheet.md` (sha256 `6063c2e3259aa7d85c04d86c8fa7fc9606b973d207fa088a25d27b9d288b9799`, 39106 bytes), `docs/双语与写作约定.md` (sha256 `bc9f6ed607fc34af5d5f17abc7ddb574d5013362c75ab6dcbb57527941938c16`); all 2026-11-07
+> - Chinese source: `AGENTS.md` (sha256 `3fd935d6fbb3dbebe134b54d7109a635f650b2f7263e03bf1cf97543ab7adc62`), `社会系统协议学白皮书.md` (sha256 `d5ffb73e3db73f8bb42a2ecb39871bf6c55eace8bb72111b63a2ee362134d9c8`, 338639 bytes), `核心概念速查手册_CheatSheet.md` (sha256 `6063c2e3259aa7d85c04d86c8fa7fc9606b973d207fa088a25d27b9d288b9799`, 39106 bytes), `docs/双语与写作约定.md` (sha256 `bc9f6ed607fc34af5d5f17abc7ddb574d5013362c75ab6dcbb57527941938c16`); all 2026-11-07
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
 > - Translation date: 2026-11-07
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
+> - Pending sync: none at present. The Chinese-master-source fingerprint in this record was refreshed on 2026-11-08 (the earlier value was stale); this refresh records the current fingerprint only and does not assert an itemised re-verification of every intervening source change. To be recorded item by item if the Chinese source is updated
 > - Status: bilingual glossary (not a translation of a single Chinese document)
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
@@ -72,6 +72,8 @@ Three numbering systems coexist and **do not map onto one another**.
 | 箭头／层级 | denotes modelling dependency and navigation | Not proof or derivation |
 
 `3→6→19` expresses modelling dependency and clause ownership. It does **not** assert that all propositions have been strictly proved from the three postulates.
+
+**Note on a fourth, section-local numbering, and on symbol scope.** Chapter 8 §8.5.4 uses `L1` / `L2` / `L3` once more, but only for three pre-registered DGP assumptions (flow topology / loss-correlation mechanism / estimation-error covariance). That numbering is local to the section: it is **not** a fourth book-wide coordinate system and does not map onto any of the three above, and the chapter states that the three layers must not be collapsed into one. The letter `B` is likewise reused across explicitly scoped senses in the whitepaper chapters; the consolidated cross-reference is the *Note on symbol scope* in the front matter of `en/whitepaper/chapter-08.md`, while Chapter 1's *Scope of symbols and names* records two of those senses as the Chinese source states them. These are cross-reference notes, not terminology entries: this glossary remains a translation aid for the four entry-layer documents, not a full-book terminology base.
 
 ## 4. Negative guardrails
 
