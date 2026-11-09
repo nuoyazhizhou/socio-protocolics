@@ -1,14 +1,16 @@
 > **Translation record**
-> - Chinese source: `CONTRIBUTING.md` (sha256 `4152272438042f15eb85fe74491ead03a0eac70211e546e8e13398c08d4f11e8`, 4501 bytes, 2026-11-07)
+> - Chinese source: `CONTRIBUTING.md` (sha256 `fedeab2f71e590dddeefccca893716fc1e3c494e2effe55d60809f7ff98e99ec`, 4555 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
-> - Translation date: 2026-11-07
+> - Translation date: 2026-11-09
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
 > - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
 # How to Contribute
+
+**English** | **[简体中文](../CONTRIBUTING.md)**
 
 Specific errors in historical facts, citations, concept mapping, or research design are welcome, as are reports of engineering terms that are unhelpful or actively misleading. Supporting the overall framework, however, is not a condition of participation.
 

@@ -1,5 +1,7 @@
 # 社会系统协议学 · Socio-Protocolics
 
+**[English](en/README.md)** | **简体中文** &nbsp;|&nbsp; **[在线阅读 (GitHub Pages)](https://nuoyazhizhou.github.io/socio-protocolics/)**
+
 项目地址：[nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics)。
 
 修订发布标识：**v11.2-r20261106**，见[修订记录](docs/修订记录.md)。[在线阅读网站](https://nuoyazhizhou.github.io/socio-protocolics/)由相同公开Markdown生成，提供分章阅读、搜索与公式呈现；白皮书统一版本仍为v11.2。

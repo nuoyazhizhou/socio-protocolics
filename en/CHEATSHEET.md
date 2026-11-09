@@ -1,14 +1,15 @@
 > **Translation record**
-> - Chinese source: `核心概念速查手册_CheatSheet.md` (sha256 `6063c2e3259aa7d85c04d86c8fa7fc9606b973d207fa088a25d27b9d288b9799`, 39106 bytes, 2026-11-08)
+> - Chinese source: `核心概念速查手册_CheatSheet.md` (sha256 `851ea57717be075f3eea80e0716ce4aae4c61d1fb35b3b3ad47aece08cab0ab1`, 39181 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
-> - Translation date: 2026-11-08
+> - Translation date: 2026-11-09
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
 > - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
 # Socio-Protocolics: Core Concepts CheatSheet (L1 Cognitive Cache)
+> **Language / 语言**: **English** | [简体中文](../核心概念速查手册_CheatSheet.md)  
 > **Positioning**: a high-density theory CheatSheet, a plug-and-play L1 memory base across sessions, and a protocol for fast-loading AI context.
 > **Version**: v11.2 (Orthogonal Axiomatic Foundation Edition)
 > **Structural revision (2026-10-26)**: v11.2, 19 RFC items numbered consecutively 001—019; for older numbering see the version comparison.

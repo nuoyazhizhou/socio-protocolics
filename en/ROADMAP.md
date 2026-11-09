@@ -1,14 +1,16 @@
 > **Translation record**
-> - Chinese source: `ROADMAP.md` (sha256 `97832a4fed1ac3ad69572a8a77e4960ee03e6f1b6a51868f1ab13f42e7261aa6`, `26771` bytes, 2026-11-09)
+> - Chinese source: `ROADMAP.md` (sha256 `fff0542821d3d6a3620dfddba5ba2cda70758a48cafef0e09c509dd64bdeeeba`, 26822 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
 > - Translation date: 2026-11-09
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
 # Project Roadmap
+
+**English** | **[简体中文](../ROADMAP.md)**
 
 Version: v0.8 | Date: 2026-10-28 | Language: Chinese original; English translation pending.
 

@@ -1,4 +1,5 @@
 # 《社会系统协议学（Socio-Protocolics）核心概念速查手册（L1 认知缓存）》
+> **语言 / Language**: **简体中文** | [English](en/CHEATSHEET.md)  
 > **定位**：高密度理论速查卡、跨会话即插即用 L1 记忆底座、AI 上下文极速加载协议。  
 > **版本**：v11.2 (正交公理化奠基典藏版 / Orthogonal Axiomatic Foundation Edition)  
 > **结构修订（2026-10-26）**：v11.2，19项RFC连续编号001—019；旧版编号见版本对照。

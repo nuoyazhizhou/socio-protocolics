@@ -26,6 +26,19 @@ def reading_markdown(text: str) -> str:
                   r'(https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/tools/\1)', text)
     text = text.replace('../.github/workflows/pages.yml',
                         'https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/.github/workflows/pages.yml')
+    # Cross-language top-level navigation links in source markdown point to repo files for GitHub browsing;
+    # in the generated site, point them to the respective online site paths so mkdocs --strict passes.
+    text = text.replace('(en/README.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/)')
+    text = text.replace('(en/CONTRIBUTING.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/CONTRIBUTING/)')
+    text = text.replace('(en/ROADMAP.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/ROADMAP/)')
+    text = text.replace('(en/CHEATSHEET.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/CHEATSHEET/)')
+    text = text.replace('(en/FRAMEWORK_GUIDE.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/FRAMEWORK_GUIDE/)')
+    text = text.replace('(en/GLOSSARY.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/GLOSSARY/)')
+    text = text.replace('(en/BILINGUAL_CONVENTIONS.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/en/BILINGUAL_CONVENTIONS.md)')
+    text = text.replace('(../README.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/)')
+    text = text.replace('(../CONTRIBUTING.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/CONTRIBUTING/)')
+    text = text.replace('(../ROADMAP.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/ROADMAP/)')
+    text = text.replace('(../核心概念速查手册_CheatSheet.md)', '(https://nuoyazhizhou.github.io/socio-protocolics/核心概念速查手册_CheatSheet/)')
     lines = []
     fence = None
     for line in text.splitlines(keepends=True):

@@ -1,14 +1,16 @@
 > **Translation record**
-> - Chinese source: `README.md` (sha256 `e16332aa5ea69c3da96faff8f2de6776f4ff295c475b37595c3017c112cd5a95`, 6341 bytes, 2026-11-07)
+> - Chinese source: `README.md` (sha256 `518ac519c27c3a68ea27977a54e166f107bbb9e8fc2367092d237184174e64b4`, 6490 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
-> - Translation date: 2026-11-07
+> - Translation date: 2026-11-09
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
 > - Pending sync: none at present; to be recorded item by item if the Chinese source is updated
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
 # Socio-Protocolics
+
+**English** | **[简体中文](../README.md)** &nbsp;|&nbsp; **[Online Documentation](https://nuoyazhizhou.github.io/socio-protocolics/en/)**
 
 Project repository: [nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics).
 
