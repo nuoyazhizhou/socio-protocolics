@@ -34,7 +34,7 @@ Coase's bibliographic entry is *Economica* 4(16):386–405; Carlile is *Organiza
 
 ## Relationship to the Current Master Source
 
-This design uses the P1/P2 background and O4; RFC-004 only bounds the applicability of the serial model, RFC-005 only raises a risk to be tested, RFC-007 clearly states a normative objective, and RFC-017 distinguishes one-off from recurring cost. This design is not treated as a direct test of the three postulates or the six core proposition groups, nor does it test Socio-Radar. For specifics see [Research Notes](research_notes.md); the public entry is the [article](../../../articles/intermediary/删掉两道审批_工作真的少了吗.md#article-framework).
+This design uses the P1/P2 background and O4; RFC-004 only bounds the applicability of the serial model, RFC-005 only raises a risk to be tested, RFC-007 clearly states a normative objective, and RFC-017 distinguishes one-off from recurring cost. This design is not treated as a direct test of the three postulates or the six core proposition groups, nor does it test Socio-Radar. For specifics see [Research Notes](research_notes.md); the public entry is the [article](../../articles/intermediary/two_approvals_removed.md#article-framework).
 
 ## Next Minimal Deliverable
 

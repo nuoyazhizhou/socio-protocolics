@@ -18,7 +18,7 @@ Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIV
 
 | Field | Current registration of this group |
 |---|---|
-| Master-source location | [SP-RFC-011](../../../社会系统协议学白皮书.md#sp-rfc-011), [SP-RFC-014](../../../社会系统协议学白皮书.md#sp-rfc-014); below, the original conditions and the author's application are kept separate |
+| Master-source location | [SP-RFC-011](../../whitepaper/chapter-05.md#sp-rfc-011), [SP-RFC-014](../../whitepaper/chapter-05.md#sp-rfc-014); below, the original conditions and the author's application are kept separate |
 | Sub-claim and identity | v11.2 Group IV, the authority-and-relief application and empirical bridging of 011/014; explicit objection, pause / change right and actual correction are different events. 012 split-brain, 013 strict dominance and 015 exit are not automatically verified along with the case |
 | Main-case candidate | Hotel-penalty administrative-reconsideration case, developing original decision — application and dispute — reconsideration change — actual performance, narrated within the official anonymised scope |
 | Evidence and gaps | An existing typical-case introduction; the original decision, applicable rules, dispute records and performance evidence still need supplementing, and the introduction cannot be woven into a complete file or presumed that relief has been realised |

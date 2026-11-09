@@ -30,4 +30,4 @@ Date: 2026-10-23 | Chinese original; English translation pending.
 
 **What is still missing.** Systematic search of checklist/human-factors research, a formal unseen question bank, external-material review, sample-size planning and real-reader data. The author-side existing contribution is text, material and an engineering-oriented specification; collaboration arrangements are agreed separately according to actual contribution.
 
-Connection to the popular chapter: [Did Removing Two Approvals Really Reduce the Work?](../../../articles/intermediary/删掉两道审批_工作真的少了吗.md). This card only tests one analytical arrangement, and does not establish the validity of the six core proposition groups, social isomorphism, or Socio-Radar.
+Connection to the popular chapter: [Did Removing Two Approvals Really Reduce the Work?](../../articles/intermediary/two_approvals_removed.md). This card only tests one analytical arrangement, and does not establish the validity of the six core proposition groups, social isomorphism, or Socio-Radar.

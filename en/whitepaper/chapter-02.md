@@ -66,7 +66,7 @@ This chapter first lists three SP-RFCs, then language and cross-civilisation cas
 
 **Claim identity:** citation of established physical results, conditional model, and social bridging.  
 **Dependencies and additional conditions:** P1; given the channel, task, encoding, audience and comprehension-accuracy are listed separately.  
-**Generation and evidence card:** [G001](../../社会系统协议学白皮书.md#rfc-evidence-001).
+**Generation and evidence card:** [G001](appendix.md#rfc-evidence-001).
 
 **Normative Spec (规范条文).**
 
@@ -109,13 +109,13 @@ This chapter first lists three SP-RFCs, then language and cross-civilisation cas
 
 **Claim identity:** empirical mechanism hypothesis.  
 **Dependencies and additional conditions:** P1 background; name content, audience prior knowledge, citation and collaboration process are defined separately.  
-**Generation and evidence card:** [G002](../../社会系统协议学白皮书.md#rfc-evidence-002).
+**Generation and evidence card:** [G002](appendix.md#rfc-evidence-002).
 
 **Normative Spec (规范条文).**
 
 > Naming can organise scattered experience into communicable, contestable and researchable concepts, thereby lowering cross-agent identification and coordination cost; but this does not mean that unnamed objective facts cannot be handled by the judiciary or existing rules at all, nor does it mean that naming necessarily brings an absolute monopoly on interpretive authority. The evolutionary validity of an interface declaration depends on legal sources, procedural rules and the competitive interpretation of multiple agents.
 >
-> **Test entry:** Execute according to the candidate comparison protocol listed under [G002](../../社会系统协议学白皮书.md#rfc-evidence-002) and §8.5.1, distinguishing the overall intervention effect of naming and compression from the independent effect of naming; pre-register the task, comparison objects, primary metrics, minimum meaningful improvement magnitude and error requirements. An existing name or case clue does not equal identified naming gain; when sufficient precision excludes the predetermined improvement, narrow or reject the corresponding local prediction.
+> **Test entry:** Execute according to the candidate comparison protocol listed under [G002](appendix.md#rfc-evidence-002) and §8.5.1, distinguishing the overall intervention effect of naming and compression from the independent effect of naming; pre-register the task, comparison objects, primary metrics, minimum meaningful improvement magnitude and error requirements. An existing name or case clue does not equal identified naming gain; when sufficient precision excludes the predetermined improvement, narrow or reject the corresponding local prediction.
 
 > 📰 **[Real-world case annotation · Case 2.2-A] (Evolution of the “sexual harassment” concept and the taking shape of an institutional interface)**  
 > *Case and bibliographic positioning*: in 1977 the United States Court of Appeals for the District of Columbia Circuit, in [Barnes v. Costle, 561 F.2d 983](https://openjurist.org/561/f2d/983/barnes-v-m-costle), held that — for the plaintiff's alleged adverse workplace treatment after refusing her supervisor's sexual demands — her claim could fall under the Title VII prohibition of sex discrimination, and vacated the lower court's summary judgment. MacKinnon's 1979 monograph 《职场女性的性骚扰》 (*Sexual Harassment of Working Women: A Case of Sex Discrimination*; see [the Yale University Press record](https://yalebooks.yale.edu/book/9780300022995/sexual-harassment-of-working-women/)) marked sex discrimination as the object of its argument in the subtitle; what is checked here is the bibliographic record, which does not substitute for studying the book's contents. The two materials can order the judgment and the monograph in time; from this one cannot conclude that the case occurred before the concept was named, nor separately identify the net effect of naming on remedies.
@@ -133,7 +133,7 @@ This chapter first lists three SP-RFCs, then language and cross-civilisation cas
 
 **Claim identity:** semantic propagation application.  
 **Dependencies and additional conditions:** Group I; version, context and interpretation task are defined separately, not a direct corollary of SP-RFC-002.  
-**Generation and evidence card:** [G003](../../社会系统协议学白皮书.md#rfc-evidence-003).
+**Generation and evidence card:** [G003](appendix.md#rfc-evidence-003).
 
 **Normative Spec (规范条文).**
 
@@ -179,7 +179,7 @@ In this book's engineering mapping, literary styles can be analogised to Seriali
 
 **Normative Spec (规范条文).**
 
-New protocols can evolve through user-space (Ring-3) multi-branch trial-and-error and PDCA-environment selection; this mechanism must satisfy budget, branch independence, observable results and feedback-window conditions, and does not presuppose that any single branch must fail or that all winners come from the margins. An architect can act as "the Bazaar Maintainer & Merge Architect of the evolution racetrack", protecting genuine feedback, extracting Linter norms and implementing reversible incremental merges. The trunk may be autonomous, contractual or an industry standard; the corresponding authorisation interface is taken only when goals such as state enforcement are required. Specific selection follows [SP-RFC-018](../../社会系统协议学白皮书.md#sp-rfc-018) for maturity criteria, comparison windows, branch budgets and stop-or-defer observation rules; it does not require every branch to survive, nor does it replace instance design with a uniform timeout auto-termination.
+New protocols can evolve through user-space (Ring-3) multi-branch trial-and-error and PDCA-environment selection; this mechanism must satisfy budget, branch independence, observable results and feedback-window conditions, and does not presuppose that any single branch must fail or that all winners come from the margins. An architect can act as "the Bazaar Maintainer & Merge Architect of the evolution racetrack", protecting genuine feedback, extracting Linter norms and implementing reversible incremental merges. The trunk may be autonomous, contractual or an industry standard; the corresponding authorisation interface is taken only when goals such as state enforcement are required. Specific selection follows [SP-RFC-018](chapter-07.md#sp-rfc-018) for maturity criteria, comparison windows, branch budgets and stop-or-defer observation rules; it does not require every branch to survive, nor does it replace instance design with a uniform timeout auto-termination.
 
 ```
 [User-space multi-branch horse race: citizens' storybooks / street-vendor vernacular / local dialects] ──(compare after results mature; feedback frequency bounded by latency)─┐

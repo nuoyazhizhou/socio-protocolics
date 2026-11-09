@@ -52,7 +52,7 @@ The cases, open topics and bilingual route below are retained and can supply evi
 
 | Content | Actual status |
 |---|---|
-| [Whitepaper](../社会系统协议学白皮书.md) and [CheatSheet](../核心概念速查手册_CheatSheet.md) | Chinese v11.2; the six core proposition groups and the technical-debt accounting naming are synchronised. Some core cases have [source boundaries](case_sources_and_boundaries.md); the whole book's historical sources and social mechanisms have not been verified in full |
+| [Whitepaper](whitepaper/chapter-01.md) and [CheatSheet](CHEATSHEET.md) | Chinese v11.2; the six core proposition groups and the technical-debt accounting naming are synchronised. Some core cases have [source boundaries](case_sources_and_boundaries.md); the whole book's historical sources and social mechanisms have not been verified in full |
 | [Hu Shi article](articles/hu-shih/how_to_evaluate_hu_shis_works.md) | Chinese public candidate draft, with source and revision notes; no English translation yet, and it is not a causal-effect study |
 | [H01—H03 and PR-001](research/README.md) | Material and research-design drafts; not formally pre-registered, no effect data obtained |
 | [OP-002 certification systems and organisational autonomy](research/OP-002/question_card.md) | Open questions, four candidate hypotheses and a partial source initial check registered; not pre-registered, no comparison or causal identification completed, and the core clauses are not yet modified |

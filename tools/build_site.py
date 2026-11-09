@@ -22,6 +22,8 @@ WHITEPAPER = '社会系统协议学白皮书.md'
 def reading_markdown(text: str) -> str:
     """Protect table math delimiters in derived HTML input; source files stay unchanged."""
     text = text.replace('\r\n', '\n').replace('\r', '\n')
+    text = re.sub(r'\(\.\./tools/([^)]+)\)',
+                  r'(https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/tools/\1)', text)
     text = text.replace('../.github/workflows/pages.yml',
                         'https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/.github/workflows/pages.yml')
     lines = []

@@ -50,6 +50,6 @@ The original card's claim about the Kittur and Ortega studies — "one measures 
 
 ## Relationship with the whitepaper
 
-This round did not modify the [whitepaper text](../../社会系统协议学白皮书.md) or the [CheatSheet](../CHEATSHEET.md). Limited resources, autonomous agents, expectation and feedback are the source of the questions, and the H1a/H1b/H2 of this card cannot be derived directly from these postulates. New results should first be compared with existing architecture, organisation and collaboration explanations; whether the whitepaper needs revision is adjudicated separately on the basis of concrete evidence.
+This round did not modify the [whitepaper text](../whitepaper/chapter-01.md) or the [CheatSheet](../CHEATSHEET.md). Limited resources, autonomous agents, expectation and feedback are the source of the questions, and the H1a/H1b/H2 of this card cannot be derived directly from these postulates. New results should first be compared with existing architecture, organisation and collaboration explanations; whether the whitepaper needs revision is adjudicated separately on the basis of concrete evidence.
 
 What needs collaboration first is not producing significant results, but filling in the [card's items to be locked](PR-001_agent_collaboration_scale.md#vii-items-that-must-be-completed-before-a-formal-launch) — in particular whether access cost is operational, whether contributions are attributable, and how to compare an uncertain optimal scale.

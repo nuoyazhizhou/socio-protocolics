@@ -70,7 +70,7 @@
 
 **Claim identity:** authority model and social bridging.
 **Dependencies and additional conditions:** O2 and the specific execution structure; independent review, remedy, and compensation are specified separately.
-**Generation and evidence card:** [G011](../../社会系统协议学白皮书.md#rfc-evidence-011).
+**Generation and evidence card:** [G011](appendix.md#rfc-evidence-011).
 
 **Normative Spec (规范条文).**
 Modern rule-of-law property rights can be likened to user-mode resource protection with clear authority boundaries (Ring-3 Protection). In a conventional operating system, user-mode isolation is enforced with the kernel's participation and cannot by itself constrain the kernel itself; the social mapping must therefore also show how constraints such as independent review, separation of powers, remedy, and compensation act upon the power executor. When expropriation authority lacks these constraints and can expand arbitrarily, agents face a higher risk of property-rights withdrawal, and long-term investment may be suppressed; the degree and duration should be judged by institutional conditions and evidence — one cannot assert from the Ring-3 analogy alone that the capital-sinking function permanently falls to zero.
@@ -103,7 +103,7 @@ Modern rule-of-law property rights can be likened to user-mode resource protecti
 
 **Claim identity:** state distinction and mechanism hypothesis.
 **Dependencies and additional conditions:** P1 resource background; communication, authority, arbitration, and competitive incentive are each defined separately.
-**Generation and evidence card:** [G012](../../社会系统协议学白皮书.md#rfc-evidence-012).
+**Generation and evidence card:** [G012](appendix.md#rfc-evidence-012).
 
 **Normative Spec (规范条文).**
 When a central node can no longer continuously transfer to edge nodes the resources needed to sustain collaboration, service degradation, relationship decoupling, or control-right competition may appear. A network partition refers only to communication isolation; only when multiple nodes or partitions simultaneously claim valid write authority over the same resource and produce conflicting decisions does it constitute the split-brain referred to here. If arbitration, authority isolation, and stop-write-on-disconnect mechanisms are effective, a partition may manifest as a partial service pause without rewriting confirmed state. Mapping this mechanism onto regional warlordism requires separately proving the link between resource cutoff, failure of constraints, and competitive expropriation; the analogies of local malicious in-transit interception (Rogue Transit) and BGP-route hijacking with forged jurisdiction should also be checked separately, and cannot be inferred from fiscal distress alone.
@@ -136,7 +136,7 @@ When a central node can no longer continuously transfer to edge nodes the resour
 
 **Claim identity:** conditional derivation of a finite two-action game.
 **Dependencies and additional conditions:** P2-type choice; complete net payoff, strict dominance over all opponent strategies; dynamics argued separately.
-**Generation and evidence card:** [G013](../../社会系统协议学白皮书.md#rfc-evidence-013).
+**Generation and evidence card:** [G013](appendix.md#rfc-evidence-013).
 
 **Normative Spec (规范条文).**
 **Freeing malicious nodes from penalties raises the plunder incentive:** absence of slashing lowers the cost of plunder, but $\text{Penalty}_{\text{slash}}=0$ and $E[R_{\text{plunder}}]>0$ by themselves do not guarantee that plunder dominates cooperation. In a clearly specified two-strategy static game, if every node accurately maximises net expected utility and, for all opponent strategies $a_{-i}$, $Q_i(D,a_{-i})>Q_i(H,a_{-i})$, then plunder $D$ strictly dominates cooperation $H$, and universal plunder forms the unique Nash equilibrium. Whether a real system converges to this state, and whether a Byzantine avalanche or physical downtime appears, still requires stating the strategy-update mechanism, resource thresholds, and fault-tolerance boundaries.
@@ -157,7 +157,7 @@ This conclusion applies only to this two-action payoff table. If extra strategie
 
 **Claim identity:** institutional instantiation and normative boundary.
 **Dependencies and additional conditions:** specified jurisdiction, public objective, authorisation, and procedure; not every collaboration must enter the kernel.
-**Generation and evidence card:** [G014](../../社会系统协议学白皮书.md#rfc-evidence-014).
+**Generation and evidence card:** [G014](appendix.md#rfc-evidence-014).
 
 **Normative Spec (规范条文).**
 User space (Ring-3) can continuously organise collaboration through autonomous rules, community norms, contracts, and technical standards. For programmes that require nationwide coercive enforcement, public taxation, or statutory education standards, the authorisation and procedure interface that enters the national kernel (Ring-0) — call it a system call (Syscall) — is an important path to that specific objective. State recognition, institutional nesting, and direct state adoption are distinct relations; one cannot take becoming a state-default daemon as the uniform success criterion for all ideas, paradigms, or technology movements.
@@ -187,7 +187,7 @@ User space (Ring-3) can continuously organise collaboration through autonomous r
 
 **Claim identity:** identification boundary and application hypothesis.
 **Dependencies and additional conditions:** clearly specified feasible alternative, exit cost, monopoly control, and observed denominator.
-**Generation and evidence card:** [G015](../../社会系统协议学白皮书.md#rfc-evidence-015).
+**Generation and evidence card:** [G015](appendix.md#rfc-evidence-015).
 
 **Normative Spec (规范条文).**
 When a central node monopolises basic resources and service interfaces and forcibly bundles indispensable basic services with other obligations, the terminal's feasible choice set may shrink markedly. If the accountability explanation merely invokes formal signing consent without disclosing alternative options, exit costs, and historical coerced contributions, an attribution distortion and pseudo-voluntary narrative arises. One should separately test resource control rights, bundling conditions, feasible exit paths, and ledger records before assessing their effect on trust. Observing choice entropy $H(\text{Choice})=0$ only shows that the choice set is concentrated within the sample; both preference homogeneity and deprivation of feasible alternatives can produce this phenomenon, so the constraint, exit cost, and feasible choice set must be identified independently.

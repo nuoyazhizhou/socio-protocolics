@@ -18,8 +18,8 @@ Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIV
 
 | Field | Current registration of this group |
 |---|---|
-| Master-source location | [SP-RFC-008](../../../社会系统协议学白皮书.md#sp-rfc-008); below, the original conditions and the author's application are kept separate |
-| Sub-claim and identity | v11.2 Group III / [RFC-008](../../../社会系统协议学白皮书.md#sp-rfc-008): given that recovery from breach is lower than the gain, with other items fixed, a fall in performance probability reduces that item's net present value as a conditional relation; the real belief—investment link is separately pending testing |
+| Master-source location | [SP-RFC-008](../../whitepaper/chapter-04.md#sp-rfc-008); below, the original conditions and the author's application are kept separate |
+| Sub-claim and identity | v11.2 Group III / [RFC-008](../../whitepaper/chapter-04.md#sp-rfc-008): given that recovery from breach is lower than the gain, with other items fixed, a fall in performance probability reduces that item's net present value as a conditional relation; the real belief—investment link is separately pending testing |
 | Main-case candidate | 2018 photovoltaic Documents 823 and 93 and a class of clearly identified projects, developing provisions — interpretation — actual handling — investment decision; do not first use "no investment" to retrodict a credibility collapse |
 | Evidence and gaps | The two documents and their scope are listed; one must supplement the specific project's original eligibility, handling, awareness change and behaviour timing, and revenue / cost / financing material; a policy document cannot fill in the investment consequence |
 | Real counter-material | The UK AR5 offshore-wind result and its cost explanation challenge "commitment alone is sufficient for investment", but the rounds and project conditions differ and the sector attribution needs cross-checking; the land law only provides an arrangement and does not automatically count as a positive effect |

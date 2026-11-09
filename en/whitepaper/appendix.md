@@ -48,27 +48,27 @@
 
 | New number | Group | Standalone body section | Claim identity |
 |---|---|---|---|
-| SP-RFC-001 | I | [2.1 Physical Channel and Semantic Decoding](../../社会系统协议学白皮书.md#sp-rfc-001) | citation of established physical results, conditional model, and social bridging |
-| SP-RFC-002 | I | [2.2 Naming and Common Identification](../../社会系统协议学白皮书.md#sp-rfc-002) | empirical mechanism hypothesis |
-| SP-RFC-003 | I | [2.3 Textual Stability and Cross-Context Interpretation](../../社会系统协议学白皮书.md#sp-rfc-003) | semantic propagation application |
-| SP-RFC-004 | II | [3.1 Conditional Retention Rate of Serial Compatibility Layers](../../社会系统协议学白皮书.md#sp-rfc-004) | conditional model |
-| SP-RFC-005 | II | [3.2 Normative Complexity and Intermediary Rent-Seeking Feedback](../../社会系统协议学白皮书.md#sp-rfc-005) | conditional mechanism hypothesis |
-| SP-RFC-006 | II | [3.3 Approval Latency, Mission Deadline, and Protection Benefit](../../社会系统协议学白皮书.md#sp-rfc-006) | conditional judgment and application comparison |
-| SP-RFC-007 | II | [3.4 Architect's Understandability, Rights, and Migration Precepts](../../社会系统协议学白皮书.md#sp-rfc-007) | cross-group normative rule |
-| SP-RFC-008 | III | [4.1 Performance Probability, Recovery, and Investment Threshold](../../社会系统协议学白皮书.md#sp-rfc-008) | conditional model and empirical bridging |
-| SP-RFC-009 | III | [4.2 Retry Idempotence, Record Durability, and Finality](../../社会系统协议学白皮书.md#sp-rfc-009) | property definition and procedural boundary |
-| SP-RFC-010 | III | [4.3 Deterministic Execution and Conditional Commitment](../../社会系统协议学白皮书.md#sp-rfc-010) | execution mechanism and conditional protection |
-| SP-RFC-011 | IV | [5.1 Privilege Isolation and Constraints on the Executor](../../社会系统协议学白皮书.md#sp-rfc-011) | authority model and social bridging |
-| SP-RFC-012 | IV | [5.2 Resource Cutoff, Communication Partition, and Conflicting Writes](../../社会系统协议学白皮书.md#sp-rfc-012) | state distinction and mechanism hypothesis |
-| SP-RFC-013 | IV | [5.3 Predatory Gain, Strict Dominance, and Static Equilibrium](../../社会系统协议学白皮书.md#sp-rfc-013) | conditional derivation of a finite two-action game |
-| SP-RFC-014 | IV | [5.4 Authorisation Interface for Specific Public Objectives](../../社会系统协议学白皮书.md#sp-rfc-014) | institutional instantiation and normative boundary |
-| SP-RFC-015 | IV | [5.5 Feasible Choice Set, Exit, and Voluntariness Identification](../../社会系统协议学白皮书.md#sp-rfc-015) | identification boundary and application hypothesis |
-| SP-RFC-016 | V | [6.1 Mobilisation Task, Acknowledgement Feedback, and Continuous Governance](../../社会系统协议学白皮书.md#sp-rfc-016) | mechanism analogy and empirical bridging |
-| SP-RFC-017 | VI | [7.1 Migration Net Burden and Technical-Debt Accounting](../../社会系统协议学白皮书.md#sp-rfc-017) | accounting definition and option comparison |
-| SP-RFC-018 | VI | [7.2 Multi-Branch Trial and Mature-Feedback Screening](../../社会系统协议学白皮书.md#sp-rfc-018) | conditional-probability model, empirical screening, and design norm |
-| SP-RFC-019 | Cross-group / Chapter 8 | [8.1 AI Tool Control and Exploratory Early-Warning](../../社会系统协议学白皮书.md#sp-rfc-019) | application and research norm |
+| SP-RFC-001 | I | [2.1 Physical Channel and Semantic Decoding](chapter-02.md#sp-rfc-001) | citation of established physical results, conditional model, and social bridging |
+| SP-RFC-002 | I | [2.2 Naming and Common Identification](chapter-02.md#sp-rfc-002) | empirical mechanism hypothesis |
+| SP-RFC-003 | I | [2.3 Textual Stability and Cross-Context Interpretation](chapter-02.md#sp-rfc-003) | semantic propagation application |
+| SP-RFC-004 | II | [3.1 Conditional Retention Rate of Serial Compatibility Layers](chapter-03.md#sp-rfc-004) | conditional model |
+| SP-RFC-005 | II | [3.2 Normative Complexity and Intermediary Rent-Seeking Feedback](chapter-03.md#sp-rfc-005) | conditional mechanism hypothesis |
+| SP-RFC-006 | II | [3.3 Approval Latency, Mission Deadline, and Protection Benefit](chapter-03.md#sp-rfc-006) | conditional judgment and application comparison |
+| SP-RFC-007 | II | [3.4 Architect's Understandability, Rights, and Migration Precepts](chapter-03.md#sp-rfc-007) | cross-group normative rule |
+| SP-RFC-008 | III | [4.1 Performance Probability, Recovery, and Investment Threshold](chapter-04.md#sp-rfc-008) | conditional model and empirical bridging |
+| SP-RFC-009 | III | [4.2 Retry Idempotence, Record Durability, and Finality](chapter-04.md#sp-rfc-009) | property definition and procedural boundary |
+| SP-RFC-010 | III | [4.3 Deterministic Execution and Conditional Commitment](chapter-04.md#sp-rfc-010) | execution mechanism and conditional protection |
+| SP-RFC-011 | IV | [5.1 Privilege Isolation and Constraints on the Executor](chapter-05.md#sp-rfc-011) | authority model and social bridging |
+| SP-RFC-012 | IV | [5.2 Resource Cutoff, Communication Partition, and Conflicting Writes](chapter-05.md#sp-rfc-012) | state distinction and mechanism hypothesis |
+| SP-RFC-013 | IV | [5.3 Predatory Gain, Strict Dominance, and Static Equilibrium](chapter-05.md#sp-rfc-013) | conditional derivation of a finite two-action game |
+| SP-RFC-014 | IV | [5.4 Authorisation Interface for Specific Public Objectives](chapter-05.md#sp-rfc-014) | institutional instantiation and normative boundary |
+| SP-RFC-015 | IV | [5.5 Feasible Choice Set, Exit, and Voluntariness Identification](chapter-05.md#sp-rfc-015) | identification boundary and application hypothesis |
+| SP-RFC-016 | V | [6.1 Mobilisation Task, Acknowledgement Feedback, and Continuous Governance](chapter-06.md#sp-rfc-016) | mechanism analogy and empirical bridging |
+| SP-RFC-017 | VI | [7.1 Migration Net Burden and Technical-Debt Accounting](chapter-07.md#sp-rfc-017) | accounting definition and option comparison |
+| SP-RFC-018 | VI | [7.2 Multi-Branch Trial and Mature-Feedback Screening](chapter-07.md#sp-rfc-018) | conditional-probability model, empirical screening, and design norm |
+| SP-RFC-019 | Cross-group / Chapter 8 | [8.1 AI Tool Control and Exploratory Early-Warning](chapter-08.md#sp-rfc-019) | application and research norm |
 
-Legacy numbers must be converted through the [version concordance](../../docs/v11.2_编号与章节对照.md); an old and a new number that are identical may point to different content. Legacy references use the `legacy-v11-0-rfc-XXX` or `legacy-v11-1-rfc-XXX` entry points, and do not claim that an unversioned old link still carries the same meaning.
+Legacy numbers must be converted through the [version concordance](../V11_2_NUMBERING.md); an old and a new number that are identical may point to different content. Legacy references use the `legacy-v11-0-rfc-XXX` or `legacy-v11-1-rfc-XXX` entry points, and do not claim that an unversioned old link still carries the same meaning.
 
 ```
 ================================================================================
@@ -82,25 +82,25 @@ Framework: 3 Postulates / 6 Core Proposition Groups / 19 Consecutive RFC Entries
 
 | Logical identity and number | Normative / term name | Affiliated core proposition and formalised mechanism | Historical / engineering comparison and evidence boundary |
 | :--- | :--- | :--- | :--- |
-| **【citation of established physical results, conditional model, and social bridging】<br>SP-RFC-001** | **Physical Channel and Semantic Decoding**<br>body [2.1](../../社会系统协议学白皮书.md#sp-rfc-001) | **Proposition Group I: Channel Capacity & Semantic Boundary**<br>The physical-capacity theorem and the candidate social model $C\le kI$ are kept separate; the semantic mapping of $N_{\text{padding}}$ awaits calibration. | Stylistic and terminology thresholds can be studied as objects of comprehension cost; their effect on engineer training and collaboration must be identified independently, and no unmeasured inter-generational shortening magnitude is reported. |
-| **【empirical mechanism hypothesis】<br>SP-RFC-002** | **Naming and Common Identification**<br>body [2.2](../../社会系统协议学白皮书.md#sp-rfc-002) | **Proposition Group I: Channel Capacity & Semantic Boundary**<br>Dispersed experience can form a citable interface through conceptual encapsulation; the gains in identification and coordination are tested separately. | Conceptual naming may lower cross-agent identification and coordination cost; the gain is to be compared. Judicial relief depends on the evolution of legal sources; naming does not constitute a pre-emptive monopoly over a judicial entry point. |
-| **【semantic propagation application】<br>SP-RFC-003** | **Textual Stability and Cross-Context Interpretation**<br>body [2.3](../../社会系统协议学白皮书.md#sp-rfc-003) | **Proposition Group I: Channel Capacity & Semantic Boundary; related to Group V tasks**<br>Byte hashing does not guarantee semantic consistency; the costs of understandability, stability, and interpretive coordination must be specified by a model. | Fixing a canon and cross-language dissemination each have their conditions; no undefined product upper bound or a "zero tampering for a millennium" is claimed. |
-| **【conditional model】<br>SP-RFC-004** | **Conditional Retention Rate of Serial Compatibility Layers**<br>body [3.1](../../社会系统协议学白皮书.md#sp-rfc-004) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>$\eta=\prod_i(1-\lambda_i)$; a serial arrangement adds no output or recovery model, and geometric decay must be accompanied by equal rates or a uniform positive lower bound. | The net contribution of a compatibility layer must be compared against feasible alternatives; wars and the rise and fall of empires still require independent historical materials and multi-factor analysis. |
-| **【conditional mechanism hypothesis】<br>SP-RFC-005** | **Normative Complexity and Intermediary Rent-Seeking Feedback**<br>body [3.2](../../社会系统协议学白皮书.md#sp-rfc-005) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>Where exclusive rights, a dominant non-productive net payoff, and insufficient competition/exit/error-correction coexist, test the complexity–rent-seeking feedback; an institutionalised scenario must satisfy the same conditions. | [different paths of UNIX/GNU/Linux](../../社会系统协议学白皮书.md#sec-3-2); [complexity-boundary comparison of SOAP/WS-* deployments](../../社会系统协议学白皮书.md#sec-3-6-1); [discussion of institutional boundaries and Lysenkoism](../../社会系统协议学白皮书.md#sec-3-6-2) (the church-finance controversy and the university theological review are studied separately; the Sorbonne is not equated with an indulgence-selling institution). |
-| **【conditional judgment and application comparison】<br>SP-RFC-006** | **Approval Latency, Mission Deadline, and Protection Benefit**<br>body [3.3](../../社会系统协议学白皮书.md#sp-rfc-006) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>For a specific task, $Latency_{Audit}>TTL_{mission}$ may cause timeout; strictly distinguish four consequences — original-path delay, available alternative bypass, local task failure, and systemic governance failure; prudent review is not rent-seeking, and speed does not automatically increase net benefit. | The classified applicability of the UK's 1865 Locomotive Act and its 1896 amendment; one cannot infer from a local timeout that an entire industry is zeroed out or that a malicious bypass is certain to succeed. |
-| **【cross-group normative rule】<br>SP-RFC-007** | **Architect's Understandability, Rights, and Migration Precepts**<br>body [3.4](../../社会系统协议学白皮书.md#sp-rfc-007) | **Cross-group normative rule; Group II keeps the entry point and also cites Groups I/IV/VI**<br>1. the minimal-plain-language precept; 2. the cut-the-rent-seeking precept; 3. the decisive-refactoring precept. | [Hu Shi's materials on sorting the national heritage](../../社会系统协议学白皮书.md#sec-2-4-3); [the interface analogy of Luther and Wang Yangming](../../社会系统协议学白皮书.md#sec-3-5-2); [the interface of Huineng and Pure Land practice](../../社会系统协议学白皮书.md#sec-3-5-1); [comparison of REST/JSON deployment conditions](../../社会系统协议学白皮书.md#sec-3-6-1); a cross-section comparison clue does not mean the rule's effect is already verified. |
-| **【conditional model and empirical bridging】<br>SP-RFC-008** | **Performance Probability, Recovery, and Investment Threshold**<br>body [4.1](../../社会系统协议学白皮书.md#sp-rfc-008) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>$NPV_i=\sum_t\beta_i^t[p_{it}R_{it}+(1-p_{it})Q_{it}]-I_i$; performance, remedy, and investment threshold act jointly. | Credible commitment is a candidate mechanism; the effects of financial crises, social-security participation, and marriage/fertility must be identified separately. |
-| **【property definition and procedural boundary】<br>SP-RFC-009** | **Retry Idempotence, Record Durability, and Finality**<br>body [4.2](../../社会系统协议学白皮书.md#sp-rfc-009) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>Idempotence under the same request identifier $F_k(F_k(s))=F_k(s)$; durability, finality, and authorisation update are defined separately. | Fix the transaction, rule, and evidence before comparison; a lawful review and an in-action withdrawal of authorisation are not arbitrary rewriting of history. |
-| **【execution mechanism and conditional protection】<br>SP-RFC-010** | **Deterministic Execution and Conditional Commitment**<br>body [4.3](../../社会系统协议学白皮书.md#sp-rfc-010) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>$s_{n+1}=\delta(s_n,tx_n)$; beyond determinism, ordered input, consensus, authority, and fault conditions are still required. | Signature- and time-lock-constrained protocol-controlled state and assets do not guarantee off-chain reserves, purchasing power, or resistance to physical coercion. |
-| **【authority model and social bridging】<br>SP-RFC-011** | **Privilege Isolation and Constraints on the Executor**<br>body [5.1](../../社会系统协议学白皮书.md#sp-rfc-011) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Ring-3 privilege protection relies on a trusted kernel; constraining Ring-0 requires separate review, remedy, and power checks. | The engineering analogy of rule-of-law property rights; expropriation must be analysed by jurisdiction, condition, and compensation procedure; it does not imply that investment is necessarily zeroed. |
-| **【state distinction and mechanism hypothesis】<br>SP-RFC-012** | **Resource Cutoff, Communication Partition, and Conflicting Writes**<br>body [5.2](../../社会系统协议学白皮书.md#sp-rfc-012) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Resource cutoff, communication partition, and conflicting multi-master writes are tested separately; arbitration and stop-write-on-disconnect can protect safety. | Local in-transit interception and cross-domain forged jurisdiction are analogous respectively to Rogue Transit and BGP Hijacking. |
-| **【conditional derivation of a finite two-action game】<br>SP-RFC-013** | **Predatory Gain, Strict Dominance, and Static Equilibrium**<br>body [5.3](../../社会系统协议学白皮书.md#sp-rfc-013) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Plunder dominance requires a complete net-utility comparison against the relevant opponent's strategies; group convergence requires a given dynamic. | Zero penalty is one of the incentive factors; cooperative gain, reputation, long-term tax base, and fault-tolerance mechanisms must be examined jointly. |
-| **【institutional instantiation and normative boundary】<br>SP-RFC-014** | **Authorisation Interface for Specific Public Objectives**<br>body [5.4](../../社会系统协议学白皮书.md#sp-rfc-014) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>An authorisation Syscall is involved only when goals such as state enforcement are required; autonomy and technical standards can continue to evolve at Ring-3. | Hu Shi's vernacular writing entered the national-school standard through the 1920 forwarding order of the Beijing School Administration Bureau; the Edict of Milan; the UK window-tax avoidance and local negative externalities (see [Case 3.7-B](../../社会系统协议学白皮书.md#sec-3-7-1)). |
-| **【identification boundary and application hypothesis】<br>SP-RFC-015** | **Feasible Choice Set, Exit, and Voluntariness Identification**<br>body [5.5](../../社会系统协议学白皮书.md#sp-rfc-015) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>A single choice $H(\text{Choice})=0$ must be identified together with the feasible alternative set, exit cost, and monopoly constraint; one cannot separately presume voluntariness or coercion. | The Appalachian coal-company town tokens tied to exclusive stores; the Microsoft Windows Internet Explorer bundling antitrust litigation; the attribution-controversy ledger of the historical agricultural–industrial price-scissors contribution. |
-| **【mechanism analogy and empirical bridging】<br>SP-RFC-016** | **Mobilisation Task, Acknowledgement Feedback, and Continuous Governance**<br>body [6.1](../../社会系统协议学白皮书.md#sp-rfc-016) | **Proposition Group V: Transport Topology & Task Feedback**<br>TCP/UDP serve as transport-mechanism analogies; organisational reliability depends on application-layer feedback, resources, and recovery. | Li Zicheng and Zhu Yuanzhang can be used for historical comparison; one cannot infer governance success or failure from a protocol name or the number of ACKs. |
-| **【accounting definition and option comparison】<br>SP-RFC-017** | **Migration Net Burden and Technical-Debt Accounting**<br>body [7.1](../../社会系统协议学白皮书.md#sp-rfc-017) | **Proposition Group VI: Debt Accounting & Evolutionary Selection**<br>$\Delta\text{Burden}_{\text{net}}=NPV(\text{Cost}_{\text{migration}}+\text{Loss}_{\text{implicit}}+\text{Maintenance}_{\text{new}})-NPV(\text{Debt}_{\text{legacy}})$; compare net burden after unifying the boundary and lifecycle. | Retain the Catch-Block fault-tolerance asset and the Strangler Fig incremental migration; a non-zero cost does not mean the net burden is always non-negative. |
-| **【conditional-probability model, empirical screening, and design norm】<br>SP-RFC-018** | **Multi-Branch Trial and Mature-Feedback Screening**<br>body [7.2](../../社会系统协议学白皮书.md#sp-rfc-018) | **Proposition Group VI: Debt Accounting & Evolutionary Selection**<br>With independent and fixed success rates, $P=1-\prod_k(1-p_k)$; under a general budget constraint $\sum_{k=1}^K\text{Cost}_k+C_{\text{merge}}(K)\le\text{Budget}$ (simplified to $K\cdot\text{Cost}_{\text{fork}}\le\text{Budget}$ when costs are equal and merge overhead is ignored); the feedback window is $T_{\text{latency}}\le\Delta t<T_{\text{environment}}$. | Branch horse-racing among operating systems such as Linux; the TCP/IP vs OSI protocol-route competition; the Xiaogang Village and Special-Zone concurrent trial-and-error; clues from WeChat's multi-team parallel iteration (parameters await verification against the enterprise's original records); the architect is the trunk merger. |
-| **【application and research norm】<br>SP-RFC-019** | **AI Tool Control and Exploratory Early-Warning**<br>body [8.1](../../社会系统协议学白皮书.md#sp-rfc-019) | **Cross-group tooling/research norm, located in Chapter 8; keeps the Group VI entry point and relates to Groups II/IV, not a deductive corollary of VI**<br>A risk-proxy score exceeding a preset threshold triggers only a data and mechanism review; the threshold is uncalibrated and does not authorise physical intervention; bypass decisions compare benefit, rights, and migration risk separately. | Candidate comparison of LLM tool control rights, exit, and independent audit; the four proxy inputs and one composite score are not yet calibrated and cannot serve as a deterministic social diagnosis. |
+| **【citation of established physical results, conditional model, and social bridging】<br>SP-RFC-001** | **Physical Channel and Semantic Decoding**<br>body [2.1](chapter-02.md#sp-rfc-001) | **Proposition Group I: Channel Capacity & Semantic Boundary**<br>The physical-capacity theorem and the candidate social model $C\le kI$ are kept separate; the semantic mapping of $N_{\text{padding}}$ awaits calibration. | Stylistic and terminology thresholds can be studied as objects of comprehension cost; their effect on engineer training and collaboration must be identified independently, and no unmeasured inter-generational shortening magnitude is reported. |
+| **【empirical mechanism hypothesis】<br>SP-RFC-002** | **Naming and Common Identification**<br>body [2.2](chapter-02.md#sp-rfc-002) | **Proposition Group I: Channel Capacity & Semantic Boundary**<br>Dispersed experience can form a citable interface through conceptual encapsulation; the gains in identification and coordination are tested separately. | Conceptual naming may lower cross-agent identification and coordination cost; the gain is to be compared. Judicial relief depends on the evolution of legal sources; naming does not constitute a pre-emptive monopoly over a judicial entry point. |
+| **【semantic propagation application】<br>SP-RFC-003** | **Textual Stability and Cross-Context Interpretation**<br>body [2.3](chapter-02.md#sp-rfc-003) | **Proposition Group I: Channel Capacity & Semantic Boundary; related to Group V tasks**<br>Byte hashing does not guarantee semantic consistency; the costs of understandability, stability, and interpretive coordination must be specified by a model. | Fixing a canon and cross-language dissemination each have their conditions; no undefined product upper bound or a "zero tampering for a millennium" is claimed. |
+| **【conditional model】<br>SP-RFC-004** | **Conditional Retention Rate of Serial Compatibility Layers**<br>body [3.1](chapter-03.md#sp-rfc-004) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>$\eta=\prod_i(1-\lambda_i)$; a serial arrangement adds no output or recovery model, and geometric decay must be accompanied by equal rates or a uniform positive lower bound. | The net contribution of a compatibility layer must be compared against feasible alternatives; wars and the rise and fall of empires still require independent historical materials and multi-factor analysis. |
+| **【conditional mechanism hypothesis】<br>SP-RFC-005** | **Normative Complexity and Intermediary Rent-Seeking Feedback**<br>body [3.2](chapter-03.md#sp-rfc-005) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>Where exclusive rights, a dominant non-productive net payoff, and insufficient competition/exit/error-correction coexist, test the complexity–rent-seeking feedback; an institutionalised scenario must satisfy the same conditions. | [different paths of UNIX/GNU/Linux](chapter-03.md#sec-3-2); [complexity-boundary comparison of SOAP/WS-* deployments](chapter-03.md#sec-3-6-1); [discussion of institutional boundaries and Lysenkoism](chapter-03.md#sec-3-6-2) (the church-finance controversy and the university theological review are studied separately; the Sorbonne is not equated with an indulgence-selling institution). |
+| **【conditional judgment and application comparison】<br>SP-RFC-006** | **Approval Latency, Mission Deadline, and Protection Benefit**<br>body [3.3](chapter-03.md#sp-rfc-006) | **Proposition Group II: Intermediary Parasitism & Compatibility Decay**<br>For a specific task, $Latency_{Audit}>TTL_{mission}$ may cause timeout; strictly distinguish four consequences — original-path delay, available alternative bypass, local task failure, and systemic governance failure; prudent review is not rent-seeking, and speed does not automatically increase net benefit. | The classified applicability of the UK's 1865 Locomotive Act and its 1896 amendment; one cannot infer from a local timeout that an entire industry is zeroed out or that a malicious bypass is certain to succeed. |
+| **【cross-group normative rule】<br>SP-RFC-007** | **Architect's Understandability, Rights, and Migration Precepts**<br>body [3.4](chapter-03.md#sp-rfc-007) | **Cross-group normative rule; Group II keeps the entry point and also cites Groups I/IV/VI**<br>1. the minimal-plain-language precept; 2. the cut-the-rent-seeking precept; 3. the decisive-refactoring precept. | [Hu Shi's materials on sorting the national heritage](chapter-02.md#sec-2-4-3); [the interface analogy of Luther and Wang Yangming](chapter-03.md#sec-3-5-2); [the interface of Huineng and Pure Land practice](chapter-03.md#sec-3-5-1); [comparison of REST/JSON deployment conditions](chapter-03.md#sec-3-6-1); a cross-section comparison clue does not mean the rule's effect is already verified. |
+| **【conditional model and empirical bridging】<br>SP-RFC-008** | **Performance Probability, Recovery, and Investment Threshold**<br>body [4.1](chapter-04.md#sp-rfc-008) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>$NPV_i=\sum_t\beta_i^t[p_{it}R_{it}+(1-p_{it})Q_{it}]-I_i$; performance, remedy, and investment threshold act jointly. | Credible commitment is a candidate mechanism; the effects of financial crises, social-security participation, and marriage/fertility must be identified separately. |
+| **【property definition and procedural boundary】<br>SP-RFC-009** | **Retry Idempotence, Record Durability, and Finality**<br>body [4.2](chapter-04.md#sp-rfc-009) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>Idempotence under the same request identifier $F_k(F_k(s))=F_k(s)$; durability, finality, and authorisation update are defined separately. | Fix the transaction, rule, and evidence before comparison; a lawful review and an in-action withdrawal of authorisation are not arbitrary rewriting of history. |
+| **【execution mechanism and conditional protection】<br>SP-RFC-010** | **Deterministic Execution and Conditional Commitment**<br>body [4.3](chapter-04.md#sp-rfc-010) | **Proposition Group III: Intertemporal Finality & Expectation Credibility**<br>$s_{n+1}=\delta(s_n,tx_n)$; beyond determinism, ordered input, consensus, authority, and fault conditions are still required. | Signature- and time-lock-constrained protocol-controlled state and assets do not guarantee off-chain reserves, purchasing power, or resistance to physical coercion. |
+| **【authority model and social bridging】<br>SP-RFC-011** | **Privilege Isolation and Constraints on the Executor**<br>body [5.1](chapter-05.md#sp-rfc-011) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Ring-3 privilege protection relies on a trusted kernel; constraining Ring-0 requires separate review, remedy, and power checks. | The engineering analogy of rule-of-law property rights; expropriation must be analysed by jurisdiction, condition, and compensation procedure; it does not imply that investment is necessarily zeroed. |
+| **【state distinction and mechanism hypothesis】<br>SP-RFC-012** | **Resource Cutoff, Communication Partition, and Conflicting Writes**<br>body [5.2](chapter-05.md#sp-rfc-012) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Resource cutoff, communication partition, and conflicting multi-master writes are tested separately; arbitration and stop-write-on-disconnect can protect safety. | Local in-transit interception and cross-domain forged jurisdiction are analogous respectively to Rogue Transit and BGP Hijacking. |
+| **【conditional derivation of a finite two-action game】<br>SP-RFC-013** | **Predatory Gain, Strict Dominance, and Static Equilibrium**<br>body [5.3](chapter-05.md#sp-rfc-013) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>Plunder dominance requires a complete net-utility comparison against the relevant opponent's strategies; group convergence requires a given dynamic. | Zero penalty is one of the incentive factors; cooperative gain, reputation, long-term tax base, and fault-tolerance mechanisms must be examined jointly. |
+| **【institutional instantiation and normative boundary】<br>SP-RFC-014** | **Authorisation Interface for Specific Public Objectives**<br>body [5.4](chapter-05.md#sp-rfc-014) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>An authorisation Syscall is involved only when goals such as state enforcement are required; autonomy and technical standards can continue to evolve at Ring-3. | Hu Shi's vernacular writing entered the national-school standard through the 1920 forwarding order of the Beijing School Administration Bureau; the Edict of Milan; the UK window-tax avoidance and local negative externalities (see [Case 3.7-B](chapter-03.md#sec-3-7-1)). |
+| **【identification boundary and application hypothesis】<br>SP-RFC-015** | **Feasible Choice Set, Exit, and Voluntariness Identification**<br>body [5.5](chapter-05.md#sp-rfc-015) | **Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion**<br>A single choice $H(\text{Choice})=0$ must be identified together with the feasible alternative set, exit cost, and monopoly constraint; one cannot separately presume voluntariness or coercion. | The Appalachian coal-company town tokens tied to exclusive stores; the Microsoft Windows Internet Explorer bundling antitrust litigation; the attribution-controversy ledger of the historical agricultural–industrial price-scissors contribution. |
+| **【mechanism analogy and empirical bridging】<br>SP-RFC-016** | **Mobilisation Task, Acknowledgement Feedback, and Continuous Governance**<br>body [6.1](chapter-06.md#sp-rfc-016) | **Proposition Group V: Transport Topology & Task Feedback**<br>TCP/UDP serve as transport-mechanism analogies; organisational reliability depends on application-layer feedback, resources, and recovery. | Li Zicheng and Zhu Yuanzhang can be used for historical comparison; one cannot infer governance success or failure from a protocol name or the number of ACKs. |
+| **【accounting definition and option comparison】<br>SP-RFC-017** | **Migration Net Burden and Technical-Debt Accounting**<br>body [7.1](chapter-07.md#sp-rfc-017) | **Proposition Group VI: Debt Accounting & Evolutionary Selection**<br>$\Delta\text{Burden}_{\text{net}}=NPV(\text{Cost}_{\text{migration}}+\text{Loss}_{\text{implicit}}+\text{Maintenance}_{\text{new}})-NPV(\text{Debt}_{\text{legacy}})$; compare net burden after unifying the boundary and lifecycle. | Retain the Catch-Block fault-tolerance asset and the Strangler Fig incremental migration; a non-zero cost does not mean the net burden is always non-negative. |
+| **【conditional-probability model, empirical screening, and design norm】<br>SP-RFC-018** | **Multi-Branch Trial and Mature-Feedback Screening**<br>body [7.2](chapter-07.md#sp-rfc-018) | **Proposition Group VI: Debt Accounting & Evolutionary Selection**<br>With independent and fixed success rates, $P=1-\prod_k(1-p_k)$; under a general budget constraint $\sum_{k=1}^K\text{Cost}_k+C_{\text{merge}}(K)\le\text{Budget}$ (simplified to $K\cdot\text{Cost}_{\text{fork}}\le\text{Budget}$ when costs are equal and merge overhead is ignored); the feedback window is $T_{\text{latency}}\le\Delta t<T_{\text{environment}}$. | Branch horse-racing among operating systems such as Linux; the TCP/IP vs OSI protocol-route competition; the Xiaogang Village and Special-Zone concurrent trial-and-error; clues from WeChat's multi-team parallel iteration (parameters await verification against the enterprise's original records); the architect is the trunk merger. |
+| **【application and research norm】<br>SP-RFC-019** | **AI Tool Control and Exploratory Early-Warning**<br>body [8.1](chapter-08.md#sp-rfc-019) | **Cross-group tooling/research norm, located in Chapter 8; keeps the Group VI entry point and relates to Groups II/IV, not a deductive corollary of VI**<br>A risk-proxy score exceeding a preset threshold triggers only a data and mechanism review; the threshold is uncalibrated and does not authorise physical intervention; bypass decisions compare benefit, rights, and migration risk separately. | Candidate comparison of LLM tool control rights, exit, and independent audit; the four proxy inputs and one composite score are not yet calibrated and cannot serve as a deterministic social diagnosis. |
 
 <a id="rfc-evidence-cards"></a>
 
@@ -110,13 +110,13 @@ The cards below are item-by-item traceability entries to the body text; they add
 category, and no proven conclusion. The P/O column lists modelling invocations; additional
 assumptions and normative objectives are listed separately; "verification not yet completed" does not
 erase a qualified formal derivation, nor does it upgrade a code test into a social empirical result.
-Source localisation and gaps are in [Core Case Sources and Boundaries](../../docs/核心案例来源与边界.md).
+Source localisation and gaps are in [Core Case Sources and Boundaries](../case_sources_and_boundaries.md).
 
 <a id="rfc-evidence-001"></a>
 
 #### G001 | Physical Channel and Semantic Decoding
 
-**Body and identity**: [SP-RFC-001](../../社会系统协议学白皮书.md#sp-rfc-001); citation of established physical results, conditional model, and social bridging.
+**Body and identity**: [SP-RFC-001](chapter-02.md#sp-rfc-001); citation of established physical results, conditional model, and social bridging.
 
 - **Foundations and Additional Conditions**: O1 (audience), O2 (encoding and rules), O5 (channel and time); P1. Also given: bandwidth, signal-to-noise ratio, task, accuracy, and the assumptions of no serial overlap / no retry.
 - **Dilemma and Counterfactual**: A finite channel and the audience's decoding capacity limit the end-to-end transmission of the same task; removing an available decoding path may cause a specified task to fail, but failure cannot be presumed from a stylistic name.
@@ -130,7 +130,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G002 | Naming and Common Identification
 
-**Body and identity**: [SP-RFC-002](../../社会系统协议学白皮书.md#sp-rfc-002); empirical mechanism hypothesis.
+**Body and identity**: [SP-RFC-002](chapter-02.md#sp-rfc-002); empirical mechanism hypothesis.
 
 - **Foundations and Additional Conditions**: O1 (participant), O2 (name and common-reference rule); P1 (resource background). Also given: object content, prior knowledge, retrieval/citation task, and the object under intervention estimation.
 - **Dilemma and Counterfactual**: Experience is dispersed and mutual reference is costly; lacking a shared name may raise cost, but description, alias, or existing rules can also accomplish the task.
@@ -144,7 +144,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G003 | Textual Stability and Cross-Context Interpretation
 
-**Body and identity**: [SP-RFC-003](../../社会系统协议学白皮书.md#sp-rfc-003); semantic propagation application.
+**Body and identity**: [SP-RFC-003](chapter-02.md#sp-rfc-003); semantic propagation application.
 
 - **Foundations and Additional Conditions**: O1 (heterogeneous audience), O2 (text and interpretation task), O3 (audience belief, listed separately only as an expected mechanism); P1 (background). Also given: version, language, context, and interpretive resources.
 - **Dilemma and Counterfactual**: The same bytes may be interpreted by different audiences as different senses; removing version identification or interpretive resources may increase errors on a specified task, but it is not a necessary outcome.
@@ -158,7 +158,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G004 | Conditional Retention Rate of Serial Compatibility Layers
 
-**Body and identity**: [SP-RFC-004](../../社会系统协议学白皮书.md#sp-rfc-004); conditional model.
+**Body and identity**: [SP-RFC-004](chapter-03.md#sp-rfc-004); conditional model.
 
 - **Foundations and Additional Conditions**: O4 (serial intermediary), O5 (same traffic); P1. Assumes a conditional retention rate at each stage, no added output or recovery path, and an explicit unit of measurement.
 - **Dilemma and Counterfactual**: Serial stages may lose traffic stage by stage; adding a loss stage lowers the retention rate within the bounded model, but added verification or output can change the net contribution.
@@ -172,7 +172,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G005 | Normative Complexity and Intermediary Rent-Seeking Feedback
 
-**Body and identity**: [SP-RFC-005](../../社会系统协议学白皮书.md#sp-rfc-005); conditional mechanism hypothesis.
+**Body and identity**: [SP-RFC-005](chapter-03.md#sp-rfc-005); conditional mechanism hypothesis.
 
 - **Foundations and Additional Conditions**: O1 (strategic agent), O4 (intermediary), O2 (exclusive right and constraint); P2, with P1 only as a cost background. Also given: net payoff, competition, exit, and error-correction conditions.
 - **Dilemma and Counterfactual**: Exclusive control may make complexity maintenance and non-productive payoff mutually reinforcing; removing an approval while retaining shadow control does not necessarily change that incentive.
@@ -186,7 +186,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G006 | Approval Latency, Mission Deadline, and Protection Benefit
 
-**Body and identity**: [SP-RFC-006](../../社会系统协议学白皮书.md#sp-rfc-006); conditional judgment and application comparison.
+**Body and identity**: [SP-RFC-006](chapter-03.md#sp-rfc-006); conditional judgment and application comparison.
 
 - **Foundations and Additional Conditions**: O1 (task agent), O2 (approval path), O4 (reviewer), O5 (time and resource); P1. Fixed task TTL, alternative path, protection requirement, and right constraint.
 - **Dilemma and Counterfactual**: Approval latency may exceed a path's task deadline; the counterfactual must compare delay, bypass, task failure, and governance failure separately.
@@ -200,7 +200,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G007 | Architect's Understandability, Rights, and Migration Precepts
 
-**Body and identity**: [SP-RFC-007](../../社会系统协议学白皮书.md#sp-rfc-007); cross-group normative rule.
+**Body and identity**: [SP-RFC-007](chapter-03.md#sp-rfc-007); cross-group normative rule.
 
 - **Foundations and Additional Conditions**: O1 (affected agent), O2 (specification), O4 (intermediary), O5 (cost); P1/P2 as modelling background. Also state explicitly the normative objectives of understandability, lawful right, and error correction.
 - **Dilemma and Counterfactual**: There are trade-offs among complexity, protection, and migration; lacking an understandable explanation or remedy may increase errors and right harm, but cannot predict inevitable collapse.
@@ -214,7 +214,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G008 | Performance Probability, Recovery, and Investment Threshold
 
-**Body and identity**: [SP-RFC-008](../../社会系统协议学白皮书.md#sp-rfc-008); conditional model and empirical bridging.
+**Body and identity**: [SP-RFC-008](chapter-04.md#sp-rfc-008); conditional model and empirical bridging.
 
 - **Foundations and Additional Conditions**: O1 (investor), O3 (subjective performance probability), O5 (input); P2/P3. Given term, discounting, performance and default cash flows, and decision rule.
 - **Dilemma and Counterfactual**: Uncertain cross-period recovery may lower a project's attractiveness; when only the performance probability changes, the direction of the result depends on the difference between performance and default cash flows.
@@ -228,7 +228,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G009 | Retry Idempotence, Record Durability, and Finality
 
-**Body and identity**: [SP-RFC-009](../../社会系统协议学白皮书.md#sp-rfc-009); property definition and procedural boundary.
+**Body and identity**: [SP-RFC-009](chapter-04.md#sp-rfc-009); property definition and procedural boundary.
 
 - **Foundations and Additional Conditions**: O2 (request, state, record, and review rule), O3 (expected for application layer); P1 (fault background), P3 (expectation background). Fixed request identifier, version, and evidence.
 - **Dilemma and Counterfactual**: Retry amplification, loss of an already-committed result, and revocation of a confirmation record are different failures; the absence of de-duplication, recovery, or finality rules can each separately expose a risk.
@@ -242,7 +242,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G010 | Deterministic Execution and Conditional Commitment
 
-**Body and identity**: [SP-RFC-010](../../社会系统协议学白皮书.md#sp-rfc-010); execution mechanism and conditional protection.
+**Body and identity**: [SP-RFC-010](chapter-04.md#sp-rfc-010); execution mechanism and conditional protection.
 
 - **Foundations and Additional Conditions**: O2 (state machine, ordering, and execution rule), O1 (executor), O3 (conditional commitment); P1/P2/P3 used separately for fault, strategy, and expected application.
 - **Dilemma and Counterfactual**: Node execution divergence and unilateral rewriting of a commitment are different risks; the same code does not automatically provide a consistent history or off-chain redemption.
@@ -256,7 +256,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G011 | Privilege Isolation and Constraints on the Executor
 
-**Body and identity**: [SP-RFC-011](../../社会系统协议学白皮书.md#sp-rfc-011); authority model and social bridging.
+**Body and identity**: [SP-RFC-011](chapter-05.md#sp-rfc-011); authority model and social bridging.
 
 - **Foundations and Additional Conditions**: O2 (authority rule and execution structure), O1 (power agent), O3 (trusted expectation); P2/P3 background. Also given: review, remedy, and actual enforcement capacity.
 - **Dilemma and Counterfactual**: The highest-privilege agent may cross user-space protection; setting authority only on the user cannot by itself constrain the kernel.
@@ -270,7 +270,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G012 | Resource Cutoff, Communication Partition, and Conflicting Writes
 
-**Body and identity**: [SP-RFC-012](../../社会系统协议学白皮书.md#sp-rfc-012); state distinction and mechanism hypothesis.
+**Body and identity**: [SP-RFC-012](chapter-05.md#sp-rfc-012); state distinction and mechanism hypothesis.
 
 - **Foundations and Additional Conditions**: O5 (resource), O4 (transport node), O2 (write and arbitration rule); P1, with strategic conflict using P2 separately. Explicit fault, disconnect, and authority model.
 - **Dilemma and Counterfactual**: Resource cutoff, communication partition, and competitive multi-master writes each have occurrence conditions; one cannot write a single fiscal cutoff as an automatic split-brain chain.
@@ -284,7 +284,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G013 | Predatory Gain, Strict Dominance, and Static Equilibrium
 
-**Body and identity**: [SP-RFC-013](../../社会系统协议学白皮书.md#sp-rfc-013); conditional derivation of a finite two-action game.
+**Body and identity**: [SP-RFC-013](chapter-05.md#sp-rfc-013); conditional derivation of a finite two-action game.
 
 - **Foundations and Additional Conditions**: O1 (utility-maximising agent), O2 (action and payoff rule); P2. Finite nodes, only H/D two actions, strict dominance of net utility against all opponent strategies.
 - **Dilemma and Counterfactual**: Given the payoff table, D strictly dominates H; zero penalty may lower the cost of D, but by itself does not determine the complete net-utility ordering.
@@ -298,7 +298,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G014 | Authorisation Interface for Specific Public Objectives
 
-**Body and identity**: [SP-RFC-014](../../社会系统协议学白皮书.md#sp-rfc-014); institutional instantiation and normative boundary.
+**Body and identity**: [SP-RFC-014](chapter-05.md#sp-rfc-014); institutional instantiation and normative boundary.
 
 - **Foundations and Additional Conditions**: O1 (authoriser and affected agent), O2 (jurisdiction and procedure); P2/P3 as implementation and expectation background. Also given: public objective, lawful authority, and right constraint.
 - **Dilemma and Counterfactual**: Some objectives require state enforcement, public taxation, or statutory standards; without corresponding authorisation, the objective may not be lawfully completed.
@@ -312,7 +312,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G015 | Feasible Choice Set, Exit, and Voluntariness Identification
 
-**Body and identity**: [SP-RFC-015](../../社会系统协议学白皮书.md#sp-rfc-015); identification boundary and application hypothesis.
+**Body and identity**: [SP-RFC-015](chapter-05.md#sp-rfc-015); identification boundary and application hypothesis.
 
 - **Foundations and Additional Conditions**: O1 (choosing agent), O2 (bundling and exit rule), O5 (resource and migration cost); P1/P2. Explicit sample denominator, feasible alternative, and constraint.
 - **Dilemma and Counterfactual**: Formal consent may coexist with infeasible exit; a single choice may come from either preference alignment or constraint.
@@ -326,7 +326,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G016 | Mobilisation Task, Acknowledgement Feedback, and Continuous Governance
 
-**Body and identity**: [SP-RFC-016](../../社会系统协议学白皮书.md#sp-rfc-016); mechanism analogy and empirical bridging.
+**Body and identity**: [SP-RFC-016](chapter-06.md#sp-rfc-016); mechanism analogy and empirical bridging.
 
 - **Foundations and Additional Conditions**: O1 (task participant), O2 (delivery and confirmation rule), O4 (feedback network), O5 (resupply); P1/P2/P3 as resource, strategy, and expectation background.
 - **Dilemma and Counterfactual**: Mobilisation does not automatically bring delivery, resource recovery, and continuous governance; deleting feedback may harm a specified task, but other feedback channels can compensate.
@@ -340,7 +340,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G017 | Migration Net Burden and Technical-Debt Accounting
 
-**Body and identity**: [SP-RFC-017](../../社会系统协议学白皮书.md#sp-rfc-017); accounting definition and option comparison.
+**Body and identity**: [SP-RFC-017](chapter-07.md#sp-rfc-017); accounting definition and option comparison.
 
 - **Foundations and Additional Conditions**: O5 (comparable resource and time), O2 (migration and maintenance scheme), O1 (cost bearer); P1 (budget background). Fixed task, lifecycle, price, and discounting.
 - **Dilemma and Counterfactual**: Omitting migration cost, implicit asset, or old burden may misjudge the scheme; a non-zero cost cannot imply debt conservation.
@@ -354,7 +354,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G018 | Multi-Branch Trial and Mature-Feedback Screening
 
-**Body and identity**: [SP-RFC-018](../../社会系统协议学白皮书.md#sp-rfc-018); conditional-probability model, empirical screening, and design norm.
+**Body and identity**: [SP-RFC-018](chapter-07.md#sp-rfc-018); conditional-probability model, empirical screening, and design norm.
 
 - **Foundations and Additional Conditions**: O1 (trial and screening agent), O2 (branch and screening rule), O5 (budget and time); P1, with P2 used only for the separately listed maintainer incentive. Fixed independent success/failure events and each $p_k$.
 - **Dilemma and Counterfactual**: Discovery, correct screening, feasible deployment, and migration gain are different events; common failure, short-term proxy, and resource crowding can decouple them.
@@ -368,7 +368,7 @@ Source localisation and gaps are in [Core Case Sources and Boundaries](../../doc
 
 #### G019 | AI Tool Control and Exploratory Early-Warning
 
-**Body and identity**: [SP-RFC-019](../../社会系统协议学白皮书.md#sp-rfc-019); application and research norm.
+**Body and identity**: [SP-RFC-019](chapter-08.md#sp-rfc-019); application and research norm.
 
 - **Foundations and Additional Conditions**: O1 (user and executor), O2 (tool authority), O4 (provider and measurement intermediary), O5 (cost); P1/P2 background. List tool objective, exit objective, and research objective separately.
 - **Dilemma and Counterfactual**: Tool invocation may exceed authority, provider control may raise exit cost, and a proxy score may be misused; the three risks are evidenced separately.

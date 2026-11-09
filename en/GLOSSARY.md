@@ -10,11 +10,11 @@
 
 # Bilingual Glossary (en-v0.1)
 
-This is a **translation aid**, not a definition source. All definitions, conditions and boundaries are authoritative only in the [Chinese master source](../社会系统协议学白皮书.md). Terms are listed here so that the English entry-layer documents use one English form per Chinese concept; a change of wording is not a change of concept. The [bilingual writing conventions](../docs/双语与写作约定.md) require a glossary before translation begins.
+This is a **translation aid**, not a definition source. All definitions, conditions and boundaries are authoritative only in the [Chinese master source](whitepaper/chapter-01.md). Terms are listed here so that the English entry-layer documents use one English form per Chinese concept; a change of wording is not a change of concept. The [bilingual writing conventions](BILINGUAL_CONVENTIONS.md) require a glossary before translation begins.
 
 **Scope**: this glossary covers the four English entry-layer documents — [project introduction](./README.md), [participation guide](./CONTRIBUTING.md), [framework and case index](./FRAMEWORK_GUIDE.md) and this glossary. It is not a full-book terminology base; a complete English whitepaper would require a further pre-review before any chapter is translated.
 
-**Authority of links**: in their bodies, the three translated documents link to the Chinese files that their Chinese sources link to; the [Chinese master source](../社会系统协议学白皮书.md) remains canonical (C2). The `./` links in the paragraph above are an editorial index of this batch's English counterparts, not a redirection of those source links. The English SSOT pointer still leads only to the Chinese master source.
+**Authority of links**: in their bodies, the three translated documents link to the Chinese files that their Chinese sources link to; the [Chinese master source](whitepaper/chapter-01.md) remains canonical (C2). The `./` links in the paragraph above are an editorial index of this batch's English counterparts, not a redirection of those source links. The English SSOT pointer still leads only to the Chinese master source.
 
 **How to read the tables**: "Locked English" is the only form used in this batch. "Avoid" marks renderings that would alter the epistemic status of a claim, erase a negative guardrail, or invent a verification that has not happened.
 
@@ -182,6 +182,6 @@ Numerical values in §8.5.4 of the whitepaper are **illustrative**. Do not attac
 
 ## 10. What this glossary does not do
 
-It does not define the primitives, postulates, proposition groups or SP-RFC items; the [Chinese master source](../社会系统协议学白皮书.md) does. It does not record that historical cases, mathematical propositions or empirical effects have been verified — passing the automated checks establishes only structure, numbering, textual completeness and the reference implementations. It does not supply the missing external sources, does not upgrade "not verified" to "verified", and does not turn a conceptual sample chapter into an accepted case article. Where the Chinese source is updated, the affected English documents are marked as pending sync rather than treated as current.
+It does not define the primitives, postulates, proposition groups or SP-RFC items; the [Chinese master source](whitepaper/chapter-01.md) does. It does not record that historical cases, mathematical propositions or empirical effects have been verified — passing the automated checks establishes only structure, numbering, textual completeness and the reference implementations. It does not supply the missing external sources, does not upgrade "not verified" to "verified", and does not turn a conceptual sample chapter into an accepted case article. Where the Chinese source is updated, the affected English documents are marked as pending sync rather than treated as current.
 
-See also the [agent rules](../AGENTS.md), the [CheatSheet](../核心概念速查手册_CheatSheet.md) and the [bilingual writing conventions](../docs/双语与写作约定.md).
+See also the [agent rules](GLOSSARY.md), the [CheatSheet](CHEATSHEET.md) and the [bilingual writing conventions](BILINGUAL_CONVENTIONS.md).

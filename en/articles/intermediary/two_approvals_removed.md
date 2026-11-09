@@ -12,7 +12,7 @@
 
 Version: conceptual sample chapter v0.3 | Date: 2026-10-23 | English translation pending.
 
-Status: pending reconstruction with a real case; T3 case-article acceptance not passed. The existing institutional material and paper citations have not yet been developed into a complete real mainline; evidence is to be supplemented and the piece reconstructed per the [case-first rules](../../../docs/案例驱动写作与命题检验.md); the text is kept for now, and this round's status correction is not written up as the case study being complete.
+Status: pending reconstruction with a real case; T3 case-article acceptance not passed. The existing institutional material and paper citations have not yet been developed into a complete real mainline; evidence is to be supplemented and the piece reconstructed per the [case-first rules](../../CASE_DRIVEN_TESTING.md); the text is kept for now, and this round's status correction is not written up as the case study being complete.
 
 A form travels from Desk A to Desk B, and back from Desk B to Desk A. A says a stamp is missing; B says the version is wrong. By the time you have fixed the version, C tells you: the old stamp can't be used — you have to get it stamped again.
 
@@ -36,7 +36,7 @@ On this design, what changes is possibly how firms interact with departments: pa
 
 This is much like wrapping an interface in software: the user need not know how many services are called behind it, which does not mean those services are not running. **This is the author's functional analogy, used to raise questions to check — not evidence that the reform works.**
 
-How much time the reform actually saved still requires checking processing records, correction-and-return cycles, data matching, back-office hours, and the people who never entered registration. What a document says should be done and what actually gets done are two different kinds of material. At present we have only the process starting point at the institutional level, and cannot write "total cost has already fallen". [Table of where the work went and what is missing](../../../research/cases/II-CN-A_住房公积金登记工作去向.md)
+How much time the reform actually saved still requires checking processing records, correction-and-return cycles, data matching, back-office hours, and the people who never entered registration. What a document says should be done and what actually gets done are two different kinds of material. At present we have only the process starting point at the institutional level, and cannot write "total cost has already fallen". [Table of where the work went and what is missing](../../research/cases/II-CN-A_housing_fund_registration_disposition.md)
 
 ## Removing a post is not removing the work
 
@@ -81,7 +81,7 @@ The money also has to be put on separate ledgers. What an applicant pays the ser
 
 A randomised-audit study of Indonesian road projects shows that added oversight is not bound to be pure loss. It also reminds us that converting oversight results into net gains takes additional assumptions. [Olken, 2007, research design and §VI](https://economics.mit.edu/sites/default/files/publications/Monitoring%20Corruption%20Evidence%20from%20a%20Field.pdf)
 
-This does not endorse every check. It demands that before deletion we first ask what the check provides. The positioning of the study's results and limits is in the [foreign-study check table](../../../research/cases/II-INT_审计与驾照研究核对.md).
+This does not endorse every check. It demands that before deletion we first ask what the check provides. The positioning of the study's results and limits is in the [foreign-study check table](../../research/cases/II-INT_audit_and_driving_license_research_check.md).
 
 Another piece of Chinese material comes from a 2024 public notification, concerning PipeChina's insufficient meeting coordination and the burden of attending and sitting through meetings. It supplies a question worth investigating, not a set of work-hour data from which net loss could be directly computed. [Item 3 of part two of the officially reposted monthly report](https://lzw.cmc.gov.cn/pgt/art/2024/art_e7bb5788c0d94bed97af2f705c81e076.html)
 
@@ -125,7 +125,7 @@ When you meet a suspicious gate, you can start by writing down six things:
 
 These questions also apply to this engineering vocabulary itself. If the word "middleware" makes it easier for readers to curse someone yet harder to see the work someone else carries, that expression needs repair.
 
-To that end we provide the [OP-001 question card](../../../research/OP-001/问题卡.md): compare the engineering checklist against ordinary cost and process checklists carrying the same information, and see whether readers really make fewer mistakes. At present there is only the design and publicly disclosed fictional material; **there are no experimental results, and no formal pre-registration**.
+To that end we provide the [OP-001 question card](../../research/OP-001/question_card.md): compare the engineering checklist against ordinary cost and process checklists carrying the same information, and see whether readers really make fewer mistakes. At present there is only the design and publicly disclosed fictional material; **there are no experimental results, and no formal pre-registration**.
 
 You can do just one small thing: point out which condition an exercise is missing; supply an equivalent or better existing study; or contribute a historical record that can trace where registration work went. Null results, counterexamples and factual corrections can all change later versions — you do not have to subscribe to "Socio-Protocolics" first.
 
@@ -133,10 +133,10 @@ You can do just one small thing: point out which condition an exercise is missin
 
 ## Endnote: which principles this article uses, and what it does not prove
 
-This article belongs to the second group's themes in the [Socio-Protocolics Whitepaper v11.2](../../../社会系统协议学白皮书.md). **P1** supplies the finite-resource background; **P2** reminds us participants have their own goals; P3's belief updating or equilibrium is not tested in this article. **O4 Middleware** is used to distinguish translation, certification and oversight functions from exclusive control.
+This article belongs to the second group's themes in the [Socio-Protocolics Whitepaper v11.2](../../whitepaper/chapter-01.md). **P1** supplies the finite-resource background; **P2** reminds us participants have their own goals; P3's belief updating or equilibrium is not tested in this article. **O4 Middleware** is used to distinguish translation, certification and oversight functions from exclusive control.
 
-The main use is the applicability boundary of [SP-RFC-004](../../../社会系统协议学白皮书.md#sp-rfc-004): where new services or recovery gains exist, a serial-loss formula cannot be applied by layer count alone; the person-minute exercises in this article plug nothing into that formula. [SP-RFC-005](../../../社会系统协议学白皮书.md#sp-rfc-005) supplies the to-be-tested risk questions of service, authority and rent; this article has not identified the causal feedback of "complexity and rent-seeking reinforcing each other".
+The main use is the applicability boundary of [SP-RFC-004](../../whitepaper/chapter-03.md#sp-rfc-004): where new services or recovery gains exist, a serial-loss formula cannot be applied by layer count alone; the person-minute exercises in this article plug nothing into that formula. [SP-RFC-005](../../whitepaper/chapter-03.md#sp-rfc-005) supplies the to-be-tested risk questions of service, authority and rent; this article has not identified the causal feedback of "complexity and rent-seeking reinforcing each other".
 
-[SP-RFC-007](../../../社会系统协议学白皮书.md#sp-rfc-007) states the normative objective chosen by this article: reduce useless burden, protect rights and keep error correction. [SP-RFC-017](../../../社会系统协议学白皮书.md#sp-rfc-017) is used to distinguish switching from continuing investment; no net-present-value accounting of a real process has been completed. The stage paths of the candidate process diagram (non-numbered material), 005's long-run closure and 006's deadline mismatch have not been tested by this article, and the other proposition groups cannot be counted as proven on that account either.
+[SP-RFC-007](../../whitepaper/chapter-03.md#sp-rfc-007) states the normative objective chosen by this article: reduce useless burden, protect rights and keep error correction. [SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017) is used to distinguish switching from continuing investment; no net-present-value accounting of a real process has been completed. The stage paths of the candidate process diagram (non-numbered material), 005's long-run closure and 006's deadline mismatch have not been tested by this article, and the other proposition groups cannot be counted as proven on that account either.
 
 The existing literature supports each of its own narrow claims; the author's mapping of where the work went onto interfaces and middleware is an analytical arrangement. **This article shows how to raise questions; OP-001 tests whether this way of expressing them has any local use; neither can substitute for testing the framework as a whole.** For source versions, reading scope and item-by-item correspondences see the [source notes](source_notes.md), and for this round's changes the [revision notes](revision_notes.md). Chinese first; the English version has not yet been produced.

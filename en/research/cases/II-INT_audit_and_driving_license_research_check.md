@@ -45,4 +45,4 @@ This is a check of passages from two published papers, not a replication, a syst
 
 Another Chinese candidate — the national pipeline-network meeting burden — currently has only [item 3 of part 2 of a 2024 official reprint notice](https://lzw.cmc.gov.cn/pgt/art/2024/art_e7bb5788c0d94bed97af2f705c81e076.html) as checkable. It is registered only as "a notice lead that a coordination-burden problem exists"; the meeting output, man-hours, and post-cancellation results have not been obtained, and it is not counted as evidence of equal weight with the two experiments. This round did not independently verify that candidate's continuous change across 2022–2024.
 
-Main-text entry: [Removed Two Approval Steps — Did the Work Really Decrease?](../../../articles/intermediary/删掉两道审批_工作真的少了吗.md). The to-be-tested questions in methodological expression are separately in [OP-001](../OP-001/question_card.md).
+Main-text entry: [Removed Two Approval Steps — Did the Work Really Decrease?](../../articles/intermediary/two_approvals_removed.md). The to-be-tested questions in methodological expression are separately in [OP-001](../OP-001/question_card.md).

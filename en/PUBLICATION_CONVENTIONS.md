@@ -27,9 +27,9 @@ python tools/check_public.py
 python tools/export_public.py
 ```
 
-After the dependencies are installed, `verify_all.py` checks the designated structure and textual markers of the public whitepaper, CheatSheet and AGENTS, and runs the embedded reference engine's listed numerical, threshold, missing-value and metadata checks; the actual number of items is whatever the current run reports. The internal edition is not needed by default; the maintainer may follow [AGENTS.md](../AGENTS.md#四-自动化质量门禁verification-gate) to specify a local internal edition explicitly and add the corresponding checks. The script does not depend on the maintainer's old directories or on environment variables for the script's location.
+After the dependencies are installed, `verify_all.py` checks the designated structure and textual markers of the public whitepaper, CheatSheet and AGENTS, and runs the embedded reference engine's listed numerical, threshold, missing-value and metadata checks; the actual number of items is whatever the current run reports. The internal edition is not needed by default; the maintainer may follow [AGENTS.md](AGENTS.md#iv-automated-quality-gate-verification-gate) to specify a local internal edition explicitly and add the corresponding checks. The script does not depend on the maintainer's old directories or on environment variables for the script's location.
 
-The whitepaper remains a single public main-text file, using nine groups of tags to support chapter-by-chapter reading and editing; for the procedure see [Reading, Previewing and Replacing by Tag](../docs/白皮书分块读取与编辑.md). The automated checks also verify block boundaries; the editing tool previews by default, and writing requires checking the original block hash and preserving anchors. Block regression additionally runs `python tools/test_whitepaper_blocks.py`; backups and intermediate editing drafts are kept in `.local` and are not included in the public export.
+The whitepaper remains a single public main-text file, using nine groups of tags to support chapter-by-chapter reading and editing; for the procedure see [Reading, Previewing and Replacing by Tag](CHUNK_READING_GUIDE.md). The automated checks also verify block boundaries; the editing tool previews by default, and writing requires checking the original block hash and preserving anchors. Block regression additionally runs `python tools/test_whitepaper_blocks.py`; backups and intermediate editing drafts are kept in `.local` and are not included in the public export.
 
 `check_public.py` checks the file scope of the current index, whether the public files exist, whether they contain writing markers or local absolute paths, and whether Markdown local links fall within the public manifest. It does not automatically go online to verify external links, nor is it a guarantee of content safety or of the factual correctness of the whole text.
 
@@ -51,7 +51,7 @@ Public sources give priority to the original author's text, contemporaneous orig
 
 ## Version and Licence
 
-The release tag for this revision of Whitepaper v11.2 is `v11.2-r20261106`; see the [Revision Record](../docs/修订记录.md). The theoretical version and the revision snapshot are kept separate; existing articles keep their own versions according to purpose.
+The release tag for this revision of Whitepaper v11.2 is `v11.2-r20261106`; see the [Revision Record](REVISION_RECORD.md). The theoretical version and the revision snapshot are kept separate; existing articles keep their own versions according to purpose.
 
 The unified version of the whitepaper remains v11.2. Case articles and research cards carry their own versions; revising an article is not a claim that the whitepaper's core propositions have completed empirical validation. Article revisions should keep a public summary; working drafts and full diffs may be kept locally.
 

@@ -87,4 +87,4 @@ Select one Zhejiang city for which historical procedures can be obtained, and su
 
 Minimum fields to collect: matter / city / rule version, anonymised business number, applicable eligibility, first attempt / registration / completion time, per-agent handling and rework person-minutes, correction reason, claiming/matching status, exit reason, quality review, and one-time migration investment. The above are field specifications, not an already-existing open dataset, and no acquisition is promised.
 
-The link to the [article](../../../articles/intermediary/删掉两道审批_工作真的少了吗.md) is a disposition; the link to [OP-001](../OP-001/question_card.md) is a judgement omission. This case was not used to estimate the SP-RFC-004 loss rate, the SP-RFC-005 rent, or the SP-RFC-017 net present value.
+The link to the [article](../../articles/intermediary/two_approvals_removed.md) is a disposition; the link to [OP-001](../OP-001/question_card.md) is a judgement omission. This case was not used to estimate the SP-RFC-004 loss rate, the SP-RFC-005 rent, or the SP-RFC-017 net present value.

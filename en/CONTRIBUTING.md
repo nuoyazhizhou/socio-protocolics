@@ -16,17 +16,17 @@ Specific errors in historical facts, citations, concept mapping, or research des
 
 ## Taking Part in Chapter-by-Chapter Review
 
-The chapters, scope, and schedule for this round are all set out in [ROADMAP](../ROADMAP.md#chapter-review). A comment may address a single sentence of the source text or one subsection; you need not first read the whole book, propose an alternative theory, or endorse Socio-Protocolics.
+The chapters, scope, and schedule for this round are all set out in [ROADMAP](ROADMAP.md#chapter-review). A comment may address a single sentence of the source text or one subsection; you need not first read the whole book, propose an alternative theory, or endorse Socio-Protocolics.
 
 When submitting, set out clearly: **block ID / subsection / original sentence → your question or suggestion → the grounds, plus any observation that might change the assessment**. A purely presentational suggestion can simply name the intended readers and the comprehension obstacle. Where historical facts, causation, or numerical values are involved, however, attach locatable material and distinguish what has been verified from what still awaits verification. If no evidence has been found, a specific gap may still be reported; it need not be presented as a definitive conclusion.
 
 A discussion may be retained, reworded, split, moved into open research questions, held pending further material, or declined, with the maintainer recording the reasons. Closing a discussion does not automatically mean the main text has been revised, nor does it mean the clause has been substantiated; once a revision is explicitly proposed, the actual changes, the required synchronisation, and the check results are each recorded separately. Full discussions and private drafts remain local; the public progress record carries only concise conclusions.
 
-When a revision is needed, first read the target chapter using the [chunking guide](../docs/白皮书分块读取与编辑.md), preserving the original sentence locations and their hashes; preview any whole-block replacement before applying it. Research notes, Zhihu posts, Reddit drafts, and papers are judged separately by their [purpose branch](../docs/双语与写作约定.md#同一主题按用途分支); a draft serving an independent purpose must not be discarded merely because of a different version number or prose style. Corrections to shared facts must still be checked for synchronisation.
+When a revision is needed, first read the target chapter using the [chunking guide](CHUNK_READING_GUIDE.md), preserving the original sentence locations and their hashes; preview any whole-block replacement before applying it. Research notes, Zhihu posts, Reddit drafts, and papers are judged separately by their [purpose branch](BILINGUAL_CONVENTIONS.md#purpose-branches-for-the-same-theme); a draft serving an independent purpose must not be discarded merely because of a different version number or prose style. Corrections to shared facts must still be checked for synchronisation.
 
 ## Case Writing and Continuation
 
-Authors and collaborators alike follow [Case-Driven Writing and Proposition Testing](../docs/案例驱动写作与命题检验.md) and Article 9 of AGENTS.md. Before submitting a case draft, register in the [topic plan](../research/主题计划/README.md) the specific sub-claim, the real main case to be developed, and real counter-material or a sourced competing explanation; locate the key facts in the body text and, at the end, supply a "claim–evidence–competing explanation–verdict–proposed revision" receipt.
+Authors and collaborators alike follow [Case-Driven Writing and Proposition Testing](CASE_DRIVEN_TESTING.md) and Article 9 of AGENTS.md. Before submitting a case draft, register in the [topic plan](research/topic_plan/README.md) the specific sub-claim, the real main case to be developed, and real counter-material or a sourced competing explanation; locate the key facts in the body text and, at the end, supply a "claim–evidence–competing explanation–verdict–proposed revision" receipt.
 
 Fictional leads and simulated numbers cannot carry real-world conclusions. A conceptual sample chapter is labelled "pending reconstruction with a real case"; do not substitute a complete or entertaining draft for case acceptance. Partial support, rejecting an empirical prediction, narrowing the scope of application, the sufficiency of an existing explanation, and insufficient evidence can all be valuable contributions; a conclusion favourable to the framework is not required of any contribution.
 
@@ -43,11 +43,11 @@ Discussion may take place through an Issue, or you may edit a public Markdown fi
 
 ## Where to Start
 
-- [H01: Does Making Expression Explicit Lower Comprehension Cost?](../research/H01_表达与理解成本.md): first check whether the materials are equivalent in meaning; there is no need to recruit readers immediately.
-- [H02: Formal Status and Adoption Incentives](../research/H02_正式地位与采用.md): first code a small number of contemporaneous texts and check whether we have treated a proposal as an observed effect.
-- [H03: Rule Promulgation and Actual Migration](../research/H03_规则与实际迁移.md): first check one directive and two textbooks, and judge what each of them can show.
-- [OP-002: Certification Systems and Organisational Autonomy](../research/OP-002/问题卡.md): you may check just one authorisation document, one enforcement record, or one piece of counter-evidence; historical mechanisms, formal models, and tooling gains are adjudicated separately.
-- [PR-001: Access Cost and Agent Collaboration Scale](../research/PR-001_Agent协作规模.md): first examine whether participation is identifiable, how contributions are scored, or how the optimal scale might be estimated; this is currently a design awaiting assessment, not yet registered or run.
+- [H01: Does Making Expression Explicit Lower Comprehension Cost?](research/H01_expression_and_understanding_cost.md): first check whether the materials are equivalent in meaning; there is no need to recruit readers immediately.
+- [H02: Formal Status and Adoption Incentives](research/H02_formal_status_and_adoption.md): first code a small number of contemporaneous texts and check whether we have treated a proposal as an observed effect.
+- [H03: Rule Promulgation and Actual Migration](research/H03_rules_and_actual_migration.md): first check one directive and two textbooks, and judge what each of them can show.
+- [OP-002: Certification Systems and Organisational Autonomy](research/OP-002/question_card.md): you may check just one authorisation document, one enforcement record, or one piece of counter-evidence; historical mechanisms, formal models, and tooling gains are adjudicated separately.
+- [PR-001: Access Cost and Agent Collaboration Scale](research/PR-001_agent_collaboration_scale.md): first examine whether participation is identifiable, how contributions are scored, or how the optimal scale might be estimated; this is currently a design awaiting assessment, not yet registered or run.
 
 These are all open drafts; they have not been pre-registered, and no effect experiments have been conducted. Do not present a task number or a Git commit date as proof of pre-registration.
 

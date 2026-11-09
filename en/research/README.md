@@ -10,7 +10,7 @@
 
 # Research questions that can be taken up
 
-The first three cards take up the [Hu Shi article](../../articles/hu-shih/如何评价胡适的作品.md); OP-001 takes up the [intermediary article](../../articles/intermediary/删掉两道审批_工作真的少了吗.md); OP-002 opens research on certification, authorisation and organisational autonomy; PR-001 studies agent collaboration scale separately. They are drafts of material verification and research design; none has been formally pre-registered, none has run experiments under its own protocol, and none has effect data.
+The first three cards take up the [Hu Shi article](../articles/hu-shih/how_to_evaluate_hu_shis_works.md); OP-001 takes up the [intermediary article](../articles/intermediary/two_approvals_removed.md); OP-002 opens research on certification, authorisation and organisational autonomy; PR-001 studies agent collaboration scale separately. They are drafts of material verification and research design; none has been formally pre-registered, none has run experiments under its own protocol, and none has effect data.
 
 ## Raise questions, and also accept that a question may be rejected
 

@@ -74,7 +74,7 @@ This chapter sets out four SP-RFCs (004–007) on intermediary net contribution,
 
 **Claim identity:** conditional model.
 **Dependencies and additional conditions:** P1 background; the same traffic, serial conditional loss, and no added output or recovery path.
-**Generation and evidence card:** [G004](../../社会系统协议学白皮书.md#rfc-evidence-004).
+**Generation and evidence card:** [G004](appendix.md#rfc-evidence-004).
 
 **Normative Spec (规范条文).**
 
@@ -110,7 +110,7 @@ Moreover, one must distinguish the "privileged rent-setting that extracts non-pr
 
 **Claim identity:** conditional mechanism hypothesis.
 **Dependencies and additional conditions:** P2/O4; exclusive rights, a dominant non-productive net payoff, and insufficient constraint.
-**Generation and evidence card:** [G005](../../社会系统协议学白皮书.md#rfc-evidence-005).
+**Generation and evidence card:** [G005](appendix.md#rfc-evidence-005).
 
 **Normative Spec (规范条文).**
 
@@ -135,7 +135,7 @@ Moreover, one must distinguish the "privileged rent-setting that extracts non-pr
 
 **Claim identity:** conditional judgment and application comparison.
 **Dependencies and additional conditions:** given path, deadline, and protection goal; whether rent-seeking requires separate evidence.
-**Generation and evidence card:** [G006](../../社会系统协议学白皮书.md#rfc-evidence-006).
+**Generation and evidence card:** [G006](appendix.md#rfc-evidence-006).
 
 **Normative Spec (规范条文).**
 
@@ -174,7 +174,7 @@ One must not equate an individual task delay or local bypass of an electronic fe
 
 **Claim identity:** cross-group normative rule.
 **Dependencies and additional conditions:** explicit design goals, rights, costs, and alternatives; not an objective law.
-**Generation and evidence card:** [G007](../../社会系统协议学白皮书.md#rfc-evidence-007).
+**Generation and evidence card:** [G007](appendix.md#rfc-evidence-007).
 
 **Normative Spec (规范条文).**
 

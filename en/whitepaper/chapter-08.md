@@ -62,7 +62,7 @@ This chapter enters through SP-RFC-019, the cross-group tool / research norm, an
 
 **Claim identity:** application and research norm.
 **Dependencies and additional conditions:** the specific tool / governance objective and agent calibration; not a theorem deduced from Group VI.
-**Generation and evidence card:** [G019](../../社会系统协议学白皮书.md#rfc-evidence-019).
+**Generation and evidence card:** [G019](appendix.md#rfc-evidence-019).
 
 **Normative Spec.**
 This section is an application / research norm for tool control and exploratory measurement; it retains the Group VI entry point and links to Groups II / IV, and does not call itself a new law deduced from the sixth group. Within the same item this norm explicitly separates three duties and constraint boundaries of different kinds:

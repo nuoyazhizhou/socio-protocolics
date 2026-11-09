@@ -63,7 +63,7 @@
 
 **Claim identity:** conditional model and empirical bridging.
 **Dependencies and additional conditions:** P2/P3; cash flows, recovery, discounting, horizon, and decision rules are specified separately.
-**Generation and evidence card:** [G008](../../社会系统协议学白皮书.md#rfc-evidence-008).
+**Generation and evidence card:** [G008](appendix.md#rfc-evidence-008).
 
 **Normative Spec (规范条文).**
 Long-run capital expenditure (CAPEX) depends on expected cash flows, rule fulfilment probability, cost of capital, investment horizon, and default-recovery conditions. For a given investment project $i$, the following may be used as a conditional analytical framework:
@@ -104,7 +104,7 @@ Since $0<\beta_i<1$, when $R_{it}>Q_{it}$ and $p_{it}^{\prime}<p_{it}$, this dif
 
 **Claim identity:** property definition and procedural boundary.
 **Dependencies and additional conditions:** fixed request, rule version, evidence set, and authorisation-review procedure.
-**Generation and evidence card:** [G009](../../社会系统协议学白皮书.md#rfc-evidence-009).
+**Generation and evidence card:** [G009](appendix.md#rfc-evidence-009).
 
 **Normative Spec (规范条文).**
 1. **Semantic invariance and procedural protection:** if property rights, jurisdiction, and the relations of rights and obligations can be rewritten at will without due process, agents' long-run expectations are disturbed. One should independently examine the dispersion of textual-interpretation authority, procedural constraints, and ex-post remedy mechanisms; one cannot assert a type-system collapse merely from textual change.
@@ -128,7 +128,7 @@ Since $0<\beta_i<1$, when $R_{it}>Q_{it}$ and $p_{it}^{\prime}<p_{it}$, this dif
 
 **Claim identity:** execution mechanism and conditional protection.
 **Dependencies and additional conditions:** initial state, input ordering, consensus, authority, faults, and asset control are specified separately.
-**Generation and evidence card:** [G010](../../社会系统协议学白皮书.md#rfc-evidence-010).
+**Generation and evidence card:** [G010](appendix.md#rfc-evidence-010).
 
 **Normative Spec (规范条文).**
 A deterministic state machine produces identical results under identical initial states and identical ordered inputs, and can be used to reduce arbitrary discretion in cross-period clearing. If one further requires multiple nodes to agree on a consistent history, one must also specify the consensus algorithm, membership and authority model, fault and attack thresholds, network assumptions, protocol-upgrade authority, and finality criteria; the recurrence $s_{n+1}=\delta(s_n,tx_n)$ may represent the execution rule, but this recurrence relation by itself does not prove history is immutable. Cryptographic signatures and time-locks constrain authorisation and execution timing respectively, and — where the stated assumptions hold — raise the difficulty of unauthorised ledger alteration; evaluation of "default resistance" must be limited to the states and assets the protocol actually controls, and the counter-example conditions under which the commitment fails must be stated explicitly. Given that real social contracts are endogenously incomplete, deterministic auto-execution (such as smart contracts or rigid administrative rules) applies only to standard paths with complete, verifiable state; for unforeseeable physical or social edge anomalies, the protocol must still reserve a procedurally-constrained "Bounded Discretion & Exception Handler" to avoid strangling legitimate room for correction through rigid lock-in.

@@ -46,7 +46,7 @@
 
 **Claim identity:** accounting definition and option comparison.
 **Dependencies and additional conditions:** P1 budget background; same task, lifecycle, price, and discounting basis.
-**Generation and evidence card:** [G017](../../社会系统协议学白皮书.md#rfc-evidence-017).
+**Generation and evidence card:** [G017](appendix.md#rfc-evidence-017).
 
 **Normative Spec (规范条文).**
 Finite resources and irreversible time bound the feasible set of options, but they do not by themselves prove that the total volume of technical debt is conserved, nor that every system must incur some fixed number of defects. This item requires comparing the net burden of maintaining the old system against migrating to a new system under one and the same task boundary, lifecycle, price, and discounting basis:
@@ -94,7 +94,7 @@ The following are risk hypotheses, epistemic constraints, and engineering-implem
 
 **Claim identity:** conditional-probability model, empirical screening, and design norm.
 **Dependencies and additional conditions:** branch success/failure, independence, fixed probability, budget, and observation window to be set separately.
-**Generation and evidence card:** [G018](../../社会系统协议学白皮书.md#rfc-evidence-018).
+**Generation and evidence card:** [G018](appendix.md#rfc-evidence-018).
 
 **Normative Spec (规范条文).**
 When the state space, uncertainty, and computational demand of a given task exceed a single node's resources or knowledge capacity, comparing multi-branch exploration against a single-branch option may be considered. Finiteness alone does not prove that every finite task cannot be exhausted centrally, nor that parallel net benefit is necessarily positive. Whether there is gain depends on task, budget, branch correlation, cost, consequence observation, and screening; the following probability, feedback, and governance conditions each bear their own burden of argument:
@@ -173,7 +173,7 @@ Discovery probability is not equal to correct-selection probability, still less 
 
 "Cathedral / Bazaar" in this book are two lenses for comparing control rights, interface openness, and trial style; they do not exhaust organisational types. Closed-source, centralised, compatibility burden, and branch exploration are not the same dimension; real systems may mix them; historical comparison must be verified separately.
 
-*Identity of the cases in this section:* the following case comparisons are used to raise testable comparison questions and implementation suggestions; they are candidate comparisons and normative suggestions, not newly added accounting definitions or probability clauses; borrowing the conditional model of [SP-RFC-004](../../社会系统协议学白皮书.md#sp-rfc-004) does not equal establishing another accounting definition.
+*Identity of the cases in this section:* the following case comparisons are used to raise testable comparison questions and implementation suggestions; they are candidate comparisons and normative suggestions, not newly added accounting definitions or probability clauses; borrowing the conditional model of [SP-RFC-004](chapter-03.md#sp-rfc-004) does not equal establishing another accounting definition.
 
 **Comparison index of human organisation and operating-system routes**
 
@@ -190,7 +190,7 @@ Discovery probability is not equal to correct-selection probability, still less 
 #### 7.3.1 Compatibility-layer trap vs clean-slate refactor: comparing compatibility burden and migration options
 
 **Normative Spec (规范条文).**
-A centralised system may pursue consistency through control rights and unified review, but may also form exclusive interfaces and compatibility burden; net contribution must be compared against feasible alternatives. Only when satisfying the same-basis, serial, and no-new-output-or-recovery-path conditions of [SP-RFC-004](../../社会系统协议学白皮书.md#sp-rfc-004) is the conditional retention rate $\eta_n=\prod_i(1-\lambda_i)$ used, where $\lambda_i$ is the loss rate of layer $i$ relative to its input; layer-wise conditional ratios multiplied do not require statistical independence, and must not be confused with the independent success/failure events of 018. Social application must be measured independently, and one cannot directly equate efficiency loss with an organisation crossing its survival threshold. A clean-slate refactor (Clean-Slate Spec) in an isolated sandbox may try to reduce historical coupling, but must compare in-place repair, full replacement, and incremental bypass per [SP-RFC-017](#sp-rfc-017), accounting for migration, adaptation, governance, ecosystem cold-start, and implicit robust-asset loss, and stating rights, safety, and revert conditions; no migration approach is assumed universally optimal.
+A centralised system may pursue consistency through control rights and unified review, but may also form exclusive interfaces and compatibility burden; net contribution must be compared against feasible alternatives. Only when satisfying the same-basis, serial, and no-new-output-or-recovery-path conditions of [SP-RFC-004](chapter-03.md#sp-rfc-004) is the conditional retention rate $\eta_n=\prod_i(1-\lambda_i)$ used, where $\lambda_i$ is the loss rate of layer $i$ relative to its input; layer-wise conditional ratios multiplied do not require statistical independence, and must not be confused with the independent success/failure events of 018. Social application must be measured independently, and one cannot directly equate efficiency loss with an organisation crossing its survival threshold. A clean-slate refactor (Clean-Slate Spec) in an isolated sandbox may try to reduce historical coupling, but must compare in-place repair, full replacement, and incremental bypass per [SP-RFC-017](#sp-rfc-017), accounting for migration, adaptation, governance, ecosystem cold-start, and implicit robust-asset loss, and stating rights, safety, and revert conditions; no migration approach is assumed universally optimal.
 
 > 📜 **[Historical evidence annotation · Case 7.3.1-A] (The Holy Roman Empire's privilege-compatibility burden: Charles IV, the Habsburgs, and periodised evidence from the Thirty Years' War)**  
 > *Text location and comparison question*: Voltaire, in [chapter 70 of the *Essai sur les mœurs* (Garnier edition, vol. 11, French transcription)](https://fr.wikisource.org/wiki/Essai_sur_les_m%C5%93urs/Chapitre_70), mocked the Holy Roman Empire as “既不神圣，也不罗马，更非帝国” ["neither holy, nor Roman, nor an empire"]. This is the author's evaluation and cannot serve as factual proof that the empire had no governing capacity. The concrete powers and negotiation processes of the emperor, the imperial diet, the courts, and the territories and towns must still be verified against period and institutional materials, and not generalised into the claim that grassroots governance was wholly subject to old privileges.

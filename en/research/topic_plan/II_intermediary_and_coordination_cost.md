@@ -18,7 +18,7 @@ Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIV
 
 | Field | Current registration of this group |
 |---|---|
-| Master-source location | [SP-RFC-004](../../../社会系统协议学白皮书.md#sp-rfc-004), [SP-RFC-005](../../../社会系统协议学白皮书.md#sp-rfc-005); below, the original conditions and the author's application are kept separate |
+| Master-source location | [SP-RFC-004](../../whitepaper/chapter-03.md#sp-rfc-004), [SP-RFC-005](../../whitepaper/chapter-03.md#sp-rfc-005); below, the original conditions and the author's application are kept separate |
 | Sub-claim and identity | v11.2 Group II; 004 is a conditional serial model, first checking whether there is a productive contribution / recovery; 005's complexity—exclusive-control feedback is separately a mechanism hypothesis, and one case cannot substitute for both being verified |
 | Main-case candidate | Zhejiang 2017 newly established-unit housing-provident-fund registration; one city must be selected to develop the original process — decision — data flow — actual completion; at present the provincial document can only explain the design |
 | Evidence and gaps | The [work-outcome table](../cases/II-CN-A_housing_fund_registration_disposition.md) already exists; the same-city old and new guides, claim / rework / exit and cost records still need supplementing, and actual success cannot be written in |
@@ -72,7 +72,7 @@ Recent-neighbour searches pending: transaction cost, organisation coordination, 
 
 The fourth Zhejiang item "housing-provident-fund deposit registration" is selected, and the [provincial institutional process, work outcome and gap table](../cases/II-CN-A_housing_fund_registration_disposition.md) is delivered. The old side still has only a normative baseline; next time the same-city old and new handling guides and execution records must be supplemented; do not treat the provincial document as on-site effect. Also delivered: [foreign-research partial check and meeting-lead boundary](../cases/II-INT_audit_and_driving_license_research_check.md). The old Chinese sample chapter and OP-001 have updated names, paths and material; the three fabricated problems must not be passed off as Zhejiang measured data.
 
-The conceptual sample chapter [*"After Removing Two Approvals, Is the Work Really Less?"*](../../../articles/intermediary/删掉两道审批_工作真的少了吗.md), pending reconstruction with a real case, has been formed, with endnotes listing the P1/P2 background, O4, 004/005, the 007 normative objective and the 017 accounting reminder. The candidate process diagram (non-numbered material) candidate path, 006 and 005's institutionalised scenarios are still untested. The accompanying [OP-001](../OP-001/question_card.md) directly asks whether the method representation has a local gain, and does not establish the whole proposition group. The Chinese pack can be reviewed first; the English has not yet been produced; the shared [execution and acceptance steps](README.md) apply.
+The conceptual sample chapter [*"After Removing Two Approvals, Is the Work Really Less?"*](../../articles/intermediary/two_approvals_removed.md), pending reconstruction with a real case, has been formed, with endnotes listing the P1/P2 background, O4, 004/005, the 007 normative objective and the 017 accounting reminder. The candidate process diagram (non-numbered material) candidate path, 006 and 005's institutionalised scenarios are still untested. The accompanying [OP-001](../OP-001/question_card.md) directly asks whether the method representation has a local gain, and does not establish the whole proposition group. The Chinese pack can be reviewed first; the English has not yet been produced; the shared [execution and acceptance steps](README.md) apply.
 
 ## This Round's Source-Status Update
 
@@ -82,7 +82,7 @@ v0.2 has updated the reading status in the table above. The checked sections, ta
 
 ## Later Fiscal-History Supplement: Does Not Replace the Current Main Case
 
-The following continues the existing gaps in [core case sources and boundaries](../../../docs/核心案例来源与边界.md); no new historical material has been obtained now, so it is not registered as a T1 material table or T2/T3 completion, nor does the supplementation suggestion change the existing four-case order. When truly developed, separately supplement the bounded period, object and complete proposition-testing card.
+The following continues the existing gaps in [core case sources and boundaries](../../case_sources_and_boundaries.md); no new historical material has been obtained now, so it is not registered as a T1 material table or T2/T3 completion, nor does the supplementation suggestion change the existing four-case order. When truly developed, separately supplement the bounded period, object and complete proposition-testing card.
 
 | Material task | Corresponding main text and question | First submittable result | Counter-material and competing explanation | Current status |
 |---|---|---|---|---|

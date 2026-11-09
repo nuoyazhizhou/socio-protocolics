@@ -12,7 +12,7 @@
 
 Version: v0.1 | Date: 2026-10-23 | This is an English translation of the Chinese source; the Chinese source remains authoritative.
 
-This convention implements [Article 9 of AGENTS.md](../AGENTS.md) and applies to all topics, authors, agents, continuations of earlier drafts and translations. The theoretical definitions remain governed by the [whitepaper](../社会系统协议学白皮书.md).
+This convention implements [Article 9 of AGENTS.md](GLOSSARY.md) and applies to all topics, authors, agents, continuations of earlier drafts and translations. The theoretical definitions remain governed by the [whitepaper](whitepaper/chapter-01.md).
 
 ## The Research Task of an Article
 
@@ -40,7 +40,7 @@ Each group continues to look for favourable, unfavourable, partially successful 
 
 ## The Topic Card to Be Re-read When Starting and Continuing a Draft
 
-Each [topic plan](../research/主题计划/README.md) must maintain the fields below; when they change, update the card and its version rather than keeping only the title and a candidate list.
+Each [topic plan](research/topic_plan/README.md) must maintain the fields below; when they change, update the card and its version rather than keeping only the title and a candidate list.
 
 | Field | Required content |
 |---|---|
@@ -70,7 +70,7 @@ Where material is insufficient, first carry out a search, an evidence table or a
 |---|---|---|---|---|
 | The one item actually checked in this article; the original text and the author's application are kept separate | The source chain is not counted twice; unknowns are not filled in with zeros | Identical meaning is registered as restatement | Local support / rejection of a specific empirical prediction / narrowing the scope of application / an existing explanation already suffices / insufficient evidence; these may coexist as separate items | Specified down to the SSOT clause and derived drafts, or state that the evidence is currently insufficient for a change |
 
-Adjudicate separately "what the real event shows" and "what the framework adds"; a main case succeeding does not by itself demonstrate that the framework has a gain. Correct factual errors first; only if a theoretical change is genuinely needed, revise the master source, the CheatSheet and the related drafts incrementally and run the [automated checks](../AGENTS.md). If there is no new theoretical conclusion, record that honestly as well; do not revise theory merely to pad out the revision count, and do not edit only the review report.
+Adjudicate separately "what the real event shows" and "what the framework adds"; a main case succeeding does not by itself demonstrate that the framework has a gain. Correct factual errors first; only if a theoretical change is genuinely needed, revise the master source, the CheatSheet and the related drafts incrementally and run the [automated checks](GLOSSARY.md). If there is no new theoretical conclusion, record that honestly as well; do not revise theory merely to pad out the revision count, and do not edit only the review report.
 
 ## Holding Style and Evidence Together
 
@@ -81,6 +81,6 @@ A reader should be able both to take away one method of checking and to point ou
 
 ## Registering the Generation Card and the Three Tests Separately
 
-Locate the sub-claim with the [whitepaper generation and evidence cards](../社会系统协议学白皮书.md#rfc-evidence-cards); a case-study receipt must state separately which of necessity, sufficiency and minimality is checked this time and whether the other two have not been checked. A mechanism being absent while the standard is still met can argue against necessity; a mechanism existing while it still fails constitutes a refutation only when its sufficiency conditions are met; minimality requires comparing a reduced or alternative scheme. Real counter-material, hypothetical stress scenarios and unmet premises are registered separately. The desirability of a normative objective, its implementation effect and the formal model each use their corresponding evidence; the positive and negative results of one case cannot jointly be counted as the same prediction being verified.
+Locate the sub-claim with the [whitepaper generation and evidence cards](whitepaper/appendix.md#rfc-evidence-cards); a case-study receipt must state separately which of necessity, sufficiency and minimality is checked this time and whether the other two have not been checked. A mechanism being absent while the standard is still met can argue against necessity; a mechanism existing while it still fails constitutes a refutation only when its sufficiency conditions are met; minimality requires comparing a reduced or alternative scheme. Real counter-material, hypothetical stress scenarios and unmet premises are registered separately. The desirability of a normative objective, its implementation effect and the formal model each use their corresponding evidence; the positive and negative results of one case cannot jointly be counted as the same prediction being verified.
 
 Cases related to 018 register discovery, screening, deployment and migration separately; a successful branch is not named after the fact according to the eventual winner. Keep all registered branches, unknown outcomes, maturity consequences, screening errors and maintainers' conflicts of interest; migration costs return to 017, and objectives related to state authority return to 014.

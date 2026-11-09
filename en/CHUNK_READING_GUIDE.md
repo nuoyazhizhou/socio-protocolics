@@ -10,7 +10,7 @@
 
 # Whitepaper Reading and Editing by Tag
 
-Date: 2026-10-27. The main text still takes the [Chinese master source](../社会系统协议学白皮书.md) as its sole public source of definitions; the tags only mark reading and writing boundaries and add no new theoretical tier or RFC.
+Date: 2026-10-27. The main text still takes the [Chinese master source](whitepaper/chapter-01.md) as its sole public source of definitions; the tags only mark reading and writing boundaries and add no new theoretical tier or RFC.
 
 ## Fixed Boundaries
 
@@ -82,7 +82,7 @@ The tool checks the target's original hash, the complete tag structure and the e
 
 When there is no diff, it does not write and does not back up. Empty content, a missing trailing newline, a BOM, missing / duplicated / nested / crossed tags, wrong chapter assignment, lost anchors, a hash mismatch or an existing tool write lock all cause the operation to be refused. Tag examples inside fenced code blocks do not count as real boundaries.
 
-The block editor only checks reading/writing boundaries and anchors; it does not substitute for review of the body text, formulas or code. After an actual change, still run the content-regression and public-scope checks according to [AGENTS.md](../AGENTS.md#四-自动化质量门禁verification-gate).
+The block editor only checks reading/writing boundaries and anchors; it does not substitute for review of the body text, formulas or code. After an actual change, still run the content-regression and public-scope checks according to [AGENTS.md](AGENTS.md#iv-automated-quality-gate-verification-gate).
 
 ## The Internal Edition and Verification
 

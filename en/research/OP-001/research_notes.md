@@ -18,7 +18,7 @@ Under the same process material, information fields and reading conditions, can 
 
 This is a candidate study about the **usability of expression and analysis methods**. It does not present "the intermediary may have a net benefit" as a new finding, does not establish that society and computing are isomorphic, and does not test the universality of the six core proposition groups. Even if the result is positive, it only supports the local gain of this engineering-oriented arrangement relative to a specified control.
 
-It uses the P1/P2 background and draws on the master source's O4, the applicability boundary of RFC-004, the to-be-tested risk of RFC-005, the normative objective of RFC-007, and the migration-accounting boundary of RFC-017; it does not alter the original attribution of the three postulates — the six core proposition groups — the 19 effective SP-RFC items (of which 007 is a normative rule). [Master source](../../../社会系统协议学白皮书.md)
+It uses the P1/P2 background and draws on the master source's O4, the applicability boundary of RFC-004, the to-be-tested risk of RFC-005, the normative objective of RFC-007, and the migration-accounting boundary of RFC-017; it does not alter the original attribution of the three postulates — the six core proposition groups — the 19 effective SP-RFC items (of which 007 is a normative rule). [Master source](../../whitepaper/chapter-01.md)
 
 ## 2. Nearest Neighbours and the Current Gap
 

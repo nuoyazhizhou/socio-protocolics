@@ -12,7 +12,7 @@
 
 Version: v0.4 | Date: 2026-10-27 | This is an English translation of the Chinese source; the Chinese source remains authoritative.
 
-These conventions are distilled from the existing Chinese publication plan and sample drafts, rearranged according to the current state of the repository. Historical drafts, the full review process and source backups remain local. Framework definitions are governed by [Whitepaper v11.2, the sole canonical text](../社会系统协议学白皮书.md).
+These conventions are distilled from the existing Chinese publication plan and sample drafts, rearranged according to the current state of the repository. Historical drafts, the full review process and source backups remain local. Framework definitions are governed by [Whitepaper v11.2, the sole canonical text](whitepaper/chapter-01.md).
 
 ## Chinese First
 
@@ -45,11 +45,11 @@ Every case has a Chinese original and an English counterpart. Both languages kee
 
 For Chinese figures, explain to foreign readers "who he was, what the prior rule was, and what the change targeted"; for foreign figures, supply the background to Chinese readers in the same way. Do not assume that all English-language readers are familiar with European or American history.
 
-Cases are paired by the same question and must not be spliced together merely by country or by a quota of good and bad outcomes. For the specific rules see [Case Selection and Comparison Method](../research/案例选择与比较方法.md). The "success" dimension may differ from case to case, but in that case the comparison is only heuristic and cannot be called a strict causal control.
+Cases are paired by the same question and must not be spliced together merely by country or by a quota of good and bad outcomes. For the specific rules see [Case Selection and Comparison Method](research/case_selection_and_comparison_method.md). The "success" dimension may differ from case to case, but in that case the comparison is only heuristic and cannot be called a strict causal control.
 
 ## The Case-First Requirement
 
-All topics, drafting, continuations and translations first follow [Case-Driven Writing and Proposition Testing](../docs/案例驱动写作与命题检验.md) and Article 9 of AGENTS.md. Read back the topic card first and make explicit the sub-claim, the real main case, real counter-material or a sourced competing explanation, the verdict and the position for theoretical write-back.
+All topics, drafting, continuations and translations first follow [Case-Driven Writing and Proposition Testing](CASE_DRIVEN_TESTING.md) and Article 9 of AGENTS.md. Read back the topic card first and make explicit the sub-claim, the real main case, real counter-material or a sourced competing explanation, the verdict and the position for theoretical write-back.
 
 Each piece rests on at least one developed real process; key facts must be traceable, and engineering concepts enter afterwards. Conceptual explanation, simulated accounting and scattered name-checks of real material cannot replace a real case article; anything that does not meet the requirement is labelled a "conceptual sample chapter, pending reconstruction with a real case". A stylistic reference inherits only pacing and expression, not the numbers or "verified" claims in the sample text.
 
@@ -74,10 +74,10 @@ Each piece explains in several short paragraphs:
 
 Key sources are also placed near the relevant body text. Mutual links between the project's own articles and the whitepaper provide navigation only and do not constitute external evidence.
 
-Framework citations use explicit numbering and links to the original text, written as "postulate background → main proposition group/clause → normative objective or qualitative extension → untested parts → open questions". The source note lists positions in the body text separately; it is not enough to write "based on protocolics" only in an endnote, or to attach the whole 3→6→19 chain as a label. For a concrete example see the [Hu Shi article endnotes](../articles/hu-shih/如何评价胡适的作品.md#article-framework) and the [3→6→19 Theme and Case Index](../docs/框架与案例索引.md).
+Framework citations use explicit numbering and links to the original text, written as "postulate background → main proposition group/clause → normative objective or qualitative extension → untested parts → open questions". The source note lists positions in the body text separately; it is not enough to write "based on protocolics" only in an endnote, or to attach the whole 3→6→19 chain as a label. For a concrete example see the [Hu Shi article endnotes](articles/hu-shih/how_to_evaluate_hu_shis_works.md#article-framework) and the [3→6→19 Theme and Case Index](framework_and_case_index.md).
 
 ## From Examples Back to the Framework
 
 Fact corrections first modify the corresponding article; where a definition or proposition changes, first record the original claim, opposing evidence, competing explanations and the proposed scope of change, then update the master source and affected derived drafts incrementally. Whether a method works, whether a mechanism holds and whether a postulate is appropriate are different questions, and favourable reviews of an article cannot substitute for one another.
 
-New cases and translations must be added to the public manifest, with links and text scope checked; when modifying the whitepaper, the CheatSheet or AGENTS, also run regression according to [the verification gate rules](../AGENTS.md). Internal material and audit evidence are not made public automatically merely by being used in writing.
+New cases and translations must be added to the public manifest, with links and text scope checked; when modifying the whitepaper, the CheatSheet or AGENTS, also run regression according to [the verification gate rules](GLOSSARY.md). Internal material and audit evidence are not made public automatically merely by being used in writing.

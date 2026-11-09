@@ -41,7 +41,7 @@ Version: v0.5 | Date: 2026-10-23 | Corresponds to the [main text](how_to_evaluat
 - The old draft's endnote once used v11.0's 22 historical numbers; this v11.2 round changes to the consecutive numbering 001—019, tracking merges and migrations via the version comparison.
 - 001 and 014 are marked as primary citations, 007 is listed separately as a normative objective, and 017/018 are marked as qualitative extensions, all linking to the text items.
 - The source notes add the mapping of objects, postulates, items and specific article sections, and make explicit group 3, group 5 and the other untested parts.
-- A new [full-framework topic and case index](../../../docs/框架与案例索引.md) is added, so that language reform is not treated as the sole topic of the whole framework.
+- A new [full-framework topic and case index](../../framework_and_case_index.md) is added, so that language reform is not treated as the sole topic of the whole framework.
 
 This article has not obtained an independent peer-review pass, nor has a reader-effect experiment been run. The provenance and scope of the corresponding material are in the [source notes](source_notes.md).
 

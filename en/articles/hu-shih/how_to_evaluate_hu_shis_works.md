@@ -275,7 +275,7 @@ The use of the three versions is to let the reader see: **recognising symbols, u
 
 They cannot establish how much difficulty each of the three contributes. C has already added hints; the reading order also brings a familiarity effect; and the author's own sense of difficulty is not a randomised-group measurement.
 
-From this the original draft concluded that "notation contributes little, terminology less, and grammar is the main source" — the evidence is insufficient. That ordering is withdrawn here, and the testable question is retained: [Once content and background are controlled, how much comprehension cost can explicit expression reduce?](../../../research/H01_表达与理解成本.md)
+From this the original draft concluded that "notation contributes little, terminology less, and grammar is the main source" — the evidence is insufficient. That ordering is withdrawn here, and the testable question is retained: [Once content and background are controlled, how much comprehension cost can explicit expression reduce?](../../research/H01_expression_and_understanding_cost.md)
 
 ### Scientific Vernacular Also Has to Be Learned
 
@@ -301,7 +301,7 @@ Likewise, although Lu Xun used fierce wording about the Chinese script in 1934, 
 
 The Second Simplification of Chinese Characters (erjian) supplies the questioning of another period. A 1986 official document reviews: after the 1977 draft was published, the first table was tried out in publications; in 1978 the relevant textbooks and publications stopped the trial, while the draft had not yet been rescinded; only in 1986 was discontinuation formally required. Trial use, stopping the trial, and rescission are different decisions. [15]
 
-This outcome cannot directly establish who was more restrained, but it obliges us to take "simplification" apart: **if it merely saves a few strokes, do the distinctions the original task needs still exist? If different sources are merged into one written form, what restores the distinctions, and who bears the work of recognition, error-correction and preserving the original records?** Documents currently available can explain the decisions and some of the reasons; they cannot substitute for measuring the second scheme's comprehension effects or historical losses; for specific materials and gaps see the [Second Simplification evidence table](../../../research/cases/CN-S2_证据起点.md).
+This outcome cannot directly establish who was more restrained, but it obliges us to take "simplification" apart: **if it merely saves a few strokes, do the distinctions the original task needs still exist? If different sources are merged into one written form, what restores the distinctions, and who bears the work of recognition, error-correction and preserving the original records?** Documents currently available can explain the decisions and some of the reasons; they cannot substitute for measuring the second scheme's comprehension effects or historical losses; for specific materials and gaps see the [Second Simplification evidence table](../../research/cases/CN-S2_evidence_starting_point.md).
 
 Returning to the vernacular movement, a counterfactual question can be raised: if spreading vernacular had to wait for character forms, a standard language and a spelling system to be all ready, would it have delayed some benefits that could have been obtained earlier? Conversely, might advancing the pieces together have lowered repeated conversion costs? Both directions should be examined. We have no evidence to fill in the delay as 1927, nor can we derive from it a shortage of technical or administrative talent; schools, funding, teachers, textbooks and social demand all remain on the causal chain.
 
@@ -329,9 +329,9 @@ This article has not demonstrated the six core proposition groups, nor has it me
 
 If you work on linguistics, literary history, the history of education, institutions or human–computer interaction, the following three items are all ready to take up:
 
-1. [Check comprehension costs](../../../research/H01_表达与理解成本.md): how to build equivalence-preserving texts and separate the effects of notation, terminology, added explanation and syntax?
-2. [Examine status and adoption](../../../research/H02_正式地位与采用.md): can actors' talk of "orthodoxy" be matched against actual changes in investment? Is there contrary material?
-3. [Trace rules and migration](../../../research/H03_规则与实际迁移.md): from an official order to a textbook to classroom use, which evidence is still missing in between?
+1. [Check comprehension costs](../../research/H01_expression_and_understanding_cost.md): how to build equivalence-preserving texts and separate the effects of notation, terminology, added explanation and syntax?
+2. [Examine status and adoption](../../research/H02_formal_status_and_adoption.md): can actors' talk of "orthodoxy" be matched against actual changes in investment? Is there contrary material?
+3. [Trace rules and migration](../../research/H03_rules_and_actual_migration.md): from an official order to a textbook to classroom use, which evidence is still missing in between?
 
 Counterexamples, existing research, better explanations, or one exact line of revision are all welcome. You do not have to accept the whole framework first.
 
@@ -345,7 +345,7 @@ Counterexamples, existing research, better explanations, or one exact line of re
 
 This article is a case article of Socio-Protocolics. This still-under-revision research framework tries to use engineering concepts such as protocol, interface, middleware, compatibility and feedback to compare collaboration problems across fields.
 
-The framework is organised as "3 postulates → 6 core proposition groups → 19 valid RFC items (including the 007 rule; version cross-references listed separately)". The arrows denote modelling dependency and clause ownership; they cannot substitute for proof. This article uses only part of it; the [complete index of topics and clauses](../../../docs/框架与案例索引.md) lists other topics and gaps.
+The framework is organised as "3 postulates → 6 core proposition groups → 19 valid RFC items (including the 007 rule; version cross-references listed separately)". The arrows denote modelling dependency and clause ownership; they cannot substitute for proof. This article uses only part of it; the [complete index of topics and clauses](../../framework_and_case_index.md) lists other topics and gaps.
 
 The three modelling starting points this article uses are:
 
@@ -353,22 +353,22 @@ The three modelling starting points this article uses are:
 2. **P2: Participants have their own goals and choices.** Under the same set of rules, different agents may adopt different strategies.
 3. **P3: Rules influence action through expectations.** Assessments of recognition, benefit, risk and performance may influence an agent's investment and cooperation. This article treats recognition–expectation–action as a candidate mechanism and does not infer from it that an equilibrium exists or converges.
 
-These are summaries; for the [postulates and object definitions](../../../社会系统协议学白皮书.md#-04-协议学核心对象模型与公理体系layer-2-theoretical-primitive-spec) the authority is whitepaper §1.5. This article also uses O1 agent, O2 protocol, O3 expectation and O4 intermediary to organise its objects, and does not judge the mere existence of teachers or editors to be parasitic.
+These are summaries; for the [postulates and object definitions](../../whitepaper/chapter-01.md#-04-协议学核心对象模型与公理体系layer-2-theoretical-primitive-spec) the authority is whitepaper §1.5. This article also uses O1 agent, O2 protocol, O3 expectation and O4 intermediary to organise its objects, and does not judge the mere existence of teachers or editors to be parasitic.
 
 The specific clauses participate in this article as follows:
 
 | Reference | What this article uses it to discuss | Scope of use |
 |---|---|---|
-| Group 1 · [SP-RFC-001](../../../社会系统协议学白皮书.md#sp-rfc-001) | Background supplementation, decoding and comprehension costs in §3 and §6 | Main conceptual reference; no Shannon capacity or throughput formulas were used to compute historical effects |
-| Group 4 · [SP-RFC-014](../../../社会系统协议学白皮书.md#sp-rfc-014) | The authorisation gateway of the education system in §2 | Main functional mapping; regulation, textbooks and actual adoption remain separate |
-| The normative rule of Group 2 · [SP-RFC-007](../../../社会系统协议学白皮书.md#sp-rfc-007) | Weighting the intelligibility of expression, public participation and error correction | A normative objective this article makes public; it does not follow automatically from the physical postulates |
-| Group 6 · [SP-RFC-017](../../../社会系统协议学白皮书.md#sp-rfc-017), [SP-RFC-018](../../../社会系统协议学白皮书.md#sp-rfc-018) | Old–new compatibility, migration, trial works and feedback in §3, §4, §5, §7–8 | Qualitative extension; no net-present-value accounting of migration was done, and neither independent-branch probabilities nor feedback windows were tested |
+| Group 1 · [SP-RFC-001](../../whitepaper/chapter-02.md#sp-rfc-001) | Background supplementation, decoding and comprehension costs in §3 and §6 | Main conceptual reference; no Shannon capacity or throughput formulas were used to compute historical effects |
+| Group 4 · [SP-RFC-014](../../whitepaper/chapter-05.md#sp-rfc-014) | The authorisation gateway of the education system in §2 | Main functional mapping; regulation, textbooks and actual adoption remain separate |
+| The normative rule of Group 2 · [SP-RFC-007](../../whitepaper/chapter-03.md#sp-rfc-007) | Weighting the intelligibility of expression, public participation and error correction | A normative objective this article makes public; it does not follow automatically from the physical postulates |
+| Group 6 · [SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017), [SP-RFC-018](../../whitepaper/chapter-07.md#sp-rfc-018) | Old–new compatibility, migration, trial works and feedback in §3, §4, §5, §7–8 | Qualitative extension; no net-present-value accounting of migration was done, and neither independent-branch probabilities nor feedback windows were tested |
 
 This article does not develop Group 3's intertemporal performance model or Group 5's sustained-mobilisation model, and does not test Group 2's serial-decay and rent-seeking mechanisms. The expectation language of P3 does not mean proof has already been obtained for Group 3's propositions; a work's providing a sample does not mean the 018 model has passed testing.
 
 In the Hu Shi case this article further proposes: expression thresholds, formal recognition and imitable works may jointly influence the adoption of a way of writing. This is a candidate explanation requiring comparative material to test; this article does not strictly derive historical conclusions from the three postulates, nor does it use one case to validate the six core proposition groups.
 
-The public entry point for whitepaper v11.2 and open research: [nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics). The repository version corresponding to this article has been pushed; the entry point and the reading site can provide navigation; publication in the repository and on the website does not mean this article has been published on external platforms such as Zhihu. In the repository you can read directly the [authoritative whitepaper](../../../社会系统协议学白皮书.md) and [open questions](../../../research/README.md); for item-by-item boundaries of concepts and sources see the [source notes](source_notes.md).
+The public entry point for whitepaper v11.2 and open research: [nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics). The repository version corresponding to this article has been pushed; the entry point and the reading site can provide navigation; publication in the repository and on the website does not mean this article has been published on external platforms such as Zhihu. In the repository you can read directly the [authoritative whitepaper](../../whitepaper/chapter-01.md) and [open questions](../../research/README.md); for item-by-item boundaries of concepts and sources see the [source notes](source_notes.md).
 
 Counterexamples, existing research and concrete revisions are welcome. Later materials and research results will be used to revise the framework's scope of application and its predictions.
 
@@ -393,4 +393,4 @@ The numbers correspond to the body text; for full locations, reading scope and l
 12. Lu Xun, ["Letter in Reply to Mr. Cao Juren" (《答曹聚仁先生信》)](https://zh.wikisource.org/zh-hant/答曹聚仁先生信), 2 August 1934; point three and what could be done at the time.
 13. Lu Xun, ["Chinese Characters and Latinisation" (《漢字和拉丁化》)](https://zh.wikisource.org/zh-hant/漢字和拉丁化), 23 August 1934; the passages on experiments and mixed writing.
 14. Qian Xuantong, ["The Problem of Chinese Writing Hereafter" (《中國今後之文字問題》)](https://zh.wikisource.org/zh-hans/中國今後之文字問題), letter dated 14 March 1918, published 15 April of the same year; focused on transitional measures; Chen Duxiu's reply is listed separately, and the authors are not conflated.
-15. [Beijing Municipal Government forwarding of 国发〔1986〕64号 with the attached request of the State Language Commission](https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_71436.html), distinguishing the 1977 trial, the 1978 stoppage of the trial and the 1986 discontinuation; for the actual reading and boundaries see the [Second Simplification evidence table](../../../research/cases/CN-S2_证据起点.md).
+15. [Beijing Municipal Government forwarding of 国发〔1986〕64号 with the attached request of the State Language Commission](https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_71436.html), distinguishing the 1977 trial, the 1978 stoppage of the trial and the 1986 discontinuation; for the actual reading and boundaries see the [Second Simplification evidence table](../../research/cases/CN-S2_evidence_starting_point.md).

@@ -35,6 +35,79 @@ theme:
 plugins:
   - search:
       lang: en
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: false
+      languages:
+        - locale: zh
+          default: true
+          name: 简体中文
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav:
+            - Overview:
+                - Project introduction: en/README.md
+                - How to contribute: en/CONTRIBUTING.md
+                - Framework and case index: en/FRAMEWORK_GUIDE.md
+                - Bilingual glossary: en/GLOSSARY.md
+            - Whitepaper:
+                - Chapter 1 — research positioning, objects, postulates, and the boundaries of the six proposition groups: en/whitepaper/chapter-01.md
+                - Appendix — Navigation and Version Concordance of the 19 SP-RFC Bodies: en/whitepaper/appendix.md
+                - Chapter 2 — Group I — Channel Capacity & Semantic Boundary: en/whitepaper/chapter-02.md
+                - Chapter 3 — Proposition Group II — Intermediary Parasitism & Compatibility Decay: en/whitepaper/chapter-03.md
+                - Chapter 4 — Proposition Group III — Intertemporal Finality & Expectation Credibility: en/whitepaper/chapter-04.md
+                - Chapter 5 — Proposition Group IV — Privilege Ring Isolation & Split-Brain Contagion: en/whitepaper/chapter-05.md
+                - Chapter 6 — Proposition Group V — Transport Topology & Task Feedback: en/whitepaper/chapter-06.md
+                - Chapter 7 — Proposition Group VI — Debt Accounting & Evolutionary Selection: en/whitepaper/chapter-07.md
+                - Chapter 8 — Measurement Definitions, Reference Implementations, and Research Boundaries: en/whitepaper/chapter-08.md
+            - Specifications & Maintenance:
+                - Core concepts CheatSheet: en/CHEATSHEET.md
+                - Agent collaboration rules: en/AGENTS.md
+                - Revision record: en/REVISION_RECORD.md
+                - v11.2 numbering concordance: en/V11_2_NUMBERING.md
+                - Case writing and proposition testing: en/CASE_DRIVEN_TESTING.md
+                - Bilingual conventions: en/BILINGUAL_CONVENTIONS.md
+                - Chunk reading and editing: en/CHUNK_READING_GUIDE.md
+                - Publication and site maintenance: en/PUBLICATION_CONVENTIONS.md
+                - Chapter discussion roadmap: en/ROADMAP.md
+                - Case sources and boundaries: en/case_sources_and_boundaries.md
+            - Case Studies:
+                - Articles overview & purpose: en/articles/README.md
+                - Hu Shi · research essay: en/articles/hu-shih/how_to_evaluate_hu_shis_works.md
+                - Hu Shi · Zhihu candidate draft: en/articles/hu-shih/zhihu_release_draft.md
+                - Hu Shi · sources & boundaries: en/articles/hu-shih/source_notes.md
+                - Intermediary · concept sample essay: en/articles/intermediary/two_approvals_removed.md
+                - Intermediary · sources & boundaries: en/articles/intermediary/source_notes.md
+            - Open Research:
+                - Framework & case index: en/framework_and_case_index.md
+                - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
+                - Research questions that can be taken up: en/research/README.md
+                - H01 — Expression & understanding cost: en/research/H01_expression_and_understanding_cost.md
+                - H02 — Formal status & adoption: en/research/H02_formal_status_and_adoption.md
+                - H03 — Rules & actual migration: en/research/H03_rules_and_actual_migration.md
+                - OP-001 · Material pack: en/research/OP-001/material_pack.md
+                - OP-001 · Question card: en/research/OP-001/question_card.md
+                - OP-001 · Research notes: en/research/OP-001/research_notes.md
+                - OP-001 · Source & boundary: en/research/OP-001/source_and_boundary.md
+                - OP-002 · Question card: en/research/OP-002/question_card.md
+                - OP-002 · Research notes: en/research/OP-002/research_notes.md
+                - OP-002 · Source & boundary: en/research/OP-002/source_and_boundary.md
+                - PR-001 · Agent collaboration scale: en/research/PR-001_agent_collaboration_scale.md
+                - PR-001 · Source & revision notes: en/research/PR-001_source_and_revision_notes.md
+                - Case selection & comparison method: en/research/case_selection_and_comparison_method.md
+                - Case · CN-HU naming & response mapping: en/research/cases/CN-HU_naming_and_response_mapping.md
+                - Case · CN-S2 evidence starting point: en/research/cases/CN-S2_evidence_starting_point.md
+                - Case · II-CN-A housing fund registration disposition: en/research/cases/II-CN-A_housing_fund_registration_disposition.md
+                - Case · II-INT audit & driving-license research check: en/research/cases/II-INT_audit_and_driving_license_research_check.md
+                - Topic plan · README: en/research/topic_plan/README.md
+                - Topic plan · I — Channel capacity & semantic boundary: en/research/topic_plan/I_channel_capacity_and_semantic_boundary.md
+                - Topic plan · II — Intermediary & coordination cost: en/research/topic_plan/II_intermediary_and_coordination_cost.md
+                - Topic plan · III — Intertemporal commitment & investment: en/research/topic_plan/III_intertemporal_commitment_and_investment.md
+                - Topic plan · IV — Authority & correction: en/research/topic_plan/IV_authority_and_correction.md
+                - Topic plan · V — Feedback & sustained collaboration: en/research/topic_plan/V_feedback_and_sustained_collaboration.md
+                - Topic plan · VI — Migration & evolutionary screening: en/research/topic_plan/VI_migration_and_evolutionary_screening.md
 markdown_extensions:
   - tables
   - attr_list
@@ -99,67 +172,6 @@ nav:
       - 分块读取与编辑: docs/白皮书分块读取与编辑.md
       - 发布与网站维护: docs/发布与目录约定.md
       - Agent协作规则: AGENTS.md
-  - English (entry layer):
-      - Project introduction: en/README.md
-      - How to contribute: en/CONTRIBUTING.md
-      - Framework and case index: en/FRAMEWORK_GUIDE.md
-      - Bilingual glossary: en/GLOSSARY.md
-  - English (phased chapter translations):
-      - Chapter 1 — research positioning, objects, postulates, and the boundaries of the six proposition groups: en/whitepaper/chapter-01.md
-      - Appendix — Navigation and Version Concordance of the 19 SP-RFC Bodies: en/whitepaper/appendix.md
-      - Chapter 2 — Group I — Channel Capacity & Semantic Boundary: en/whitepaper/chapter-02.md
-      - Chapter 3 — Proposition Group II — Intermediary Parasitism & Compatibility Decay: en/whitepaper/chapter-03.md
-      - Chapter 4 — Proposition Group III — Intertemporal Finality & Expectation Credibility: en/whitepaper/chapter-04.md
-      - Chapter 5 — Proposition Group IV — Privilege Ring Isolation & Split-Brain Contagion: en/whitepaper/chapter-05.md
-      - Chapter 6 — Proposition Group V — Transport Topology & Task Feedback: en/whitepaper/chapter-06.md
-      - Chapter 7 — Proposition Group VI — Debt Accounting & Evolutionary Selection: en/whitepaper/chapter-07.md
-      - Chapter 8 — Measurement Definitions, Reference Implementations, and Research Boundaries: en/whitepaper/chapter-08.md
-  - English (site layer):
-      - Core concepts CheatSheet: en/CHEATSHEET.md
-      - Agent collaboration rules: en/AGENTS.md
-      - Revision record: en/REVISION_RECORD.md
-      - v11.2 numbering concordance: en/V11_2_NUMBERING.md
-      - Case writing and proposition testing: en/CASE_DRIVEN_TESTING.md
-      - Bilingual conventions: en/BILINGUAL_CONVENTIONS.md
-      - Chunk reading and editing: en/CHUNK_READING_GUIDE.md
-      - Publication and site maintenance: en/PUBLICATION_CONVENTIONS.md
-      - Chapter discussion roadmap: en/ROADMAP.md
-      - Case sources and boundaries: en/case_sources_and_boundaries.md
-  - English (articles):
-      - Articles overview & purpose: en/articles/README.md
-      - Hu Shi · research essay: en/articles/hu-shih/how_to_evaluate_hu_shis_works.md
-      - Hu Shi · Zhihu candidate draft: en/articles/hu-shih/zhihu_release_draft.md
-      - Hu Shi · sources & boundaries: en/articles/hu-shih/source_notes.md
-      - Intermediary · concept sample essay: en/articles/intermediary/two_approvals_removed.md
-      - Intermediary · sources & boundaries: en/articles/intermediary/source_notes.md
-  - English (research library):
-      - Framework & case index: en/framework_and_case_index.md
-      - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
-      - Research questions that can be taken up: en/research/README.md
-      - H01 — Expression & understanding cost: en/research/H01_expression_and_understanding_cost.md
-      - H02 — Formal status & adoption: en/research/H02_formal_status_and_adoption.md
-      - H03 — Rules & actual migration: en/research/H03_rules_and_actual_migration.md
-      - OP-001 · Material pack: en/research/OP-001/material_pack.md
-      - OP-001 · Question card: en/research/OP-001/question_card.md
-      - OP-001 · Research notes: en/research/OP-001/research_notes.md
-      - OP-001 · Source & boundary: en/research/OP-001/source_and_boundary.md
-      - OP-002 · Question card: en/research/OP-002/question_card.md
-      - OP-002 · Research notes: en/research/OP-002/research_notes.md
-      - OP-002 · Source & boundary: en/research/OP-002/source_and_boundary.md
-      - PR-001 · Agent collaboration scale: en/research/PR-001_agent_collaboration_scale.md
-      - PR-001 · Source & revision notes: en/research/PR-001_source_and_revision_notes.md
-      - Case selection & comparison method: en/research/case_selection_and_comparison_method.md
-      - Case · CN-HU naming & response mapping: en/research/cases/CN-HU_naming_and_response_mapping.md
-      - Case · CN-S2 evidence starting point: en/research/cases/CN-S2_evidence_starting_point.md
-      - Case · II-CN-A housing fund registration disposition: en/research/cases/II-CN-A_housing_fund_registration_disposition.md
-      - Case · II-INT audit & driving-license research check: en/research/cases/II-INT_audit_and_driving_license_research_check.md
-      - Topic plan · README: en/research/topic_plan/README.md
-      - Topic plan · I — Channel capacity & semantic boundary: en/research/topic_plan/I_channel_capacity_and_semantic_boundary.md
-      - Topic plan · II — Intermediary & coordination cost: en/research/topic_plan/II_intermediary_and_coordination_cost.md
-      - Topic plan · III — Intertemporal commitment & investment: en/research/topic_plan/III_intertemporal_commitment_and_investment.md
-      - Topic plan · IV — Authority & correction: en/research/topic_plan/IV_authority_and_correction.md
-      - Topic plan · V — Feedback & sustained collaboration: en/research/topic_plan/V_feedback_and_sustained_collaboration.md
-      - Topic plan · VI — Migration & evolutionary screening: en/research/topic_plan/VI_migration_and_evolutionary_screening.md
 
 extra:
   generator: false

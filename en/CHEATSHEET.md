@@ -12,7 +12,7 @@
 > **Positioning**: a high-density theory CheatSheet, a plug-and-play L1 memory base across sessions, and a protocol for fast-loading AI context.
 > **Version**: v11.2 (Orthogonal Axiomatic Foundation Edition)
 > **Structural revision (2026-10-26)**: v11.2, 19 RFC items numbered consecutively 001—019; for older numbering see the version comparison.
-> **Full whitepaper**: [Socio-Protocolics Core Architecture Whitepaper v11.2](../社会系统协议学白皮书.md)
+> **Full whitepaper**: [Socio-Protocolics Core Architecture Whitepaper v11.2](whitepaper/chapter-01.md)
 > **Evidentiary status**: distinguishes externally published empirical research, this book's conditional models and mechanisms awaiting test, and simulations with assumed inputs; the CheatSheet does not report that this book has completed original social-empirical verification.
 
 **How to use this card**: This card is a cache of the main text. The definitions and boundaries of the primitives, postulates and the six proposition groups are in Whitepaper §1.5; the RFCs are checked against the clauses in the main text; the indicators are defined in §8.3, with the §8.4 reference implementation and the §8.5 operationalisation checked against it. Omitting an expansion does not cancel a condition; cases and analogies do not add new theorems.
@@ -52,7 +52,7 @@ Conditional-derivation index: in the main text, III-1 of §4.1 establishes the e
 
 ## II. Index of the 19 Active SP-RFC Entries
 
-For the per-item P/O, additional conditions, dilemma, counterfactual and evidence status, see the [Whitepaper Generation and Evidence Cards](../社会系统协议学白皮书.md#rfc-evidence-cards). Necessity, sufficiency and minimality are tested separately; a counterfactual failure does not by itself establish sufficiency or uniqueness, and a normative objective requires a separate statement of reasons. Empirical validation that has not been completed continues to be marked as such, and is not replaced by passing the automated checks or by filling in a card.
+For the per-item P/O, additional conditions, dilemma, counterfactual and evidence status, see the [Whitepaper Generation and Evidence Cards](whitepaper/appendix.md#rfc-evidence-cards). Necessity, sufficiency and minimality are tested separately; a counterfactual failure does not by itself establish sufficiency or uniqueness, and a normative objective requires a separate statement of reasons. Empirical validation that has not been completed continues to be marked as such, and is not replaced by passing the automated checks or by filling in a card.
 
 > **[Architectural-tier note]**: 19 consecutive numbers 001—019; 007 is the cross-group normative rule, 003 is a semantic application, and 019 is the Chapter 8 tooling/research norm. The former 006/010 are retained as non-numbered materials; the 19 items are not called proven corollaries.
 
@@ -71,14 +71,14 @@ For the per-item P/O, additional conditions, dilemma, counterfactual and evidenc
     2. **Precept of cutting off rent-seeking**: compare the intermediary's net contribution with feasible alternative mechanisms; open competition and bypass for non-productive monopolies, and retain independent review and third-party remedy.
     3. **Precept of decisive refactoring**: after risks and migration costs have been verified, incubate an alternative protocol in an independent userland sandbox; production migration follows Strangler Fig incremental traffic splitting and a reversible boundary.
 
-Non-numbered research material: the [candidate process diagram](../社会系统协议学白皮书.md#research-process-pattern) raises longitudinal comparison questions of exploration, diffusion, enclosure and refactoring; it has not established an obligatory order or frequency.
+Non-numbered research material: the [candidate process diagram](whitepaper/chapter-03.md#research-process-pattern) raises longitudinal comparison questions of exploration, diffusion, enclosure and refactoring; it has not established an obligatory order or frequency.
 
 ### 3. Proposition Group III: Intertemporal Finality & Expectation Credibility — Clauses and Application Index
 * **[conditional model and empirical bridging] SP-RFC-008 [Performance Probability, Recovery, and Investment Threshold]**: project net present value depends on performance probability, breach recovery, cash-flow timing and discounting. With other conditions equal and performance return above breach recovery, a fall in performance probability lowers net present value; only crossing the threshold causes exit from the investment. The variance of rule lifetime cannot on its own determine CAPEX, and pension or marriage/fertility behaviour requires a separately established mechanism.
 * **[property definition and procedural boundary] SP-RFC-009 [Retry Idempotence, Record Durability, and Finality]**: repeated submission of the same request identifier should not add business effects; ACID durability, historical finality and an updatable current state are different properties. Before comparing Verify, the transaction, rule version and evidence set must be fixed; correcting an error under existing review rules is not equivalent to arbitrary rollback. US Title IX must be analysed under specific school rules, evidence and procedures; subsequently establishing that there was no valid consent at the time is not equivalent to retrospectively reversing a valid authorisation through a change of mind.
 * **[execution mechanism and conditional protection] SP-RFC-010 [Deterministic Execution and Conditional Commitment]**: the same initial state and ordered inputs produce the same output; resistance to breach also depends on consensus, authority, fault thresholds, escalation and finality rules. Signatures and time locks constrain only the states and assets controlled by the protocol and cannot automatically guarantee off-chain performance or resistance to physical coercion.
 
-Non-numbered application material: the [consumption and policy expectations note](../社会系统协议学白皮书.md#application-policy-expectations) retains the external model's conditions and is not treated as a direct corollary of the investment model.
+Non-numbered application material: the [consumption and policy expectations note](whitepaper/chapter-04.md#application-policy-expectations) retains the external model's conditions and is not treated as a direct corollary of the investment model.
 
 ### 4. Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion — Clauses and Application Index
 * **[authority model and social bridging] SP-RFC-011 [Privilege Isolation and Constraints on the Executor]**: Ring-3 is a privilege-boundary analogy; ordinary userland isolation cannot by itself constrain Ring-0. Stability of property rights also requires independent review, constraints on power, remedy and compensation; a higher risk of withdrawal may dampen investment, and does not entail that all CAPEX is permanently reduced to zero.
@@ -229,7 +229,7 @@ The following call stack only illustrates one hypothetical rule change (illustra
 
 ---
 
-Research output should preferentially use `evaluate_research_flags` and `research_score` / `research_zone`; the old health naming is kept for compatibility only. A snapshot carries the reference version, the declared model/measurement configuration and the input source; missing metadata are listed separately, and `provenance_verified=False` does not automatically verify the source; it is always `uncalibrated` and `research_only=True`. No computation is performed when a necessary value is missing. It is not a physical circuit break, not an automatic authorisation and not a health certification, but research review only; even a human stamp cannot substitute for an independent basis for authorisation. For the implementation stress test see the [007 cross-group verification table](../社会系统协议学白皮书.md#sp-rfc-007).
+Research output should preferentially use `evaluate_research_flags` and `research_score` / `research_zone`; the old health naming is kept for compatibility only. A snapshot carries the reference version, the declared model/measurement configuration and the input source; missing metadata are listed separately, and `provenance_verified=False` does not automatically verify the source; it is always `uncalibrated` and `research_only=True`. No computation is performed when a necessary value is missing. It is not a physical circuit break, not an automatic authorisation and not a health certification, but research review only; even a human stamp cannot substitute for an independent basis for authorisation. For the implementation stress test see the [007 cross-group verification table](whitepaper/chapter-03.md#sp-rfc-007).
 
 ## VI. Cognitive Cache and Fast-Invocation Prompts (System Prompts for AI Integration)
 
@@ -258,4 +258,4 @@ When this theory needs to be retrieved in a later session, the following short p
 ---
 
 
-Numbering follows v11.2; the [old–new numbering and chapter correspondence](../docs/v11.2_编号与章节对照.md) retains a traceability entry point for old citations.
+Numbering follows v11.2; the [old–new numbering and chapter correspondence](V11_2_NUMBERING.md) retains a traceability entry point for old citations.

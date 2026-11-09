@@ -12,7 +12,7 @@
 
 Version: index v0.8 | Date: 2026-10-26 | Language: Chinese original; English translation pending.
 
-This is a writing and research navigation aid; it does not establish a separate set of definitions. Names, ownership and conditions follow [Whitepaper §1.5](../社会系统协议学白皮书.md#-04-协议学核心对象模型与公理体系layer-2-theoretical-primitive-spec); the RFC links lead into the main text. 3 → 6 → 19 expresses modelling dependency and clause ownership; it does not mean that all propositions have been strictly established from the three postulates.
+This is a writing and research navigation aid; it does not establish a separate set of definitions. Names, ownership and conditions follow [Whitepaper §1.5](whitepaper/chapter-01.md#-04-协议学核心对象模型与公理体系layer-2-theoretical-primitive-spec); the RFC links lead into the main text. 3 → 6 → 19 expresses modelling dependency and clause ownership; it does not mean that all propositions have been strictly established from the three postulates.
 
 ## I. How the three tiers connect to the articles
 
@@ -28,8 +28,8 @@ The table below is the writing and research queue. I—VI each already have thei
 
 | Core proposition group | Standalone question and candidate formats | Current entry points and gaps |
 |---|---|---|
-| Proposition Group I: Channel Capacity & Semantic Boundary | How does expression affect comprehension and execution? Comparisons of same content under different wording, naming and background training | [Group I standalone plan](research/topic_plan/I_channel_capacity_and_semantic_boundary.md), [Hu Shi article](../articles/hu-shih/如何评价胡适的作品.md), [H01](research/H01_expression_and_understanding_cost.md); candidates, research cards and partial evidence already exist, but remain untested; 002 has a separate, to-be-developed task |
-| Proposition Group II: Intermediary Parasitism & Compatibility Decay | Does the intermediary add a service or a checkpoint? When does review provide protection, and when does it merely add delay? | [intermediary article and endnotes](../articles/intermediary/删掉两道审批_工作真的少了吗.md#article-framework) and [OP-001](research/OP-001/question_card.md) have been compiled; 004 cites only the boundary, 005 raises only the risk, and the candidate process diagram (non-numbered material), candidate pattern, 006 and 005's institutionalised scenario remain untested |
+| Proposition Group I: Channel Capacity & Semantic Boundary | How does expression affect comprehension and execution? Comparisons of same content under different wording, naming and background training | [Group I standalone plan](research/topic_plan/I_channel_capacity_and_semantic_boundary.md), [Hu Shi article](articles/hu-shih/how_to_evaluate_hu_shis_works.md), [H01](research/H01_expression_and_understanding_cost.md); candidates, research cards and partial evidence already exist, but remain untested; 002 has a separate, to-be-developed task |
+| Proposition Group II: Intermediary Parasitism & Compatibility Decay | Does the intermediary add a service or a checkpoint? When does review provide protection, and when does it merely add delay? | [intermediary article and endnotes](articles/intermediary/two_approvals_removed.md#article-framework) and [OP-001](research/OP-001/question_card.md) have been compiled; 004 cites only the boundary, 005 raises only the risk, and the candidate process diagram (non-numbered material), candidate pattern, 006 and 005's institutionalised scenario remain untested |
 | Proposition Group III: Intertemporal Finality & Expectation Credibility | How do contractual or policy commitments affect irreversible investment? How are breach recovery, review and lawful updating to be distinguished? | [land contracting, photovoltaics and UK tendering plan](research/topic_plan/III_intertemporal_commitment_and_investment.md) has been listed; cash-flow, belief and actual-investment materials remain to be supplied |
 | Proposition Group IV: Privilege Ring Isolation & Split-Brain Contagion | Who can execute or change the rules? What roles do independent remedy, conflicting commands and exit constraints each play? | [administrative reconsideration, rainstorm response and aerospace decision plan](research/topic_plan/IV_authority_and_correction.md) have been listed; the Hu Shi article still mainly concerns 014, and the other authority and payoff conditions remain unverified |
 | Proposition Group V: Transport Topology & Task Feedback | How does the scale of transmission turn into sustained collaboration? How do acknowledgement, resupply and error correction fit together? For cross-context interpretation, see Group I's 003 separately. | [SARS, H7N9 and Ebola response plan](research/topic_plan/V_feedback_and_sustained_collaboration.md) has been listed; task, time and resource materials remain to be supplied, and labelling protocols by outcome is prohibited |
@@ -41,7 +41,7 @@ Every thematic line should seek favourable, unfavourable, partially successful o
 
 The objects use O1/O2/O3/O4; the postulates P1/P2 serve as background, and P3 organises the to-be-tested recognition–expectation–action mechanism. The main topics are 001 of Group I and 014 of Group IV; 007 states the normative objective, and 017/018 are only qualitative extensions.
 
-The intermediary mechanism of 004, 005 (including the merged institutionalised scenario), the candidate process diagram (non-numbered material) and 006 has not been tested by this article; Group III and Group V are not developed; 011, 012, 013, 015, 019 and the like also cannot be counted as covered. The complete [item-by-item citation note](../articles/hu-shih/来源说明.md#与白皮书的对应关系) and the [article endnotes](../articles/hu-shih/如何评价胡适的作品.md#article-framework) state the actual use and its limits.
+The intermediary mechanism of 004, 005 (including the merged institutionalised scenario), the candidate process diagram (non-numbered material) and 006 has not been tested by this article; Group III and Group V are not developed; 011, 012, 013, 015, 019 and the like also cannot be counted as covered. The complete [item-by-item citation note](articles/hu-shih/source_notes.md#correspondence-with-the-whitepaper) and the [article endnotes](articles/hu-shih/how_to_evaluate_hu_shis_works.md#article-framework) state the actual use and its limits.
 
 Therefore, "has an article citation" in this index only means that one traceable usage exists; it does not mean that the core propositions, the group they belong to, or the related SP-RFC has gained empirical verification.
 
@@ -53,57 +53,57 @@ The phrases below are navigation summaries; they do not replace the main-text cl
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-001](../社会系统协议学白皮书.md#sp-rfc-001) | Separate physical capacity from social semantics; measure comprehension cost independently | Main conceptual citation; no Shannon or throughput formula is plugged in, and H01 takes up the local question |
-| [SP-RFC-002](../社会系统协议学白皮书.md#sp-rfc-002) | Does naming improve shared recognition and coordination? | Not developed in the Hu Shi main text; the [preliminary naming-response table](research/cases/CN-HU_naming_and_response_mapping.md) has been delivered, and the [Group I plan](research/topic_plan/I_channel_capacity_and_semantic_boundary.md) separates necessity from gain-rejection conditions; a full comparison and effect test remain to be done |
-| [SP-RFC-003](../社会系统协议学白皮书.md#sp-rfc-003) | Textual stability and cross-context interpretation (a Group I application, related to V) | Not used; discussing classical–vernacular translation does not imply a full cross-architecture model |
+| [SP-RFC-001](whitepaper/chapter-02.md#sp-rfc-001) | Separate physical capacity from social semantics; measure comprehension cost independently | Main conceptual citation; no Shannon or throughput formula is plugged in, and H01 takes up the local question |
+| [SP-RFC-002](whitepaper/chapter-02.md#sp-rfc-002) | Does naming improve shared recognition and coordination? | Not developed in the Hu Shi main text; the [preliminary naming-response table](research/cases/CN-HU_naming_and_response_mapping.md) has been delivered, and the [Group I plan](research/topic_plan/I_channel_capacity_and_semantic_boundary.md) separates necessity from gain-rejection conditions; a full comparison and effect test remain to be done |
+| [SP-RFC-003](whitepaper/chapter-02.md#sp-rfc-003) | Textual stability and cross-context interpretation (a Group I application, related to V) | Not used; discussing classical–vernacular translation does not imply a full cross-architecture model |
 
 ### Group II: RFC-004—007 | Intermediary, Complexity and Normative Choice
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-004](../社会系统协议学白皮书.md#sp-rfc-004) | Conditions for serial loss and the benefits of productive intermediation | The Hu Shi article does not use a loss model; the new intermediary article cites the applicable boundary and does not estimate a loss rate |
-| [SP-RFC-005](../社会系统协议学白皮书.md#sp-rfc-005) | Do exclusive interpretive authority, complexity and rent form a feedback loop? | No rent-seeking identification has been made; independent materials are awaited |
-| [Candidate process diagram (non-numbered material)](../社会系统协议学白皮书.md#research-process-pattern) | Do candidate paths such as exploration and enclosure have counterexamples or repairs? | No stage-by-stage test has been made; labels must not be supplied on the basis of historical outcomes |
-| [SP-RFC-006](../社会系统协议学白皮书.md#sp-rfc-006) | Approval latency, task deadlines and protection benefits | Not developed; time and risk records for the same task are awaited |
-| [SP-RFC-007](../社会系统协议学白皮书.md#sp-rfc-007) | Normative trade-offs among intelligibility, lawful rights, error correction and migration | Related to the normative objective; does not constitute verification of an empirical law |
+| [SP-RFC-004](whitepaper/chapter-03.md#sp-rfc-004) | Conditions for serial loss and the benefits of productive intermediation | The Hu Shi article does not use a loss model; the new intermediary article cites the applicable boundary and does not estimate a loss rate |
+| [SP-RFC-005](whitepaper/chapter-03.md#sp-rfc-005) | Do exclusive interpretive authority, complexity and rent form a feedback loop? | No rent-seeking identification has been made; independent materials are awaited |
+| [Candidate process diagram (non-numbered material)](whitepaper/chapter-03.md#research-process-pattern) | Do candidate paths such as exploration and enclosure have counterexamples or repairs? | No stage-by-stage test has been made; labels must not be supplied on the basis of historical outcomes |
+| [SP-RFC-006](whitepaper/chapter-03.md#sp-rfc-006) | Approval latency, task deadlines and protection benefits | Not developed; time and risk records for the same task are awaited |
+| [SP-RFC-007](whitepaper/chapter-03.md#sp-rfc-007) | Normative trade-offs among intelligibility, lawful rights, error correction and migration | Related to the normative objective; does not constitute verification of an empirical law |
 
 ### Group III: RFC-008—010 | Intertemporal Commitment, Performance and Finality
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-008](../社会系统协议学白皮书.md#sp-rfc-008) | Performance, breach recovery and the investment threshold | Not used; concrete cash flows and alternative explanations are needed |
-| [Consumption and policy application note (non-numbered material)](../社会系统协议学白皮书.md#application-policy-expectations) | A specific model of policy credibility, consumption and expectations | Not used; coverage cannot be claimed on the strength of the P3 concept alone |
-| [SP-RFC-009](../社会系统协议学白皮书.md#sp-rfc-009) | The distinction between retry, historical records and lawful review | Not used; a fixed set of transactions, rules and evidence is needed |
-| [SP-RFC-010](../社会系统协议学白皮书.md#sp-rfc-010) | Deterministic execution, consensus and off-chain performance conditions | Not used; code execution does not substitute for external performance evidence |
+| [SP-RFC-008](whitepaper/chapter-04.md#sp-rfc-008) | Performance, breach recovery and the investment threshold | Not used; concrete cash flows and alternative explanations are needed |
+| [Consumption and policy application note (non-numbered material)](whitepaper/chapter-04.md#application-policy-expectations) | A specific model of policy credibility, consumption and expectations | Not used; coverage cannot be claimed on the strength of the P3 concept alone |
+| [SP-RFC-009](whitepaper/chapter-04.md#sp-rfc-009) | The distinction between retry, historical records and lawful review | Not used; a fixed set of transactions, rules and evidence is needed |
+| [SP-RFC-010](whitepaper/chapter-04.md#sp-rfc-010) | Deterministic execution, consensus and off-chain performance conditions | Not used; code execution does not substitute for external performance evidence |
 
 ### Group IV: RFC-011—015 | Authority, Conflict and Exit
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-011](../社会系统协议学白皮书.md#sp-rfc-011) | Authority isolation and its external constraints and remedies | Not used; authority protection cannot be inferred from educational authorisation |
-| [SP-RFC-012](../社会系统协议学白皮书.md#sp-rfc-012) | How partitioning, resource cut-off and conflicting writes are to be distinguished | Not used; conflicting decisions over the same resource need to be specified |
-| [SP-RFC-013](../社会系统协议学白皮书.md#sp-rfc-013) | Whether a full payoff comparison makes wrongdoing strictly dominant | Not used; payoffs, information and an updating mechanism are needed |
-| [SP-RFC-014](../社会系统协议学白皮书.md#sp-rfc-014) | The authorisation and implementation interface for a specific public goal | Main functional mapping; a document re-forwarded by local authorities does not imply that nationwide adoption is complete |
-| [SP-RFC-015](../社会系统协议学白皮书.md#sp-rfc-015) | Identifying the alternative set, exit costs and voluntary choice | Not used; coercion or voluntariness cannot be inferred from a single choice |
+| [SP-RFC-011](whitepaper/chapter-05.md#sp-rfc-011) | Authority isolation and its external constraints and remedies | Not used; authority protection cannot be inferred from educational authorisation |
+| [SP-RFC-012](whitepaper/chapter-05.md#sp-rfc-012) | How partitioning, resource cut-off and conflicting writes are to be distinguished | Not used; conflicting decisions over the same resource need to be specified |
+| [SP-RFC-013](whitepaper/chapter-05.md#sp-rfc-013) | Whether a full payoff comparison makes wrongdoing strictly dominant | Not used; payoffs, information and an updating mechanism are needed |
+| [SP-RFC-014](whitepaper/chapter-05.md#sp-rfc-014) | The authorisation and implementation interface for a specific public goal | Main functional mapping; a document re-forwarded by local authorities does not imply that nationwide adoption is complete |
+| [SP-RFC-015](whitepaper/chapter-05.md#sp-rfc-015) | Identifying the alternative set, exit costs and voluntary choice | Not used; coercion or voluntariness cannot be inferred from a single choice |
 
 ### Group V: RFC-016 | Mobilisation Task and Sustained Feedback
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-016](../社会系统协议学白皮书.md#sp-rfc-016) | The role of feedback, responsibility, resupply and recovery in sustained collaboration | Not used; transmission or work feedback does not imply that organisational disaster tolerance has been tested |
+| [SP-RFC-016](whitepaper/chapter-06.md#sp-rfc-016) | The role of feedback, responsibility, resupply and recovery in sustained collaboration | Not used; transmission or work feedback does not imply that organisational disaster tolerance has been tested |
 
 ### Group VI: RFC-017—018 | Migration Accounting and Screening
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-017](../社会系统协议学白皮书.md#sp-rfc-017) | The net burden of migration, new maintenance and hidden assets within the same boundary | Qualitative extension; no historical NPV accounting has been done |
-| [SP-RFC-018](../社会系统协议学白皮书.md#sp-rfc-018) | Branch budgets, common failure, screening and maturity feedback | Qualitative extension; no independent probabilities or feedback windows have been estimated |
+| [SP-RFC-017](whitepaper/chapter-07.md#sp-rfc-017) | The net burden of migration, new maintenance and hidden assets within the same boundary | Qualitative extension; no historical NPV accounting has been done |
+| [SP-RFC-018](whitepaper/chapter-07.md#sp-rfc-018) | Branch budgets, common failure, screening and maturity feedback | Qualitative extension; no independent probabilities or feedback windows have been estimated |
 
 ### Cross-group tool/research norm: RFC-019 | Chapter 8
 
 | Number and source | Specific question to check | Role in the Hu Shi article / remaining gap |
 |---|---|---|
-| [SP-RFC-019](../社会系统协议学白皮书.md#sp-rfc-019) | Tool control, exit auditing and the validity of uncalibrated agents | Not used; Socio-Radar is not evidence for this article |
+| [SP-RFC-019](whitepaper/chapter-08.md#sp-rfc-019) | Tool control, exit auditing and the validity of uncalibrated agents | Not used; Socio-Radar is not evidence for this article |
 
 ## V. Citation conventions for each article
 
