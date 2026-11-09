@@ -157,14 +157,26 @@
 
 *   **修辞噪声与有效信息比（PBR & SNR/PNR）**：
     $V(D)$为原文固定分词后、剪枝前实际出现的不同token集合；$P(w)$为其原文相对频率，熵分母用$\log_2|V(D)|$，不是外部总词表大小。单一token种类的熵记0，空文档记缺失。PBR/PNR使用同一文档、同一配置返回的二元组；外部导入须重算或独立核对，标量范围合法不等于配对或来源已验证。
-    $$\text{PBR}(D) = 1 - \frac{\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))}{\text{TokenCount}(D)}, \quad \text{PNR}(D) = \frac{1 - \text{PBR}(D)}{\text{PBR}(D) + \epsilon} \cdot H_{\text{norm}}(D)$$
+
+    $$
+    \text{PBR}(D) = 1 - \frac{\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))}{\text{TokenCount}(D)}, \quad \text{PNR}(D) = \frac{1 - \text{PBR}(D)}{\text{PBR}(D) + \epsilon} \cdot H_{\text{norm}}(D)
+    $$
+
     TokenCount与SSOT §8.3.2同义，原文固定分词一次，剪枝后直接计保留token数。无熵加权简式 $SNR=\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))/(\text{TokenCount}(D)-\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding})))$ 在分母为零时不报告有限值；空文档属于缺失数据。SNR 是文本长度代理，PNR 另含熵权重和稳定项；两者不同，也不等于物理信噪比。保存PNR原值及ε，近零填充时做敏感性分析；对数、截断、缩放是另行命名的研究候选变量，不统一强制，不直接替换引擎原始输入或沿用原阈值。$PBR>0.65$ 且 $PNR<0.20$ 为黄区条件之一，$PBR>0.85$ 为红区直接触发条件，均为未校准演示阈值，不据此判定现实信道失聪。
 *   **语言总线困惑度—长度代理实验（Exploratory Perplexity-Length Benchmark）**：
-    $$\text{Impedance\_Ratio} = \frac{\sum \text{PPL}(\text{Classical}) \times \text{Tokens}(\text{Classical})}{\sum \text{PPL}(\text{Vernacular}) \times \text{Tokens}(\text{Vernacular})}$$
+
+    $$
+    \text{Impedance\_Ratio} = \frac{\sum \text{PPL}(\text{Classical}) \times \text{Tokens}(\text{Classical})}{\sum \text{PPL}(\text{Vernacular}) \times \text{Tokens}(\text{Vernacular})}
+    $$
+
     待执行探索性基准实验设计：比较李善兰文言译本与白话教材的困惑度与 Token 长度乘积；该乘积不等于总交叉熵或人类理解成本，跨文体比较须控制命题等价并经独立行为学检验（尚未提供完整测量记录前不作为实测定论）。
-* **科层相邻偏离摘要与端到端独立检验（Hierarchical Drift & End-to-End Validation）**：
-    $$d_i=1-\cos(\mathbf v(T_{i-1}),\mathbf v(T_i)),\quad p_{local}=\prod_i(1-d_i).$$ 该有符号相似度乘积不是流量保留率。
-    若由独立流量测量得到四层均有损耗0.32，串行无恢复模型才给出 $0.68^4\approx21.4\%$。语义距离不能直接当作流量损耗；首尾语义与实际任务结果须独立检验。
+*   **科层相邻偏离摘要与端到端独立检验（Hierarchical Drift & End-to-End Validation）**：
+
+    $$
+    d_i=1-\cos(\mathbf v(T_{i-1}),\mathbf v(T_i)),\quad p_{local}=\prod_i(1-d_i).
+    $$
+
+    该有符号相似度乘积不是流量保留率。若由独立流量测量得到四层均有损耗0.32，串行无恢复模型才给出 $0.68^4\approx21.4\%$。语义距离不能直接当作流量损耗；首尾语义与实际任务结果须独立检验。
 *   **碳硅本体边界原理（Carbon-Silicon Ontological Principle）**：
     人类节点是带私有目标函数的自适应博弈 Agent；是否出现均衡、动态收敛或死锁，须分别给出激励、更新与资源模型，不能由“理性”与“恶意调用”直接推出。
 
@@ -245,6 +257,9 @@ Traceback (most recent call last):
 | **阿西莫格鲁 / 约翰逊 / 罗宾逊** | 2024 诺贝尔经济学奖 | **制度宏观架构学家** | 包容性制度 vs 榨取性制度；《权力与进步》揭示技术协议精英垄断 vs 普惠分发 |
 | **莫基尔 / 阿吉翁 / 豪伊特** | 2025 诺贝尔经济学奖 | **开源知识与前沿破坏** | 莫基尔：有用知识与知识交流机制，本书以开源知识总线作类比；阿吉翁/豪伊特：创造性破坏及相关增长模型；接近技术前沿时，创新激励与知识传播约束可能改变，须在具体模型中比较，不由“闭源”标签推出必然撞墙 |
 | **霍尔 (Hall) & 伍德福德** | 2026 诺贝尔经济学奖 | **跨期消费与政策预期** | Hall（1978）在模型条件下推导消费边际效用的随机游走；预期管理与承诺是政策传导机制之一，不意味着临时补贴绝对无效或任何宽松必然失灵 |
+| **杰弗里·鲍克 & 苏珊·利·斯塔尔 (Bowker & Star)** | 1999 科学技术与社会 (STS) | **分类政治与底层信息基础设施** | 《分类及其后果》揭示每一套标准化分类与命名系统都伴随不可见劳动（Invisible Work），抬高某些群体视角而边缘化另一些；映射至第一组 **SP-RFC-002（命名规范与跨主体共同识别）**，约束理论不把统一命名默认视作中性的降本手段 |
+| **劳拉·德纳尔迪斯 (Laura DeNardis)** | 2009 互联网治理与国际政治 | **网络协议政治学与标准博弈** | 《协议政治》以 IPv4 枯竭与 IPv6 迁移迟滞为案例，论证“协议即政治”（Protocol is Politics），揭示标准制定中的权力与寻租博弈；映射至元层透镜及第六组 **SP-RFC-017（技术债核算与双轨迁移净负担）**，提供迁移僵局的实证基线 |
+| **亚历山大·加洛韦 & 尤金·萨克 (Galloway & Thacker) / 德勒兹** | 2004/2007 媒介与关键软件研究 | **去中心化网络控制图式** | 德勒兹（1990）提出“控制社会”；加洛韦等将 TCP/IP、DNS 与 RFC 规范形式化为去中心化网络环境下的控制图式；本书承接其“以协议为社会透镜”的谱系，增量在于推进至形式化公理（O1–O5 原语、三大公设、19 项条文）与跨时代历史制度分析 |
 
 ---
 

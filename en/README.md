@@ -1,5 +1,5 @@
 > **Translation record**
-> - Chinese source: `README.md` (sha256 `518ac519c27c3a68ea27977a54e166f107bbb9e8fc2367092d237184174e64b4`, 6490 bytes, 2026-11-09)
+> - Chinese source: `README.md` (sha256 `44d301bd525015a8ecc7b948f1ecdbe010762dee5450bd4fb333723836ed6d1d`, 11958 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
 > - Translation date: 2026-11-09
@@ -8,41 +8,68 @@
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
-# Socio-Protocolics
+# Socio-Protocolics · 社会系统协议学
 
-**English** | **[简体中文](../README.md)** &nbsp;|&nbsp; **[Online Documentation](https://nuoyazhizhou.github.io/socio-protocolics/en/)**
+> **An open cross-disciplinary research programme using distributed-systems, protocol-stack and multi-agent concepts to organise and examine questions of social coordination, institutional change and governance cost.**
 
-Project repository: [nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics).
+**English** | **[简体中文](../README.md)** &nbsp;|&nbsp; **[Online Documentation (EN)](https://nuoyazhizhou.github.io/socio-protocolics/en/)** · **[中文在线阅读网站](https://nuoyazhizhou.github.io/socio-protocolics/)**  
+Project repository: [nuoyazhizhou/socio-protocolics](https://github.com/nuoyazhizhou/socio-protocolics) | Release tag: **v11.2-r20261106** (see the [Revision Record](REVISION_RECORD.md); the unified theoretical version of the whitepaper remains v11.2)
 
-Release tag: **v11.2-r20261106**; see the [Revision Record](REVISION_RECORD.md). The [online reading site](https://nuoyazhizhou.github.io/socio-protocolics/) is generated from the same public Markdown and offers chapter-by-chapter reading, search and formula rendering; the unified whitepaper version remains v11.2.
+---
 
-The framework uses engineering concepts—protocols, interfaces, middleware, migration and feedback—to organise questions about social coordination. This repository holds the whitepaper, case articles written for a general readership, and open research questions ready to be taken up and tested.
+## What Does Socio-Protocolics Study?
 
-This is a research programme open to revision: engineering analogies help formulate questions, whereas historical explanations, mathematical propositions and empirical effects each require their own evidence.
+Large-scale human coordination relies on language, contracts, organisational approvals, legal enforcement and public rules. Institutional economics, historical sociology and political science—such as Mancur Olson on institutional sclerosis, Joseph Tainter on diminishing returns to complexity, Kydland and Prescott on dynamic inconsistency, North and Weingast on credible commitment, Charles Tilly on state formation, James C. Scott on state legibility, F. A. Hayek on distributed information, and Zeynep Tufekci on networked mobilisation—have built rich explanatory accounts, yet their conceptual interfaces often remain fragmented across disciplines. Meanwhile, distributed computing, operating systems and network engineering have developed a precise analytical vocabulary for high-concurrency coordination, privilege boundaries, fault recovery and legacy-system migration.
 
-The whitepaper is now in chapter-by-chapter review and incremental revision. Each round focuses on specific questions within a single chapter, reading the relevant main text, definitions and evidence cards as needed; the conclusions of a discussion and the actual edits are recorded separately. The current chapter, open questions and next item are collected in [Chapter Review Progress](ROADMAP.md#chapter-review); installing the chunking tool or passing the automated checks does not establish that a chapter has been reviewed.
+**Socio-Protocolics** aligns these systems-engineering primitives with mainstream social-science questions in a **Dual-Track Unified Monograph** (`L1 Vernacular layer` in plain systems-engineering language + `L2 Theoretical Spec` as a Multi-Agent Object Model), organising modelling, comparative case analysis and falsifiable testing around six core groups of questions:
+
+1. **Channel Capacity & Semantic Boundary (Group I)**: How do forms of expression and naming rules shape comprehension cost and coordination diffusion? Why do foundational language reforms—such as Hu Shi's written-vernacular Chinese movement (Hu Shi was a leading advocate of replacing classical literary Chinese with written vernacular Chinese in modern China)—lower reading and transmission barriers, whereas other standards stop at formal adoption on paper?
+2. **Intermediary Parasitism & Compatibility Decay (Group II)**: Does organisational or institutional middleware provide a genuine translation, authentication and coordination service, or has it evolved into an exclusive gate for non-productive rent extraction? When two approval steps are deleted, does the coordination work really get lighter?
+3. **Intertemporal Finality & Expectation Credibility (Group III)**: How do contract enforcement, breach recovery and record durability shape intertemporal finality, and in turn alter agents' expectations and long-term irreversible investments?
+4. **Privilege Ring Isolation & Split-Brain Contagion (Group IV)**: How can rule executors themselves be constrained through clear authority boundaries (the Ring-0/Ring-3 privilege-boundary analogy), independent review and remedy? How do resource cutoffs, conflicting multi-headed commands (split-brain) and exit barriers reshape strategic equilibria?
+5. **Transport Topology & Task Feedback (Group V)**: Why does large-scale informational mobilisation not automatically translate into sustained governance capacity? How do acknowledgement receipts (ACK), resource resupply and error-correction loops fit together?
+6. **Debt Accounting & Evolutionary Selection (Group VI)**: Faced with heavy historical institutional baggage (technical debt), how should the net migration burden of a full rewrite be compared against an incremental Strangler Fig bypass? Under finite budgets, when do parallel multi-branch userland trials and mature-feedback screening outperform a single top-down design?
+
+### Framework Structure and Epistemic Boundaries
+
+- **Three-tier modelling navigation (`3 → 6 → 19`)**: Built on **5 primitive objects** (`O1: Agent`, `O2: Protocol`, `O3: Expectation & Trust`, `O4: Middleware — intermediary interpretation layer`, `O5: Resource & Energy — physical hard constraints`), **3 first-order postulates (P1–P3)** organise **six core proposition groups (I–VI)** and **19 numbered SP-RFC items (001—019, where 003 is a semantic propagation application, 007 is a cross-group normative rule, and 019 is the Chapter 8 cross-group tooling and research norm, with 2 non-numbered materials retained)**. Tier arrows denote modelling dependency and clause attribution; they do not imply that all propositions have been strictly proved from the three postulates.
+- **An open research programme, not proven universal laws**: This is a research programme open to revision and counterexample testing. Engineering analogies help compress expression and formulate questions; they do not substitute for mathematical proof or assert social isomorphism. Citations of established physical results, formal conditional propositions, empirical mechanism hypotheses, accounting definitions and normative rules each require their own evidence. The Chapter 8 measurement indicators and reference code constitute **a conceptual formalisation and reference architecture, plus a future empirical research agenda**; they do not claim completed social measurement or predictive capability.
+- **Current review progress**: The [online reading site](https://nuoyazhizhou.github.io/socio-protocolics/en/) is generated from the same public Markdown and offers chapter-by-chapter reading, full-text search and formula rendering. The whitepaper is now in chapter-by-chapter review and incremental revision: each round focuses on specific questions within a single chapter, reading the relevant main text, definitions and evidence cards as needed, with discussion conclusions and actual edits recorded separately. The current chapter, open questions and next item are collected in [Chapter Review Progress](ROADMAP.md#chapter-review); installing the chunking tool or passing the automated checks does not establish that a chapter has been reviewed.
+
+**Search Keywords**: `Socio-Protocolics` · `社会系统协议学` · `Protocol Governance` · `Institutional Analysis & Institutional Change` · `Distributed Systems` · `Multi-Agent Systems` · `Middleware Rent-Seeking & Administrative Burden` · `Credible Commitment` · `Technical Debt & Incremental Migration`
+
+---
 
 ## Where to Start
 
-| What you want to see | Entry point |
-|---|---|
-| A concrete article open to criticism | [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) |
-| The article's sources and evidence boundaries | [Sources for the Hu Shi article](articles/hu-shih/source_notes.md) |
-| A second theme beyond language reform | [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md) |
-| Whether the engineering claims actually hold up | [OP-001: Comparison Draft of an Engineering Checklist and an Ordinary Process Checklist](research/OP-001/question_card.md) |
-| Accreditation access and organisational autonomy | [OP-002: When Access Absorbs, and When It Protects Independent Inquiry](research/OP-002/question_card.md) |
-| A small question to take up | [Open Questions and Research Designs](research/README.md) |
-| Review an agent-collaboration experiment | [PR-001: Access Cost and Collaboration Scale (Design Draft)](research/PR-001_agent_collaboration_scale.md) |
-| Check the evidence boundaries of the core cases | [Sources and Boundaries of the Core Cases](case_sources_and_boundaries.md) |
-| Understand the overall framework | [Whitepaper v11.2, the sole canonical text](whitepaper/chapter-01.md) |
-| Read or edit a single chapter of the whitepaper | [Reading, Previewing and Replacing by Tag](CHUNK_READING_GUIDE.md) |
-| Join this round of chapter-by-chapter review | [Chapter Order and Current Progress](ROADMAP.md#chapter-review) · [How to Give Chapter Feedback](CONTRIBUTING.md#chapter-feedback) |
-| A quick concept lookup | [Core Concepts CheatSheet](CHEATSHEET.md) |
-| Report an error or submit a revision | [How to Contribute](CONTRIBUTING.md) |
-| The sequence of work and current gaps | [Project Roadmap](ROADMAP.md) |
-| Which postulates and SP-RFCs an article cites, and what other themes lack | [3→6→19 Theme and Case Index](framework_and_case_index.md) |
-| Continue case studies across the six proposition groups | [Implementation Plan and First Tasks for Groups I—VI](research/topic_plan/README.md) |
-| How success and failure are compared | [Case Selection and Comparison Method](research/case_selection_and_comparison_method.md) |
+### Quick Entry by Reading Goal
+
+- **Start with concrete case essays (no theory prerequisite)**: Read [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) or [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md).
+- **10-minute core concept overview**: Browse the [Core Concepts CheatSheet](CHEATSHEET.md) and the [3→6→19 Theme and Case Index](framework_and_case_index.md).
+- **Read the whitepaper systematically**: Visit the [Online Reading Site (EN)](https://nuoyazhizhou.github.io/socio-protocolics/en/), or jump straight to [Whitepaper v11.2 (Chapter 1)](whitepaper/chapter-01.md) (with the Chinese SSOT remaining the sole canonical source).
+- **Spot errors, critique or pick up an open question**: Explore [Open Questions and Research Designs](research/README.md) or [How to Contribute](CONTRIBUTING.md) (endorsing the overall framework is not a condition of participation).
+
+### Complete Navigation Table
+
+| Category | What you want to see | Entry point |
+| --- | --- | --- |
+| **Cases & Evidence** | A concrete article open to criticism | [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) |
+| **Cases & Evidence** | The article's sources and evidence boundaries | [Sources for the Hu Shi article](articles/hu-shih/source_notes.md) |
+| **Cases & Evidence** | A second theme beyond language reform | [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md) |
+| **Cases & Evidence** | Check the evidence boundaries of the core cases | [Sources and Boundaries of the Core Cases](case_sources_and_boundaries.md) |
+| **Whitepaper & CheatSheet** | Understand the overall framework | [Whitepaper v11.2, phased English translation (Chapter 1)](whitepaper/chapter-01.md) |
+| **Whitepaper & CheatSheet** | A quick concept lookup | [Core Concepts CheatSheet](CHEATSHEET.md) |
+| **Whitepaper & CheatSheet** | Which postulates and SP-RFCs an article cites, and what other themes lack | [3→6→19 Theme and Case Index](framework_and_case_index.md) |
+| **Whitepaper & CheatSheet** | Read or edit a single chapter of the whitepaper | [Reading, Previewing and Replacing by Tag](CHUNK_READING_GUIDE.md) |
+| **Open Research** | A small question to take up | [Open Questions and Research Designs](research/README.md) |
+| **Open Research** | Whether the engineering claims actually hold up | [OP-001: Comparison Draft of an Engineering Checklist and an Ordinary Process Checklist](research/OP-001/question_card.md) |
+| **Open Research** | Accreditation access and organisational autonomy | [OP-002: When Access Absorbs, and When It Protects Independent Inquiry](research/OP-002/question_card.md) |
+| **Open Research** | Review an agent-collaboration experiment | [PR-001: Access Cost and Collaboration Scale (Design Draft)](research/PR-001_agent_collaboration_scale.md) |
+| **Open Research** | Continue case studies across the six proposition groups | [Implementation Plan and First Tasks for Groups I—VI](research/topic_plan/README.md) |
+| **Open Research** | How success and failure are compared | [Case Selection and Comparison Method](research/case_selection_and_comparison_method.md) |
+| **Review & Participation** | Join this round of chapter-by-chapter review | [Chapter Order and Current Progress](ROADMAP.md#chapter-review) · [How to Give Chapter Feedback](CONTRIBUTING.md#chapter-feedback) |
+| **Review & Participation** | Report an error or submit a revision | [How to Contribute](CONTRIBUTING.md) |
+| **Review & Participation** | The sequence of work and current gaps | [Project Roadmap](ROADMAP.md) |
 
 ## How Cases Feed Back into Theory
 
@@ -50,7 +77,7 @@ Each case distinguishes four things: what the external material says, which conc
 
 The [Open Research Library](research/README.md) welcomes independent researchers who choose their own materials and methods to support, refute or narrow specific sub-claims. The authors provide checkable questions and starting points for sources; findings are written back, according to the evidence, into candidate hypotheses and the whitepaper clauses that need revision; participation does not require endorsing the overall framework.
 
-The Hu Shi case—Hu Shi was a leading advocate of written vernacular Chinese in modern China—first raises questions of comprehension cost, formal adoption and sample diffusion; these remain local explanations awaiting comparison, and on this basis no postulate or any of the six core proposition groups has been declared corroborated. [Correspondence between the Case and the Whitepaper](articles/hu-shih/source_notes.md#correspondence-with-the-whitepaper) lists the specific boundaries.
+The Hu Shi case first raises questions of comprehension cost, formal adoption and sample diffusion; these remain local explanations awaiting comparison, and on this basis no postulate or any of the six core proposition groups has been declared corroborated. [Correspondence between the Case and the Whitepaper](articles/hu-shih/source_notes.md#correspondence-with-the-whitepaper) lists the specific boundaries.
 
 The intermediary theme already has a conceptual sample chapter (pending reconstruction with a real case), single-item registration materials from Zhejiang, partial cross-checks of foreign studies, and the OP-001 fictional problem set; it has not passed the real-case acceptance stage (T3). The unified requirements are set out in [Case-Driven Writing and Proposition Testing](CASE_DRIVEN_TESTING.md). The article distinguishes where the work goes, the service provided and the approval gate; OP-001 asks directly whether the engineering representation reduces misinterpretation relative to an ordinary cost checklist. No effect data from this project exist for either, nor has this been used to corroborate all the mechanisms of the second core proposition group.
 
@@ -63,8 +90,9 @@ Later work will bring together Chinese and foreign cases of adoption, obstructio
 核心概念速查手册_CheatSheet.md      Concept entry point, original path retained
 articles/                          Public cases, sources and brief revision notes
 research/                          Open questions and material specifications
-docs/                              Directory and publication conventions
-tools/                             Content checks, public-file check, history-free export
+docs/                              Framework index, writing conventions and publication rules
+en/                                English entry points, phased chapter translations, case and research counterparts
+tools/                             Content checks, public-file check, site builder and history-free export
 public-files.json                  Explicit per-file public manifest
 ```
 

@@ -1,5 +1,5 @@
-site_name: 社会系统协议学
-site_description: 白皮书、案例文章与可接手检验的开放研究问题
+site_name: 社会系统协议学 · Socio-Protocolics
+site_description: 社会系统协议学（Socio-Protocolics）：用分布式系统、协议栈与多智能体原语整理和分析社会协作、制度变迁、中介成本与技术债迁移的跨学科研究纲领（白皮书 v11.2、公开案例文章与开放研究问题）。
 site_url: https://nuoyazhizhou.github.io/socio-protocolics/
 repo_url: https://github.com/nuoyazhizhou/socio-protocolics
 repo_name: nuoyazhizhou/socio-protocolics
@@ -46,6 +46,9 @@ plugins:
         - locale: en
           name: English
           build: true
+          site_name: Socio-Protocolics
+          site_description: "Socio-Protocolics: an open cross-disciplinary research programme using distributed-systems, protocol-stack and multi-agent concepts to organise questions of social coordination, institutional change, middleware rent-seeking and technical-debt migration (Whitepaper v11.2, public case articles and open research questions)."
+          copyright: No unified open licence has been declared for this repository; citations and third-party materials retain their respective rights.
           nav:
             - Overview:
                 - Project introduction: en/README.md

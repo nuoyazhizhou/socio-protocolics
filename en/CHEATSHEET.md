@@ -1,5 +1,5 @@
 > **Translation record**
-> - Chinese source: `核心概念速查手册_CheatSheet.md` (sha256 `851ea57717be075f3eea80e0716ce4aae4c61d1fb35b3b3ad47aece08cab0ab1`, 39181 bytes, 2026-11-09)
+> - Chinese source: `核心概念速查手册_CheatSheet.md` (sha256 `067525cd297b95d6faa8a5ac8b2e5d349a933d369a84da8d96d00fc5317029c4`, 40602 bytes, 2026-11-09)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
 > - Translation version: `en-v0.1`
 > - Translation date: 2026-11-09
@@ -167,14 +167,26 @@ The four modes are comparison dimensions; they cannot exhaust institutional type
 
 *   **Rhetorical noise and effective-information ratio (PBR & SNR/PNR)**:
     $V(D)$ is the set of distinct tokens actually appearing in the original text after fixed tokenization and before pruning; $P(w)$ is its relative frequency in the original text, and the entropy denominator uses $\log_2|V(D)|$, not the size of an external total word list. The entropy of a single token type is recorded as 0, and an empty document is recorded as missing. PBR/PNR use the two-tuple returned by the same document under the same configuration; external imports must be recomputed or independently checked, and a legal scalar range is not equivalent to a verified pairing or source.
-    $$\text{PBR}(D) = 1 - \frac{\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))}{\text{TokenCount}(D)}, \quad \text{PNR}(D) = \frac{1 - \text{PBR}(D)}{\text{PBR}(D) + \epsilon} \cdot H_{\text{norm}}(D)$$
+
+    $$
+    \text{PBR}(D) = 1 - \frac{\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))}{\text{TokenCount}(D)}, \quad \text{PNR}(D) = \frac{1 - \text{PBR}(D)}{\text{PBR}(D) + \epsilon} \cdot H_{\text{norm}}(D)
+    $$
+
     TokenCount is synonymous with SSOT §8.3.2: tokenize the original text once, and after pruning count the retained tokens directly. The unweighted simple form without entropy $SNR=\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))/(\text{TokenCount}(D)-\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding})))$ does not report a finite value when the denominator is zero; an empty document counts as missing data. SNR is a text-length proxy, while PNR additionally contains an entropy weight and a stability term; the two are different, and neither is equal to a physical signal-to-noise ratio. Save the original PNR value and ε and run a sensitivity analysis for near-zero padding; logarithm, truncation and scaling are separately named research candidate variables, are not uniformly enforced, and do not directly replace the engine's raw input or carry over the original thresholds. $PBR>0.65$ and $PNR<0.20$ are one of the yellow-zone conditions, and $PBR>0.85$ is a direct red-zone trigger; both are uncalibrated illustrative thresholds, and real-world channel deafness is not judged from them.
 *   **Language-bus perplexity–length proxy experiment (Exploratory Perplexity-Length Benchmark)**:
-    $$\text{Impedance\_Ratio} = \frac{\sum \text{PPL}(\text{Classical}) \times \text{Tokens}(\text{Classical})}{\sum \text{PPL}(\text{Vernacular}) \times \text{Tokens}(\text{Vernacular})}$$
+
+    $$
+    \text{Impedance\_Ratio} = \frac{\sum \text{PPL}(\text{Classical}) \times \text{Tokens}(\text{Classical})}{\sum \text{PPL}(\text{Vernacular}) \times \text{Tokens}(\text{Vernacular})}
+    $$
+
     An exploratory benchmark experiment design awaiting execution: compare the perplexity × Token-length product of Li Shanlan's classical-Chinese translation with that of vernacular textbooks; this product is not equal to total cross-entropy or human comprehension cost, and cross-genre comparison must control for propositional equivalence and undergo independent behavioural testing (it is not treated as a measured conclusion until a complete measurement record has been provided).
-* **Hierarchical adjacent-drift summary and end-to-end independent validation (Hierarchical Drift & End-to-End Validation)**:
-    $$d_i=1-\cos(\mathbf v(T_{i-1}),\mathbf v(T_i)),\quad p_{local}=\prod_i(1-d_i).$$ This signed similarity product is not a traffic retention rate.
-    If independent traffic measurement gives a loss of 0.32 at each of four layers, only the serial no-recovery model gives $0.68^4\approx21.4\%$. Semantic distance cannot be treated directly as traffic loss; the start/end semantics and the actual task outcome must be tested independently.
+*   **Hierarchical adjacent-drift summary and end-to-end independent validation (Hierarchical Drift & End-to-End Validation)**:
+
+    $$
+    d_i=1-\cos(\mathbf v(T_{i-1}),\mathbf v(T_i)),\quad p_{local}=\prod_i(1-d_i).
+    $$
+
+    This signed similarity product is not a traffic retention rate. If independent traffic measurement gives a loss of 0.32 at each of four layers, only the serial no-recovery model gives $0.68^4\approx21.4\%$. Semantic distance cannot be treated directly as traffic loss; the start/end semantics and the actual task outcome must be tested independently.
 *   **Carbon-Silicon Ontological Boundary Principle (Carbon-Silicon Ontological Principle)**:
     Human nodes are adaptive game-playing Agents with private objective functions; whether equilibrium, dynamic convergence or deadlock occurs requires incentive, update and resource models to be given separately, and cannot be derived directly from "rationality" and "malicious calls".
 
@@ -255,6 +267,9 @@ When this theory needs to be retrieved in a later session, the following short p
 | **Acemoglu / Johnson / Robinson** | 2024 Nobel Prize in Economics | **Macro-architects of institutions** | Inclusive vs extractive institutions; *Power and Progress* sets elite monopoly over technical protocols against broad-based distribution |
 | **Mokyr / Aghion / Howitt** | 2025 Nobel Prize in Economics | **Open-source knowledge and frontier disruption** | Mokyr: useful knowledge and mechanisms of knowledge exchange, which this book takes as an open-source knowledge bus analogy; Aghion/Howitt: creative destruction and related growth models; near the technological frontier, innovation incentives and knowledge-dissemination constraints may change and must be compared in a specific model, and inevitably hitting a wall cannot be derived from the "closed-source" label |
 | **Hall (Hall) & Woodford** | 2026 Nobel Prize in Economics | **Intertemporal consumption and policy expectations** | Hall (1978) derives, under model conditions, the random walk of the marginal utility of consumption; expectation management and commitment are one of the policy transmission mechanisms, and this does not mean that temporary subsidies are absolutely ineffective or that any easing necessarily fails |
+| **Geoffrey Bowker & Susan Leigh Star (Bowker & Star)** | 1999 Science and Technology Studies (STS) | **Classification politics and underlying information infrastructure** | *Sorting Things Out* demonstrates that every standardised system of classification and naming is accompanied by invisible work, elevating certain group perspectives while marginalising others; mapped to Group I **SP-RFC-002 (Naming Conventions and Inter-Subject Common Identification)**, constraining the theory from treating unified naming as a default neutral cost-reduction tool |
+| **Laura DeNardis (Laura DeNardis)** | 2009 Internet governance and international politics | **Internet protocol politics and standard battles** | *Protocol Politics* takes IPv4 exhaustion and IPv6 migration inertia as cases to argue that "protocol is politics", revealing power and rent-seeking contests in standards-setting; mapped to the meta-layer lens and Group VI **SP-RFC-017 (Technical Debt Accounting and Net Dual-Track Migration Burden)**, providing an empirical baseline for migration impasses |
+| **Alexander Galloway & Eugene Thacker (Galloway & Thacker) / Deleuze** | 2004/2007 media and critical software studies | **Diagrams of decentralized network control** | Deleuze (1990) proposed "societies of control"; Galloway et al. formalized TCP/IP, DNS and RFC specifications as control diagrams under decentralized networks; this book inherits this lineage of "protocol as a social lens", with its incremental contribution lying in advancing to formal axioms (O1–O5 primitives, 3 postulates, 19 clauses) and cross-epoch historical institutional analysis |
 
 ---
 

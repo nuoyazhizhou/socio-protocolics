@@ -148,7 +148,13 @@ One may study dependency-tree pruning or a lexicon proxy, but it must be validat
 Define the padding bloat ratio:
 $$\text{PBR}(D) = 1 - \frac{\text{TokenCount}(\text{Prune}(D,\mathcal L_{padding}))}{\text{TokenCount}(D)}$$
 After the original document is tokenized and fixed, and before pruning, let $V=V(D)$ be the set of distinct tokens that actually appear in the document, $|V|$ its size, and $P(w)$ the occurrence count of token $w$ divided by the total original token count; this is not an external total vocabulary nor the post-pruning vocabulary. Combining this word-frequency distribution, compute the document's normalized Shannon entropy:
-$$H_{\text{norm}}(D)=-\frac{\sum_{w\in V}P(w)\log_2P(w)}{\log_2|V|}\quad(|V|>1);\qquad H_{\text{norm}}(D)=0\quad(|V|=1).$$ Only a non-empty document can be computed; an empty document is treated as missing data. The lexicon-count reference implementation is not equivalent to lossless semantic pruning.
+
+$$
+H_{\text{norm}}(D)=-\frac{\sum_{w\in V}P(w)\log_2P(w)}{\log_2|V|}\quad(|V|>1);\qquad H_{\text{norm}}(D)=0\quad(|V|=1).
+$$
+
+Only a non-empty document can be computed; an empty document is treated as missing data. The lexicon-count reference implementation is not equivalent to lossless semantic pruning.
+
 Payload-to-Noise Ratio ($\text{PNR}$):
 $$\text{PNR}(D) = \frac{1 - \text{PBR}(D)}{\text{PBR}(D) + \epsilon} \cdot H_{\text{norm}}(D)$$
 where the stabilising term $\epsilon=1\times10^{-6}$ is used only in the PNR denominator and does not change the PBR definition.
@@ -161,8 +167,12 @@ where the stabilising term $\epsilon=1\times10^{-6}$ is used only in the PNR den
 Let the sample set of userland inbound demands be $\mathcal{U} = \{u_1, u_2, \dots, u_M\}$ (covering real civil demands such as labour-capital disputes, contract performance, property-right confirmation, and logistics access).
 Let the kernel's exported syscall interface table be $\mathcal{K} = \{k_1, k_2, \dots, k_N\}$ (constitution, statutes, formal administrative-approval entries).
 Compute the minimum manifold projection residual of the demand vectors onto the legal interfaces (Projection Residual):
-$$\bar d_{\text{norm}}=\frac1M\sum_{i=1}^M\min_j\frac{1-\cos(\vec E(u_i),\vec E(k_j))}{2}.$$ Here the normalised cosine distance, consistent with the reference code, is used explicitly. Both sample sets must be non-empty, lie in the same vector space, and have non-zero norms; missing or invalid inputs are not scored.
-Define the rejection rate in combination with the (stratified) application records. One must first state the conventions for application attempts, successful registration, procedural non-acceptance, substantive rejection, withdrawal, and overdue non-handling; the missing mechanism for unregistered parties is estimated separately.
+
+$$
+\bar d_{\text{norm}}=\frac1M\sum_{i=1}^M\min_j\frac{1-\cos(\vec E(u_i),\vec E(k_j))}{2}.
+$$
+
+Here the normalised cosine distance, consistent with the reference code, is used explicitly. Both sample sets must be non-empty, lie in the same vector space, and have non-zero norms; missing or invalid inputs are not scored. Define the rejection rate in combination with the (stratified) application records. One must first state the conventions for application attempts, successful registration, procedural non-acceptance, substantive rejection, withdrawal, and overdue non-handling; the missing mechanism for unregistered parties is estimated separately.
 $$\text{SIR} = \alpha \cdot \bar{d}_{\text{norm}}(\mathcal{U}, \mathcal{K}) + (1 - \alpha) \cdot R_{\text{drop}} \in [0, 1]$$
 where $\bar{d}_{\text{norm}}$ is the average normalised semantic distance between demands and existing legal interfaces, $R_{\text{drop}}$ is the actual case-filing / approval rejection rate, and the weight $\alpha \in [0, 1]$ (baseline $\alpha=0.50$). This decoupled weighted form avoids the measurement loophole that "when a demand coincides literally with a statute ($d=0$) yet meets a 100% rejection, the multiplicative impedance is zeroed out".
 One should record separately the application-registration attempts, successful registrations, procedural non-acceptances, substantive rejections, withdrawals, and overdue non-handlings, and state the sample coverage and the estimation method for unrecorded parties. The exploratory rejection rate must be stratified by ex-ante verifiable application validity, dispute type, and procedural stage, and one cannot equate lawfully rejecting an invalid application with institutional blockage. The semantic distance and the stratified rejection rate may be retained as independent observational features; before external-validity testing is completed, one must not interpret their weighted value as the closing of a legal access channel or the inevitable emergence of a shadow economy.
