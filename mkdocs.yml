@@ -123,6 +123,15 @@ nav:
       - Bilingual conventions: en/BILINGUAL_CONVENTIONS.md
       - Chunk reading and editing: en/CHUNK_READING_GUIDE.md
       - Publication and site maintenance: en/PUBLICATION_CONVENTIONS.md
+      - Chapter discussion roadmap: en/ROADMAP.md
+      - Case sources and boundaries: en/case_sources_and_boundaries.md
+  - English (articles):
+      - Articles overview & purpose: en/articles/README.md
+      - Hu Shi · research essay: en/articles/hu-shih/how_to_evaluate_hu_shis_works.md
+      - Hu Shi · Zhihu candidate draft: en/articles/hu-shih/zhihu_release_draft.md
+      - Hu Shi · sources & boundaries: en/articles/hu-shih/source_notes.md
+      - Intermediary · concept sample essay: en/articles/intermediary/two_approvals_removed.md
+      - Intermediary · sources & boundaries: en/articles/intermediary/source_notes.md
   - English (research library):
       - Framework & case index: en/framework_and_case_index.md
       - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
