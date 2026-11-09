@@ -32,7 +32,7 @@
 
 **Note on claim identities.** The claim-identity label in this chapter (RFC 016: mechanism analogy and empirical bridging) is a descriptive phrase at the grain of the source sentence (per R7 of the term ledger), not a taxonomy of claim identities. This translation keeps the five canonical claim identities — `postulate`, `conditional proposition`, `mechanism hypothesis`, `accounting definition`, `normative objective` — distinct, and renders the finer descriptive label by reusing the locked class word. The label is not upgraded into a proven conclusion; the negation guardrails in the source (cannot / does not / are not auto-derived / one cannot predict) are preserved.
 
-**Convention on link re-pointing.** Every in-page anchor that lives in another chapter (`#rfc-evidence-XXX`) is re-pointed to the Chinese source `../../社会系统协议学白皮书.md#…` so the build does not report a missing anchor; these resolve once the corresponding English chapter lands. The repository-relative link `docs/核心案例来源与边界.md` inside the verbatim case block 6.1.2-B is re-pointed to `../../docs/核心案例来源与边界.md` to resolve under the nested English page. Anchors that live in this file (`#chapter-6`, `#sp-rfc-016`, `#sec-6-1`, `#sec-6-1-1`, `#sec-6-1-2`) remain same-page links.
+**Convention on cross-chapter links.** In-page anchors that live in another English chapter or the appendix (#rfc-evidence-XXX, #sp-rfc-XXX) are linked directly to their corresponding English pages, maintaining full link closure within the English edition. Anchors that live in this file remain same-page links.
 
 ---
 

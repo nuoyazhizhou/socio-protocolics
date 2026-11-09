@@ -27,7 +27,7 @@
 | 大集市（Bazaar） | Bazaar (mode) | §7.2 analogy |
 | 大教堂（Cathedral） | Cathedral (mode) | §7.2 analogy |
 
-**Convention on link re-pointing.** Every in-page anchor that lives in another chapter (`#rfc-evidence-XXX`, `#sp-rfc-004`) is re-pointed to the Chinese source `../../社会系统协议学白皮书.md#…` so the build does not report a missing anchor; these resolve once the corresponding English chapter lands. Anchors that live in this file (`#chapter-7`, `#sp-rfc-017`, `#sec-7-1`, `#sec-7-2`, `#sec-7-3`, `#sec-7-3-1`, `#sec-7-3-2`) remain same-page links.
+**Convention on cross-chapter links.** In-page anchors that live in another English chapter or the appendix (#rfc-evidence-XXX, #sp-rfc-XXX) are linked directly to their corresponding English pages, maintaining full link closure within the English edition. Anchors that live in this file remain same-page links.
 
 <!-- SP:BEGIN chapter-07 -->
 

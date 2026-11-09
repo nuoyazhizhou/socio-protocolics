@@ -34,7 +34,7 @@
 
 **Note on claim identities.** The 19 claim-identity labels in this appendix are descriptive phrases at the grain of the source sentence (per R7 of the term ledger), not a taxonomy of claim identities. This translation keeps the five canonical claim identities — `postulate`, `conditional proposition`, `mechanism hypothesis`, `accounting definition`, `normative objective` — distinct, and renders the finer descriptive labels by reusing the locked class words (conditional model, social bridging, empirical bridging, normative rule, research norm, semantic application, citation of established physical results, and so on). The labels are not upgraded into proven conclusions.
 
-**Convention on link re-pointing.** Every in-page anchor that lives in another chapter (`#sp-rfc-XXX`, `#sec-X-Y`) is re-pointed to the Chinese source `../../社会系统协议学白皮书.md#…` so the build does not report a missing anchor; these resolve once the corresponding English chapter lands. Anchors that live in this file (`#rfc-directory`, `#rfc-evidence-cards`, `#rfc-evidence-001`…`#rfc-evidence-019`) remain same-page links.
+**Convention on cross-chapter links.** In-page anchors that live in another English chapter or the appendix (#rfc-evidence-XXX, #sp-rfc-XXX) are linked directly to their corresponding English pages, maintaining full link closure within the English edition. Anchors that live in this file remain same-page links.
 
 ---
 

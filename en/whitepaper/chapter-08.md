@@ -35,7 +35,7 @@
 | 完整数值化预登记样例 | full numerical pre-registration worked example | §8.5.4 (B-A / B-B) |
 | 成对可区分预测对照 | paired discriminating-prediction comparison | §8.5.4 (C1 / C2 / C3) |
 
-**Convention on link re-pointing.** Every in-page anchor that lives in another chapter (`#rfc-evidence-XXX`, `#sp-rfc-XXX`) is re-pointed to the Chinese source `../../社会系统协议学白皮书.md#…` so the build does not report a missing anchor; these resolve once the corresponding English chapter lands. Anchors that live in this file (`#chapter-8`, `#sp-rfc-019`, `#sec-8-1`, `#sec-8-2`, `#sec-8-3`, `#sec-8-4`, `#sec-8-5`, `#sec-8-5-4`, `#sec-8-6`) remain same-page links.
+**Convention on cross-chapter links.** In-page anchors that live in another English chapter or the appendix (#rfc-evidence-XXX, #sp-rfc-XXX) are linked directly to their corresponding English pages, maintaining full link closure within the English edition. Anchors that live in this file remain same-page links.
 
 **Note on coordinate systems (section-local numbering).** The `L1` / `L2` / `L3` in §8.5.4 name three pre-registered DGP assumptions of that section — flow topology, the loss-correlation mechanism, and estimation-error covariance — and are local to it. They are not the L1/L2/L3 twin-track writing coordinate of Chapter 1, nor the Level 0/1/2 orthogonal pyramid, nor the L0–L5 functional stack: the three book-wide coordinate systems declared in `en/GLOSSARY.md` §3 and Chapter 1 §1.1 do not map onto one another by number, and this section-local numbering does not map onto any of them. The chapter keeps the three layers separate and states that they must not be collapsed into one.
 
