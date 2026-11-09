@@ -1,0 +1,116 @@
+> **Translation record**
+> - Chinese source: `research/主题计划/I_信道容量与语义边界.md` (sha256 `a369a1dc4518a765cfb7c2d3d18bbce5d9e1572334e392a068ed84d92140f853`, `15290` bytes, 2026-11-09)
+> - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
+> - Translation version: `en-v0.1`
+> - Translation date: 2026-11-09
+> - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
+> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Status: complete translation
+> - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
+
+# Group I — Channel Capacity & Semantic Boundary: Expression, Naming and Common Understanding
+
+Version: Plan v0.6 | Date: 2026-10-23 | Chinese original; English translation pending.
+
+Status: Chinese and foreign candidates, research cards and partial evidence are listed; verification is not yet complete. The existing Hu Shi exploratory article, the H01—H03 research cards and the Second-Simplification evidence starting point do not mean that RFC-001 and 002 are verified, nor that the Hu Shi article has passed the new item-by-item T3 acceptance. This document unifies the previously scattered thematic entries; the cross-case method and the existing source reading scope remain in [the case selection and comparison method](../case_selection_and_comparison_method.md), the existing source scope returns to each material table, and the specific scopes of this round's 002 initial check and the Second-Simplification addition are respectively in the evidence tables below, not expanded into effect verification.
+
+## Real-Case and Proposition-Testing Card (required reading before drafting and continuing)
+
+Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIVEN_TESTING.md). A retrospective study of a known historical outcome is not packaged as an ex-ante prediction; 001 and 002 each submit their evidence and verdict, and belonging to the same group does not substitute for testing each separately.
+
+| Field | Current registration of this group |
+|---|---|
+| Master-source location and identity | v11.2 Group I, [RFC-001 §2.1](../../../社会系统协议学白皮书.md#sp-rfc-001), [RFC-002 §2.2](../../../社会系统协议学白皮书.md#sp-rfc-002). 001's physical-capacity theorem, the in-assumption throughput algebra, and the to-be-calibrated social bridging are kept separate; 002's naming—identification—coordination relation is tested as an empirical mechanism, not established by an interface analogy |
+| Specific sub-claims | 001: after fixing the target reader, proposition content and task, whether making expression explicit changes comprehension accuracy, time spent and errors; comprehension outcome cannot directly substitute for collaboration throughput. 002: whether a name with clear content and boundaries is accurately cited by other participants and helps organise disagreement, or instead produces ambiguity; this is a local application hypothesis and does not presuppose a positive gain |
+| Main case and scope | 001 first uses Hu Shi's 1917—1920 advocacy and a specific educational entry as a historical thread, organising H01 material around the specific passages of the preface to *Ji weiji shiji* (《代微积拾级》). 002 plans to trace the generalisation, response and differences of programmes by Hu Shi and Chen Duxiu. The two threads each list their sources; the textbook illustration is not counted as a measurement of the effect of the Hu Shi movement |
+| Evidence chain and gaps | 001 already has the author's original text, the location of directives and textual illustrations, but lacks comparable textbooks, actual use and independent comprehension-effect data; 002 has delivered the [naming-and-response initial table](../cases/CN-HU_naming_and_response_mapping.md), checking the Eight Points, the three-programme programme and subsequent generalisations; complete sentence-by-sentence coding, first-print proofreading and coordination effect are still missing. The thread is already written into the [Zhihu candidate draft](../../../articles/hu-shih/知乎发布稿.md) §4 4.4; the research draft v0.5 still does not expand 002 |
+| Real counter-material | The existence of *Ji weiji shiji* constrains the absolute claim that "without modern vernacular, higher mathematics could not be translated"; it does not establish relative efficiency; the vernacular's existing tradition constrains "no one invested before formal recognition". The Second Simplification is formally registered as a counter-test candidate against 001's over-strong simplification extrapolation; its withdrawal and the chip rationale do not constitute a comprehension effect — see the [supplementary handling table](../cases/CN-S2_evidence_starting_point.md). 002 already has an initial check of variant names and content differences; records of misreading, behaviour and collaboration without a unified name still need supplementing |
+| Revision conditions | 001: if the equivalence check fails, redo the material; if a sufficiently precise qualifying comparison rules out the predefined comprehension gain, or the gain comes only from extra hints / background explanation, then reject or narrow that local prediction. 002: separate the necessity of a unified word-form N from the gain G of a relative alternative; collaboration without a unified word-form only rejects N. G requires an independent indicator, a comparison, a minimum improvement and an error requirement; only after a qualifying comparison rules out the predefined improvement is that local prediction rejected; before parameters are locked, one must not claim T2 is passed |
+| Ordinary-explanation comparison | 001 is compared with language-understanding, cognitive-load and educational-background explanations; 002 is compared with conceptual history, issue-framing, journal organisation and interaction-network explanations. When an engineering phrasing has the same meaning it is registered as a restatement, not forced into a gain |
+| Theory write-back and stage | For now, do not revise the whitepaper. First complete 001's equivalence material and 002's small-scale response table, and item by item submit the receipt "sub-claim — supporting / contrary evidence — competing explanation — verdict — intended revision position"; if there is no new theoretical addition, write the reason for not revising. The existing Hu Shi article is pending re-review by the new standard; having a main text and endnotes does not automatically count as T3-passed |
+
+## Core Questions and Cross-Clauses
+
+001 asks "who reads what, completes what task, at what cost"; 002 asks "whether different people are identifying the same problem, and how names and definitions participate in communication". Fewer characters does not mean faster understanding; citing the same word does not mean agreeing with the same claim; common identification also does not mean coordinated action has already happened.
+
+P1 supplies a finite resource background, P2 preserves the reader's and author's choices, and P3 is used for the separately listed recognition—expectation—action candidate mechanism. [RFC-014](../../../社会系统协议学白皮书.md#sp-rfc-014) is only a cross-entry for educational authorisation; formal admission is not naming, nor a comprehension gain. 007's public understandability is a normative objective and does not follow from a physical theorem. Physical channel capacity cannot directly give a social collaboration radius or a number of years of industrialisation.
+
+## The Second-Simplification Main Thread: Task Distinction and Disambiguation Burden
+
+The Second Simplification primarily studies "whether the different values that the original task needed to preserve are merged, and the cost of restoring the distinguishing information", and does not make the chip cost the main thread of 001. First verify the 1977 published draft character table and the specific task, distinguishing heteromorphically merged characters, shape-similar characters, and different-source many-to-one mappings. Word groups, context or extra fields may disambiguate, or may be insufficient; one cannot directly write a formal reverse non-uniqueness as an already-increased overall reading cost.
+
+The first deliverable is the per-case mapping and restricted-context task table listed in [Second-Simplification Table v0.4](../cases/CN-S2_evidence_starting_point.md), while also checking preserved distinctions, already-low-cost disambiguation and undamaged tasks. It is called a candidate mechanism of "shifting the disambiguation burden to word groups / context", not "becoming an alphabetic language"; general simplified/traditional examples do not substitute for the Second-Simplification original-table check. At present there is no such table or effect data.
+
+## Cross-Generation Tracing and the Other Task of Historical Reading
+
+Per [Second-Simplification Table v0.4](../cases/CN-S2_evidence_starting_point.md), separately list two outcomes: "whether the new record can restore the old writing", and "whether readers of the new system can learn and read old documents". The former checks originals, logs and ground truth; the latter checks glyphs, classical-Chinese / domain training and tools; the two cannot substitute for each other. Surnames serve only as a conditional example of record migration; without per-person archives one must not judge ancestry or Second-Simplification causation.
+
+The Korean *Silok* translation and the Han-Nom document-preservation project serve as comparative threads on obstacles and remedies; the specific reading scope is in the material table; do not carry over unverified policy numbers, and do not presuppose a Korean / Vietnamese "trap" or that historical research has become impossible. Cross-register with 017's migration accounting on original preservation, training, translation, correction and cross-generation bearers; for now do not revise the whitepaper. The next deliverable can be a per-case mapping table plus original / log-preservation fields, rather than first writing a conclusion of permanent amnesia.
+
+## Four Chinese and Foreign Candidates and Source Starting Points
+
+The table below follows the existing candidate registration and adds no new effect verification. They mainly serve 001 and language-rule migration; they cannot be treated as 002's four test cases merely because they share the language theme. Originals, actual reading scope and unknowns return to the [existing material table](../case_selection_and_comparison_method.md).
+
+| ID / object | Current material and the narrow judgement it can support | Still missing and comparison boundary |
+|---|---|---|
+| CN-HU Hu Shi and the vernacular movement, focusing first on 1917—1920 | The [article and sources](../../../articles/hu-shih/来源说明.md) list the advocacy, the author's self-account and a specific grade-level educational arrangement | Textbooks, classroom use, other actors' behaviour and comprehension effect still need supplementing; this is not a nationwide synchronous migration or a 001 causal verification |
+| CN-S2 Second-Simplification character draft, 1977—1986 | [Evidence Table v0.4](../cases/CN-S2_evidence_starting_point.md) mainly checks the disambiguation burden after task-relevant distinctions are merged many-to-one; the formal withdrawal, the chip rationale and the handling of quantified clues are listed separately | A counter-test candidate against 001's over-strong extrapolation, not a negative control or proof that the Second-Simplification cognitive effect is established; unverified numbers, surname causation and the Korean extrapolation are not evidence |
+| US-PW U.S. *Plain Writing Act*, from 2010 | The [enacted bill text](https://www.govinfo.gov/content/pkg/PLAW-111publ274/html/PLAW-111publ274.htm), with the provisions and reading scope registered in the existing material table | Legislation does not equal improved comprehension; actual documents, audience and effect records still need supplementing |
+| US-S06 U.S. 1906 simplified-spelling controversy | [Contemporaneous newspaper OCR](https://oregonnews.uoregon.edu/lccn/sn83025138/1906-12-15/ed-1/seq-4/ocr/) is an existing lead on the withdrawal report | Images, formal directives and congressional records still need cross-checking; do not upgrade one report into the failure of all spelling change |
+
+The 1956 Chinese-character simplification is retained as a nearby candidate in the same domain; the original organisation is incomplete, and success or failure is not predetermined. The four cells are for exploration; they do not constitute a matched experiment, a success-rate estimate or an independent repeated verification.
+
+## RFC-002 Standalone Task: From General Claims to Cross-Author Responses
+
+The source entries to be organised are Hu Shi's [*Wenxue gailiang chuyi* (《文学改良刍议》)](https://zh.wikisource.org/wiki/文學改良芻議), Chen Duxiu's [*Wenxue geming lun* (《文学革命论》)](https://zh.wikisource.org/wiki/文學革命論), and Hu Shi's [*Jianshe de wenxue geming lun* (《建设的文学革命论》)](https://zh.wikisource.org/wiki/建設的文學革命論). This round has already checked, in the [naming-and-response comparison table](../cases/CN-HU_naming_and_response_mapping.md), the relevant transcriptions, the Eight Points and the three-programme programme; the first print has not been proofread, no "verified coordination gain" conclusion is added, and no claim is made that the term was first coined by Hu Shi.
+
+First record name, original sentence and boundary item by item, then record which specific item another author explicitly responded to, what was endorsed or rewritten, and where correspondence fails; do not treat the Eight Points, the three-programme programme and subsequent generalisations as exactly the same normative version. A cross-author response can only first support the existence of an identifiable discussion relation, and cannot attribute naming merely from the order of appearance.
+
+The initial content and response comparison has been delivered; the next deliverable is the complete three-text coding and gap table, with fields: `source_id, author, date, version / volume-issue / page, original-sentence location, name, definition / programme, cited object, endorse / oppose / rewrite, same-name-different-meaning, behaviour record, competing explanation, source chain, unknown`. Quantity is not a commitment to sample sufficiency; later one must supplement opposition or misreading records and the journal / interaction conditions, avoiding selecting only mutually supporting texts.
+
+The pursuit of the status of "literary orthodoxy" is still taken up by H02, and school admission and textbook implementation by H03; neither can substitute for 002's naming effect. 002 has no independently numbered problem card or complete case pack yet; maintain the task in this section for now, and do not divert the numbers of H01—H03, OP-001 or PR-001.
+
+## 002 Rejection Conditions and Three-Process Boundary
+
+Adoption may precede formal recognition, and identification may be achieved through explicit mapping of different names; name, recognition and adoption should be recorded in separate columns, and specific institutions and feedback tracked, without presupposing a fixed one-way order. That the titles "reform / revolution" differ only shows a label difference, and does not first assume complete co-reference or that full convergence has occurred; identical names also do not presuppose content equivalence.
+
+The [002 material table](../cases/CN-HU_naming_and_response_mapping.md) separately defines N (necessity of a unified word-form) and G (net gain in a specific task). Increasing opposition may mean the problem has been clarified, and the number of disagreements cannot be directly used as an indicator of coordination failure. When historical comparison cannot identify a gain, report insufficiency; do not write an unverified result as a verified zero effect. The three-text initial check shows Hu Shi's Eight Points also contain intellectual and social orientation, and one cannot write both sides as purely formal versus purely political.
+
+## First Task per RFC and the Division of Labour with Research Cards
+
+| Clause / related task | First deliverable | Current status |
+|---|---|---|
+| 001 Comprehension cost | [H01](../H01_expression_and_understanding_cost.md): the proposition list of a real text, symbol / term basis, equivalence rewriting, information addition/removal and a domain-check opinion | Design draft; no qualified equivalence question bank or experimental result yet; the original illustration does not count as a controlled experiment |
+| 002 Naming and common identification | [Initial comparison delivered](../cases/CN-HU_naming_and_response_mapping.md); continue to supplement complete item-by-item coding, counter-material and behaviour records | T1 material advancing; no complete T2 comparison or coordination effect yet; cross-author response does not equal cost reduction |
+| P3 cross: recognition and investment | [H02](../H02_formal_status_and_adoption.md): sources, recognition / investment coding and counter-records for a small amount of contemporaneous material | Material research draft; does not claim 002's effect |
+| 014 cross: rules and migration | [H03](../H03_rules_and_actual_migration.md): check of directives, textbooks and actual-use scope | Original starting point already exists; later chain not complete; comprehension gain is not inferred from provisions |
+
+## This Round's Deliverable on the Hu Shi Article v0.5
+
+Added [§7 Comparison of Objective and Current Deliverable](../../../articles/hu-shih/如何评价胡适的作品.md#reform-scope): separately listing the implementation arrangements and evidence boundaries of Hu Shi 1918/1953, Lu Xun 1934 and Qian Xuantong 1918, with the Second Simplification providing only a question lead on objective trade-offs. New sources and item-by-item receipts are in the [source note](../../../articles/hu-shih/来源说明.md); do not rank the figures' slogans into a restraint ranking, and do not use later texts as evidence of early motives.
+
+Bundling may increase dependence, or may save accompanying conversion; "extended to after 1927 and causing a talent shortage" has no commensurate material and is left only as a research direction. The 002 paragraphs, the complete real process and the effect test are still not finished; this article addition does not automatically pass T3, nor does it revise the master source.
+
+## Additional Deliverable on the Zhihu Dissemination Candidate Draft v0.1
+
+Following the same evidence floor, a separate [Zhihu draft](../../../articles/hu-shih/知乎发布稿.md) was written, retaining the seven-section dissemination skeleton. The real process mainly adds the deletion-and-collaboration of the four prefaces to *Changshi ji* (《尝试集》); 002's initial textual relation enters §4 4.4 and is not passed off as a naming effect. Material sources, contrary observations, competing explanations, observations that would change the verdict, and reasons for not revising the theory are in the [shared receipt](../../../articles/hu-shih/来源说明.md#zhihu-receipt).
+
+The research draft v0.5 and the desktop v0.6 are each retained; the new draft is not called the "final golden version" in which all textual research is complete. The Second-Simplification at the end of the text is only the question entry for the next article; its specific mapping, disambiguation / identification effect and cross-generation record chain still need to be supplemented. The dissemination draft has not been released externally, and there is no reader-effect or T3-acceptance conclusion. Chinese first, English translation pending.
+
+## Article Revision Order and Acceptance
+
+1. Re-read this card and the Hu Shi main text and source note; separate the four threads of "comprehension cost", "naming / definition", "status recognition" and "actual adoption".
+2. First supplement 001 material checking and the 002 response table, forming real counter-material / sourced competing explanations; gaps must not be filled with imagined processes.
+3. Section 4 of the Hu Shi article may add the real process of "how a common issue formed", keeping the popular style; specific paragraphs must wait until the evidence table is complete before being written. The main text, source note, endnotes and receipt are updated synchronously; do not hang only the 002 number.
+4. Adjudicate 001, 002 and the 014 cross-application item by item; record supporting facts, proposed mechanisms and identified gains separately. Incrementally revise the master source and derived drafts when necessary; otherwise record that the theory is not revised for now.
+5. Accept per the [shared T1—T4 stages](README.md). Translate only after the Chinese evidence and conclusions are fixed; completing the plan does not equal the article being finished, the proposition being verified, or T3 being passed.
+
+## 2026-10-26 Structural Sync: the Application Entry of 003
+
+[SP-RFC-003](../../../社会系统协议学白皮书.md#sp-rfc-003) is changed to take Group I as the main index, related to Group V's dissemination task; it is a semantic-propagation application, not a direct inference from 001 or 002. First fix the language / version, audience and action requirement of the same historical text, and compare version identification and interpretation differences separately; do not infer comprehension consistency from byte consistency. The original Group V WHO-notice version task may be cross-referenced, not copied as independent evidence, nor reported as complete because of the relocation. At present the bilingual main-text check and reader outcome are still missing; verification is not yet complete.
+
+## 2026-10-27 Inspection-Interface Revision Receipt
+
+This round incrementally revises SSOT §2.3, §8.5.1 and generates cards G002/G003 because of a gap in the inspection definition, not from new case-effect findings. 002 must beforehand select an independent naming effect after the condition of "the overall intervention of naming and compression" or controlling length etc., and separately register content, familiarity, training and task; the naming object, recognised status, actual adoption and coordination outcome continue to be kept separate. 003 is tested by the local hypothesis of H003-V version identification and H003-I interpretation mechanism, and cannot refute the byte / semantic property distinction with a certain low-interpretation-variance instance.
+
+The existing case evidence and T-stage are not upgraded; this round adds no new measured results, and remains "Chinese and foreign candidates, research cards and partial evidence listed; verification not yet complete". The "do not revise theory for now" in the previous receipt targeted the case material at that time, and does not negate this round's editorial correction to the inspection interface.

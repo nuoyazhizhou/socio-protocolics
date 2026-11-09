@@ -123,6 +123,34 @@ nav:
       - Bilingual conventions: en/BILINGUAL_CONVENTIONS.md
       - Chunk reading and editing: en/CHUNK_READING_GUIDE.md
       - Publication and site maintenance: en/PUBLICATION_CONVENTIONS.md
+  - English (research library):
+      - Framework & case index: en/framework_and_case_index.md
+      - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
+      - Research questions that can be taken up: en/research/README.md
+      - H01 — Expression & understanding cost: en/research/H01_expression_and_understanding_cost.md
+      - H02 — Formal status & adoption: en/research/H02_formal_status_and_adoption.md
+      - H03 — Rules & actual migration: en/research/H03_rules_and_actual_migration.md
+      - OP-001 · Material pack: en/research/OP-001/material_pack.md
+      - OP-001 · Question card: en/research/OP-001/question_card.md
+      - OP-001 · Research notes: en/research/OP-001/research_notes.md
+      - OP-001 · Source & boundary: en/research/OP-001/source_and_boundary.md
+      - OP-002 · Question card: en/research/OP-002/question_card.md
+      - OP-002 · Research notes: en/research/OP-002/research_notes.md
+      - OP-002 · Source & boundary: en/research/OP-002/source_and_boundary.md
+      - PR-001 · Agent collaboration scale: en/research/PR-001_agent_collaboration_scale.md
+      - PR-001 · Source & revision notes: en/research/PR-001_source_and_revision_notes.md
+      - Case selection & comparison method: en/research/case_selection_and_comparison_method.md
+      - Case · CN-HU naming & response mapping: en/research/cases/CN-HU_naming_and_response_mapping.md
+      - Case · CN-S2 evidence starting point: en/research/cases/CN-S2_evidence_starting_point.md
+      - Case · II-CN-A housing fund registration disposition: en/research/cases/II-CN-A_housing_fund_registration_disposition.md
+      - Case · II-INT audit & driving-license research check: en/research/cases/II-INT_audit_and_driving_license_research_check.md
+      - Topic plan · README: en/research/topic_plan/README.md
+      - Topic plan · I — Channel capacity & semantic boundary: en/research/topic_plan/I_channel_capacity_and_semantic_boundary.md
+      - Topic plan · II — Intermediary & coordination cost: en/research/topic_plan/II_intermediary_and_coordination_cost.md
+      - Topic plan · III — Intertemporal commitment & investment: en/research/topic_plan/III_intertemporal_commitment_and_investment.md
+      - Topic plan · IV — Authority & correction: en/research/topic_plan/IV_authority_and_correction.md
+      - Topic plan · V — Feedback & sustained collaboration: en/research/topic_plan/V_feedback_and_sustained_collaboration.md
+      - Topic plan · VI — Migration & evolutionary screening: en/research/topic_plan/VI_migration_and_evolutionary_screening.md
 
 extra:
   generator: false
