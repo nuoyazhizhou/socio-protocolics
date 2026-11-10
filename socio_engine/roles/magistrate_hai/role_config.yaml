@@ -1,0 +1,27 @@
+role_id: "magistrate_hai"
+role_name: "海瑞型知县 (道德原教旨主义改革官 / Ring-1)"
+privilege_ring: 1 # Ring-1: 地方行政系统最高指令权限
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.1 # 绝对冷酷、刚正、不计利害、按法执宪
+  max_tokens: 1500
+
+action_space:
+  - "ZERO_SURTAX_POLICY"            # 强制革除全县一切火耗平余，恢复太祖洪武旧制
+  - "PURGE_CLERKS"                  # 铁腕抄没户房刑房贪吏家产充公入库
+  - "RECRUIT_NEW_CLERKS"            # 辟黜老蠹，从寒门生员与良善里老中招募新吏 (去中介化)
+  - "DIRECT_PUBLIC_CADASTRE"        # 绕过六房，亲自铁尺下乡、打谷场公丈公勘 (公理化广播)
+  - "ESTABLISH_TRANSPARENT_CODE"    # 制定《淳安条约》勒石永禁，由票直达万民，归零潜规则
+  - "RESTORE_LAND_TO_PEASANTS"      # 严令退田还民，追夺兼并上田划还破产贫农与自耕农
+  - "CONFISCATE_GENTRY_HIDDEN_LAND" # 亲下田亩丈量士绅隐田，追回兼并土地
+  - "CRACKDOWN_ON_USURY"            # 封禁高利贷，核销利息与绝卖契约
+  - "AUDIT_CADASTRE"                # 下令重新编制鱼鳞图册
+  - "ISSUE_EDICT"                   # 发布清廉安民条规
+
+observation_scope:
+  - "treasury_balance"              # 太仓银两实况
+  - "peasant_distress"              # 极端关注下户穷民口粮生死线
+  - "corruption_signals"            # 侦测户房、刑房与典当行的勾结信号
+

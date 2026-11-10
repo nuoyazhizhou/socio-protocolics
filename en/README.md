@@ -45,6 +45,7 @@ Large-scale human coordination relies on language, contracts, organisational app
 ### Quick Entry by Reading Goal
 
 - **Start with concrete case essays (no theory prerequisite)**: Read [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) or [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md).
+- **Run the Multi-Agent Simulation Sandbox (Socio-Engine)**: Read the [Sandbox Architecture & QuickStart](../socio_engine/README_EN.md) and [Universal Scenario Prompt Template](../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) to replicate Ming Dynasty Huizhou tax games and Hai Rui's breakthrough experiments.
 - **10-minute core concept overview**: Browse the [Core Concepts CheatSheet](CHEATSHEET.md) and the [3→6→19 Theme and Case Index](framework_and_case_index.md).
 - **Read the whitepaper systematically**: Visit the [Online Reading Site (EN)](https://nuoyazhizhou.github.io/socio-protocolics/en/), or jump straight to [Whitepaper v11.2 (Chapter 1)](whitepaper/chapter-01.md) (with the Chinese SSOT remaining the sole canonical source).
 - **Spot errors, critique or pick up an open question**: Explore [Open Questions and Research Designs](research/README.md) or [How to Contribute](CONTRIBUTING.md) (endorsing the overall framework is not a condition of participation).
@@ -67,9 +68,26 @@ Large-scale human coordination relies on language, contracts, organisational app
 | **Open Research** | Review an agent-collaboration experiment | [PR-001: Access Cost and Collaboration Scale (Design Draft)](research/PR-001_agent_collaboration_scale.md) |
 | **Open Research** | Continue case studies across the six proposition groups | [Implementation Plan and First Tasks for Groups I—VI](research/topic_plan/README.md) |
 | **Open Research** | How success and failure are compared | [Case Selection and Comparison Method](research/case_selection_and_comparison_method.md) |
+| **Simulation & Sandbox** | Run the Multi-Agent Historical & Institutional Sandbox (Socio-Engine) | [Architecture & Quickstart](../socio_engine/README_EN.md) · [User Guide](../socio_engine/USER_GUIDE.md) |
+| **Simulation & Sandbox** | Universal Scenario Prompt Template (Song / Tang / Rome) | [Scenario Prompt Template](../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) |
+| **Simulation & Sandbox** | Ming Dynasty Huizhou Tax Archival Baseline | [Historical Baseline](../socio_engine/docs/HISTORICAL_BASELINE.md) |
 | **Review & Participation** | Join this round of chapter-by-chapter review | [Chapter Order and Current Progress](ROADMAP.md#chapter-review) · [How to Give Chapter Feedback](CONTRIBUTING.md#chapter-feedback) |
 | **Review & Participation** | Report an error or submit a revision | [How to Contribute](CONTRIBUTING.md) |
 | **Review & Participation** | The sequence of work and current gaps | [Project Roadmap](ROADMAP.md) |
+
+## Simulation Sandbox & Experimental Tool · Socio-Engine
+
+The theory is not merely a set of whitepaper texts; this project implements an open-source, reproducible **Multi-Agent Historical & Social Systems Protocol Sandbox (Socio-Engine)** to simulate historical institutional transitions and micro/macro games:
+
+- **Dual-Layer Architecture**: The physical foundation is built with native Rust (`socio_core`), strictly enforcing double-entry conservation (silver, grain, land), four-tier privilege ring isolation (Ring-0 to Ring-3), and Petgraph topological blast-radius analysis. The cognitive layer uses Python Agent-as-Data to orchestrate LLM agents (DeepSeek / Claude / GPT) pursuing private utilities $U_i$ and survival limits.
+- **Ming Dynasty Huizhou Historical Experiments**: Grounded in authentic tax registers from the *Shexian County Gazettes* and *The Book of Silk* (1573–1577), multiple converged trials have been executed (including standard bureaucrat games, Hai Rui's moral purge triggering clerk strikes, and Hai Rui's institutional breakthrough via "Dis-intermediation" replacing old clerks with students, alongside an anonymized empire ablation study).
+- **Universal Scenario Extension**: Provides a self-contained axiomatic meta-prompt allowing researchers to compile new historical reforms (e.g. Northern Song Wang Anshi's Green Sprouts Law, Tang Dynasty Two-Tax Law, Ancient Rome Price Edict) into runnable multi-agent sandboxes.
+
+👉 **Navigation & Getting Started**:
+- [Architecture & Quickstart (socio_engine/README_EN.md)](../socio_engine/README_EN.md) ｜ [Chinese Documentation (socio_engine/README.md)](../socio_engine/README.md)
+- [User Configuration & API Key Guide (socio_engine/USER_GUIDE.md)](../socio_engine/USER_GUIDE.md)
+- [Universal Scenario Prompt Template (socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
+- [Ming Dynasty Huizhou Historical Archival Baseline (socio_engine/docs/HISTORICAL_BASELINE.md)](../socio_engine/docs/HISTORICAL_BASELINE.md)
 
 ## How Cases Feed Back into Theory
 
@@ -92,6 +110,7 @@ articles/                          Public cases, sources and brief revision note
 research/                          Open questions and material specifications
 docs/                              Framework index, writing conventions and publication rules
 en/                                English entry points, phased chapter translations, case and research counterparts
+socio_engine/                      Multi-Agent Simulation Sandbox (Rust physical kernel + Python cognitive layer)
 tools/                             Content checks, public-file check, site builder and history-free export
 public-files.json                  Explicit per-file public manifest
 ```

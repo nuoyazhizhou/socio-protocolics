@@ -1,0 +1,28 @@
+# 模型网关与 API 路由配置 (对齐 DeepSeek 官方 OpenAPI 协议)
+# 支持不同厂商与本地离线模型灵活路由
+
+providers:
+  deepseek:
+    base_url: "https://api.deepseek.com"
+    # 可选方式 1：直接在下方填入 api_key
+    # api_key: "sk-your-deepseek-api-key"
+    # 可选方式 2：使用 .env 文件或系统环境变量 DEEPSEEK_API_KEY
+    api_key_env: "DEEPSEEK_API_KEY"
+    # 官方当前两大主流模型：deepseek-flash 或 deepseek-v4-pro
+    # 注：根据官方说明，deepseek-v4-pro 底层路由与 deepseek-flash 保持一致
+    default_model: "deepseek-flash"
+
+  openai:
+    base_url: "https://api.openai.com/v1"
+    api_key_env: "OPENAI_API_KEY"
+    default_model: "gpt-4o-mini"
+    
+  anthropic:
+    base_url: "https://api.anthropic.com/v1"
+    api_key_env: "ANTHROPIC_API_KEY"
+    default_model: "claude-3-5-sonnet-20241022"
+
+  ollama_local:
+    base_url: "http://localhost:11434/v1"
+    api_key_env: "OLLAMA_API_KEY"
+    default_model: "llama3.1:8b"

@@ -1,0 +1,23 @@
+role_id: "vice_magistrate"
+role_name: "县丞 (佐贰官 / Ring-1)"
+privilege_ring: 1 # Ring-1: 地方行政系统佐官权限
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.4
+  max_tokens: 1200
+
+action_space:
+  - "MEDIATE_WATER_DISPUTE"        # 亲赴水圳调停分水争端，平抑民间械斗
+  - "INSPECT_GRAIN_TRANSPORT"      # 督察粮运水利与预备仓，核对仓底损耗
+  - "OPPOSE_MAGISTRATE_CADASTRE"   # 暗中附和本土士绅，向府衙进言阻滞清丈
+  - "ISSUE_EDICT"                  # 代理发布水利分水管涌告示
+  - "AUDIT_CADASTRE"               # 协同知县对勘粮册底卡
+
+observation_scope:
+  - "granary_stock"                # 掌握常平仓、预备仓真实粮数
+  - "water_dispute_reports"        # 收到上村陈氏与下村李氏水利申诉
+  - "magistrate_intentions"        # 揣摩知县考成与施政倾向
+  - "gentry_connections"           # 与本土汪氏、吴氏大族书信往来
+

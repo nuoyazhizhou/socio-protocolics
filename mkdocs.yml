@@ -55,6 +55,8 @@ plugins:
                 - How to contribute: en/CONTRIBUTING.md
                 - Framework and case index: en/FRAMEWORK_GUIDE.md
                 - Bilingual glossary: en/GLOSSARY.md
+            - Simulation Sandbox:
+                - Overview & Quickstart: en/socio_engine/README.md
             - Whitepaper:
                 - Chapter 1 — research positioning, objects, postulates, and the boundaries of the six proposition groups: en/whitepaper/chapter-01.md
                 - Appendix — Navigation and Version Concordance of the 19 SP-RFC Bodies: en/whitepaper/appendix.md
@@ -138,6 +140,11 @@ nav:
       - 本次修订: docs/修订记录.md
       - 章节讨论进度: ROADMAP.md
       - 参与贡献: CONTRIBUTING.md
+  - 仿真沙盘 (Socio-Engine):
+      - 沙盘介绍与快速开始: socio_engine/README.md
+      - 用户配置与运行指南: socio_engine/USER_GUIDE.md
+      - 跨朝代剧本生成模板: socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md
+      - 真实历史档案基准 (明代徽州): socio_engine/docs/HISTORICAL_BASELINE.md
   - 白皮书:
       - 第一章 · 研究定位与建模基础: chapters/chapter-01.md
       - 第二章 · 信道与语义边界: chapters/chapter-02.md

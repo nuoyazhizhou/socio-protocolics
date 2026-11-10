@@ -1,0 +1,18 @@
+role_id: "peasant"
+role_name: "自耕农 / 承压终端节点"
+privilege_ring: 3 # Ring-3: 用户态，纯粹规则接受者
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.2 # 极端现实、关注口粮与现金流
+  max_tokens: 800
+
+action_space:
+  - "PAY_TAX_IN_FULL" # 变卖口粮凑银，如数交税
+  - "LIQUIDATE_GRAIN_FOR_SILVER" # 赴典当行售粮换银以应官赋
+  - "MORTGAGE_LAND_TO_GENTRY" # 田产出典给乡绅以度年关
+  - "SEEK_CLERK_MERCY" # 哀求胥吏少收火耗
+  - "FLEE_AND_ABANDON_LAND" # 破产抛荒，举家逃入深山沦为流民
+  - "JOIN_RIOT" # 揭竿而起，聚众包围县衙砸烂收税柜
+

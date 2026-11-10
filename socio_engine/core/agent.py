@@ -1,0 +1,111 @@
+import json
+from typing import Dict, Any, Optional
+from core.role_loader import RoleDefinition
+from core.llm_client import LLMClient
+
+class RoleAgent:
+    """
+    通用智能体驱动类 (Agent-as-Data)
+    没有任何硬编码的角色业务逻辑，由 RoleDefinition (基础原型) + 实例属性 (家境/特质/恩怨) 注入驱动
+    认知决策由 LLMClient 负责，物理执行由 Rust socio_core 负责
+    """
+    def __init__(
+        self,
+        agent_id: str,
+        role_def: RoleDefinition,
+        instance_name: Optional[str] = None,
+        background: Optional[str] = None,
+        trait: Optional[str] = None,
+        model: Optional[str] = None,
+        temperature: Optional[float] = None,
+        llm_client: Optional[LLMClient] = None
+    ):
+        self.agent_id = agent_id
+        self.role_def = role_def
+        self.role_id = role_def.role_id
+        self.role_name = instance_name or role_def.role_name
+        self.background = background or ""
+        self.trait = trait or "NORMAL"
+        self.privilege_ring = role_def.privilege_ring
+        self.model = model or role_def.model
+        self.temperature = temperature if temperature is not None else role_def.temperature
+        self.llm_client = llm_client or LLMClient()
+        
+        # 本地记忆/上下文
+        self.recent_dialogues = []
+
+    def build_prompt_context(self, world_state: Dict[str, Any], agent_state: Dict[str, Any], observation: Dict[str, Any]) -> str:
+        """为 LLM 组装当前轮次的上下文，注入阶级身份与家庭生计宿命"""
+        context = f"=== 当前年份/季度: 第 {world_state.get('tick_index', 1)} 季度 ===\n"
+        context += f"【你的姓名与身份】: {self.role_name} (ID: {self.agent_id})\n"
+        context += f"【法定特权环等级】: Ring-{self.privilege_ring}\n"
+        if self.background:
+            context += f"【你的生计处境与宗族宿命】: {self.background}\n"
+        if self.trait:
+            context += f"【你的性情特质与心智模式】: {self.trait}\n"
+
+        context += f"\n【全县宏观官情环境】:\n"
+        context += f"  - 太仓实存库银: {world_state.get('treasury_silver', 0.0):.1f} 两\n"
+        context += f"  - 官定米价: {world_state.get('grain_price_silver', 1.0):.2f} 两/石\n"
+        context += f"  - 官定基准税率: {world_state.get('official_tax_per_mu', 0.0801):.4f} 两/亩\n"
+        context += f"  - 官派火耗折银率: {world_state.get('surtax_rate', 0.15)*100:.1f}%\n"
+
+        context += f"\n【当前你个人的真实身家与资产底账】:\n"
+        context += f"  - 手头实存现银: {agent_state.get('cash_silver', 0.0):.2f} 两\n"
+        context += f"  - 仓中存留口粮: {agent_state.get('stored_grain', 0.0):.2f} 石 (单季度全家最低糊口粮约 3 石)\n"
+        context += f"  - 名下耕地田亩: {agent_state.get('land_owned_mu', 0.0):.1f} 亩 (其中隐匿避税: {agent_state.get('land_hidden_mu', 0.0):.1f} 亩)\n"
+        context += f"  - 官府积欠税银: {agent_state.get('tax_arrears', 0.0):.2f} 两\n"
+        context += f"  - 当前存活状态: {agent_state.get('survival_status', 'ALIVE')}\n"
+        
+        context += f"\n【你所能获悉的乡邻文书与外部消息】:\n"
+        for k, v in observation.items():
+            context += f"  - {k}: {v}\n"
+            
+        context += f"\n【本轮你可执行的合法动作集合 (Action Space)】:\n"
+        for act in self.role_def.action_space:
+            context += f"  * {act}\n"
+            
+        context += "\n请根据你的个人利益、家庭代际危机与阶级动机，在权衡利弊后做出本轮决断，严格输出 proposal_action JSON 结构。\n"
+        return context
+
+    def decide(self, world_state: Dict[str, Any], agent_state: Dict[str, Any], observation: Dict[str, Any], action_template_json: str) -> Dict[str, Any]:
+        """
+        触发 Agent 思考并产出动作
+        通过 LLMClient 路由到指定的模型
+        """
+        user_prompt = self.build_prompt_context(world_state, agent_state, observation)
+        
+        response_text = self.llm_client.generate(
+            role_id=self.role_id,
+            provider=self.role_def.provider,
+            model=self.model,
+            system_prompt=self.role_def.system_prompt,
+            user_prompt=user_prompt,
+            temperature=self.temperature,
+            max_tokens=self.role_def.max_tokens,
+            response_format_json=True
+        )
+
+        try:
+            clean_text = response_text.strip()
+            if clean_text.startswith("```"):
+                lines = clean_text.splitlines()
+                if lines[0].startswith("```"):
+                    lines = lines[1:]
+                if lines and lines[-1].startswith("```"):
+                    lines = lines[:-1]
+                clean_text = "\n".join(lines).strip()
+            action_data = json.loads(clean_text)
+        except Exception:
+            action_data = {
+                "action_type": self.role_def.action_space[0] if self.role_def.action_space else "NOOP",
+                "intent_summary": "解析失败保底动作",
+                "parameters": {},
+                "is_covert": False
+            }
+
+        return {
+            "prompt_used": user_prompt,
+            "raw_response": response_text,
+            "action": action_data
+        }

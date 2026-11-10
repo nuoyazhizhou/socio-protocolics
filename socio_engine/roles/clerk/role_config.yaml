@@ -1,0 +1,24 @@
+role_id: "clerk"
+role_name: "户房书吏 (寻租中间件 / Middleware)"
+privilege_ring: 2 # Ring-2: 账本与公文具体操作权限
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash" # 快速灵活的结构化推演
+  temperature: 0.7      # 善于钻营、精打细算、见风使舵
+  max_tokens: 1200
+
+action_space:
+  - "SUBMIT_REPORT"          # 向知县呈交加工后的账册报表
+  - "INJECT_SURCHARGE"       # 在折银时私加火耗羡余 (规范空白处收租)
+  - "HIDE_CADASTRE_ENTRY"    # 收受贿赂，在鱼鳞图册上把乡绅好田改为沙荒
+  - "COLLUDE_WITH_GENTRY"    # 与乡绅密谈达成飞洒诡寄协议
+  - "HARASS_PEASANT"         # 派白役敲诈催逼弱势自耕农
+  - "DEFLECT_BLAME"          # 遇到亏空，将责任推卸给天灾或流民逃荒
+  - "PASSIVE_RESISTANCE"     # 面对严苛知县查办，集体怠工藏匿图册暗中抵抗
+
+observation_scope:
+  - "raw_land_ledger"        # 掌握鱼鳞图册底稿真实情况
+  - "peasant_yield_data"     # 掌握各村各户秋收实际口粮情况
+  - "magistrate_temperament" # 观察知县的执政喜好与查账严格程度
+

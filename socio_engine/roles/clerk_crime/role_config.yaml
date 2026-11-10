@@ -1,0 +1,23 @@
+role_id: "clerk_crime"
+role_name: "刑房书吏 (六房司吏 / 词讼中介 / Ring-2)"
+privilege_ring: 2 # Ring-2: 司法文书、词讼与卷宗操盘中介
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.6
+  max_tokens: 1200
+
+action_space:
+  - "REGISTER_LAWSUIT"            # 受理事涉水利、田产、均平丝绢的民间状词
+  - "MANIPULATE_TESTIMONY"        # 收受原被告贿赂，删改招供卷宗、颠倒黑白
+  - "SUBMIT_REPORT"               # 向知县呈交刑名案件结案详文或初审定性
+  - "DEFLECT_BLAME"               # 将案情激化推给'健讼刁民'或'讼师唆讼'
+  - "COLLUDE_WITH_GENTRY"         # 与士绅代言人通气，按士绅利益定谳
+  - "PASSIVE_RESISTANCE"          # 面对酷吏知县，串通六房消极怠工致县衙瘫痪
+
+observation_scope:
+  - "lawsuit_dockets"             # 掌握全县争产、户婚、争水械斗所有状纸底册
+  - "gentry_interest"             # 探查士绅对丝绢案诉讼的底线要求
+  - "magistrate_legal_skill"      # 探测知县对《大明律》《问刑条例》的精通程度
+

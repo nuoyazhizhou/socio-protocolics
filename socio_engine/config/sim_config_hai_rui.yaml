@@ -1,0 +1,191 @@
+# 场景与时间线配置: 海瑞型铁腕知县反腐整肃压力测试 (The Hai Rui Paradox Experiment)
+scenario:
+  name: "海瑞知县铁腕整肃与系统免疫反弹压力测试 (激进反腐 vs 官绅怠工)"
+  historical_baseline_doc: "docs/HISTORICAL_BASELINE.md"
+  county: "南直隶 徽州府 歙县"
+  historical_year_start: 1575 # 万历三年
+  historical_year_end: 1576   # 万历四年
+  max_ticks: 8                # 8 个季度完整政治与社会风暴周期
+  tick_unit: "QUARTER"
+
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 极端反腐与系统反弹的宏观历史推进日程表
+historical_timeline_events:
+  1: "【万历三年春】海瑞刚峰新官到任！升堂第一日即严旨革除一切火耗平余，下令彻查户房钱吏与孙典当贪弊！"
+  2: "【万历三年夏】伏旱青黄不接，海瑞下令封禁城关高利贷，核销利息；户房钱吏与刑房马司吏暗中策划反制！"
+  3: "【万历三年秋】海瑞亲带弓手下田丈量士绅隐田，追回吴员外、孙掌柜隐田数百亩；吴员外急修密信直达北京言官！"
+  4: "【万历三年冬】户部考成严催解银，官府因无火耗补充办公公费告急；六房书吏集体告病怠工，官衙两眼抹黑！"
+  5: "【万历四年春】丰乐河春旱，海瑞亲赴水坝强行按丁平分水权；知府崔孔昕发严牌痛斥海瑞‘好名沽誉、激变地方’！"
+  6: "【万历四年夏】徽州在籍大族汪道昆等联名血书直达通政司，巡按御史奉旨下驻徽州，严查海瑞‘摧残缙绅、动摇名教’！"
+  7: "【万历四年秋】全县下户小农赋税负担大幅减轻，百姓遮道焚香；但典当停业导致民间急救借贷断流，官绅联手封杀！"
+  8: "【万历四年冬】终局考成！吏部与巡按御史考察定谳，海瑞面临去留绝境，全县系统制度熵与权力结构面临大清算！"
+
+macro_environment:
+  initial_treasury_silver: 2000.0
+  imperial_tax_quota: 6145.0
+  base_grain_price: 1.0
+  official_tax_per_mu: 0.0801
+  silk_surcharge_per_mu: 0.0210
+  official_surtax_rate: 0.00          # 海瑞到任：官定火耗强制归零！
+  subsistence_grain_per_tick: 3.0
+
+population:
+  magistrates:
+    - id: "magistrate_hai_rui"
+      name: "海瑞知县 (号刚峰)"
+      role_type: "magistrate_hai"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.1 # 绝对冷酷刚正，按大明律执宪
+      background: "号刚峰，清廉至极，家无余财。视火耗平余为盗窃民财，视士绅投献为硕鼠兼并。不畏上官严旨，不计个人升迁荣辱，铁腕执法以救生民"
+      initial_assets: { silver: 15.0, grain: 20.0, land: 0.0 }
+
+    - id: "vice_magistrate_liu"
+      name: "刘县丞 (分管水利粮马)"
+      role_type: "vice_magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PRAGMATIC_BUREAUCRAT"
+      background: "深知海瑞刚烈必将惹出滔天大祸，为求自保极力与海瑞划清界限，向知府与士绅示好，静待海瑞被参倒台"
+      initial_assets: { silver: 90.0, grain: 45.0, land: 20.0 }
+
+  clerks:
+    - id: "clerk_qian"
+      name: "钱老吏 (户房经办)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "GREEDY_CALCULATING"
+      background: "火耗财路被海瑞一刀切断，自身面临抄家危险，联合六房书吏集体怠工藏匿图册，誓让海瑞办不成一件事"
+      initial_assets: { silver: 80.0, grain: 40.0, land: 35.0 }
+
+    - id: "clerk_zhao"
+      name: "赵新吏 (户房副役)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "OPPORTUNIST_AMBITIOUS"
+      background: "在海瑞的雷霆之怒下吓破了胆，既想投靠海瑞告发钱吏立功，又怕士绅日后反攻倒算被灭口"
+      initial_assets: { silver: 20.0, grain: 25.0, land: 15.0 }
+
+    - id: "clerk_crime_ma"
+      name: "马司吏 (刑房掌案)"
+      role_type: "clerk_crime"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "CORRUPT_LEGALIST"
+      background: "海瑞亲自坐堂断狱、不许舞文弄墨，刑房讼规彻底断流；暗中联络在籍士绅搜集海瑞‘越权苛刑’的黑材料"
+      initial_assets: { silver: 45.0, grain: 30.0, land: 18.0 }
+
+    - id: "bailiff_captain_wu"
+      name: "吴捕头 (快班总捕)"
+      role_type: "bailiff_captain"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "BRUTAL_EXTORTIONIST"
+      background: "海瑞严禁索要'鞋袜钱'与'常例'，差役失去生计，怨声载道，出工不出力，故意放纵盗贼"
+      initial_assets: { silver: 30.0, grain: 20.0, land: 10.0 }
+
+  gentry:
+    - id: "gentry_wu"
+      name: "吴员外 (致仕乡绅)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PATRON_ELITE"
+      background: "遭海瑞强行清丈隐匿田亩、取消优免特权，视海瑞为生死之敌，动员全徽州在京官绅网络全力参劾"
+      initial_assets: { silver: 600.0, grain: 900.0, land: 120.0 }
+
+    - id: "gentry_sun"
+      name: "孙掌柜 (典当行主 / 钱吏连襟)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "PREDATORY_LENDER"
+      background: "典当行被海瑞勒令停业封账，怀恨在心，联合米商彻底拒绝向农户提供折银借贷，人为制造银荒"
+      initial_assets: { silver: 850.0, grain: 400.0, land: 80.0 }
+
+  peasants:
+    - id: "peasant_wu_scholar"
+      name: "吴秀才家 (进学户 / 三等中户)"
+      role_type: "peasant"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.3
+      trait: "SCHOLAR_INVESTOR"
+      background: "长子生员优免被海瑞核减，族中长辈要求其带头罢考抵制海瑞，进退失据"
+      initial_assets: { silver: 8.0, grain: 50.0, land: 28.0 }
+
+    - id: "peasant_chen_elder"
+      name: "陈老汉家 (吃绝户危机 / 下户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "HEIRLESS_VULNERABLE"
+      background: "海瑞免除火耗让全家税负大减，老汉视海青天为再生父母，但极度担忧海青天被贪官害走"
+      initial_assets: { silver: 3.0, grain: 25.0, land: 12.0 }
+
+    - id: "peasant_li_tailwater"
+      name: "李生 (水尾贫农 / 争水世仇)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.9
+      trait: "DESPERATE_STRESSED"
+      background: "海瑞亲赴水圳强行破坝分水，解救了水尾旱情，但因典当行歇业，春荒急需看病买粮却借不到分文现银"
+      initial_assets: { silver: 0.5, grain: 5.0, land: 5.0 }
+
+    - id: "peasant_zhao_lijia"
+      name: "赵大富 (轮值里长 / 夹心层中户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "TRAPPED_LIJIA"
+      background: "海瑞严打胥吏勒索，里长免去了差役敲诈，但书吏怠工导致黄册税额无人清算，里长夹在中间不知所措"
+      initial_assets: { silver: 15.0, grain: 40.0, land: 32.0 }
+
+    - id: "peasant_chen_hothead"
+      name: "陈二狗 (上村自耕农 / 宗族械斗主力)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 1.0
+      trait: "BELLIGERENT_HOTHEAD"
+      background: "陈公陂水坝被海瑞下令打开分水，宗族械斗被压制，但因火耗全免，自家赋税大幅降低，陷入矛盾情绪"
+      initial_assets: { silver: 2.0, grain: 15.0, land: 8.0 }
+
+social_relations:
+  - { from: "vice_magistrate_liu", to: "magistrate_hai_rui", type: "SubordinateTo", weight: 0.8 }
+  - { from: "clerk_qian", to: "magistrate_hai_rui", type: "SubordinateTo", weight: 0.5 }
+  - { from: "clerk_zhao", to: "magistrate_hai_rui", type: "SubordinateTo", weight: 0.8 }
+  - { from: "clerk_crime_ma", to: "magistrate_hai_rui", type: "SubordinateTo", weight: 0.5 }
+  - { from: "bailiff_captain_wu", to: "magistrate_hai_rui", type: "SubordinateTo", weight: 0.7 }
+  - { from: "bailiff_captain_wu", to: "clerk_qian", type: "SubordinateTo", weight: 2.2 }
+  - { from: "peasant_zhao_lijia", to: "clerk_qian", type: "SubordinateTo", weight: 2.0 }
+  - { from: "clerk_qian", to: "gentry_sun", type: "CollusionAlliance", weight: 4.0 }
+  - { from: "vice_magistrate_liu", to: "gentry_wu", type: "CollusionAlliance", weight: 3.5 }
+  - { from: "clerk_crime_ma", to: "gentry_sun", type: "CollusionAlliance", weight: 3.0 }
+  - { from: "gentry_wu", to: "magistrate_hai_rui", type: "HostileRival", weight: 5.0 }
+  - { from: "bailiff_captain_wu", to: "peasant_zhao_lijia", type: "CoercionHarass", weight: 1.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_li_tailwater", type: "CoercionHarass", weight: 1.0 }
+  - { from: "peasant_chen_hothead", to: "peasant_li_tailwater", type: "HostileRival", weight: 3.0 }
+  - { from: "peasant_wu_scholar", to: "gentry_wu", type: "PatronClient", weight: 2.0 }
+  - { from: "peasant_li_tailwater", to: "gentry_sun", type: "DebtorTo", weight: 3.5 }
+  - { from: "peasant_wu_scholar", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.5 }
+  - { from: "peasant_chen_elder", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.2 }
+  - { from: "peasant_li_tailwater", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 0.8 }
+  - { from: "peasant_chen_hothead", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.0 }
+

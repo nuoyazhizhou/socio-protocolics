@@ -35,6 +35,7 @@
 ### 按阅读需求快速进入
 
 - **先读通俗案例（不先啃理论）**：从 [如何评价胡适的作品：作品好不好，与它改变了什么](articles/hu-shih/如何评价胡适的作品.md) 或 [删掉两道审批，工作真的少了吗？](articles/intermediary/删掉两道审批_工作真的少了吗.md) 开始。
+- **运行多智能体仿真沙盘（Socio-Engine）**：查阅 [沙盘架构与快速开始](socio_engine/README.md) 与 [跨朝代通用剧本生成模板](socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)，复现明万历徽州赋役博弈与海瑞突破实验。
 - **10 分钟速览核心概念**：查阅 [核心概念速查手册（CheatSheet）](核心概念速查手册_CheatSheet.md) 与 [3→6→19 主题与案例索引](docs/框架与案例索引.md)。
 - **系统阅读白皮书**：访问 [在线分章阅读网站](https://nuoyazhizhou.github.io/socio-protocolics/)，或直接阅读仓库内的 [白皮书 v11.2 唯一权威正文](社会系统协议学白皮书.md)。
 - **挑错、反驳或接手小问题**：浏览 [开放问题与研究设计](research/README.md) 或 [参与方式](CONTRIBUTING.md)（支持整体框架不是参与条件）。
@@ -57,9 +58,26 @@
 | **开放研究**     | 评议Agent协作实验                         | [PR-001：接入成本与协作规模（设计草案）](research/PR-001_Agent协作规模.md)                             |
 | **开放研究**     | 接续六组主题的案例研究                    | [I—VI组实施计划与首项任务](research/主题计划/README.md)                                                |
 | **开放研究**     | 检查成功与失败如何比较                    | [案例选择与比较方法](research/案例选择与比较方法.md)                                                   |
+| **仿真与实证沙盘** | 运行多智能体历史与制度仿真沙盘 (Socio-Engine) | [沙盘架构与快速开始](socio_engine/README.md) · [用户配置指南](socio_engine/USER_GUIDE.md)                |
+| **仿真与实证沙盘** | 跨朝代剧本生成提示词模板 (宋代/唐代/罗马) | [通用剧本生成提示词模板](socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)                      |
+| **仿真与实证沙盘** | 明万历徽州赋役历史档案实证基准            | [历史档案基准](socio_engine/docs/HISTORICAL_BASELINE.md)                                               |
 | **审读与参与**   | 参加本轮逐章讨论                          | [章节顺序与当前进度](ROADMAP.md#chapter-review) · [怎样提出章节意见](CONTRIBUTING.md#chapter-feedback) |
 | **审读与参与**   | 指出错误或提交改稿                        | [参与方式](CONTRIBUTING.md)                                                                            |
 | **审读与参与**   | 看推进顺序与当前缺口                      | [项目路线图](ROADMAP.md)                                                                               |
+
+## 仿真沙盘与实验工具 · Socio-Engine
+
+理论不仅停留在白皮书文本中，本项目已实装了高性能的**社会系统协议多智能体仿真沙盘（Socio-Engine）**，用于对历史真实制度变迁与微观/宏观博弈进行可复现的沙盘推演：
+
+- **双层架构 (Dual-Layer Architecture)**：底层采用原生 Rust（`socio_core`）严格强制执行双式记账物理守恒（银两/粮食/土地）、四大特权环隔离门禁（Ring-0 到 Ring-3）与 Petgraph 社会拓扑爆炸半径分析；上层采用 Python Agent-as-Data 架构，通过大模型（DeepSeek / Claude / GPT）模拟各阶级具有私有效用 $U_i$ 与生存底线的自博弈。
+- **万历徽州赋役历史基准实验**：基于《万历歙县志》与《丝绢全书》真实赋税底册，完成了多组具有理论收敛性的推演（包含常规顾知县的自博弈、海瑞朴素整肃引起的胥吏怠工反弹、以及海瑞通过“去中介化（Dis-intermediation）”用寒门生员替代老吏的制度性突破，与全要素架空消融实验）。
+- **跨朝代与跨文明剧本扩展**：提供自包含公理微内核的通用剧本生成提示词模板，支持学者与开发者一键将北宋王安石青苗法、唐代两税法、明代一条鞭法等历史改革编译为可运行的多智能体沙盘。
+
+👉 **快速上手与文档导航**：
+- [沙盘架构与快速开始 (socio_engine/README.md)](socio_engine/README.md) ｜ [English Documentation (socio_engine/README_EN.md)](socio_engine/README_EN.md)
+- [用户配置与 API Key 指南 (socio_engine/USER_GUIDE.md)](socio_engine/USER_GUIDE.md)
+- [跨朝代通用剧本生成提示词模板 (socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
+- [明代徽州历史档案实证基准 (socio_engine/docs/HISTORICAL_BASELINE.md)](socio_engine/docs/HISTORICAL_BASELINE.md)
 
 ## 案例怎样回到理论
 
@@ -82,6 +100,7 @@ articles/                          公开案例、出处、简明修订记录
 research/                          开放问题与材料规格
 docs/                              框架索引、写作规范与发布约定
 en/                                英文对应入口、白皮书分章译稿、案例与研究对应稿
+socio_engine/                      多智能体仿真沙盘 (Rust 物理状态机 + Python 认知决策)
 tools/                             内容回归门禁、公开文件检查、网站构建与无历史快照导出
 public-files.json                  逐文件公开清单
 ```

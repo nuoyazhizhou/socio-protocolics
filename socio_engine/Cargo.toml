@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "socio_core"
+]
+resolver = "2"
+

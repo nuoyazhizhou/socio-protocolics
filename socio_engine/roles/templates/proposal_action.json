@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProtocolActionPacket",
+  "description": "Agent 决策与系统调用 (Syscall) 标准动作报文",
+  "type": "object",
+  "properties": {
+    "action_type": {
+      "type": "string",
+      "description": "动作类型代码，必须在角色的合法动作空间中"
+    },
+    "intent_summary": {
+      "type": "string",
+      "description": "行动的自然语言战略意图说明 (一句话)"
+    },
+    "target_agent_id": {
+      "type": "string",
+      "description": "动作指向的客体智能体 ID (可为 null 或 'BROADCAST')"
+    },
+    "parameters": {
+      "type": "object",
+      "description": "行动涉及的数值、公文内容或操作参数"
+    },
+    "is_covert": {
+      "type": "boolean",
+      "description": "是否为瞒过上级的暗箱操作 (若为 true 则记入灰色事件流)"
+    },
+    "expected_rent": {
+      "type": "number",
+      "description": "该行动预期产生的非生产性私利租金 (两白银，可为 0)"
+    }
+  },
+  "required": ["action_type", "intent_summary", "parameters", "is_covert"]
+}
+

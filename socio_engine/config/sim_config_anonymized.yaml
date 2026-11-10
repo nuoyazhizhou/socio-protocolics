@@ -1,0 +1,191 @@
+# 场景与时间线配置: 全要素匿名化架空世界消融测试 (The Anonymized Counterfactual Test)
+# 彻底剔除所有明代、徽州、歙县、丝绢案专有名词，验证社会系统协议学 (Socio-Protocolics) 结构与特权环的自发动力学
+scenario:
+  name: "架空帝国苍水县特权环与赋役流转消融测试 (纯机制验证)"
+  historical_baseline_doc: "docs/HISTORICAL_BASELINE.md"
+  county: "天启帝国 东荒行省 苍水县"
+  historical_year_start: 101 # 帝国纪元101年
+  historical_year_end: 102   # 帝国纪元102年
+  max_ticks: 8               # 8 个季度完整周期
+  tick_unit: "QUARTER"
+
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 纯机制驱动的环境事件演进 (不包含任何真实历史文献名词)
+historical_timeline_events:
+  1: "【纪元101年·春】中央政务院推行‘一律折银定额考成法’，地方主管官到任严抓收缴；地籍司吏在成文法空白处暗加成色折耗。"
+  2: "【纪元101年·夏】青黄不接，夏荒催征紧迫；民间信贷行主趁机以月息三分放款并接受上等田产质押。"
+  3: "【纪元101年·秋】全县晚季主粮大熟，但粮价受集中抛售暴跌；下游无水贫农减产，差役登门逼拿扣押。"
+  4: "【纪元101年·冬】年度考成到期，地方官严格查考太仓实银；基层小农现金流告罄，中产保长面临连坐兜底。"
+  5: "【纪元102年·春】大旱降临，沧澜河水势骤减，上游大族筑坝拦水，下游缺水农户扬言携械死斗！"
+  6: "【纪元102年·夏】小农借贷逾期违约，信贷行主启动‘绝卖条款’强行割夺田产，案卷司吏收受规费修改公文。"
+  7: "【纪元102年·秋】行省高等文官选拔大试，儒学中户长子进场应试，关乎家族能否跃升免役特权环！"
+  8: "【纪元102年·冬】大试放榜！中央督察官下驻严查隐瞒匿税，地方官面临考绩升迁终局裁决！"
+
+macro_environment:
+  initial_treasury_silver: 2000.0
+  imperial_tax_quota: 6000.0
+  base_grain_price: 1.0
+  official_tax_per_mu: 0.08
+  silk_surcharge_per_mu: 0.02
+  official_surtax_rate: 0.15
+  subsistence_grain_per_tick: 3.0
+
+population:
+  magistrates:
+    - id: "governor_zhang"
+      name: "张主政 (地方主管行政官)"
+      role_type: "magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.4
+      background: "中央外派流官，任期有限，急于完成中央下达的折银考成指标以获拔擢，对基层土地实情缺乏穿透力"
+      initial_assets: { silver: 150.0, grain: 60.0, land: 0.0 }
+
+    - id: "assistant_li"
+      name: "李佐贰 (分管粮道水利副官)"
+      role_type: "vice_magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PRAGMATIC_BUREAUCRAT"
+      background: "本土长期任职副官，深谙本土宗族势力盘根错节，分管粮仓与水利调配，行事讲求中庸自保"
+      initial_assets: { silver: 90.0, grain: 45.0, land: 20.0 }
+
+  clerks:
+    - id: "clerk_qian"
+      name: "钱司吏 (地籍税粮常驻经办)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "GREEDY_CALCULATING"
+      background: "常年垄断基层黄册地籍底卡，与民间借贷行主有宗亲利益勾连，精通借成色熔铸损耗暗加私费"
+      initial_assets: { silver: 80.0, grain: 40.0, land: 35.0 }
+
+    - id: "clerk_zhao"
+      name: "赵副吏 (协理副役)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "OPPORTUNIST_AMBITIOUS"
+      background: "年轻副手，渴望取代正职主位，密切关注长官查账动态，伺机告发同僚私弊"
+      initial_assets: { silver: 20.0, grain: 25.0, land: 15.0 }
+
+    - id: "clerk_crime_ma"
+      name: "马法案 (讼案卷宗司吏)"
+      role_type: "clerk_crime"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "CORRUPT_LEGALIST"
+      background: "长期把持地方司法与民事争讼案卷，深谙文书修辞变通，收受贿赂为其颠倒卷宗证据"
+      initial_assets: { silver: 45.0, grain: 30.0, land: 18.0 }
+
+    - id: "bailiff_captain_wu"
+      name: "吴总捕 (执法差役领班)"
+      role_type: "bailiff_captain"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "BRUTAL_EXTORTIONIST"
+      background: "暴力执行端领队，持长官批文下乡强行催逼拘捕，对下敲诈索要差旅劳务私规"
+      initial_assets: { silver: 30.0, grain: 20.0, land: 10.0 }
+
+  gentry:
+    - id: "gentry_wang"
+      name: "王氏族长 (享有特权的本土显贵)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PATRON_ELITE"
+      background: "世居本地的特权缙绅，享有法定免除劳役赋税特权，大量吸纳自耕农田产隐匿挂靠"
+      initial_assets: { silver: 600.0, grain: 900.0, land: 120.0 }
+
+    - id: "lender_sun"
+      name: "孙信贷主 (民间抵押借贷行主)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "PREDATORY_LENDER"
+      background: "与地籍钱司吏互为利益姻亲，坐拥借贷商行，专在农户青黄不接时放高息借贷，谋求断赎兼并土地"
+      initial_assets: { silver: 850.0, grain: 400.0, land: 80.0 }
+
+  peasants:
+    - id: "peasant_wu_scholar"
+      name: "吴进学户 (供养子嗣考取特权的中农)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.3
+      trait: "SCHOLAR_INVESTOR"
+      background: "中等自耕农，举全家财力供养长子博取特权准入资格，极其注重声誉与完税无瑕"
+      initial_assets: { silver: 5.0, grain: 28.0, land: 28.0 }
+
+    - id: "peasant_chen_elder"
+      name: "陈老户 (无后嗣的脆弱下户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "HEIRLESS_VULNERABLE"
+      background: "拥有优等耕地但无健壮男丁，宗族觊觎其遗产，极力按时交税以防官府与恶亲借机霸产"
+      initial_assets: { silver: 3.0, grain: 18.0, land: 12.0 }
+
+    - id: "peasant_li_tailwater"
+      name: "李水尾 (水渠末端脆弱贫农)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.9
+      trait: "DESPERATE_STRESSED"
+      background: "地处水系末端连年缺水减产，深陷高利债务，缺乏应急白银流动性，濒临破产"
+      initial_assets: { silver: 0.5, grain: 6.0, land: 5.0 }
+
+    - id: "peasant_zhao_lijia"
+      name: "赵保长 (轮值兜底的基层中产)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "TRAPPED_LIJIA"
+      background: "本届轮值基层责任保长，依法须对辖区内逃税逃荒农户承担连带兜底责任，焦虑万分"
+      initial_assets: { silver: 12.0, grain: 35.0, land: 32.0 }
+
+    - id: "peasant_chen_hothead"
+      name: "陈护堰 (上游宗族武力自耕农)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 1.0
+      trait: "BELLIGERENT_HOTHEAD"
+      background: "上游大族青年，脾气刚烈，持械防守水利堰坝，与下游各户长期处于戒备对峙"
+      initial_assets: { silver: 2.0, grain: 12.0, land: 8.0 }
+
+social_relations:
+  - { from: "assistant_li", to: "governor_zhang", type: "SubordinateTo", weight: 1.2 }
+  - { from: "clerk_qian", to: "governor_zhang", type: "SubordinateTo", weight: 1.0 }
+  - { from: "clerk_zhao", to: "governor_zhang", type: "SubordinateTo", weight: 0.8 }
+  - { from: "clerk_crime_ma", to: "governor_zhang", type: "SubordinateTo", weight: 0.9 }
+  - { from: "bailiff_captain_wu", to: "governor_zhang", type: "SubordinateTo", weight: 1.0 }
+  - { from: "bailiff_captain_wu", to: "clerk_qian", type: "SubordinateTo", weight: 2.2 }
+  - { from: "peasant_zhao_lijia", to: "clerk_qian", type: "SubordinateTo", weight: 2.0 }
+  - { from: "clerk_qian", to: "lender_sun", type: "CollusionAlliance", weight: 4.0 }
+  - { from: "assistant_li", to: "gentry_wang", type: "CollusionAlliance", weight: 3.0 }
+  - { from: "clerk_crime_ma", to: "lender_sun", type: "CollusionAlliance", weight: 2.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_zhao_lijia", type: "CoercionHarass", weight: 3.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_li_tailwater", type: "CoercionHarass", weight: 2.5 }
+  - { from: "peasant_chen_hothead", to: "peasant_li_tailwater", type: "HostileRival", weight: 4.5 }
+  - { from: "peasant_wu_scholar", to: "gentry_wang", type: "PatronClient", weight: 2.5 }
+  - { from: "peasant_li_tailwater", to: "lender_sun", type: "DebtorTo", weight: 3.5 }
+  - { from: "peasant_wu_scholar", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.5 }
+  - { from: "peasant_chen_elder", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.2 }
+  - { from: "peasant_li_tailwater", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 0.8 }
+  - { from: "peasant_chen_hothead", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.0 }
+

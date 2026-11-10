@@ -1,0 +1,229 @@
+# 场景与时间线配置 (基于明万历初年歙县真实历史档案)
+scenario:
+  name: "明万历初年徽州府歙县丰乐河畔村落赋役与丝绢博弈实验 (五年全任期)"
+  historical_baseline_doc: "docs/HISTORICAL_BASELINE.md"
+  county: "南直隶 徽州府 歙县"
+  historical_year_start: 1573 # 万历元年
+  historical_year_end: 1577   # 万历五年
+  max_ticks: 20               # 模拟 20 个季度 (整整 5 年全周期)
+  tick_unit: "QUARTER"
+
+# 数据库配置
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 外部五年真实历史大事件日程表 (World Milestones 注入宏观认知)
+historical_timeline_events:
+  1: "【万历元年春】顾知县新官到任，申明户部考成法，户房钱老吏暗借火耗平余浮收。"
+  2: "【万历元年夏】青黄不接，夏税折麦催征紧迫，孙掌柜当铺放出月息三分高利贷兼并田产。"
+  3: "【万历元年秋】歙县秋粮晚稻大收，水尾李生田地无水减产，遭差役登门逼催丝绢税。"
+  4: "【万历元年冬】冬税解京，知县完成第一年考成，太仓实银尚可，但下户小农现金流告罄。"
+  5: "【万历二年春】春旱严重，丰乐河水势骤减，上村陈氏筑坝截水，下村李氏扬言携械死斗。"
+  6: "【万历二年夏】小农借贷逾期，孙典当启动‘绝卖条款’强行兼并水尾田产，钱老吏从中做假账。"
+  7: "【万历二年秋】徽州府学岁考大比，吴秀才家长子吴天麟进场应试，关乎全族生员优免前程。"
+  8: "【万历二年冬】岁考放榜！吴天麟高中秀才，吴家获得二免特权，钱粮亏空转嫁给轮值里长！"
+  9: "【万历三年春】军户帅嘉谟持《大明会典》上告巡抚，称丝绢8780匹不应由歙县独扛，朝野震动！"
+  10: "【万历三年夏】徽州知府崔孔昕发紧急牌面：严禁六县均摊，限令知县速捕帅嘉谟归案！"
+  11: "【万历三年秋】应天巡抚宋仪望批示：设法均平，严防民变！顾知县被夹在中间，启动清勘对簿。"
+  12: "【万历三年冬】户部严催旧绢，歙县士绅汪道昆、生员万民联名上呈血书，誓死罢考罢市抗税！"
+  13: "【万历四年春】巡按直隶监察御史邓文宪下驻徽州，严查贪墨私耗，召六县知县合议大辩论。"
+  14: "【万历四年夏】婺源五县士民暴动围攻府衙，程任卿带头抗辩，歙县士子合院罢考相抗！"
+  15: "【万历四年秋】顾知县呈报全县清丈隐田16万亩实录，力图通过做大田土底盘稀释税负。"
+  16: "【万历四年冬】朝廷折中定案：减免歙县丝绢税，五县分摊部分银米，帅嘉谟流放、程任卿入狱。"
+  17: "【万历五年春】内阁首辅张居正下达全国清丈大令，全县全面重造鱼鳞图册，清查诡寄。"
+  18: "【万历五年夏】赵新吏递交密告黑材料，钱老吏私隐田产被查处，孙典当高利贷受整治。"
+  19: "【万历五年秋】全县鱼鳞图册大告成功，地籍归户清册定案，赋役一条鞭法全面落地。"
+  20: "【万历五年冬】五年考成届满！顾知县因清丈有功、抚平丝绢大难，选授刑科给事中升迁入京！"
+
+# 数据库配置
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 真实宏观经济参数 (严格对齐万历十六年条鞭由票与丝绢全书)
+macro_environment:
+  initial_treasury_silver: 2500.0          # 县太仓实存银 (两)
+  imperial_tax_quota: 6145.0               # 朝廷下达歙县的人丁丝绢与夏秋二税考成定额
+  base_grain_price: 1.0                    # 正常平年米价 (1.0 两白银 / 石大米)
+  official_tax_per_mu: 0.0801              # 万历税票官定税额: 0.0801 两/亩
+  silk_surcharge_per_mu: 0.0210            # 歙县分摊的人丁丝绢加派额: 0.0210 两/亩
+  official_surtax_rate: 0.15               # 官定火耗折银耗费率: 15%
+  subsistence_grain_per_tick: 3.0          # 每户单季最低糊口粮 (石)
+
+# 组织信道与滤波参数 (RFC-016)
+information_channel:
+  reporting_loss_rate: 0.35                # 基层灾情与抗税向知县汇报的滤波失真率
+  magistrate_audit_frequency: 2            # 知县每 2 个季度下乡实地清丈一次
+
+# 真实微观人口与家庭谱系配置 (Population & Micro-Ecological Lineages)
+population:
+  magistrates:
+    - id: "magistrate_gu"
+      name: "顾知县"
+      role_type: "magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.3
+      background: "万历二年进士，南直隶流官，初到任不通钱谷，急于完成考绩升迁，想在丝绢案中维持两造平衡"
+      initial_assets: { silver: 150.0, grain: 60.0, land: 0.0 }
+
+    - id: "vice_magistrate_liu"
+      name: "刘县丞 (分管水利粮马)"
+      role_type: "vice_magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PRAGMATIC_BUREAUCRAT"
+      background: "南直隶推官转任县丞，常驻东花厅分管粮马水利，与本土汪道昆、吴员外等大族为通家之好，遇事圆滑保身"
+      initial_assets: { silver: 90.0, grain: 45.0, land: 20.0 }
+
+  clerks:
+    - id: "clerk_qian"
+      name: "钱老吏 (户房经办)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.5
+      trait: "GREEDY_CALCULATING"
+      background: "把持户房二十余年，熟悉各都山川田亩册籍漏洞，与城关孙典当为连襟，暗中抽取火耗平余"
+      initial_assets: { silver: 80.0, grain: 40.0, land: 35.0 }
+
+    - id: "clerk_zhao"
+      name: "赵新吏 (户房副役)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "OPPORTUNIST_AMBITIOUS"
+      background: "西乡李氏姑表外甥，一直觊觎正书吏肥缺，企图借知县查账告发钱吏私弊，取而代之"
+      initial_assets: { silver: 20.0, grain: 25.0, land: 15.0 }
+
+    - id: "clerk_crime_ma"
+      name: "马司吏 (刑房掌案)"
+      role_type: "clerk_crime"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "CORRUPT_LEGALIST"
+      background: "把持刑房卷宗十五年，精研《大明律》与词讼受贿，原告被告通吃，擅长按银两多寡颠倒案情供词"
+      initial_assets: { silver: 45.0, grain: 30.0, land: 18.0 }
+
+    - id: "bailiff_captain_wu"
+      name: "吴捕头 (快班总捕)"
+      role_type: "bailiff_captain"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "BRUTAL_EXTORTIONIST"
+      background: "统领三班快手五十余人，奉官票下乡拿人催征，借机勒索'鞋袜钱'与'常例'，对下凶狠对上谄媚"
+      initial_assets: { silver: 30.0, grain: 20.0, land: 10.0 }
+
+  gentry:
+    - id: "gentry_wu"
+      name: "吴员外 (致仕乡绅)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PATRON_ELITE"
+      background: "前任国子监监生，吴秀才宗族大房长辈，拥有平畈上田百亩，享有免丁免粮特权，接受同宗佃户挂靠"
+      initial_assets: { silver: 600.0, grain: 900.0, land: 120.0 }
+
+    - id: "gentry_sun"
+      name: "孙掌柜 (典当行主 / 钱吏连襟)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "PREDATORY_LENDER"
+      background: "钱老吏连襟，坐拥城关同仁典当行，专门放月息三分高利贷，伺机绝卖兼并小农田产"
+      initial_assets: { silver: 850.0, grain: 400.0, land: 80.0 }
+
+  peasants:
+    - id: "peasant_wu_scholar"
+      name: "吴秀才家 (进学户 / 三等中户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.3
+      trait: "SCHOLAR_INVESTOR"
+      background: "全家供养长子吴天麟读书进学，极度爱惜声誉，借银买墨备战岁试，最怕摊派差役影响功名"
+      initial_assets: { silver: 5.0, grain: 28.0, land: 28.0 }
+
+    - id: "peasant_chen_elder"
+      name: "陈老汉家 (吃绝户危机 / 下户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "HEIRLESS_VULNERABLE"
+      background: "拥有 12 亩上田却无男丁仅二女，体弱多病，同宗各房恶侄虎视眈眈欲吃绝户，老汉急于招赘保产"
+      initial_assets: { silver: 3.0, grain: 18.0, land: 12.0 }
+
+    - id: "peasant_li_tailwater"
+      name: "李生 (水尾贫农 / 争水世仇)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.9
+      trait: "DESPERATE_STRESSED"
+      background: "地处丰乐河水圳末梢，年年遭上村陈氏截水，叔父曾被陈氏械斗打死，欠孙典当高利贷，濒临破产"
+      initial_assets: { silver: 0.5, grain: 6.0, land: 5.0 }
+
+    - id: "peasant_zhao_lijia"
+      name: "赵大富 (轮值里长 / 夹心层中户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "TRAPPED_LIJIA"
+      background: "今年轮值第七图里长，面临 15 户逃荒与士绅推免，税额亏空 40 两面临查抄入狱，极度焦虑"
+      initial_assets: { silver: 12.0, grain: 35.0, land: 32.0 }
+
+    - id: "peasant_chen_hothead"
+      name: "陈二狗 (上村自耕农 / 宗族械斗主力)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 1.1
+      trait: "BELLIGERENT_HOTHEAD"
+      background: "上村陈氏大族青年，脾气暴躁，持械日夜看守陈公陂水坝，视下村李氏为世仇，一触即发"
+      initial_assets: { silver: 2.0, grain: 12.0, land: 8.0 }
+
+# 社会网络拓扑关系定义 (供 Rust PySocialGraph 加速计算)
+social_relations:
+  # 行政上下级与官衙制衡 (SubordinateTo)
+  - { from: "vice_magistrate_liu", to: "magistrate_gu", type: "SubordinateTo", weight: 1.2 }
+  - { from: "clerk_qian", to: "magistrate_gu", type: "SubordinateTo", weight: 1.0 }
+  - { from: "clerk_zhao", to: "magistrate_gu", type: "SubordinateTo", weight: 0.8 }
+  - { from: "clerk_crime_ma", to: "magistrate_gu", type: "SubordinateTo", weight: 0.9 }
+  - { from: "bailiff_captain_wu", to: "magistrate_gu", type: "SubordinateTo", weight: 1.0 }
+  - { from: "bailiff_captain_wu", to: "clerk_qian", type: "SubordinateTo", weight: 2.2 }
+  - { from: "peasant_zhao_lijia", to: "clerk_qian", type: "SubordinateTo", weight: 2.0 }
+
+  # 利益与姻亲同盟 (CollusionAlliance)
+  - { from: "clerk_qian", to: "gentry_sun", type: "CollusionAlliance", weight: 4.0 }
+  - { from: "vice_magistrate_liu", to: "gentry_wu", type: "CollusionAlliance", weight: 3.0 }
+  - { from: "clerk_crime_ma", to: "gentry_sun", type: "CollusionAlliance", weight: 2.5 }
+
+  # 暴力催逼与差役勒索 (CoercionHarass)
+  - { from: "bailiff_captain_wu", to: "peasant_zhao_lijia", type: "CoercionHarass", weight: 3.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_li_tailwater", type: "CoercionHarass", weight: 2.5 }
+
+  # 宗族世仇 (HostileRival)
+  - { from: "peasant_chen_hothead", to: "peasant_li_tailwater", type: "HostileRival", weight: 4.5 }
+
+  # 宗族庇护与挂靠 (PatronClient)
+  - { from: "peasant_wu_scholar", to: "gentry_wu", type: "PatronClient", weight: 2.5 }
+
+  # 高利贷债务盘剥 (DebtorTo)
+  - { from: "peasant_li_tailwater", to: "gentry_sun", type: "DebtorTo", weight: 3.5 }
+
+  # 赋税征缴链 (TaxPayerTo)
+  - { from: "peasant_wu_scholar", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.5 }
+  - { from: "peasant_chen_elder", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.2 }
+  - { from: "peasant_li_tailwater", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 0.8 }
+  - { from: "peasant_chen_hothead", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.0 }

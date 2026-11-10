@@ -1,0 +1,17 @@
+role_id: "gentry"
+role_name: "致仕缙绅 / 地方大族"
+privilege_ring: 2 # 政治特权与社会资本
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.5
+  max_tokens: 1200
+
+action_space:
+  - "PETITION_MAGISTRATE"    # 联名士绅公禀向知县施压
+  - "OFFER_BRIBE"            # 赠送书吏常例银以庇护隐田
+  - "ACCEPT_MORTGAGE"        # 兼并破产小农土地 (典当转绝卖)
+  - "SEND_CAPITAL_LETTER"    # 致信在京同年言官弹劾知县
+  - "HOARD_GRAIN"            # 囤积居奇，抬高灾年米价
+

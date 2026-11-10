@@ -1,0 +1,22 @@
+role_id: "bailiff_captain"
+role_name: "快班捕头 (三班差役总捕 / Ring-2)"
+privilege_ring: 2 # Ring-2: 基层暴力执法与催征中介
+
+llm_settings:
+  provider: "deepseek"
+  model: "deepseek-flash"
+  temperature: 0.6
+  max_tokens: 1200
+
+action_space:
+  - "ENFORCE_TAX_LEVY"            # 持票牌下乡拘传欠税纳户，铁腕催逼
+  - "EXTORT_TRAVEL_EXPENSE"       # 向轮值里长及被拘农户索取'鞋袜钱'与'常例'
+  - "SUPPRESS_WATER_RIOT"         # 带快手弓兵下乡弹压宗族械斗
+  - "DEFLECT_BLAME"               # 遇到抗税，声称'刁民聚众拒捕'推卸责任
+  - "SEEK_CLERK_MERCY"            # 勾结户房书吏通融票期
+
+observation_scope:
+  - "village_tension"             # 敏锐嗅探各图里长亏空与自耕农濒死反抗情绪
+  - "magistrate_warrants"         # 接收知县的限期拘票与朱批
+  - "bribe_opportunities"         # 寻找谁家有银子可榨取'免敲费'与'酒饭钱'
+

@@ -1,0 +1,190 @@
+# 场景与时间线配置: 1575 年南直隶徽州府歙县知县自相矛盾政令高压压力测试
+scenario:
+  name: "1575年歙县知县自相矛盾政令压力测试 (巡抚均平 vs 知府严禁 vs 户部考成)"
+  historical_baseline_doc: "docs/HISTORICAL_BASELINE.md"
+  county: "南直隶 徽州府 歙县"
+  historical_year_start: 1575 # 万历三年
+  historical_year_end: 1576   # 万历四年
+  max_ticks: 8                # 聚焦矛盾最高压的 8 个季度 (丝绢案爆发到巡按御史定谳)
+  tick_unit: "QUARTER"
+
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 矛盾政令与宏观事件日程表 (8个季度高压冲突注入)
+historical_timeline_events:
+  1: "【万历三年春·政令死局】巡抚宋仪望批示：设法均平，严防民变！但知府崔孔昕发紧急牌面：严禁六县均摊，速捕帅嘉谟归案！户部文书催征丝绢6145两一两不得亏空！"
+  2: "【万历三年夏·两造对立】歙县士绅汪道昆、生员万民联名上呈血书誓死抗税；婺源五县士民包围徽州府衙抗议歙县转嫁丝绢！"
+  3: "【万历三年秋·巡按莅境】巡按直隶监察御史邓文宪下驻徽州，严查贪墨与催税虚实，限令知县三日内拿出两全清勘章程！"
+  4: "【万历三年冬·考成逼命】户部年底考成大限已到，太仓银两缺口巨大；知府怒斥知县阳奉阴违，巡抚则严斥知县激变生乱！"
+  5: "【万历四年春·大辩论与罢考】徽州六县知县合议大辩论；婺源士民蜂拥入府，歙县生员合院罢考、城关罢市，县衙瘫痪！"
+  6: "【万历四年夏·五县暴动】程任卿率婺源五县数千人暴动冲击府衙，知府吓阻；歙县户房钱吏趁乱暗中做假，火耗浮收三成！"
+  7: "【万历四年秋·清丈稀释尝试】知县呈报全县清丈隐田16万亩实录，力图通过做大田土底盘稀释税负，但士绅强烈反弹！"
+  8: "【万历四年冬·终局裁定】朝廷折中定谳：减免歙县丝绢，五县分摊部分银米；帅嘉谟流放、程任卿入狱，知县五年考成定谳！"
+
+macro_environment:
+  initial_treasury_silver: 2020.0
+  imperial_tax_quota: 6145.0
+  base_grain_price: 1.0
+  official_tax_per_mu: 0.0801
+  silk_surcharge_per_mu: 0.0210
+  official_surtax_rate: 0.15
+  subsistence_grain_per_tick: 3.0
+
+population:
+  magistrates:
+    - id: "magistrate_gu"
+      name: "顾知县"
+      role_type: "magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.5
+      background: "万历二年进士，面对巡抚‘均平’、知府‘严禁’、户部‘必足’三道互斥政令，既怕被知府穿小鞋，又怕被巡抚参奏激变，更怕户部考成革职"
+      initial_assets: { silver: 150.0, grain: 60.0, land: 0.0 }
+
+    - id: "vice_magistrate_liu"
+      name: "刘县丞 (分管水利粮马)"
+      role_type: "vice_magistrate"
+      privilege_ring: 1
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PRAGMATIC_BUREAUCRAT"
+      background: "本地官场老油条，深知神仙打架凡人遭殃，死守粮仓水利底线，绝不卷入知府与巡抚的丝绢死局"
+      initial_assets: { silver: 90.0, grain: 45.0, land: 20.0 }
+
+  clerks:
+    - id: "clerk_qian"
+      name: "钱老吏 (户房经办)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "GREEDY_CALCULATING"
+      background: "趁上级政令互斥、县衙大乱，暗借‘催缴丝绢与补铸火耗’名义两头瞒骗，大肆浮收"
+      initial_assets: { silver: 80.0, grain: 40.0, land: 35.0 }
+
+    - id: "clerk_zhao"
+      name: "赵新吏 (户房副役)"
+      role_type: "clerk"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "OPPORTUNIST_AMBITIOUS"
+      background: "暗中观察知县在知府与巡抚之间的摇摆，随时准备向巡按御史告发钱吏私弊"
+      initial_assets: { silver: 20.0, grain: 25.0, land: 15.0 }
+
+    - id: "clerk_crime_ma"
+      name: "马司吏 (刑房掌案)"
+      role_type: "clerk_crime"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "CORRUPT_LEGALIST"
+      background: "掌管帅嘉谟与罢考案犯卷宗，在知府催捕与士绅保全之间收受黑钱，删改口供"
+      initial_assets: { silver: 45.0, grain: 30.0, land: 18.0 }
+
+    - id: "bailiff_captain_wu"
+      name: "吴捕头 (快班总捕)"
+      role_type: "bailiff_captain"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.7
+      trait: "BRUTAL_EXTORTIONIST"
+      background: "奉知府拘票抓捕帅嘉谟，又被歙县士绅阻拦，趁机勒索里长与欠粮小农"
+      initial_assets: { silver: 30.0, grain: 20.0, land: 10.0 }
+
+  gentry:
+    - id: "gentry_wu"
+      name: "吴员外 (致仕乡绅)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "PATRON_ELITE"
+      background: "徽州士绅领袖，联络汪道昆率生员合院罢考，誓死不退，同时利用乱局接受中小农户田产挂靠"
+      initial_assets: { silver: 600.0, grain: 900.0, land: 120.0 }
+
+    - id: "gentry_sun"
+      name: "孙掌柜 (典当行主 / 钱吏连襟)"
+      role_type: "gentry"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "PREDATORY_LENDER"
+      background: "钱吏连襟，趁丝绢案引发的税银挤兑，以月息三分放款并兼并小农急售田产"
+      initial_assets: { silver: 850.0, grain: 400.0, land: 80.0 }
+
+  peasants:
+    - id: "peasant_wu_scholar"
+      name: "吴秀才家 (进学户 / 三等中户)"
+      role_type: "peasant"
+      privilege_ring: 2
+      model: "deepseek-flash"
+      temperature: 0.3
+      trait: "SCHOLAR_INVESTOR"
+      background: "长子已入邑庠为生员，积极参与士子声援与罢考，但担忧朝廷削去功名"
+      initial_assets: { silver: 8.0, grain: 50.0, land: 28.0 }
+
+    - id: "peasant_chen_elder"
+      name: "陈老汉家 (吃绝户危机 / 下户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.4
+      trait: "HEIRLESS_VULNERABLE"
+      background: "极度害怕丝绢案引发战乱或差役抄家，竭力卖粮缴税保产招赘"
+      initial_assets: { silver: 3.0, grain: 25.0, land: 12.0 }
+
+    - id: "peasant_li_tailwater"
+      name: "李生 (水尾贫农 / 争水世仇)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.9
+      trait: "DESPERATE_STRESSED"
+      background: "丝绢加派逼门，欠孙典当高利贷，濒临破产边缘"
+      initial_assets: { silver: 0.5, grain: 5.0, land: 5.0 }
+
+    - id: "peasant_zhao_lijia"
+      name: "赵大富 (轮值里长 / 夹心层中户)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 0.6
+      trait: "TRAPPED_LIJIA"
+      background: "第七图轮值里长，官府催丝绢、士绅抗税不交、下户逃荒，亏空压头，面临严刑拷打"
+      initial_assets: { silver: 15.0, grain: 40.0, land: 32.0 }
+
+    - id: "peasant_chen_hothead"
+      name: "陈二狗 (上村自耕农 / 宗族械斗主力)"
+      role_type: "peasant"
+      privilege_ring: 3
+      model: "deepseek-flash"
+      temperature: 1.0
+      trait: "BELLIGERENT_HOTHEAD"
+      background: "脾气暴躁，受宗族动员参与抗税罢考巡防，随时准备对抗下乡差役"
+      initial_assets: { silver: 2.0, grain: 15.0, land: 8.0 }
+
+social_relations:
+  - { from: "vice_magistrate_liu", to: "magistrate_gu", type: "SubordinateTo", weight: 1.2 }
+  - { from: "clerk_qian", to: "magistrate_gu", type: "SubordinateTo", weight: 1.0 }
+  - { from: "clerk_zhao", to: "magistrate_gu", type: "SubordinateTo", weight: 0.8 }
+  - { from: "clerk_crime_ma", to: "magistrate_gu", type: "SubordinateTo", weight: 0.9 }
+  - { from: "bailiff_captain_wu", to: "magistrate_gu", type: "SubordinateTo", weight: 1.0 }
+  - { from: "bailiff_captain_wu", to: "clerk_qian", type: "SubordinateTo", weight: 2.2 }
+  - { from: "peasant_zhao_lijia", to: "clerk_qian", type: "SubordinateTo", weight: 2.0 }
+  - { from: "clerk_qian", to: "gentry_sun", type: "CollusionAlliance", weight: 4.0 }
+  - { from: "vice_magistrate_liu", to: "gentry_wu", type: "CollusionAlliance", weight: 3.0 }
+  - { from: "clerk_crime_ma", to: "gentry_sun", type: "CollusionAlliance", weight: 2.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_zhao_lijia", type: "CoercionHarass", weight: 3.5 }
+  - { from: "bailiff_captain_wu", to: "peasant_li_tailwater", type: "CoercionHarass", weight: 2.5 }
+  - { from: "peasant_chen_hothead", to: "peasant_li_tailwater", type: "HostileRival", weight: 4.5 }
+  - { from: "peasant_wu_scholar", to: "gentry_wu", type: "PatronClient", weight: 2.5 }
+  - { from: "peasant_li_tailwater", to: "gentry_sun", type: "DebtorTo", weight: 3.5 }
+  - { from: "peasant_wu_scholar", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.5 }
+  - { from: "peasant_chen_elder", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.2 }
+  - { from: "peasant_li_tailwater", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 0.8 }
+  - { from: "peasant_chen_hothead", to: "peasant_zhao_lijia", type: "TaxPayerTo", weight: 1.0 }
+
