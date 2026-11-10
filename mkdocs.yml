@@ -84,6 +84,8 @@ plugins:
                 - Hai Rui & Ming Fiscal Sandbox · sources & receipt: en/articles/hai-rui/source_notes.md
                 - Second-Round Simplification · essay: en/articles/erjian/why_second_round_simplification_was_halted.md
                 - Second-Round Simplification · sources & receipt: en/articles/erjian/source_notes.md
+                - Group Chat "Received" · essay: en/articles/ack/why_everyone_replies_received_yet_nothing_gets_done.md
+                - Group Chat "Received" · sources & receipt: en/articles/ack/source_notes.md
                 - Hu Shi · research essay: en/articles/hu-shih/how_to_evaluate_hu_shis_works.md
                 - Hu Shi · Zhihu candidate draft: en/articles/hu-shih/zhihu_release_draft.md
                 - Hu Shi · sources & boundaries: en/articles/hu-shih/source_notes.md
@@ -109,6 +111,7 @@ plugins:
                 - Case selection & comparison method: en/research/case_selection_and_comparison_method.md
                 - Case · CN-HU naming & response mapping: en/research/cases/CN-HU_naming_and_response_mapping.md
                 - Case · CN-S2 evidence starting point: en/research/cases/CN-S2_evidence_starting_point.md
+                - Case · V-ACK evidence starting point: en/research/cases/V-ACK_evidence_starting_point.md
                 - Case · II-CN-A housing fund registration disposition: en/research/cases/II-CN-A_housing_fund_registration_disposition.md
                 - Case · II-CN-C Ming Huizhou silk tax & Hai Rui card: en/research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md
                 - Case · II-INT audit & driving-license research check: en/research/cases/II-INT_audit_and_driving_license_research_check.md
@@ -169,6 +172,8 @@ nav:
       - 海瑞与明代赋役沙盘 · 来源与回执: articles/hai-rui/来源说明.md
       - 二简字与消歧成本 · 正文: articles/erjian/为什么一简字成了_二简字却被叫停.md
       - 二简字与消歧成本 · 来源与回执: articles/erjian/来源说明.md
+      - 群聊“收到”与任务闭环 · 正文: articles/ack/群里都回复收到_事情为什么还是没人办.md
+      - 群聊“收到”与任务闭环 · 来源与回执: articles/ack/来源说明.md
       - 胡适 · 研究稿: articles/hu-shih/如何评价胡适的作品.md
       - 胡适 · 知乎候选稿: articles/hu-shih/知乎发布稿.md
       - 胡适 · 来源与边界: articles/hu-shih/来源说明.md
@@ -179,6 +184,7 @@ nav:
       - 待补充文献与证据众包清单: research/待补充文献与证据众包清单.md
       - II-CN-C · 明代丝绢案与海瑞立项卡: research/cases/II-CN-C_明代徽州丝绢案与海瑞变法立项卡.md
       - CN-S2 · 二简字证据起点卡: research/cases/CN-S2_证据起点.md
+      - V-ACK · 群聊收到与闭环卡: research/cases/V-ACK_证据起点.md
       - OP-001 · 表达工具的比较: research/OP-001/问题卡.md
       - OP-001 · 研究设计: research/OP-001/研究说明.md
       - OP-002 · 认证与组织自主性: research/OP-002/问题卡.md

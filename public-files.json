@@ -188,6 +188,14 @@
     "socio_engine/socio_core/src/lib.rs",
     "socio_engine/socio_core/src/state.rs",
     "socio_engine/socio_core/src/topology.rs",
-    "en/socio_engine/README.md"
+    "en/socio_engine/README.md",
+    "articles/ack/群里都回复收到_事情为什么还是没人办.md",
+    "articles/ack/来源说明.md",
+    "articles/ack/修订说明.md",
+    "en/articles/ack/why_everyone_replies_received_yet_nothing_gets_done.md",
+    "en/articles/ack/source_notes.md",
+    "en/articles/ack/revision_notes.md",
+    "research/cases/V-ACK_证据起点.md",
+    "en/research/cases/V-ACK_evidence_starting_point.md"
   ]
 }

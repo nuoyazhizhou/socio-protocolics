@@ -1,8 +1,8 @@
 > **Translation record**
 >
-> - Chinese source: `articles/README.md` (sha256 `2c832078ed867efd5a0814ef91a89fd9b7698d9be042dde18e7a7c224c400381`, `4763` bytes, 2026-11-10)
+> - Chinese source: `articles/README.md` (sha256 `7fa4f1a67db41b17f0b62571c08876aa03748967d5b4c8f817d95a192dabd1e1`, `5088` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.3`
+> - Translation version: `en-v0.4`
 > - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
 > - Pending sync: synchronized in public-files.json / mkdocs.yml
@@ -19,6 +19,7 @@ The same topic can have branches for different uses, such as research and outrea
 | Intermediaries and coordination costs                            | [Two approvals deleted — is the work really less?](intermediary/two_approvals_removed.md)                                                                    | [Source notes](intermediary/source_notes.md)                                                                                            | [Revision notes](intermediary/revision_notes.md) |
 | Hai Rui, Ming fiscal intermediaries & dis-intermediation         | [Why Couldn't Even Hai Rui Defeat the County Clerks? v0.1](hai-rui/why_hai_rui_could_not_defeat_county_clerks.md)                                            | [Source notes & receipt](hai-rui/source_notes.md) · [Project Card](../research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md) | [Revision notes](hai-rui/revision_notes.md)      |
 | First/Second-Round Simplification & disambiguation cost shifting | [Why Did First-Round Simplified Characters Succeed While Second-Round Simplification Was Halted? v0.1](erjian/why_second_round_simplification_was_halted.md) | [Source notes & receipt](erjian/source_notes.md) · [CN-S2 Evidence Card](../research/cases/CN-S2_evidence_starting_point.md)            | [Revision notes](erjian/revision_notes.md)       |
+| Group Chat "Received" & Task Closure                             | [Why Does Everyone Reply "Received" in the Group Chat, Yet Nothing Gets Done? v0.1](ack/why_everyone_replies_received_yet_nothing_gets_done.md)             | [Source notes & receipt](ack/source_notes.md) · [V-ACK Evidence Card](../research/cases/V-ACK_evidence_starting_point.md)               | [Revision notes](ack/revision_notes.md)          |
 
 All new drafts and continuations of existing drafts must follow [case-driven writing and proposition testing](../CASE_DRIVEN_TESTING.md): a real primary case is developed, real contrary material or evidenced competing explanations are checked, and specific sub-claims are submitted for adjudication; a conceptual sample chapter does not count as passing T3.
 

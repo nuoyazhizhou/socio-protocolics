@@ -1,20 +1,20 @@
 > **Translation record**
-> - Chinese source: `research/主题计划/V_反馈与持续协作.md` (sha256 `e1eb95a3ee8fa7ca400c0938d0d6e34e1dba9e48e7aeb4e810943feb1dacfa0d`, `7169` bytes, 2026-11-09)
+> - Chinese source: `research/主题计划/V_反馈与持续协作.md` (sha256 `915fe653246af05d9f1868469ffdbd4b69e80cf14fc8e0e35b63c6f16d50eafe`, `7882` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-09
+> - Translation version: `en-v0.2`
+> - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: synchronized in public-files.json / mkdocs.yml
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
 # Group V — The Message Arrived; Is the Action Chain Connected?
 
-Version: Plan v0.2 | Date: 2026-10-23 | Chinese original; English translation pending. Status: historical-response candidates and research tasks, not medical advice or an already-estimated epidemic-control effect.
+Version: Plan v0.3 | Date: 2026-11-10 (initial v0.2: 2026-10-23) | Complete English translation of `research/主题计划/V_反馈与持续协作.md`. Status: Supported by the [V-ACK Evidence Starting-Point Card](../cases/V-ACK_evidence_starting_point.md) and flagship outreach essay [*Why Does Everyone Reply "Received" in the Group Chat, Yet Nothing Gets Done?*](../../articles/ack/why_everyone_replies_received_yet_nothing_gets_done.md). Historical-response candidates and research tasks, not medical advice or an already-estimated epidemic-control effect.
 
 ## Real-Case and Proposition-Testing Card (required reading before drafting and continuing)
 
-Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIVEN_TESTING.md); update the version when material and verdict change. The following main cases are all candidates, with success or failure not pre-committed; a fictional lead-in or simulated ledger cannot substitute for a real process and counter-material.
+Maintain this card per [the shared writing and acceptance rules](../../CASE_DRIVEN_TESTING.md); update the version when material and verdict change. The companion case card is registered at **[V-ACK Evidence Starting-Point Card](../cases/V-ACK_evidence_starting_point.md)**. The following main cases are all candidates, with success or failure not pre-committed; a fictional lead-in or simulated ledger cannot substitute for a real process and counter-material.
 
 | Field | Current registration of this group |
 |---|---|
@@ -66,4 +66,4 @@ Evidence that would force a revision: added acknowledgement does not improve exe
 
 First read the coordination and resources chapters specified by the 2015 review report, then supplement Nigeria tracing and response material, and deliver the common-field event table. Record for each material whether it is a contemporaneous notice, a retrospective, a party explanation or an independent review; if the original response timeline is unavailable, first deliver an availability report.
 
-Proposed article: *"After the Notice Is Sent, Who Confirms That Things Really Got Done?"* The historical case is responsible only for its evidenced scope; do not turn this plan into current disease-prevention advice. Endnotes on P1/P2/P3 and 016; only when cross-context material is actually involved separately list Group I's application 003, with the social and engineering mapping stated explicitly, Chinese first. The shared [execution and acceptance steps](README.md) apply.
+The flagship case and outreach exploration essay has landed: **[*Why Does Everyone Reply "Received" in the Group Chat, Yet Nothing Gets Done? — From Performative ACKs to Task Leases and Responsibility Closure*](../../articles/ack/why_everyone_replies_received_yet_nothing_gets_done.md)** (with companion [Source Notes](../../articles/ack/source_notes.md) and [Revision Notes](../../articles/ack/revision_notes.md)). The historical case is responsible only for its evidenced scope; do not turn this plan into current disease-prevention advice. Endnotes on P1/P2/P3 and 016; only when cross-context material is actually involved separately list Group I's application 003, with the social and engineering mapping stated explicitly, Chinese first. The shared [execution and acceptance steps](README.md) apply.
