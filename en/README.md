@@ -48,7 +48,7 @@ Large-scale human coordination relies on language, contracts, organisational app
 - **Run the Multi-Agent Simulation Sandbox (Socio-Engine)**: Read the [Sandbox Architecture & QuickStart](../socio_engine/README_EN.md) and [Universal Scenario Prompt Template](../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) to replicate Ming Dynasty Huizhou tax games and Hai Rui's breakthrough experiments.
 - **10-minute core concept overview**: Browse the [Core Concepts CheatSheet](CHEATSHEET.md) and the [3→6→19 Theme and Case Index](framework_and_case_index.md).
 - **Read the whitepaper systematically**: Visit the [Online Reading Site (EN)](https://nuoyazhizhou.github.io/socio-protocolics/en/), or jump straight to [Whitepaper v11.2 (Chapter 1)](whitepaper/chapter-01.md) (with the Chinese SSOT remaining the sole canonical source).
-- **Spot errors, critique or pick up an open question**: Explore [Open Questions and Research Designs](research/README.md) or [How to Contribute](CONTRIBUTING.md) (endorsing the overall framework is not a condition of participation).
+- **Spot errors, critique, or claim empirical/archival tasks**: Check the [Open Evidence & Material Wishlist](research/OPEN_EVIDENCE_WISHLIST.md) and [Open Questions & Research Designs](research/README.md) (endorsing the overall framework is not a condition of participation).
 
 ### Complete Navigation Table
 
@@ -63,6 +63,7 @@ Large-scale human coordination relies on language, contracts, organisational app
 | **Whitepaper & CheatSheet** | Which postulates and SP-RFCs an article cites, and what other themes lack | [3→6→19 Theme and Case Index](framework_and_case_index.md) |
 | **Whitepaper & CheatSheet** | Read or edit a single chapter of the whitepaper | [Reading, Previewing and Replacing by Tag](CHUNK_READING_GUIDE.md) |
 | **Open Research** | A small question to take up | [Open Questions and Research Designs](research/README.md) |
+| **Open Research** | Claim archival scans, econometric replications, and empirical gaps | [Open Evidence & Material Wishlist](research/OPEN_EVIDENCE_WISHLIST.md) |
 | **Open Research** | Whether the engineering claims actually hold up | [OP-001: Comparison Draft of an Engineering Checklist and an Ordinary Process Checklist](research/OP-001/question_card.md) |
 | **Open Research** | Accreditation access and organisational autonomy | [OP-002: When Access Absorbs, and When It Protects Independent Inquiry](research/OP-002/question_card.md) |
 | **Open Research** | Review an agent-collaboration experiment | [PR-001: Access Cost and Collaboration Scale (Design Draft)](research/PR-001_agent_collaboration_scale.md) |

@@ -89,6 +89,7 @@ plugins:
                 - Framework & case index: en/framework_and_case_index.md
                 - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
                 - Research questions that can be taken up: en/research/README.md
+                - Open Evidence Wishlist: en/research/OPEN_EVIDENCE_WISHLIST.md
                 - H01 — Expression & understanding cost: en/research/H01_expression_and_understanding_cost.md
                 - H02 — Formal status & adoption: en/research/H02_formal_status_and_adoption.md
                 - H03 — Rules & actual migration: en/research/H03_rules_and_actual_migration.md
@@ -166,6 +167,7 @@ nav:
       - 审批 · 来源与边界: articles/intermediary/来源说明.md
   - 开放研究:
       - 研究库: research/README.md
+      - 待补充文献与证据众包清单: research/待补充文献与证据众包清单.md
       - OP-001 · 表达工具的比较: research/OP-001/问题卡.md
       - OP-001 · 研究设计: research/OP-001/研究说明.md
       - OP-002 · 认证与组织自主性: research/OP-002/问题卡.md

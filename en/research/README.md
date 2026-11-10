@@ -12,6 +12,8 @@
 
 The first three cards take up the [Hu Shi article](../articles/hu-shih/how_to_evaluate_hu_shis_works.md); OP-001 takes up the [intermediary article](../articles/intermediary/two_approvals_removed.md); OP-002 opens research on certification, authorisation and organisational autonomy; PR-001 studies agent collaboration scale separately. They are drafts of material verification and research design; none has been formally pre-registered, none has run experiments under its own protocol, and none has effect data.
 
+> 💡 **Looking for immediate empirical contribution targets?** Check the [Open Evidence & Material Wishlist](./OPEN_EVIDENCE_WISHLIST.md), featuring 4 actionable modules (archival scans, econometric IV replications, industrial evolution archives, and cross-dynasty simulation datasets) with explicit Tier A/B/C acceptance criteria!
+
 ## Raise questions, and also accept that a question may be rejected
 
 The whitepaper can supply questions that can be taken up, candidate mechanisms and checking interfaces; it does not require the author to complete every empirical study personally. Participants may freely choose materials and suitable methods, and may also point out that a research question is already covered by existing theory; one need not first support protocolics, nor complete modelling, simulation and comparative history all at once.
