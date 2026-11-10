@@ -1,10 +1,10 @@
 > **Translation record**
-> - Chinese source: `articles/README.md` (sha256 `096b8fc3962a7978ed897dbd8d30fdd17d1a43dc138cf320d6e84d2c8c6fbe8c`, `3993` bytes, 2026-11-09)
+> - Chinese source: `articles/README.md` (sha256 `aa4b34163a6249de617a0e6d9636e48c53d7a525168166164290ee9f86631aac`, `4325` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-09
+> - Translation version: `en-v0.2`
+> - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: synchronized in public-files.json / mkdocs.yml
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
@@ -16,6 +16,7 @@ The same topic can have branches for different uses, such as research and outrea
 |---|---|---|---|
 | Hu Shi and the vernacular-language movement | [Zhihu outreach candidate draft v0.1](hu-shih/zhihu_release_draft.md) · [research draft v0.5](hu-shih/how_to_evaluate_hu_shis_works.md) | [Shared sources and claim receipts](hu-shih/source_notes.md) | [Revision notes](hu-shih/revision_notes.md) |
 | Intermediaries and coordination costs | [Two approvals deleted — is the work really less?](intermediary/two_approvals_removed.md) | [Source notes](intermediary/source_notes.md) | [Revision notes](intermediary/revision_notes.md) |
+| Hai Rui, Ming fiscal intermediaries & dis-intermediation | [Why Couldn't Even Hai Rui Defeat the County Clerks? v0.1](hai-rui/why_hai_rui_could_not_defeat_county_clerks.md) | [Source notes & receipt](hai-rui/source_notes.md) · [Project Card](../research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md) | [Revision notes](hai-rui/revision_notes.md) |
 
 All new drafts and continuations of existing drafts must follow [case-driven writing and proposition testing](../CASE_DRIVEN_TESTING.md): a real primary case is developed, real contrary material or evidenced competing explanations are checked, and specific sub-claims are submitted for adjudication; a conceptual sample chapter does not count as passing T3.
 

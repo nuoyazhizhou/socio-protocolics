@@ -102,3 +102,4 @@ Contributing to the empirical foundation of *Socio-Protocolics* follows standard
   1. Direct footnote citation in the corresponding chapter of the whitepaper: *"Special thanks to [Contributor Name / GitHub ID] for retrieving and verifying this archival document."*
   2. Recorded in the repository's public `CONTRIBUTING.md` Contributor Hall of Fame;
   3. The task on this wishlist will be marked **🟢 Resolved** with the closing justification link.
+

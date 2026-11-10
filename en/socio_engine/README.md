@@ -88,7 +88,7 @@ The included database (`database/socio_sim.db`, 2.2 MB) records **16 full simula
 | **`v1.0` / `exp_mandate_conflict`** | Ming Wanli 1573–1577 Shexian | Gu Magistrate (Compromising Bureaucrat) | 13.0 mu | 40.0% | **83.0% (Near Revolt)** | 1.61 |
 | **`exp_hai_rui_governance`** | Ming Wanli 1575 Reform | Hai Rui (Moral Purge Only) | **0.0 mu** | **0.0%** | **19.0%** | **2.97 (Clerk Strike)** |
 | **`exp_hai_rui_breakthrough`** | Ming Wanli 1575 Reform | Hai Rui (Protocol Re-engineering: Recruit New Clerks + Direct Public Cadastre) | **0.0 mu** | **0.0%** | **19.0% (Stable)** | **2.61** |
-| **`exp_blind_anonymized`** | Anonymized Cangshui County | Zero Ming Terms (Mechanistic Ablation) | Emerged rent extraction and debt bondage identical to real history |
+| **`exp_blind_anonymized`** | Anonymized Cangshui County | Zero Ming Terms (Mechanistic Ablation, Standard Governor) | 0.0 mu | 0.0% (1 Bankrupt) | **45.0% (High Rent Extraction)** | **1.43** |
 
 ---
 

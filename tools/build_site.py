@@ -19,11 +19,14 @@ RELEASE = 'v11.2-r20261106'
 WHITEPAPER = '社会系统协议学白皮书.md'
 
 
-def reading_markdown(text: str) -> str:
+def reading_markdown(text: str, source_name: str = '') -> str:
     """Protect table math delimiters in derived HTML input; source files stay unchanged."""
     text = text.replace('\r\n', '\n').replace('\r', '\n')
     text = re.sub(r'\(\.\./tools/([^)]+)\)',
                   r'(https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/tools/\1)', text)
+    if source_name.startswith('en/'):
+        text = re.sub(r'\((?:\.\./)+socio_engine/([^)]+)\)',
+                      r'(https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/socio_engine/\1)', text)
     text = text.replace('../.github/workflows/pages.yml',
                         'https://github.com/nuoyazhizhou/socio-protocolics/blob/codex/public-release/.github/workflows/pages.yml')
     # Cross-language top-level navigation links in source markdown point to repo files for GitHub browsing;
@@ -103,7 +106,7 @@ def main() -> int:
         path = SOURCE / name
         path.parent.mkdir(parents=True, exist_ok=True)
         if name.endswith('.md'):
-            path.write_text(reading_markdown(data.decode('utf-8')), encoding='utf-8')
+            path.write_text(reading_markdown(data.decode('utf-8'), name), encoding='utf-8')
         else:
             path.write_bytes(data)
     full = payload[WHITEPAPER]

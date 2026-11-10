@@ -44,7 +44,7 @@ Large-scale human coordination relies on language, contracts, organisational app
 
 ### Quick Entry by Reading Goal
 
-- **Start with concrete case essays (no theory prerequisite)**: Read [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) or [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md).
+- **Start with concrete case essays (no theory prerequisite)**: Read [Why Couldn't Even Hai Rui Defeat the County Clerks? — From the 1577 "Book of Silk" to a Rust + AI Sandbox](articles/hai-rui/why_hai_rui_could_not_defeat_county_clerks.md), [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md), or [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md).
 - **Run the Multi-Agent Simulation Sandbox (Socio-Engine)**: Read the [Sandbox Architecture & QuickStart](../socio_engine/README_EN.md) and [Universal Scenario Prompt Template](../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) to replicate Ming Dynasty Huizhou tax games and Hai Rui's breakthrough experiments.
 - **10-minute core concept overview**: Browse the [Core Concepts CheatSheet](CHEATSHEET.md) and the [3→6→19 Theme and Case Index](framework_and_case_index.md).
 - **Read the whitepaper systematically**: Visit the [Online Reading Site (EN)](https://nuoyazhizhou.github.io/socio-protocolics/en/), or jump straight to [Whitepaper v11.2 (Chapter 1)](whitepaper/chapter-01.md) (with the Chinese SSOT remaining the sole canonical source).
@@ -54,6 +54,7 @@ Large-scale human coordination relies on language, contracts, organisational app
 
 | Category | What you want to see | Entry point |
 | --- | --- | --- |
+| **Cases & Evidence** | Featured essay on Ming fiscal reform, Hai Rui & AI sandbox | [Why Couldn't Even Hai Rui Defeat the County Clerks?](articles/hai-rui/why_hai_rui_could_not_defeat_county_clerks.md) · [Sources & Receipt](articles/hai-rui/source_notes.md) |
 | **Cases & Evidence** | A concrete article open to criticism | [How to Evaluate Hu Shi's Work: Whether the Work Is Good, and What It Changed](articles/hu-shih/how_to_evaluate_hu_shis_works.md) |
 | **Cases & Evidence** | The article's sources and evidence boundaries | [Sources for the Hu Shi article](articles/hu-shih/source_notes.md) |
 | **Cases & Evidence** | A second theme beyond language reform | [Delete Two Approval Steps, and Did the Work Really Get Lighter?](articles/intermediary/two_approvals_removed.md) |

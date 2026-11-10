@@ -12,7 +12,7 @@
 - 📜 [跨朝代通用剧本提示词生成模板 (UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](./docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
 - 📊 [跨版本与多轮次方差对比看板 (scripts/query_experiments.py)](./scripts/query_experiments.py)
 - ⚙️ [模型网关配置 (config/providers.yaml)](./config/providers.yaml)
-- 🔑 [API 密钥环境变量示例 (.env.example)](./.env.example)
+- 🔑 API 密钥环境变量示例 (`.env.example`)
 - 👥 角色配置与 Prompt 注入目录 (`roles/`)
 
 ---

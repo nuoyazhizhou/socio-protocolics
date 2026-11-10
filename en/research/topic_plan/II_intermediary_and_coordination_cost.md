@@ -1,10 +1,10 @@
 > **Translation record**
-> - Chinese source: `research/主题计划/II_中介与协调成本.md` (sha256 `c1496aae141dccd95e5ae6646e1008a3cfd8f88b4e291d9ee68f2a38f9bf5fed`, `10402` bytes, 2026-11-09)
+> - Chinese source: `research/主题计划/II_中介与协调成本.md` (sha256 `702f4dc46c8c3b67a0eebec9888d998d93b2882f7b28e160d7da6de527bc7fdd`, `11218` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-09
+> - Translation version: `en-v0.2`
+> - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: synchronized in public-files.json / mkdocs.yml
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
@@ -86,6 +86,7 @@ The following continues the existing gaps in [core case sources and boundaries](
 
 | Material task | Corresponding main text and question | First submittable result | Counter-material and competing explanation | Current status |
 |---|---|---|---|---|
+| [Ming Huizhou Silk Tax Dispute & Hai Rui's Reforms](../cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md) | SP-RFC-004/005, 011/014: mechanism difference between pure coercive purge and dis-intermediation (public ledgers / alternative bookkeepers) when grassroots clerks combine productive bookkeeping with exclusive interpretive power | Established [Project & Proposition Card](../cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md), [Historical Baseline](../../../socio_engine/docs/HISTORICAL_BASELINE.md), and [Case & Sandbox Essay](../../articles/hai-rui/why_hai_rui_could_not_defeat_county_clerks.md) | Hai Rui's administrative overload and eight-month removal as Governor of Yingtian; Ray Huang's "lack of numerical management"; fiscal history explanation that meltage fees funded essential county office operations | Registered & drafted (strictly separating historical records from counterfactual sandbox runs); original woodblock scans pending |
 | French Ancien-Régime salt tax | §3.7-B: the relation of tax-system difference, evasion behaviour and total cost; do not infer net harm from the existence of smuggling | First bound the region and period, and deliver the version/page of the tax-system / collection original and a feasibility table for price, transport or litigation material; do not fill in scale numbers before verification | Contemporaneous transport and supply conditions, different-tax-system regions or enforcement records; distinguish tax-price gap, transaction cost and political judgement | Pending supplementation; retains the research-lead identity |
 | French tax-farming system | §5.6.2-A: compare state cash flow and risk, collector incentive and taxpayer burden separately | Locate one specific contract and its period / region, record the parties, revenue/expenditure responsibility, risk sharing and execution material; if accounts are unavailable, deliver the gap | Compare actually feasible alternative collection mechanisms and state risk-bearing; do not presuppose tax-farming is necessarily net-harmful | Pending supplementation; retains the research-lead identity |
 
