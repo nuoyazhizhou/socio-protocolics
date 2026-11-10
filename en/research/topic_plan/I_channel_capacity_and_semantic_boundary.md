@@ -1,10 +1,10 @@
 > **Translation record**
-> - Chinese source: `research/主题计划/I_信道容量与语义边界.md` (sha256 `a369a1dc4518a765cfb7c2d3d18bbce5d9e1572334e392a068ed84d92140f853`, `15290` bytes, 2026-11-09)
+> - Chinese source: `research/主题计划/I_信道容量与语义边界.md` (sha256 `c494ccf83ed15aa63309dc11fd4a9817d6ecad1e652d24ab6d337cbf58d31521`, `15454` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-09
+> - Translation version: `en-v0.2`
+> - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: synchronized in public-files.json / mkdocs.yml
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
@@ -54,7 +54,7 @@ The table below follows the existing candidate registration and adds no new effe
 | ID / object | Current material and the narrow judgement it can support | Still missing and comparison boundary |
 |---|---|---|
 | CN-HU Hu Shi and the vernacular movement, focusing first on 1917—1920 | The [article and sources](../../articles/hu-shih/source_notes.md) list the advocacy, the author's self-account and a specific grade-level educational arrangement | Textbooks, classroom use, other actors' behaviour and comprehension effect still need supplementing; this is not a nationwide synchronous migration or a 001 causal verification |
-| CN-S2 Second-Simplification character draft, 1977—1986 | [Evidence Table v0.4](../cases/CN-S2_evidence_starting_point.md) mainly checks the disambiguation burden after task-relevant distinctions are merged many-to-one; the formal withdrawal, the chip rationale and the handling of quantified clues are listed separately | A counter-test candidate against 001's over-strong extrapolation, not a negative control or proof that the Second-Simplification cognitive effect is established; unverified numbers, surname causation and the Korean extrapolation are not evidence |
+| CN-S2 Second-Simplification character draft, 1977—1986 | [Evidence Table v0.5](../cases/CN-S2_evidence_starting_point.md) and [public exploration essay v0.1](../../articles/erjian/why_second_round_simplification_was_halted.md) (with [sources & receipt](../../articles/erjian/source_notes.md)) mainly check the disambiguation burden after task-relevant distinctions are merged many-to-one; the formal withdrawal, the chip rationale and the handling of quantified clues are listed separately | A counter-test candidate against 001's over-strong extrapolation, not a negative control or proof that the Second-Simplification cognitive effect is established; unverified numbers, surname causation and the Korean extrapolation are not evidence |
 | US-PW U.S. *Plain Writing Act*, from 2010 | The [enacted bill text](https://www.govinfo.gov/content/pkg/PLAW-111publ274/html/PLAW-111publ274.htm), with the provisions and reading scope registered in the existing material table | Legislation does not equal improved comprehension; actual documents, audience and effect records still need supplementing |
 | US-S06 U.S. 1906 simplified-spelling controversy | [Contemporaneous newspaper OCR](https://oregonnews.uoregon.edu/lccn/sn83025138/1906-12-15/ed-1/seq-4/ocr/) is an existing lead on the withdrawal report | Images, formal directives and congressional records still need cross-checking; do not upgrade one report into the failure of all spelling change |
 

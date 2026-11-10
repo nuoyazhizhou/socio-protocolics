@@ -82,6 +82,8 @@ plugins:
                 - Articles overview & purpose: en/articles/README.md
                 - Hai Rui & Ming Fiscal Sandbox · essay: en/articles/hai-rui/why_hai_rui_could_not_defeat_county_clerks.md
                 - Hai Rui & Ming Fiscal Sandbox · sources & receipt: en/articles/hai-rui/source_notes.md
+                - Second-Round Simplification · essay: en/articles/erjian/why_second_round_simplification_was_halted.md
+                - Second-Round Simplification · sources & receipt: en/articles/erjian/source_notes.md
                 - Hu Shi · research essay: en/articles/hu-shih/how_to_evaluate_hu_shis_works.md
                 - Hu Shi · Zhihu candidate draft: en/articles/hu-shih/zhihu_release_draft.md
                 - Hu Shi · sources & boundaries: en/articles/hu-shih/source_notes.md
@@ -165,6 +167,8 @@ nav:
       - 文章与用途说明: articles/README.md
       - 海瑞与明代赋役沙盘 · 正文: articles/hai-rui/为什么海瑞斗不过县衙老吏.md
       - 海瑞与明代赋役沙盘 · 来源与回执: articles/hai-rui/来源说明.md
+      - 二简字与消歧成本 · 正文: articles/erjian/为什么一简字成了_二简字却被叫停.md
+      - 二简字与消歧成本 · 来源与回执: articles/erjian/来源说明.md
       - 胡适 · 研究稿: articles/hu-shih/如何评价胡适的作品.md
       - 胡适 · 知乎候选稿: articles/hu-shih/知乎发布稿.md
       - 胡适 · 来源与边界: articles/hu-shih/来源说明.md
@@ -174,6 +178,7 @@ nav:
       - 研究库: research/README.md
       - 待补充文献与证据众包清单: research/待补充文献与证据众包清单.md
       - II-CN-C · 明代丝绢案与海瑞立项卡: research/cases/II-CN-C_明代徽州丝绢案与海瑞变法立项卡.md
+      - CN-S2 · 二简字证据起点卡: research/cases/CN-S2_证据起点.md
       - OP-001 · 表达工具的比较: research/OP-001/问题卡.md
       - OP-001 · 研究设计: research/OP-001/研究说明.md
       - OP-002 · 认证与组织自主性: research/OP-002/问题卡.md

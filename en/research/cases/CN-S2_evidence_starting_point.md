@@ -1,18 +1,18 @@
 > **Translation record**
-> - Chinese source: `research/cases/CN-S2_证据起点.md` (sha256 `6e0c7f092593e26c0f4bd538f72fa7f03b9bfc8e9ab27748631f7459a0965a69`, `17677` bytes, 2026-11-09)
+> - Chinese source: `research/cases/CN-S2_证据起点.md` (sha256 `5f944d335003835276f4c8014fe362c0fc6d14e92159c2bdeb53fa0c7d4caf76`, `18926` bytes, 2026-11-10)
 > - Chinese version / release tag: `v11.2-r20261106` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-09
+> - Translation version: `en-v0.2`
+> - Translation date: 2026-11-10
 > - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: pending registration in public-files.json / mkdocs.yml
+> - Pending sync: synchronized in public-files.json / mkdocs.yml
 > - Status: complete translation
 > - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
 
-# CN-S2 | The Second-Simplification (二简) Draft: First Separate the Fact of Withdrawal from the Explanation of Cause
+# CN-S2 | The Second-Simplification (二简) Draft: First Separate the Fact of Withdrawal from the Explanation of Cause (Project Registration & Evidence Starting-Point Card)
 
-Version: material trial v0.4 | Date: 2026-10-23 | Language: Chinese original; English translation pending.
+Version: Project & Material Card v0.5 | Date: 2026-11-10 (initial v0.4: 2026-10-23) | Complete English translation of `research/cases/CN-S2_证据起点.md`.
 
-This document is the first evidence table, not a case article or a completed study of failure causes. It is executed per the [case comparison method](../case_selection_and_comparison_method.md); the withdrawal and the decision rationale still rely on a single official forwarding-text chain. This round additionally checks the original-paper abstract of an ordinary traditional–simplified study and a publisher's note on a word list; neither is evidence of Second-Simplification effect and neither adds an independent Second-Simplification case count.
+This document is the project registration and evidence starting-point card for the CN-S2 topic, supporting the public case and outreach exploration essay [*Why Did First-Round Simplified Characters Succeed While Second-Round Simplification Was Halted? — "Hash Collisions" and Disambiguation Cost Shifting in Chinese Character Reform*](../../articles/erjian/why_second_round_simplification_was_halted.md) (with companion [Source Notes & Proposition Testing Receipt](../../articles/erjian/source_notes.md) and [Revision Notes](../../articles/erjian/revision_notes.md)). It is executed per the [case comparison method](../case_selection_and_comparison_method.md) and [Case-Driven Writing and Proposition Testing](../../CASE_DRIVEN_TESTING.md); the withdrawal and the decision rationale remain anchored to the official forwarding-text chain (S1); it additionally checks the original-paper abstract of an ordinary traditional–simplified study (R1), the Unicode technical standard (UAX #38), and a publisher's note on a word list (R2), which supply general mechanism background and research boundaries without substituting for empirical measurements of Second-Simplification cognitive effects or adding an independent Second-Simplification case count.
 
 ## Source and locating
 
@@ -60,7 +60,7 @@ The core comparison is: **whether the task's original distinguishing capacity is
 
 The starting point of verification is Unicode [UAX #38 §3.7.1 (Revision 41)](https://www.unicode.org/reports/tr38/tr38-41.html): this round read the traditional–simplified mapping and contextual-disambiguation notes; it supports that general character mapping has a one-to-many reverse selection, but is not the 1977 draft's normative glyph table or a cognitive-cost study. §3.4 also reminds that actual reading cannot be understood as parsing isolated characters one by one. Therefore this mechanism is not called "moving toward an alphabetic language": a change in the ambiguity of writing units does not equal writing being changed to phoneme-based encoding, and Chinese itself does not thereby become another language.
 
-The next minimal material: item by item preserve the draft version / table number / glyph image, the source character, the merged character, the values the original task needed to distinguish, the allowed context, the actual ambiguity, whether it was noticed, the remedy and the investment. The 1977 published draft must not be mixed with earlier drafts / revised drafts; at present this draft-mapping table is not complete, and generalised examples or search snippets must not be filled in as already-checked character cases.
+The next minimal material: item by item preserve the draft version / table number / glyph image, the source character, the merged character, the values the original task needed to distinguish, the allowed context, the actual ambiguity, whether it was noticed, the remedy and the investment. The 1977 published draft must not be mixed with earlier drafts / revised drafts; in this round, based on the full public transcription of the 1977-12-20 *Second Chinese Character Simplification Scheme (Draft)* (`S2`) and the 1986-10-10 *Explanatory Note on Re-Publishing the "General Table of Simplified Characters"* (`S3`), we have compiled the **[Appendix: Three-Category Mapping Catalog of Second-Round Simplified Characters](../../articles/erjian/why_second_round_simplification_was_halted.md#erjian-mapping-appendix)** (strictly distinguishing Table 1 [trial use] from Table 2 [discussion draft], across Table A cross-semantic many-to-one homophone merges, Table B newly coined outlines & component replacements, and Table C the 1986 official collision rollbacks on `叠/覆/像/啰/瞭`); high-resolution scans of the December 1977 original newspaper pages and controlled human misreading measurements remain open for the next stage of supplementation.
 
 Distinguishable observation: if the merged objects were originally equivalent in that task, the original table still preserves the necessary distinction, existing fields suffice to recover it, or a qualified comparison shows accuracy does not decline and no extra disambiguation burden is needed, then the cost-increase claim for that scenario does not hold or must be narrowed; if only more potential ambiguity is observed, one still cannot directly write it as a measured reading burden. Continue comparing single-character, word-bearing, and full-context conditions separately, without first selecting a window that necessarily supports the claim.
 
