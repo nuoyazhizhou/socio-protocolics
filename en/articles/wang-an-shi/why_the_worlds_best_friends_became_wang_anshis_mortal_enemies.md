@@ -168,5 +168,18 @@ Wang Anshi was a man of towering intellect and absolute integrity. But in the wo
 
 ---
 
-*This case study is published under the Socio-Protocolics v11.2 Empirical Research Programme. Historical sources, primary memorials, and simulation parameters are documented in [Source Notes](source_notes.md) and [Initiation Card II-CN-W](../../research/cases/II-CN-W_northern_song_xining_reforms_and_middleware_compliance.md).*
+<a id="article-framework"></a>
+
+## Endnote: Protocol Clauses Invoked and What This Case Does Not Prove
+
+> **Scope & Provenance**: This case study is anchored in Group II (SP-RFC-004/005), Normative Canon (SP-RFC-007), and Group VI (SP-RFC-017/018) of *Socio-Protocolics Whitepaper v11.2*. Historical materials rely on primary Song texts (*Song Shi*, *Xu Zizhi Tongjian Changbian*, *Linquan Xiansheng Wenji*, *Wenguo Wenzheng Gong Wenji*) and modern scholarship; computational simulations refer to the Northern Song Green Sprouts sandbox (`W-SIM-01` in `socio_engine`). This article reconstructs institutional impedance and middleware alienation from a distributed systems perspective, and does not constitute a final historical verdict on all Northern Song policies.
+
+1. **Core Postulates & Clause Citations**:
+   - Uses **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (Autonomous Agent Postulate): Sub-bureaucracy clerks, local prefects, reform executives, and smallholders all possess independent utility functions rather than serving as passive logic gates;
+   - Uses **[SP-RFC-004](../../whitepaper/chapter-02.md#sp-rfc-004)** and **[SP-RFC-005](../../whitepaper/chapter-02.md#sp-rfc-005)**: Analyzes discount decay and rent-seeking via mandatory quotas when policy penetrates uncodified middleware;
+   - Uses **[SP-RFC-007](../../whitepaper/chapter-03.md#sp-rfc-007)** (Normative Precepts): Stipulates that stripping legacy middleware without establishing substitute routing and physical operating budgets guarantees administrative collapse;
+   - Uses **[SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017)** and **[SP-RFC-018](../../whitepaper/chapter-07.md#sp-rfc-018)**: Calculates massive social switching costs, showing why clean-slate monolithic rewrites fail against incremental strangler fig evolution.
+2. **Epistemological Boundaries & Unproved Claims**:
+   - The analysis of 200% malicious compliance and code review tragedy serves as a mechanism isomorphism study to extract generalized engineering criteria; it does not replace econometric or archival Song studies;
+   - Further source citations and simulation data are archived in [Source Notes](source_notes.md) and [Initiation Card II-CN-W](../../research/cases/II-CN-W_northern_song_xining_reforms_and_middleware_compliance.md).
 

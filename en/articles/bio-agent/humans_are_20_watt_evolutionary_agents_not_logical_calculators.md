@@ -193,5 +193,21 @@ Respect the 20-watt brain, protect legitimate userland aspirations in `Ring-3`, 
 
 ---
 
-*Published under the Socio-Protocolics v11.2 Empirical Research Programme. Peer-reviewed citations, biological models, and proposition testing receipts are available in [Source Notes](source_notes.md) and [Initiation Card I-BIO-A](../../research/cases/I-BIO-A_evolutionary_heuristics_and_carbon_silicon_hybrid_governance.md).*
+<a id="article-framework"></a>
+
+## Endnote: Protocol Clauses Invoked and What This Case Does Not Prove
+
+> **Scope & Provenance**: This case study is anchored in Chapter 1 Ontological Boundaries (§1.4), Primitive Extensions (§1.5.1 O1: Agent Biological Priors $\mathcal{H}_{\text{bio}}$ and Darwin–Postel Invariant), Core Postulates (SP-POSTULATE-1/2), Chapter 3 Normative Canon (SP-RFC-007 Precept 4: Bio-Compatibility), and Chapter 8 (SP-RFC-019 Three Constitutional Boundaries for Carbon–Silicon Governance). This case explores the biological cognitive bounds of carbon agents and the constitutional boundaries for AI governance; it does not advance a biological determinist dogma.
+
+1. **Core Postulates & Clause Citations**:
+   - Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (Thermodynamic Boundary): Human brains operate under a strict ~20W metabolic ceiling; suppression and transmission work are non-zero; 99% of paths are exception paths;
+   - Uses **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (Autonomous Agent Postulate): Agents possess private objective functions and strategic defection capacity rather than serving as passive hardware gates;
+   - Uses **[§1.5.1 O1: Agent Extensions](../../whitepaper/chapter-01.md#-04-the-five-foundational-primitives-layer-2-theoretical-primitive-spec)**: Introduces the biological evolutionary priors operator set $\mathcal{H}_{\text{bio}} = \langle \mathcal{L}_{\text{asym}}, T_{\text{throttle}}, \mathcal{R}_{\text{kin}} \rangle$ and the Darwin–Postel Invariant ($\Sigma_{\text{valid}} \cap \mathcal{H}_{\text{bio}} \neq \emptyset$);
+   - Uses **[SP-RFC-007](../../whitepaper/chapter-03.md#sp-rfc-007)** (Precept 4: Bio-Compatibility Precept): Forbids protocol designs reliant on zero-self-interest saint assumptions;
+   - Uses **[SP-RFC-019](../../whitepaper/chapter-08.md#sp-rfc-019)**: Enforces three constitutional air-gaps for hybrid carbon-silicon governance.
+2. **Epistemological Boundaries & Unproved Claims**:
+   - Neural metabolic budgets (Raichle & Gusnard 2002), sickle-cell balancing selection (Allison 1954), smoke detector theory (Nesse 2005), and rural institutional econometrics (Lin 1992) rely on peer-reviewed primary literature;
+   - The Darwin–Postel Invariant is a formal cross-disciplinary engineering criterion, and does not claim to fully parameterize all micro-level human psychological heuristics;
+   - Citing these clauses does not mean all mathematical proofs across the respective proposition groups are empirically completed.
+3. **Companion Records**: Full citations and testing receipts are in [Source Notes](source_notes.md) and [Initiation Card I-BIO-A](../../research/cases/I-BIO-A_evolutionary_heuristics_and_carbon_silicon_hybrid_governance.md).
 
