@@ -94,6 +94,10 @@ plugins:
                 - Wang Anshi & Xining Reforms · sources & receipt: en/articles/wang-an-shi/source_notes.md
                 - Carbon 20W Bio-Agent & Darwin–Postel Invariant · essay: en/articles/bio-agent/humans_are_20_watt_evolutionary_agents_not_logical_calculators.md
                 - Carbon 20W Bio-Agent & Darwin–Postel Invariant · sources & receipt: en/articles/bio-agent/source_notes.md
+                - Algorithmic Leviathan & Zero-Friction Abyss · essay: en/articles/algo-leviathan/the_monolithic_sandbox_illusion_of_the_algorithmic_leviathan.md
+                - Algorithmic Leviathan & Zero-Friction Abyss · sources & receipt: en/articles/algo-leviathan/source_notes.md
+                - Silicon Convergence & Bureaucratic AGI · essay: en/articles/silicon-convergence/why_agi_will_inevitably_develop_the_disposition_of_a_bureaucratic_clerk.md
+                - Silicon Convergence & Bureaucratic AGI · sources & receipt: en/articles/silicon-convergence/source_notes.md
             - Open Research:
                 - Framework & case index: en/framework_and_case_index.md
                 - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
@@ -119,6 +123,8 @@ plugins:
                 - Case · II-CN-C Ming Huizhou silk tax & Hai Rui card: en/research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md
                 - Case · II-CN-W Northern Song Xining reforms card: en/research/cases/II-CN-W_northern_song_xining_reforms_and_middleware_compliance.md
                 - Case · I-BIO-A Evolutionary heuristics & carbon-silicon card: en/research/cases/I-BIO-A_evolutionary_heuristics_and_carbon_silicon_hybrid_governance.md
+                - Case · II-SYS-A Algorithmic sandboxes & rigidity card: en/research/cases/II-SYS-A_algorithmic_sandboxes_and_mechanical_rigidity.md
+                - Case · VI-AGI-A Silicon thermal convergence & wear card: en/research/cases/VI-AGI-A_silicon_thermal_convergence_and_embodied_wear.md
                 - Case · II-INT audit & driving-license research check: en/research/cases/II-INT_audit_and_driving_license_research_check.md
                 - Topic plan · README: en/research/topic_plan/README.md
                 - Topic plan · I — Channel capacity & semantic boundary: en/research/topic_plan/I_channel_capacity_and_semantic_boundary.md
