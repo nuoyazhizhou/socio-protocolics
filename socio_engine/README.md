@@ -10,6 +10,7 @@
 - 📖 [用户使用与 API Key 配置指南 (USER_GUIDE.md)](./USER_GUIDE.md)
 - 🌐 [English Readme & Architecture (README_EN.md)](./README_EN.md)
 - 📜 [跨朝代通用剧本提示词生成模板 (UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](./docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
+- 📑 [海瑞知县铁腕整肃与中介设租推演实验报告 (docs/EXPERIMENT_REPORT_HAI_RUI.md)](./docs/EXPERIMENT_REPORT_HAI_RUI.md)
 - 📊 [跨版本与多轮次方差对比看板 (scripts/query_experiments.py)](./scripts/query_experiments.py)
 - ⚙️ [模型网关配置 (config/providers.yaml)](./config/providers.yaml)
 - 🔑 API 密钥环境变量示例 (`.env.example`)

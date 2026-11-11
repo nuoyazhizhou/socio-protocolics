@@ -159,6 +159,7 @@
     "socio_engine/database/db_manager.py",
     "socio_engine/database/schema.sql",
     "socio_engine/database/socio_sim.db",
+    "socio_engine/docs/EXPERIMENT_REPORT_HAI_RUI.md",
     "socio_engine/docs/HISTORICAL_BASELINE.md",
     "socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md",
     "socio_engine/roles/bailiff_captain/role_config.yaml",

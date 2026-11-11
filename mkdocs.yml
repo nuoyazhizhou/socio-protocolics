@@ -153,6 +153,7 @@ nav:
       - 用户配置与运行指南: socio_engine/USER_GUIDE.md
       - 跨朝代剧本生成模板: socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md
       - 真实历史档案基准 (明代徽州): socio_engine/docs/HISTORICAL_BASELINE.md
+      - 海瑞与中介设租推演报告: socio_engine/docs/EXPERIMENT_REPORT_HAI_RUI.md
   - 白皮书:
       - 第一章 · 研究定位与建模基础: chapters/chapter-01.md
       - 第二章 · 信道与语义边界: chapters/chapter-02.md
