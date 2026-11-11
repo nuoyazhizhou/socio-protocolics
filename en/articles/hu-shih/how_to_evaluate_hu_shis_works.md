@@ -199,11 +199,13 @@ He likewise kept open the possibility of failure: whether valuable vernacular li
 
 He did not say dictionaries and textbooks are useless. The text explicitly acknowledges their importance; what it opposes is the idea that the national language could be created by such things alone. He also advocated reading more existing vernacular works, practising in settings such as correspondence, writing poetry and translating books, and discussed the methods creation requires. [4]
 
-An engineer can see in this a feedback relation: **the claim guides attempts, works expose problems, use accumulates expressions, and systematisation in turn shapes later writing.**
+An engineer can see in this a feedback relation: **the claim guides attempts, works expose problems, use accumulates expressions, and systematisation in turn shapes later writing.** Documents need practice, and practice needs discussable rules.
 
-This is not "the specification document doesn't count; running code decides everything". Software also needs documentation, standards, maintenance and interoperability; literary practice even less can be judged solely by whether the program runs.
+### 4.4 Why "Reform" and "Revolution" Could Speak to Each Other
 
-Hu Shi's three essays supply analytical material supporting our inquiry into the relations among expression, status and practice. How large a role these relations actually played in the movement still requires materials on other actors and on actual adoption.
+In 1917 Hu Shi used the title "A Preliminary Discussion of Literary Reform" (文学改良刍议), while Chen Duxiu soon followed with "On Literary Revolution" (文学革命论), explicitly backing Hu Shi; by 1918, Hu Shi's own title adopted "Literary Revolution". [16][4]
+
+Hu Shi's eight items and Chen Duxiu's three principles overlapped, but also differed in structure and scope; they cannot be treated as the same specification with a changed heading. Yet whether a name is useful depends not merely on how many people chant it, but on whether it allows actors to identify more accurately: which matters we agree on, and which we contest.
 
 ## 5. Changshi ji Is a Sample, but a Sample Is Not an Inspection Exemption
 
@@ -211,21 +213,13 @@ Engineers readily understand what a demo does: a sentence of "this can be done" 
 
 Seen from this angle, one importance of Changshi ji lies in leaving the experiments on paper. People could endorse, criticise and surpass it, instead of having to guess from a manifesto alone what the finished product looked like.
 
-But three places call for restraint here.
+In the preface to the fourth edition of Changshi ji, Hu Shi reviewed the works' changes with the image of "shoe patterns for unbound feet": old habits lingered, some ground had been gained, yet the departure was not complete. He selected and revised afresh, preserving some early pieces for their historical utility. [5] This was not deliberately engineering flaws during creation, but looking back to decide which traces of evolution were worth keeping.
 
-### First, It Was Not the Only Sample Before It
+The same preface records concrete revisions. He invited friends including Ren Shuyong, Chen Shafei, Lu Xun, Zhou Zuoren, and Yu Pingbo to help delete poems:
+- In the poem *A Smile* (《一笑》), the line read: *"That person did not know how things went afterwards."* Jiang Baili suggested reordering to: *"That person afterwards did not know how things went."* Hu Shi accepted it.
+- In *Do Not Forget* (《你莫忘记》), Kang Baiqing suggested adding the particle *"le"* (了), which Hu Shi also faithfully recorded. [5]
 
-Before the collection was assembled there was already a publishing practice; other authors did not wait for a volume of poems to appear before starting to write. One cannot write "the specification sat unacted upon for half a year, and once the sample appeared everyone fell in line", still less infer from publication order alone that the later must have been caused by the earlier. [5]
-
-Demonstrating exemplary influence requires cross-checking authors' own accounts, correspondence, editorial records, relations among works, and other sources.
-
-### Second, Immaturity Is Not Deliberately Designed Immaturity
-
-The preface to the fourth edition of Changshi ji reviews the works' changes with the image of "shoe patterns for unbound feet", and states explicitly that keeping some of the old poems may have historical use. This helps readers see how the author assessed his own experimentation and why he kept some works. [5]
-
-It cannot establish that Hu Shi could have written polished works but deliberately left flaws in them for others to imitate. Preserving existing traces and pre-manufacturing defects are two different things.
-
-One may say: **these works preserve the traces of an evolution.** There is no need to add "only half-finished products could let others walk this path". Excellent works can equally provide learnable models.
+Even the champions of vernacular struggled with sentence rhythm and the placement of a single particle. **"Everyone can speak" did not automatically solve "how to write well."**
 
 ### Third, "Others Wrote Better" Cannot Directly Erase Earlier Contributions
 
@@ -394,3 +388,4 @@ The numbers correspond to the body text; for full locations, reading scope and l
 13. Lu Xun, ["Chinese Characters and Latinisation" (《漢字和拉丁化》)](https://zh.wikisource.org/zh-hant/漢字和拉丁化), 23 August 1934; the passages on experiments and mixed writing.
 14. Qian Xuantong, ["The Problem of Chinese Writing Hereafter" (《中國今後之文字問題》)](https://zh.wikisource.org/zh-hans/中國今後之文字問題), letter dated 14 March 1918, published 15 April of the same year; focused on transitional measures; Chen Duxiu's reply is listed separately, and the authors are not conflated.
 15. [Beijing Municipal Government forwarding of 国发〔1986〕64号 with the attached request of the State Language Commission](https://www.beijing.gov.cn/zhengce/zfwj/zfwj/szfwj/201905/t20190523_71436.html), distinguishing the 1977 trial, the 1978 stoppage of the trial and the 1986 discontinuation; for the actual reading and boundaries see the [Second Simplification evidence table](../../research/cases/CN-S2_evidence_starting_point.md).
+16. Chen Duxiu, ["On Literary Revolution" (《文學革命論》)](https://zh.wikisource.org/wiki/文學革命論), 1917.

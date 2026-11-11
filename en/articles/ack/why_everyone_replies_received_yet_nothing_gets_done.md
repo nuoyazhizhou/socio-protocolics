@@ -10,12 +10,6 @@
 
 # Why Does Everyone Reply "Received" in the Group Chat, Yet Nothing Gets Done? — From Performative ACKs to Task Leases and Responsibility Closure
 
-Version: Public Case & Mechanism Exploration Essay v0.1 | Date: 2026-11-10 | Complete English translation of `articles/ack/群里都回复收到_事情为什么还是没人办.md`.
-
-Status: Supported by the [V-ACK Project Registration & Evidence Starting-Point Card](../../research/cases/V-ACK_evidence_starting_point.md) and [Source Notes & Proposition Testing Receipt](source_notes.md). Serving as a flagship application case for Proposition Group V ([SP-RFC-016](../../whitepaper/chapter-06.md#sp-rfc-016)) of *Socio-Protocolics*, this essay examines **"responsibility diffusion and lease absence under multicast broadcasting,"** **"the ceremonial decoupling of performative acknowledgements from real execution,"** and **"end-to-end task verification boundaries."** **Throughout this text, workplace illustrative scenarios, organizational game-theoretic derivations, and historical public health management facts are strictly distinguished; transport protocol names are not used to replace organizational outcomes, nor are single-case inferences converted into universal managerial prescriptions.**
-
----
-
 Consider a workplace scenario familiar to nearly every modern professional:
 
 In a cross-departmental group chat with dozens of members, a manager broadcasts an urgent notice:
@@ -41,7 +35,7 @@ This highlights the most ironic, yet pervasive, structural illusion of modern di
 
 When twenty people line up to reply "Received" in a chat group, what did they actually "confirm"? That their smartphone received a burst of radio waves? That their retinas registered glowing pixels? That their brains decoded the lexical syntax? Or that an actual human being has taken on the exclusive responsibility to execute?
 
-Examined through the systems-engineering lens of *Socio-Protocolics*—specifically **Transmission Topology & Task Feedback ([SP-RFC-016](../../whitepaper/chapter-06.md#sp-rfc-016))**, **Semantic Boundaries ([SP-RFC-003](../../whitepaper/chapter-02.md#sp-rfc-003))**, and **Expectation-Induced Equilibria ([SP-POSTULATE-3](../../whitepaper/chapter-01.md#sec-1-5))**—a fundamental truth becomes apparent: **pushing a packet to an endpoint's screen is never equivalent to advancing the system to a committed state of delivery.**
+Examined through the lens of distributed systems engineering, a fundamental truth becomes apparent: **pushing a packet to an endpoint's screen is never equivalent to advancing the system to a committed state of delivery.**
 
 ---
 
@@ -227,7 +221,7 @@ Upholding *Socio-Protocolics*' commitment to **"speaking only in proportion to t
 
 ## Endnote: Which Socio-Protocolics Provisions This Essay Uses, and What It Does Not Claim to Prove
 
-This essay belongs to **Proposition Group V (Transmission Topology & Task Feedback)** of the [*Socio-Protocolics Whitepaper v11.2*](../../whitepaper/chapter-06.md):
+> **Sources & Boundaries**: This essay belongs to Group V (SP-RFC-016) of the *Socio-Protocolics Whitepaper v11.2*, grounded in SP-POSTULATE-1/2/3 and cross-applying SP-RFC-003 and SP-RFC-007. The text strictly separates workplace illustrative scenarios, organizational game-theoretic derivations, and historical public health management records (2003 SARS and 2014 Nigerian Ebola EOC contact tracing), cited in [1]–[8] and companion source notes. Transport protocol terms are not used to replace organizational outcomes, nor are single-case inferences converted into universal managerial prescriptions. Full registration and version records are preserved in the repository.
 
 1. **Postulate Grounding**:
    - Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (finite cognitive bandwidth and physical resource constraints): reading notifications, writing messages, and filing reports consume scarce cognitive energy; excessive check-ins trigger systemic congestion collapse;

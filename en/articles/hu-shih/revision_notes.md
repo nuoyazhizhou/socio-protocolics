@@ -10,9 +10,20 @@
 
 # Public revision notes
 
-Version: v0.5 | Date: 2026-10-23 | Corresponds to the [main text](how_to_evaluate_hu_shis_works.md). The v0.3 and v0.4 records are kept; v0.5 adds goals, implementation dependencies and the second-round comparison; provenance and reading scope are in the source notes. The complete working papers and line-by-line diffs are kept locally only.
+Version: v0.6 | Date: 2026-11-11 | Corresponds to the [main text](how_to_evaluate_hu_shis_works.md). The v0.3–v0.5 records are kept; v0.6 merges the previous "research draft" and "Zhihu draft" into a single canonical version, establishing "academic load-bearing wall + humanized interior decoration" as the sole publication standard.
 
-## v0.3 substantive revision record
+## v0.6: Humanization Unification into Single Canonical Version (2026-11-11)
+
+1. **Abolition of Dual Versions in Favor of a Single Standard**:
+   - Deprecated and removed `zhihu_release_draft.md` and `知乎发布稿.md`. Infused the punchy cadence, conversational clarity, and narrative momentum into the canonical `how_to_evaluate_hu_shis_works.md`.
+2. **Preservation of All Academic Foundations**:
+   - Maintained all 16 primary citations, Li Shanlan's three-layer calculus reading demonstration (terminology, notation, proposition), precise historical records on AV1 hardware decoding (MediaTek April 2020), official records on the Second Simplification, and essential internal anchors `<a id="reform-scope"></a>` and `<a id="article-framework"></a>`.
+3. **Engaging Narrative & Engineering Analogies**:
+   - Direct opening dismantling the "how well written vs. what it changed" false dilemma; used Dennis Ritchie, early C language history, video decoders, and HTML structure to illustrate decoding costs and interface entry, while sinking administrative metadata to endnotes.
+4. **Bilingual Synchronization**:
+   - Complete English translation synchronized sentence-by-sentence with the updated Chinese text.
+
+## v0.5: comparing goals and deliverables
 
 | Original treatment | Treatment in this version | Reason |
 |---|---|---|
@@ -58,7 +69,7 @@ This article has not obtained an independent peer-review pass, nor has a reader-
 
 ## Zhihu outreach candidate draft v0.1 (independent presentation, shared evidence)
 
-- A new [Zhihu draft](zhihu_release_draft.md) is added, organised in the seven-section order of the outreach sample essay: three rulers, the formal entry, the language pipeline, three articles, *Experiments*, scientific expression, and check questions to take away. Short paragraphs and engineering analogies are kept; the longer method material is merged into the [shared sources and receipts](source_notes.md#zhihu-receipt).
+- An experimental outreach draft was organized in the seven-section order of the outreach sample essay: three rulers, the formal entry, the language pipeline, three articles, *Experiments*, scientific expression, and check questions to take away. Short paragraphs and engineering analogies were kept, with longer method material merged into the [shared sources and receipts](source_notes.md#zhihu-receipt); in v0.6 this has been fully unified into the main essay.
 - Narrative detail is added from the real deletion-and-revision process in the *Experiments* self-preface; the teleologies of "deliberately leaving immaturity" and "one poetry collection making everyone catch up" are not kept.
 - The 002 material direction of desktop v0.6 is absorbed, adding cross-author responses in outreach draft §4 4.4; the judgements that variant names necessarily hinder joint identification, that increased divergence means naming failure, or that an unidentified gain means a pure by-product are not adopted.
 - The misused speech information rate is deleted, and reading-experiment figures not verified against the original research are not used as filler; AV1 is written as supported solely on the 2020 release notes, without expanding to penetration at the time; the textbook illustration keeps unknown words and does not pass itself off as a single-variable experiment.

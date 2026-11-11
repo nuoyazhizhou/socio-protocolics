@@ -1,109 +1,89 @@
-> **Translation record**
-> - Chinese source: `articles/hai-rui/为什么海瑞斗不过县衙老吏.md` (sha256 `12916ead49c343123983c35bf1bdd94b400d9e298d19ecd8881c8b82737e4c2f`, `23793` bytes, 2026-11-10)
-> - Chinese version / release tag: `v0.1` (theoretical version remains v11.2)
-> - Translation version: `en-v0.1`
-> - Translation date: 2026-11-10
-> - Check status: checked sentence by sentence against the Chinese source for claim status, negative guardrails and numbering; machine and glossary checks only; no independent professional native-speaker review
-> - Pending sync: synchronized in public-files.json and mkdocs.yml
-> - Status: complete translation
-> - Authority: the Chinese SSOT is authoritative; this translation does not constitute a separate set of definitions (C2)
-
 # Why Couldn't Even Hai Rui Defeat the County Clerks? — From the 1577 "Book of Silk" Tax Dispute to "Dis-intermediation" in a Rust + AI Sandbox
-
-Version: Public Case & Sandbox Essay v0.1 | Date: 2026-11-10 | Complete English translation of `articles/hai-rui/为什么海瑞斗不过县衙老吏.md`.
-
-Status: Supported by the [Project Registration & Proposition Testing Card](../../research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md) and [Sources & Epistemic Boundaries](source_notes.md). This essay takes the 1577 Huizhou "Head-Tax Silk" dispute and Hai Rui's local fiscal reforms in Ming China as its real historical backbone, paired with counterfactual mechanism simulations from our open-source [Socio-Engine Multi-Agent Sandbox](../../socio_engine/README.md). **All historical records and computational sandbox figures are explicitly separated; sandbox outputs are never presented as empirical historical measurements.**
-
----
 
 There is a thousand-year-old proverb in Chinese bureaucratic history: **"The county yamen (office) is cast in iron; the magistrates flow like water."**
 
-In Ming Dynasty China (1368–1644), a County Magistrate (*Zhixian*, seventh rank) was an elite scholar who had triumphed in the imperial civil service examinations, holding imperial commission as chief judge, tax collector, and administrator of 150,000+ subjects. By contrast, the revenue clerks (*Hufang Shuli*) working inside his yamen were unranked sub-bureaucrats barred from the civil service career path and forbidden even to wear official robes.
+The County Magistrate was an elite scholar who had passed the rigorous imperial examinations, holding imperial commission as chief judge, tax collector, and administrator of 150,000+ subjects. By contrast, the revenue clerks working inside his office were unranked sub-bureaucrats barred from the civil service career path and forbidden even to wear official robes.
 
-On paper, a magistrate disciplining a few county clerks should have been as effortless as a root administrator revoking a rogue user account.
+On paper, a magistrate disciplining a few county clerks should have been as effortless as an administrator deleting a few rogue user accounts.
 
-Yet actual history ran in the opposite direction: most magistrates arriving at their posts dared not touch the veteran clerks and had to rely on them for daily operations. Even **Hai Rui (1514–1587)**—the Ming Empire's most famously incorruptible and fearless reformer—managed to hold his ground only through grueling personal exertion when governing tiny Chun'an County; when promoted to Governor of Yingtian (overseeing the empire's wealthiest Jiangnan region) and attempting to overhaul land and tax abuses at scale, he was bogged down by administrative overload and impeached within just eight months.
+Yet actual history ran in the opposite direction. Most magistrates arriving at their posts dared not touch the veteran clerks and had to rely on them for daily operations. Even Hai Rui—the Ming Dynasty's most famously incorruptible and fearless official—managed to hold his ground only through grueling personal exertion when governing tiny Chun'an County; when promoted to Governor of Yingtian and attempting to overhaul the tax abuses across the entire Jiangnan delta, he lasted only eight months before being forced out, his reforms undone.
 
 Why couldn't chief executives holding formal supreme authority defeat unranked grassroots clerks?
 
-If we step outside the moral drama of "loyal officials vs. wicked clerks" and examine the system through the engineering primitives of *Socio-Protocolics*—**Middleware (`O4`), Ledger Split-Brain, Privilege Ring Isolation (`Ring-0~3`), and Dis-intermediation**—we uncover a classic architectural deadlock in distributed systems.
+This essay will not seek answers from moral dramas of "virtuous officials vs. corrupt clerks." The engineering concepts introduced below—middleware, ledger split-brain, privilege rings, and dis-intermediation—will be introduced only as the historical narrative requires them. Let us begin with the case.
 
 ---
 
 ## 1. The Ledger the Magistrate Couldn't Read: The 1577 "Book of Silk" Dispute
 
-Let us first return to Shexian County in Huizhou Prefecture during the fifth year of the Wanli Emperor (1577).
+Let us first turn to Shexian County in Huizhou Prefecture during the fifth year of the Wanli Emperor (1577).
 
-That year, Huizhou erupted in a massive tax protest known to historians as the **"Head-Tax Silk Dispute" (*Rending Sijuan An*)**. The complete official dispatches, plaints, and audit calculations of this conflict were compiled by Ming local scholar Cheng Renqing into a sixteen-volume work, *The Book of Silk* (*Sijuan Quanshu*), and analyzed in detail by historian Ray Huang in *Taxation and Governmental Finance in Sixteenth-Century Ming China* and *1587, A Year of No Significance*.[〔1〕](source_notes.md#historical-sources)
+Huizhou was engulfed in a massive tax protest known to historians as the "Head-Tax Silk Dispute." The complete official dispatches, plaints, and audit calculations were compiled by Ming scholar Cheng Renqing into a sixteen-volume work, *The Book of Silk*, which survives today. Historian Ray Huang also examined this dispute in detail in *Taxation and Governmental Finance in Sixteenth-Century Ming China* and *1587, A Year of No Significance*.[〔1〕](source_notes.md#historical-sources)
 
-The origin of the dispute was straightforward: according to the imperial statutory code (*Collected Statutes of the Ming Dynasty* / *Da Ming Huidian*), Huizhou Prefecture—comprising six counties (Shexian, Xiuning, Wuyuan, Qimen, Yixian, and Jixi)—was required to deliver **8,780 bolts of "head-tax silk"** annually to the Nanjing Ministry of Revenue (commuted at 0.7 taels of silver per bolt, totaling **6,145.3 taels of silver**).
+The origin of the dispute was straightforward. According to the imperial statutory code (*Collected Statutes of the Ming Dynasty* / *Da Ming Huidian*), Huizhou Prefecture—comprising six counties: Shexian, Xiuning, Wuyuan, Qimen, Yixian, and Jixi—was required to remit 8,780 bolts of "head-tax silk" annually to the Nanjing Ministry of Revenue. Commuted at 0.7 taels of silver per bolt, the total was 6,145 taels and 3 mace of silver.
 
-By statute, this burden was to be shared across all six counties according to registered male taxpayers. Yet for decades, when prefectural and county clerks compiled the decennial *Yellow Registers* (*Huangce*), they buried this 6,145-tael obligation inside a maze of complex conversion formulas and quietly **dumped the entire छह-county bill onto Shexian County alone**!
+By statute, this tax was meant to be apportioned among all six counties according to registered male taxpayers. Yet for decades, when prefectural and county revenue clerks compiled the decennial *Yellow Registers*, they buried this 6,145-tael quota under complex conversion formulas and quietly dumped the entire bill onto Shexian County alone.
 
-Then came the most astonishing fact: **for decades, neither the successive Prefects of Huizhou, nor the Magistrates of Shexian, nor the gentry and commoners of Shexian realized that the ledger had been rigged!**
+Most astonishing of all: for decades, successive Prefects of Huizhou, Magistrates of Shexian, and the entire gentry and populace of Shexian had no idea that the ledger had been rigged.
 
-Why did no one notice? Because Ming local tax books had long been turned by revenue clerks into a **proprietary black-box protocol** that outsiders could not decode:
+Why did no one discover it? Because county revenue clerks had turned the local tax ledgers into a proprietary black-box protocol that outsiders could not decode:
 
-1. **Nested Surcharges and Conversions**: Land was divided into upper, middle, and lower grades across paddy fields, dry land, hills, and ponds; taxes included summer wheat, autumn rice, horse fodder, and mulberry silk, split into in-kind (*bense*) and silver-commuted (*zhese*) rates, topped with "meltage fees" (*huohao*, charged for melting fractional silver into standard ingots) and "porterage/facilitation fees" (*pudian*);
-2. **Fraudulent Registration (*Guiji*) and Tax Scattering (*Feisa*)**: Wealthy landowners registered their prime paddy fields under the names of tax-exempt degree-holders (*guiji*), or bribed clerks to alter "fertile paddy" to "barren hill" on the *Fish-Scale Map-Registers* (*Yulin Tuce*). How did the clerks plug the resulting tax shortfall? They sliced the missing quota into dozens of tiny fractions and silently scattered them (*feisa*) onto illiterate poor peasants and rotating village heads (*lizhang*).
+1. **Nested Surcharges and Conversions**: Land was categorized into upper, middle, and lower grades across paddies, dry land, hills, and ponds; taxes included summer wheat, autumn rice, horse fodder, and mulberry silk, commuted into in-kind and silver rates, topped with "meltage fees" (compensating silver loss during smelting) and "porterage fees" (transport expenses).
+2. **Fraudulent Registration and Tax Scattering**: Wealthy gentry registered prime fields under tax-exempt scholars (called *guiji*), or bribed clerks to alter "fertile paddies" to "barren hills" on the cadastral maps. When tax shortfalls emerged, clerks simply divided the deficit into dozens of fractions and scattered them onto illiterate poor peasants and rotating village heads (called *feisa*).
 
-In systems architecture terms:
-- **The Imperial Court (`Ring-0`)** only issued macro county-wide quotas ("Shexian must remit 20,000 taels this year") and had no direct read/write channel to individual household land plots;
-- **The County Magistrate (`Ring-1`)** served a three-to-six-year term, did not speak the local Huizhou dialect, and could not untangle a century of accumulated conversion formulas;
-- **The Revenue Clerks (`Ring-2`, acting as `O4 Middleware`)** stayed in the yamen across generations, clutching the secret private ledgers (*miben*) that alone could execute the tax collection routine.
+Looking at this structure, three layers of actors emerge. The imperial court only issued macro county-wide quotas ("Shexian must remit 20,000 taels this year"); it possessed no direct channel to read or write individual household land plots. The county magistrate served a term of only three to six years, did not speak the local dialect, and could never untangle a century of accumulated conversion formulas. The revenue clerks remained in the county office across generations, holding the only secret private registers capable of running the tax collection routine.
 
-This produced severe **Ledger Split-Brain**: the official public registers (*Yellow Registers* and *Fish-Scale Map-Registers*) diverged wildly from physical reality. When Grand Secretary Zhang Juzheng ordered a national cadastral resurvey in 1581 (Wanli 9), Shexian's official pre-survey book listed **420,000 *mu*** of land, whereas the physical measurement uncovered **587,400 *mu***—a **38% ledger distortion rate** (+167,400 hidden *mu*)![〔2〕](../../../socio_engine/docs/HISTORICAL_BASELINE.md)
+In systems architecture terms: the court, magistrate, and clerks operated across three privilege levels (Ring-0, Ring-1, Ring-2). The clerks functioned as an intermediary compatibility layer (O4 Middleware) between command and execution. Once this layer turned the ledger into a black box, the official public registers diverged completely from reality—what computer engineering calls **Ledger Split-Brain**.
 
-How was the 1577 silk tax discrepancy finally exposed?
+How severe was the distortion? When Grand Secretary Zhang Juzheng conducted a nationwide cadastral resurvey in 1581, Shexian's official pre-survey book listed only 420,000 *mu* of land, whereas physical measurement revealed 587,400 *mu*—a 38% distortion rate (+167,400 hidden *mu*).[〔2〕](../../../socio_engine/docs/HISTORICAL_BASELINE.md)
 
-It was uncovered neither by a Prefect nor by an Imperial Censor, but by **Shuai Jiamo**, a local Shexian licentiate (*shengyuan*) skilled in mathematics. Happening upon a printed copy of the imperial *Da Ming Huidian*, Shuai cross-checked its macro statutory quotas line by line against historical gazetteers and tax rolls, isolated the 6,145-tael inter-county accounting discrepancy from tens of thousands of numbers, and bypassed the county/prefectural clerks to petition the provincial governor and central ministry directly!
+How was this multi-decade silk tax discrepancy finally exposed?
 
-In computer engineering, what Shuai Jiamo executed is called **Bypass Verification**: when an intermediary layer monopolizes data interpretation, the only way to expose it is to obtain the top-level specification (*Da Ming Huidian*) and terminal collection records, recomputing the state outside the black box.
+It was uncovered neither by a prefect nor by an imperial censor. It was exposed by Shuai Jiamo, a local licentiate skilled in mathematics. Reading a printed edition of the imperial *Da Ming Huidian*, he cross-checked its statutory quotas line by line against local gazetteers and tax rolls. From tens of thousands of numbers, he isolated the 6,145-tael accounting discrepancy and bypassed the county and prefectural clerks to petition the provincial governor and central ministry directly.
+
+What Shuai Jiamo performed has an exact name in computer engineering: **Bypass Verification**. When an intermediary layer monopolizes data interpretation, the only way to expose it is to obtain the top-level specification and terminal collection data, recomputing the state outside the black box.
 
 ---
 
 ## 2. Why Simply Purging "Corrupt Clerks" Causes the System to Crash
 
-If the clerks were so manipulative, why couldn't a newly arrived magistrate simply arrest all veteran clerks on day one and ban every single cent of "meltage fees" (*huohao*)?
+If the clerks were so corrupt, why couldn't a newly arrived magistrate simply arrest all veteran clerks on day one and decree a total ban on all informal surcharges?
 
-That is the illusion popularized by costume dramas—and the exact analytical trap warned against by Proposition Group II ([SP-RFC-004](../../whitepaper/chapter-03.md#sp-rfc-004) and [SP-RFC-005](../../whitepaper/chapter-03.md#sp-rfc-005)) of *Socio-Protocolics*:
+That is the illusion popularized by historical dramas. It treats the clerks as performing only a single function. In reality, county clerks performed two fundamentally different tasks at once.
 
-> **The same intermediary layer (`Middleware`) frequently bundles "indispensable productive translation services" together with "exclusive rent-seeking privileges."**
+The first was productive work. The court's broad tax quotas had to be calculated across 26,800 households and hundreds of thousands of land plots: issuing notices, assaying silver, compiling registers, and organizing transport. Without this translation and routing layer, macro commands could not be executed at the grassroots level.
 
-Under the Ming fiscal regime, county revenue clerks performed two fundamentally different functions at once:
+The second was rent extraction. Clerks hid the ledgers at home: whoever paid bribes received tax relief, while those without influence were saddled with taxes on abandoned lands; arbitrary meltage surcharges were layered on top. By monopolizing the interpretation of the tax books, they manufactured complexity to lock in their own irreplaceability.
 
-| Dual Attributes of County Clerks | Concrete Actions | Engineering Protocol Nature |
-| :--- | :--- | :--- |
-| **① Productive Service Function** | Decomposing macro imperial tax quotas across 26,800 households and hundreds of thousands of plots; issuing notices, assaying silver, compiling registers, and organizing transport. | **Essential protocol translation & routing** (without which macro commands cannot be executed at the micro level) |
-| **② Exclusive Rent-Seeking Power** | Hiding true ledgers at home; granting tax shelters (*guiji*) to those who paid bribes; scattering deficits (*feisa*) onto the powerless; levying arbitrary meltage surcharges (*huohao*). | **Parasitic rent extraction via exclusive interpretive monopoly** (manufacturing complexity to lock in irreplaceability) |
+> **The same intermediary layer frequently bundles indispensable productive translation services together with exclusive rent-seeking privileges.**
 
-Even more critically, fiscal historians highlight a vital **countervailing institutional constraint**: Ming statutory salaries for magistrates and clerks were near starvation levels, and the central government **did not allocate adequate operational budgets for local county offices** (paper, ink, runners' rations, silver smelting loss, and armed escort costs all had to be raised locally).[〔3〕](source_notes.md#competing-explanations)
+An even more critical constraint existed. The statutory salaries paid by the Ming government to local officials and clerks were barely enough to survive on. The central government provided virtually no operational budget for local county offices: paper, ink, runners' rations, silver smelting loss, and armed escort expenses all had to be raised locally.[〔3〕](source_notes.md#competing-explanations)
 
-What did this mean? It meant that within the clerks' *huohao* surcharge, **one portion was actually the physical fuel keeping the yamen running (productive cost compensation), while the other portion was extortionate private rent**.
+This meant that within the clerks' surcharges, one portion was the physical fuel keeping the yamen running—productive cost compensation; the other portion was extortionate private rent.
 
-Now, suppose a righteous new magistrate arrives. Without securing a new operational budget or training an alternative bookkeeping team, he simply issues a blanket decree: **"Meltage fees are reduced to zero! Anyone collecting an extra copper coin will be prosecuted!"**
+Imagine a righteous new magistrate arriving at his post. Without securing a new operational budget or training an alternative bookkeeping staff, he simply issues a blanket decree: "Meltage surcharges are reduced to zero! Anyone collecting an extra copper coin will be executed!"
 
-What happens next?
+What happens?
 
-1. **Immediate Interface Paralysis (Work-to-Rule Strike)**: Veteran clerks rarely rebel openly; instead, they feign illness and stage a work-to-rule strike. They dump the tangled, century-old Fish-Scale registers onto the magistrate's desk: *"Your Honor is incorruptible; we humble clerks dare not touch the silver. Please calculate the silver conversions for all 26,800 households yourself!"* Even if the magistrate worked sleeplessly, one person could never compute 26,000 household accounts before the treasury deadline.
-2. **How Did the Historical Hai Rui Respond?**
-   - **In 1558 (Jiajing 37), Hai Rui became Magistrate of Chun'an County in Zhejiang**. Chun'an was a small, mountainous county. Hai Rui not only issued the *Regulations for Reform* (*Xingge Tiaoli*) abolishing customary meltage fees and bringing his own dry rations to the countryside, but crucially enacted the ***Rules for Land Measurement* (*Liangtian Zeli*)**—personally leading teams to survey plots, drawing simplified maps, and writing exact tax liabilities onto public slips (*youpiao*) delivered directly to *lijia* households.[〔4〕](source_notes.md#historical-sources) In short, Hai Rui avoided being hollowed out in Chun'an because he used extraordinary personal exertion to **act as an alternative accounting engine himself, achieving small-scale "dis-intermediation."**
-   - **Yet in 1569 (Longqing 3), Hai Rui was promoted to Governor of Yingtian (overseeing ten major prefectures in Jiangnan, including Suzhou, Songjiang, Changzhou, and Huizhou)**. Facing Jiangnan's massive fiscal volume and deeply entrenched gentry-clerk networks, Hai Rui again tried to rely on executive iron willpower, issuing the *Governor's Statutes* (*Dufu Tiaoyue*) to force powerful families to return encroached lands. Immediately, three to four thousand petitions flooded his office every day; clerks and gentry staged coordinated strikes, and Hai Rui possessed no scalable technical bureaucracy capable of auditing tens of millions of *mu* across Jiangnan. Within eight months, Censor Dai Fengxiang impeached him for "abetting wicked commoners and persecuting the gentry." Hai Rui was transferred out, and his land-return orders collapsed immediately.[〔5〕](source_notes.md#historical-sources)
+First comes paralysis. The veteran clerks' preferred countermeasure is not armed rebellion, but feigning illness and working to rule. They dump the tangled, century-old tax registers onto the magistrate's desk: "Your Honor is incorruptible; we humble clerks dare not touch the silver. Please calculate the conversions for all 26,800 households yourself!" Even without sleep, no magistrate could compute twenty thousand accounts alone.
 
-Hai Rui's local success in tiny Chun'an versus his eight-month deadlock in vast Yingtian forms a **real historical positive-and-negative comparison** within the career of a single reformer: **when system scale expands, unless the accounting and verification capacity monopolized by old intermediaries is extracted into a public, replaceable institutional interface, relying on a chief executive's personal morality and iron fist will inevitably be overwhelmed by middleware sabotage and information overload.**
+How did the historical Hai Rui handle this trap? Looking at his career in two stages provides an exact positive-and-negative comparison.
+
+In 1558, Hai Rui became Magistrate of Chun'an County in Zhejiang, a remote mountainous district. He enacted the *Regulations for Reform* abolishing customary surcharges and bringing his own provisions into the countryside. Crucially, he enacted the *Rules for Land Measurement*: personally leading teams into the fields, drawing simplified land maps, and writing exact tax liabilities directly onto public slips distributed to peasant households.[〔4〕](source_notes.md#historical-sources) In Chun'an, Hai Rui was not hollowed out by clerks because through extraordinary personal exertion, he acted as the alternative computing engine himself, achieving a small-scale dis-intermediation.
+
+Yet in 1569, Hai Rui was promoted to Governor of Yingtian, governing ten wealthy Jiangnan prefectures including Suzhou, Songjiang, Changzhou, and Huizhou. Facing massive fiscal volume and deeply entrenched gentry-clerk networks, he attempted to rely on individual willpower, issuing decrees ordering powerful families to return encroached lands. Several thousand petitions flooded his office daily; clerks and gentry staged coordinated strikes and boycotted markets. Hai Rui lacked any technical bureaucracy capable of surveying tens of millions of *mu* across Jiangnan. Within eight months, Censor Dai Fengxiang impeached him for "abetting wicked commoners and persecuting the gentry." Hai Rui was transferred out, and his land-return orders collapsed immediately.[〔5〕](source_notes.md#historical-sources)
+
+The same reformer in two different offices forms a clear historical test: **when system scale expands, unless the accounting and verification capacity monopolized by old intermediaries is extracted into a public, replaceable institutional interface, relying on personal morality and executive iron willpower will inevitably be overwhelmed by middleware sabotage and information overload.**
 
 ---
 
-## 3. Putting Hai Rui into a Rust + LLM Sandbox: Four Counterfactual Experiments
+## 3. Putting Hai Rui into a Rust + AI Sandbox: Four Counterfactual Experiments
 
-To visualize the mechanism bifurcation between "moral purge alone" and "purge coupled with dis-intermediation," we ran a controlled set of **counterfactual computational simulations** in our open-source **[Socio-Engine](../../socio_engine/README.md)** sandbox.
+To clarify the mechanism divergence between "moral purge alone" and "purge coupled with dis-intermediation," we conducted a controlled set of counterfactual simulations in our open-source **[Socio-Engine](../../socio_engine/README.md)** sandbox.
 
-> ⚠️ **Epistemic Boundary Statement (Mandatory Reading)**:
-> 1. Historically, Hai Rui never served as Magistrate of Shexian. Placing "Hai Rui-style governance strategies" into the authentic 1575 Shexian household, land-grade, and tax-rate baseline (see [HISTORICAL_BASELINE.md](../../../socio_engine/docs/HISTORICAL_BASELINE.md)) is a **counterfactual institutional stress test**;
-> 2. The sandbox's physical core is enforced by native Rust (`socio_core`) with strict double-entry conservation (silver, grain, land) and `Ring-0~3` privilege ring gates, while the cognitive layer uses LLMs to drive multi-agent games among the Magistrate, Revenue Clerk Qian, Pawnshop Gentry Sun, Scholar-Candidate Household Wu, Rotating Village Head Zhao, and Tailwater Poor Peasant Li;
-> 3. **All numerical results below are sandbox simulation outputs (fully reproducible via `Run ID` in `socio_engine/database/socio_sim.db`) designed to illustrate internal model causality, and must never be treated as empirical Ming historical measurements.**
+An epistemic boundary must be stated upfront: historically, Hai Rui never governed Shexian County. Placing Hai Rui's governance strategies into the authentic 1575 Shexian household and cadastral baseline is a counterfactual institutional stress test. The core engine is implemented in native Rust (`socio_core`), strictly enforcing double-entry conservation and privilege rings, while LLMs drive multi-agent strategic interactions among the magistrate, clerks, gentry, and peasants. **All numerical results below are sandbox simulation outputs (fully auditable by Run ID in the endnote and database), designed to demonstrate causal mechanisms, and must never be treated as empirical Ming historical measurements.**
 
-Under identical initial physical resource pools (2,000 taels base treasury, identical statutory tax quotas, and identical drought shocks), we executed four 8-quarter (two-year term) comparative runs:
+Under identical initial resources (2,000 taels base treasury, fixed tax quotas, and identical drought shocks), we simulated four 8-quarter (two-year term) experimental runs:
 
 ### 1. End-of-Term Macro Metrics Across the Four Experimental Runs
 
@@ -116,34 +96,28 @@ Under identical initial physical resource pools (2,000 taels base treasury, iden
 
 ### 2. Inside the Sandbox Logs: The Q2–Q4 "Clerk Strike" and Hai Rui's Breakthrough
 
-In the execution logs of **Experiment C (`run_e422c3a8`)**, the interaction between the LLM agents and the Rust state machine captures a striking institutional game sequence:
+In **Experiment C (`run_e422c3a8`)**, the sandbox captured a realistic institutional game sequence:
 
-- **Quarter 1 (Issuing `ZERO_SURTAX_POLICY`)**:
-  The Hai Rui agent records in its internal reasoning log: *"Meltage surcharges scrape the marrow from the people's bones... Effective today, all meltage surcharges are abolished; anyone collecting a single extra copper coin shall be prosecuted without mercy."*
-- **Quarters 2–3 (Middleware Counter-Attack: Six-Office Clerk Strike)**:
-  Once meltage fees are forced to zero, Revenue Clerk Qian (`clerk_qian`) and Judicial Clerk Ma immediately trigger a passive sabotage strategy—halting ledger updates under the pretext of illness so that autumn tax collection will suffer a cliff-edge deficit in Q4, aiming to use the imperial *Kaocheng* (performance evaluation) law to oust Hai Rui.
-- **Quarter 4 (The Turning Point: `RECRUIT_NEW_CLERKS` Dis-intermediation)**:
-  Facing a paralyzed yamen, Hai Rui neither capitulates to the old clerks nor stops at verbal fury; instead, he invokes an institutional refactoring action:
-  > **[Tick 4 Hai Rui Cognitive Log]**: *"The clerks of the Six Offices have collectively feigned illness to stall work, attempting to hold this magistrate hostage by paralyzing tax collection. I shall never compromise with corrupt clerks! I shall immediately recruit upright, impoverished licentiates from the county school and honest village elders as new clerks, personally instruct them in bookkeeping, and rebuild the administrative staff so that county finances and justice can no longer be hijacked."*
-- **Quarters 5–6 (Liquidating the Rent-Seeking Coalition)**:
-  Once the newly recruited student-bookkeepers restore basic ledger throughput, in Q5 and Q6 Hai Rui executes targeted asset forfeitures (`PURGE_CLERKS`) against "Revenue Clerk Qian and Pawnshop Gentry Sun" for proven prior surcharge embezzlement, returning hidden land and illicit silver to the public treasury. This preserves all five grassroots households from flight (**0.0%** flight rate) while raising final treasury silver to **2,201.1 taels**.
+In Quarter 1, upon taking office, Hai Rui immediately issued a zero-surtax order, recording in his cognitive log: *"Meltage surcharges scrape the marrow from the people's bones... anyone collecting an extra coin shall be punished according to law."*
+
+In Quarters 2 and 3, the intermediary layer launched a crippling counter-attack. Revenue Clerk Qian and Judicial Clerk Ma triggered passive sabotage: halting ledger updates to engineer a cliff-edge deficit in Quarter 4, aiming to use imperial performance reviews to oust the magistrate.
+
+Facing administrative paralysis, Hai Rui made the decisive move in Quarter 4. Rather than compromising or relying on verbal condemnation, he invoked **staff rebuilding (`RECRUIT_NEW_CLERKS`)**: recruiting impoverished scholars and upright elders from the county school, personally training them in simplified bookkeeping, and handing them the keys to the tax office.
+
+Once the alternative team restored basic ledger throughput, in Quarters 5 and 6 Hai Rui executed targeted asset forfeitures against the corrupt clerk-pawnshop coalition (`PURGE_CLERKS`), returning hidden lands and embezzled silver to the public treasury. Clerk Qian's illicit wealth was reduced to just 6.24 taels, not a single peasant fled, and treasury revenue reached 2,201.1 taels.
 
 ---
 
 ## 4. What Do Existing Historical Explanations Already Cover, and What Does Protocolics Add?
 
-In accordance with our epistemic honesty rules, we must ask: **historians and economists have studied Ming clerks and Hai Rui for decades; does introducing the engineering vocabulary of *Socio-Protocolics* actually add analytical value?**
+Historians and economists have long established foundational insights into Ming clerks and Hai Rui's reforms:
 
-Let us first place the two classic historiographical explanations on the table:
+1. **Ray Huang's "Lack of Numerical Management" Thesis**: The Ming state established an expansive centralized apparatus without modern banking, statistics, accounting, and commercial law, forcing it to substitute moral exhortation for technical administration (*1587, A Year of No Significance*).
+2. **The Fiscal History "Starvation Wage & Office Budget Deficit" Thesis**: The Ming system barred clerks from civil service advancement and denied local yamens statutory operating funds, forcing grassroots offices to rely on informal surcharges; a deadlock only resolved in the Qing Dynasty when the Yongzheng Emperor enacted **"Formalizing Meltage Surcharges to Fund Statutory Stipends" (*Huohao Guigong*)** in 1724.
 
-1. **Ray Huang's "Lack of Numerical Management" Thesis**: The Ming state centralized power prematurely without modern banking, statistics, insurance, or commercial law, forcing it to substitute moral exhortation for technical administration (*1587, A Year of No Significance*).
-2. **The Fiscal History "Starvation Wage & Office Budget Deficit" Thesis**: By barring clerks from regular civil service promotion and starving local yamens of statutory operating funds, the Ming fiscal system structurally forced counties to rely on informal *huohao* surcharges to pay for paper, runners, and silver transport—a deadlock only partially resolved in the Qing Dynasty when the Yongzheng Emperor enacted ***Huohao Guigong* (formalizing meltage fees into public revenue to fund statutory *Yanglian* anti-corruption stipends)** in 1724.
+Simply relabeling "county clerk" as `Middleware` would be an empty terminological exercise. The genuine contribution of the engineering protocol perspective is an **actionable, auditable dis-intermediation checklist**.
 
-**So what does mapping this phenomenon onto `O4 Middleware` and `Ring-0~3` Privilege Rings add?**
-
-Simply renaming "county clerk" to `Middleware` would be a zero-gain word game. The true analytical gain of the engineering protocol lens is that it enforces an **operational, auditable, anti-omission "Dis-intermediation Engineering Checklist."**
-
-Whether you are analyzing an ancient fiscal reform, merging two departments in a modern tech company, or cutting approval windows in a municipal government, whenever you touch an intermediary layer, this framework forces you to complete the following **Five-Step Diagnostic Table** first:
+Whether analyzing an ancient reform, merging two business units, or removing approval windows in public administration, five questions must be answered before touching an intermediary layer:
 
 ### 🛠️ Actionable Tool: The 5-Step Middleware Reform Checklist
 
@@ -152,18 +126,18 @@ Whether you are analyzing an ancient fiscal reform, merging two departments in a
 | **1. Unbundle Service from Privilege** | Beyond rent-seeking at the chokepoint, what **real data translation, validation, and logistics work** does this intermediary currently perform? | Although clerks embezzled meltage fees, they also performed the real arithmetic of decomposing quotas across 26,800 households. |
 | **2. Build Alternative Routing** | Once you remove or bypass the intermediary, **who takes over the productive bookkeeping, and do they have sufficient compute/staffing capacity?** | In tiny Chun'an, Hai Rui could calculate ledgers himself and recruit local students; across ten Jiangnan prefectures in Yingtian, lacking a scalable alternative team meant drowning in thousands of daily petitions. |
 | **3. Fund the Physical Fuel** | Did part of the informal fee actually subsidize **essential operating costs** of the system? | Banning surcharges to zero without providing statutory office funding starves the yamen of paper and transport funds (which Qing Yongzheng later addressed via *Yanglian* stipends). |
-| **4. Open Terminal Verification Interfaces** | Can terminal users (`Ring-3`) independently verify rules and bills without going through the intermediary? | Shuai Jiamo cross-checking the public *Da Ming Huidian* and Zhang Juzheng issuing direct *Single-Whip Youpiao* slips to households both opened terminal verification interfaces. |
-| **5. Watch for Burden Shifting** | After the reform, did the terminal user's total burden (money + time + rejection risk) genuinely fall, or merely change disguises? | If old clerks are replaced by new land surveyors who demand a "measurement fee," the reform fails the net burden test ([SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017)). |
+| **4. Open Terminal Verification Interfaces** | Can terminal users independently verify rules and bills without going through the intermediary? | Shuai Jiamo cross-checking the public *Da Ming Huidian* and Zhang Juzheng issuing direct *Single-Whip Youpiao* slips to households both opened terminal verification interfaces. |
+| **5. Watch for Burden Shifting** | After the reform, did the terminal user's total burden (money + time + rejection risk) genuinely fall, or merely change disguises? | If old clerks are replaced by new land surveyors who demand a "measurement fee," the reform fails the net burden test (SP-RFC-017). |
 
 ---
 
 ## 5. Join the Experiment: Run the Sandbox, Critique the Claims, or Contribute Archives
 
-This essay is not an announcement that "we have proved Ming history with a computer." Instead, it lays **historical archives, protocol models, and a runnable code sandbox** openly on the table, inviting you to test, critique, and extend them:
+This essay is not an announcement that "we have proved history with code." Instead, it lays **historical archives, protocol models, and a runnable code sandbox** openly on the table, inviting you to test, critique, and extend them:
 
 1. **Want to modify Hai Rui's decrees yourself, or simulate Wang Anshi's Song Dynasty reforms?**
-   - Clone our open-source [Socio-Engine Simulation Sandbox](../../socio_engine/README.md) and edit `socio_engine/roles/magistrate_hai/system_prompt.md` or the YAML configs;
-   - Or use our [Universal Scenario Prompt Template](../../../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) to compile **Northern Song Wang Anshi's Green Sprouts Law (`W-SIM-01`)**, **Tang Dynasty Yang Yan's Two-Tax Law (`W-SIM-02`)**, or **Qing Dynasty Yongzheng's *Huohao Guigong* (`W-SIM-03`)** into a runnable multi-agent sandbox!
+   - Clone our open-source [Socio-Engine Simulation Sandbox](../../socio_engine/README.md) and edit `socio_engine/roles/magistrate_hai/system_prompt.md` or the YAML parameters;
+   - Or use our [Universal Scenario Prompt Template](../../../socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md) to generate sandbox configurations for **Northern Song Wang Anshi's Green Sprouts Law (`W-SIM-01`)**, **Tang Dynasty Yang Yan's Two-Tax Law (`W-SIM-02`)**, or **Qing Dynasty Yongzheng's *Huohao Guigong* (`W-SIM-03`)**.
 2. **Have access to Ming local gazetteers, Yellow Registers, or original woodblock scans of *The Book of Silk*?**
    - Visit our [Open Evidence & Material Wishlist](../../research/OPEN_EVIDENCE_WISHLIST.md) to claim an archival task or point out any historical inaccuracies in this essay. Every verified correction or counterexample will be credited by name in the whitepaper and revision logs.
 
@@ -173,7 +147,7 @@ This essay is not an announcement that "we have proved Ming history with a compu
 
 ## Endnote: Which Socio-Protocolics Provisions This Essay Uses—and What It Does Not Prove
 
-This essay belongs to the cross-group special topic linking **Group II (Intermediary Parasitism & Compatibility Decay)** and **Group IV (Privilege Ring Isolation & Split-Brain Contagion)** of the [*Socio-Protocolics Whitepaper v11.2*](../../whitepaper/chapter-01.md):
+> **Sources & Boundaries**: This essay belongs to Group II (SP-RFC-004/005) and Group IV of the *Socio-Protocolics Whitepaper v11.2*, grounded in SP-POSTULATE-1/2 and guided by SP-RFC-007. The historical backbone comprises the 1577 Huizhou silk tax dispute and Hai Rui's administrative tenures in Chun'an and Yingtian, cited in [〔1〕]–[〔5〕] and companion source notes. The Socio-Engine simulations in Section 3 are counterfactual stress tests; their numbers are computational outputs and not empirical historical data. Full registration cards and version logs are preserved in the repository.
 
 1. **Postulate Background**: Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (finite cognitive bandwidth and administrative resource bounds: a magistrate cannot manually compute tens of thousands of household accounts alone) and **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (self-gaming agents: clerks, gentry, and village heads pursue private utilities $U_i$ and survival thresholds).
 2. **Core Primitives & Propositions**:
@@ -186,4 +160,3 @@ This essay belongs to the cross-group special topic linking **Group II (Intermed
    - The four `Socio-Engine` experimental runs are **counterfactual multi-agent simulations** calibrated on historical baseline parameters, illustrating internal model logic rather than econometric causal identification of Ming macro-history;
    - This essay does not fit historical parameters to the exponential attenuation formula of `SP-RFC-004`, nor does it claim that all provisions of Groups II and IV are empirically proved.
 4. **Companion Files**: Full archival citations, sandbox `Run ID` parameters, and the Proposition Testing Receipt are documented in [Sources & Boundaries](source_notes.md), version history in [Revision Notes](revision_notes.md), and the project registration card in [II-CN-C Project Card](../../research/cases/II-CN-C_ming_huizhou_silk_tax_and_hai_rui_card.md).
-

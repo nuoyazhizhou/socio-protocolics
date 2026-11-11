@@ -10,12 +10,6 @@
 
 # Why Did First-Round Simplified Characters Succeed While Second-Round Simplification Was Halted? — "Hash Collisions" and Disambiguation Cost Shifting in Chinese Character Reform
 
-Version: Public Case & Mechanism Exploration Essay v0.1 | Date: 2026-11-10 | Complete English translation of `articles/erjian/为什么一简字成了_二简字却被叫停.md`.
-
-Status: Supported by the [CN-S2 Project & Evidence Starting-Point Card](../../research/cases/CN-S2_evidence_starting_point.md) and [Source Notes & Proposition Testing Receipt](source_notes.md). Serving as a cross-group case study for Proposition Group I ([SP-RFC-001](../../whitepaper/chapter-02.md#sp-rfc-001)) and Proposition Group VI ([SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017)) of *Socio-Protocolics*, this essay examines **how many-to-one glyph merging shifts disambiguation costs** and **how legacy ecosystem lock-in constrains protocol migration**. **Throughout this text, official administrative facts, conditional structural derivations, and engineering analogies are strictly distinguished; unverified recognition-rate percentages are excluded, and the withdrawal of a specific draft scheme is not extrapolated into a blanket failure of character simplification.**
-
----
-
 Twentieth-century China witnessed two major waves of script simplification that followed strikingly different historical trajectories:
 
 - **First-Round Simplification (commonly called *Yijianzi*, 一简字)**: Promulgated by the State Council in the 1956 *Chinese Character Simplification Scheme* (*Hanzi Jianhua Fang'an*), phased in across primary school textbooks and the *Xinhua Dictionary*, and consolidated into the 1964 *General Table of Simplified Characters* (*Jianhuazi Zongbiao*), it stabilized into the foundational standard written daily by over a billion people today.
@@ -264,7 +258,7 @@ In the *Explanatory Note on Re-Publishing the "General Table of Simplified Chara
 
 ## Endnote: Which Socio-Protocolics Provisions This Essay Uses, and What It Does Not Claim to Prove
 
-This essay belongs to the cross-group intersection of **Proposition Group I (Channel Capacity & Semantic Boundary)** and **Proposition Group VI (Debt Accounting & Evolutionary Selection)** in the [*Socio-Protocolics Whitepaper v11.2*](../../whitepaper/chapter-01.md):
+> **Sources & Boundaries**: This essay belongs to Proposition Group I (SP-RFC-001) and Group VI (SP-RFC-017) of the *Socio-Protocolics Whitepaper v11.2*, grounded in SP-POSTULATE-1/2, guided by SP-RFC-007, with authorization boundary analysis from SP-RFC-012/014. The historical backbone comprises the 1956 First-Round Simplification and the 1977–1986 Second-Round Simplification trajectory, cited in [1]–[7] and companion source notes. Focus is placed on many-to-one disambiguation costs and ecosystem migration costs, distinguishing administrative records from engineering analogies. Unverified percentages are excluded, and withdrawal of a draft is not extrapolated into blanket failure. Full registration and version records are preserved in the repository.
 
 1. **Postulate Background**: Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (finite cognitive bandwidth and physical resource constraints: both sender handwriting effort and receiver visual/contextual decoding effort are non-zero, and character standards are constrained by physical dictionaries and hardware font memory) and **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (strategic agents with heterogeneous utility weights across writers, readers, typesetters, and lexicographers).
 2. **Core Proposition Groups & Normative Rules**:

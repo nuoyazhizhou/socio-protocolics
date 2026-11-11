@@ -16,6 +16,20 @@ This document records the progression of [*Why Couldn't Even Hai Rui Defeat the 
 
 ---
 
+## v0.2: Humanization Refactoring & Single-Standard Unification (2026-11-11)
+
+1. **Unified Single-Version Architecture**:
+   - Replaced fragmented dual versions with a single canonical publication-ready standard: rigorous theoretical foundations ("academic load-bearing wall") paired with natural, engaging cadence ("humanized interior decoration").
+2. **Metadata Scaffolding Sunk to Endnotes**:
+   - Moved version headers, status bars, and boilerplate disclaimers to the endnote `<a id="article-framework"></a>`, opening directly with the historical paradox: *"The county yamen is cast in iron; the magistrates flow like water."*
+   - Applied "phenomenon before naming" so that system engineering terms emerge naturally from historical events.
+3. **Sentence Cadence & Table Transformation**:
+   - Shortened sentence length, unbundled compound clauses, restrained boldface usage, and converted wide analytical tables in the narrative into parallel prose while preserving 100% of factual figures (26,800 households, 6,145 taels).
+4. **Sandbox & Tool Narrative Enhancement**:
+   - Streamlined sandbox simulations into an engaging multi-quarter institutional narrative; retained the 5-step checklist as an actionable takeaway tool.
+5. **Bilingual Synchronization**:
+   - Synchronized the English companion essay `why_hai_rui_could_not_defeat_county_clerks.md` with identical structural and stylistic polish.
+
 ## v0.1: Initial Project Registration, Drafting, and Boundary Audit (2026-11-10)
 
 1. **Project Registration Prior to Drafting**:
