@@ -70,7 +70,9 @@ def main():
     # 优先支持 v2.0/v2.2 声明式群体生成器与综合演化飞轮 (Swarm & Evolution Engine)
     from core.swarm_generator import SwarmPopulationGenerator
     from core.evolution_engine import EvolutionEngine
+    from core.dialogue_bus import DialogueBus
     evolution_engine = EvolutionEngine(config=sim_config, seed=args.trial * 100 + 42)
+    dialogue_bus = DialogueBus(llm_client=llm_client)
     
     all_pop_items = []
     if "population_archetypes" in sim_config:
@@ -172,6 +174,16 @@ def main():
         c_flee = world_state.get('county_fleeing_ratio', 0.0) * 100.0
         print(f"【宏观官情】: 太仓银: {world_state['treasury_silver']:.1f}两 | 现行米价: {grain_price:.2f}两/石 | 官田抛荒: {world_state['abandoned_land_mu']:.1f}亩 | 全县宏观抛荒: {c_abandoned:.0f}亩({c_flee:.2f}%) | 民变风险: {world_state['unrest_risk_score']*100:.1f}% | 制度熵: {world_state['system_entropy']:.2f}")
 
+        # 推进微观暗流对话与面对面对质 (Inter-Agent Dialogue & Negotiation Phase)
+        quarterly_dialogues = dialogue_bus.run_quarterly_dialogues(
+            run_id=run_id,
+            tick=tick,
+            world_state=world_state,
+            agents=agents,
+            engine=engine,
+            shocks=quarterly_shocks
+        )
+
         # 各个体轮番决策
         for ag in agents:
             agent_state = json.loads(engine.get_agent_state_json(ag.agent_id))
@@ -188,6 +200,9 @@ def main():
                 "县衙告示": f"朝廷定额税粮款共 {world_state['imperial_tax_quota']} 两/石，知县考成严禁亏空",
                 "乡间市井": "闻知户房钱吏与豪强浮收火耗折色，各保小农人心惶惶",
             }
+
+            if quarterly_dialogues.get(ag.agent_id):
+                obs["本季私下对质与商谈"] = "\n".join(quarterly_dialogues[ag.agent_id])
 
             if quarterly_shocks:
                 obs["当季外部异动与同侪传闻"] = "；".join([f"{s['title']} ({s['impact']})" for s in quarterly_shocks])
@@ -276,6 +291,12 @@ def main():
                 )
                 res = json.loads(res_json)
                 print(f"  ✔ [{ag.role_name} ({ag.agent_id})]: 执行 [{action_type}] -> {res['message']} (租金抽取: {res['rent_extracted']} 两)")
+                if action_type == "ABSCOND_WITH_FUNDS":
+                    print(f"    🏃 ⚡ [突发叛逃] {ag.role_name} 席卷本保借贷白银连夜潜逃入伏牛山落草！原所属合会欠款强行转嫁中等户连坐！")
+                elif action_type == "FOUND_COMMUNITY_SOCIETY":
+                    print(f"    📜 ✨ [民间自治] {ag.role_name} 联合本乡三甲自耕农成立'丰乐同心抬会'，建立民间社仓分摊青苗利息！")
+                elif action_type == "SEND_CAPITAL_LETTER":
+                    print(f"    ✉️ 🔥 [官绅弹劾] {ag.role_name} 动用三朝老臣名望，亲修密折直呈御史台，痛参知县激变地方！")
                 if intent:
                     if isinstance(intent, dict):
                         intent_str = json.dumps(intent, ensure_ascii=False)

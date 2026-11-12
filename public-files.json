@@ -176,6 +176,7 @@
     "socio_engine/config/sim_config_mandate_conflict.yaml",
     "socio_engine/config/sim_config_wang_an_shi.yaml",
     "socio_engine/core/agent.py",
+    "socio_engine/core/dialogue_bus.py",
     "socio_engine/core/evolution_engine.py",
     "socio_engine/core/llm_client.py",
     "socio_engine/core/role_loader.py",

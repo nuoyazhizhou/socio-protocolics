@@ -25,35 +25,45 @@ class SwarmPopulationGenerator:
             background_template = group_cfg.get("background_template", "")
             objective_function = group_cfg.get("objective_function", "")
             mutation_rate = group_cfg.get("mutation_rate", 0.08)
+            members_spec = group_cfg.get("members", [])
 
             for i in range(1, count + 1):
                 agent_id = f"{group_name}_{i:02d}"
-                name = f"{base_name}_{i:02d}号"
+                member_override = members_spec[i - 1] if i - 1 < len(members_spec) else {}
                 
-                # 资产微扰采样
-                silver = self._sample_value(asset_dist.get("silver", {"type": "fixed", "val": 1.0}))
-                grain = self._sample_value(asset_dist.get("grain", {"type": "fixed", "val": 2.0}))
-                land = self._sample_value(asset_dist.get("land", {"type": "fixed", "val": 0.0}))
+                name = member_override.get("name") or f"{base_name}_{i:02d}号"
+                role_type_i = member_override.get("role_type") or role_type
+                privilege_ring_i = member_override.get("privilege_ring", privilege_ring)
+                model_i = member_override.get("model") or group_cfg.get("model", "deepseek-flash")
+                temp_i = member_override.get("temperature") or round(self.rng.uniform(0.15, 0.45), 2)
+                trait_i = member_override.get("trait") or self.rng.choice(traits_pool)
+                obj_func_i = member_override.get("objective_function") or objective_function
+                mut_rate_i = member_override.get("mutation_rate", mutation_rate)
+                bg_custom = member_override.get("background")
+
+                # 资产微扰采样或指定覆盖
+                if "assets" in member_override:
+                    silver = float(member_override["assets"].get("silver", 1.0))
+                    grain = float(member_override["assets"].get("grain", 2.0))
+                    land = float(member_override["assets"].get("land", 0.0))
+                else:
+                    silver = self._sample_value(asset_dist.get("silver", {"type": "fixed", "val": 1.0}))
+                    grain = self._sample_value(asset_dist.get("grain", {"type": "fixed", "val": 2.0}))
+                    land = self._sample_value(asset_dist.get("land", {"type": "fixed", "val": 0.0}))
                 
-                # 性情特质采样
-                trait = self.rng.choice(traits_pool)
-                
-                # 认知温度微扰 (0.1 ~ 0.5)
-                temp = round(self.rng.uniform(0.15, 0.45), 2)
-                
-                bg = background_template.format(index=i, land=land, silver=silver, grain=grain)
+                bg = bg_custom or background_template.format(index=i, land=land, silver=silver, grain=grain)
 
                 agent_item = {
                     "id": agent_id,
                     "name": name,
                     "group": group_name,
-                    "role_type": role_type,
-                    "privilege_ring": privilege_ring,
-                    "model": group_cfg.get("model", "deepseek-flash"),
-                    "temperature": temp,
-                    "trait": trait,
-                    "objective_function": objective_function,
-                    "mutation_rate": mutation_rate,
+                    "role_type": role_type_i,
+                    "privilege_ring": privilege_ring_i,
+                    "model": model_i,
+                    "temperature": temp_i,
+                    "trait": trait_i,
+                    "objective_function": obj_func_i,
+                    "mutation_rate": mut_rate_i,
                     "background": bg,
                     "initial_assets": {
                         "silver": round(silver, 2),
