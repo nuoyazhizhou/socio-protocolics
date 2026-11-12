@@ -6,9 +6,31 @@ import yaml
 from datetime import datetime
 from typing import Dict, Any, List
 
-# 确保把 socio_engine 加入 Python 搜索路径
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, CURRENT_DIR)
+
+ROLE_DICE_ACTIONS = {
+    "magistrate": ["PUNISH_CORRUPTION", "AUDIT_CADASTRE", "TAX_REDUCTION_RELIEF", "SUPPRESS_RIOT"],
+    "vice_magistrate": ["AUDIT_CADASTRE", "TAX_REDUCTION_RELIEF", "PUNISH_CORRUPTION"],
+    "clerk": ["INJECT_SURCHARGE", "PASSIVE_RESISTANCE", "HARASS_PEASANT", "CONCEAL_POOR_DEBT"],
+    "clerk_crime": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE"],
+    "bailiff_captain": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE"],
+    "gentry": ["PETITION_MAGISTRATE", "SEND_CAPITAL_LETTER", "ACCEPT_MORTGAGE"],
+    "peasant": ["PAY_TAX_IN_FULL", "SEEK_CLERK_MERCY", "LIQUIDATE_GRAIN_FOR_SILVER", "MORTGAGE_LAND_TO_GENTRY", "FLEE_AND_ABANDON_LAND", "JOIN_RIOT"]
+}
+
+def check_state_consistency(agent_state: Dict[str, Any], text: str) -> List[str]:
+    import re
+    warnings = []
+    mu_matches = re.findall(r'(\d+(?:\.\d+)?)\s*亩', text)
+    if mu_matches:
+        true_mu = agent_state.get("land_owned_mu", 0.0)
+        for m in mu_matches:
+            val = float(m)
+            if abs(val - true_mu) > 0.5:
+                warnings.append(f"田亩对账偏差: 言辞称 {val} 亩 vs 账本 {true_mu:.1f} 亩")
+                break
+    return warnings
 
 import socio_core
 from core.role_loader import RoleLoader
@@ -19,6 +41,7 @@ def export_simulation_report(report_data: Dict[str, Any], output_dir: str) -> st
     os.makedirs(output_dir, exist_ok=True)
     run_id = report_data["run_id"]
     trial = report_data["trial"]
+    mode_str = report_data.get("mode", "llm").upper()
     md_path = os.path.join(output_dir, f"SIM_REPORT_{run_id}_TRIAL_{trial}.md")
     json_path = os.path.join(output_dir, f"SIM_REPORT_{run_id}_TRIAL_{trial}.json")
 
@@ -27,17 +50,19 @@ def export_simulation_report(report_data: Dict[str, Any], output_dir: str) -> st
 
     md = []
     md.append(f"# Socio-Engine 历史沙盘推演报告：{report_data['scenario_name']}\n")
-    md.append(f"> **推演场次 (Run ID)**: `{run_id}` | **实验版本**: `{report_data['version']}` | **试验轮次**: `#{trial}`  ")
-    md.append(f"> **启动时间**: `{report_data['start_time']}` | **地理历史坐标**: `{report_data['county']}`  ")
+    md.append(f"> **推演场次 (Run ID)**: `{run_id}` | **实验版本**: `{report_data['version']}` | **试验轮次**: `#{trial}` | **决策模式**: `{mode_str}`  ")
+    md.append(f"> **随机种子 (Seed)**: `{report_data.get('seed', 'DYNAMIC')}` | **启动时间**: `{report_data['start_time']}` | **地理历史坐标**: `{report_data['county']}`  ")
     md.append(f"> **理论底座**: 《社会系统协议学》v11.2 (三态分离 / 制度引力场 / 反机械降神) | **物理引擎**: Rust socio_core (PyO3)\n")
     md.append("---\n")
 
     md.append("## 一、 宏观历史轨迹演化总表 (Macro Trajectory)\n")
-    md.append("| 季度 (Tick) | 历史大势与朝局演化 | 太仓存银 | 现行米价 | 全县抛荒田亩 (流亡比率) | 民变风险 | 制度熵(技术债) |")
+    md.append("> **民变风险区间定义 (Unrest Thresholds)**: `[SAFE]` $\\le 20\\%$ (安靖区) | `[WARNING]` $20\\%\\sim 40\\%$ (怨气聚积区) | `[CRITICAL]` $> 60\\%$ (暴动爆发区)\n")
+    md.append("| 季度 (Tick) | 历史大势与朝局演化 | 太仓存银 | 现行米价 | 抛荒田亩 (流亡比率) | 民变风险 (预警区间) | 制度熵(技术债) |")
     md.append("|:---:|:---|:---:|:---:|:---:|:---:|:---:|")
     for t in report_data["ticks"]:
         m = t["macro_state"]
-        md.append(f"| **第 {t['tick']:02d} 季** | {t['timeline_event']} | {m['treasury_silver']:.1f} 两 | {m['grain_price']:.2f} 两/石 | {m['abandoned_land']:.0f} 亩 ({m['flee_ratio']:.1f}%) | {m['unrest_risk']*100:.1f}% | {m['system_entropy']:.2f} |")
+        regime = m.get("unrest_regime", "N/A")
+        md.append(f"| **第 {t['tick']:02d} 季** | {t['timeline_event']} | {m['treasury_silver']:.1f} 两 | {m['grain_price']:.2f} 两/石 | {m['abandoned_land']:.1f} 亩 ({m['flee_ratio']:.1f}%) | {m['unrest_risk']*100:.1f}% [{regime}] | {m['system_entropy']:.2f} |")
     md.append("\n---\n")
 
     md.append("## 二、 逐季博弈流水与认知三态分离实录 (Quarterly Dialogue & Decisions)\n")
@@ -105,12 +130,18 @@ def main():
     print("====================================================================\n")
 
     import argparse
+    import random
     parser = argparse.ArgumentParser(description="Socio-Engine 历史社会系统多智能体沙盘")
     parser.add_argument("--version", type=str, default="v1.0", help="实验版本标签，如 exp_mandate_conflict, exp_blind_anonymized")
     parser.add_argument("--trial", type=int, default=1, help="同一实验版本下的试验序号 (1, 2, 3...)")
     parser.add_argument("--config", type=str, default="config/sim_config.yaml", help="配置文件相对路径")
     parser.add_argument("--ticks", type=int, default=None, help="最大仿真步数覆盖")
+    parser.add_argument("--seed", type=int, default=None, help="固定随机数种子 (固定后两轮的环境、初始禀赋与外部冲击序列 100%% 严格一致)")
+    parser.add_argument("--mode", type=str, choices=["llm", "dice"], default="llm", help="智能体决策模式: llm (大模型认知心智) 或 dice (零心智均匀随机掷骰子对照基线)")
     args = parser.parse_args()
+
+    effective_seed = args.seed if args.seed is not None else (args.trial * 100 + 42)
+    random.seed(effective_seed)
 
     # 1. 加载仿真配置
     config_file = os.path.join(CURRENT_DIR, args.config) if not os.path.isabs(args.config) else args.config
@@ -118,7 +149,8 @@ def main():
         sim_config = yaml.safe_load(f)
 
     print(f"[*] 实验场景: {sim_config['scenario']['name']}")
-    print(f"[*] 实验版本: [{args.version}] | 试验轮次: #{args.trial}")
+    print(f"[*] 实验版本: [{args.version}] | 试验轮次: #{args.trial} | 决策模式: {args.mode.upper()}")
+    print(f"[*] 伪随机数种子: {effective_seed} {'(固定环境控制组)' if args.seed is not None else '(轮次动态摄动)'}")
     h_start = sim_config['scenario'].get('historical_year_start', 1573)
     h_end = sim_config['scenario'].get('historical_year_end', 1577)
     print(f"[*] 历史坐标: {sim_config['scenario'].get('county', '通用县域')} (万历 {h_start}-{h_end} 年 / 1573-1577)")
@@ -154,12 +186,12 @@ def main():
     from core.swarm_generator import SwarmPopulationGenerator
     from core.evolution_engine import EvolutionEngine
     from core.dialogue_bus import DialogueBus
-    evolution_engine = EvolutionEngine(config=sim_config, seed=args.trial * 100 + 42)
+    evolution_engine = EvolutionEngine(config=sim_config, seed=effective_seed)
     dialogue_bus = DialogueBus(llm_client=llm_client)
     
     all_pop_items = []
     if "population_archetypes" in sim_config:
-        pop_gen = SwarmPopulationGenerator(seed=args.trial * 100 + 42)
+        pop_gen = SwarmPopulationGenerator(seed=effective_seed)
         all_pop_items = pop_gen.generate_population(sim_config["population_archetypes"])
         print(f"\n[*] [Socio-Engine v2.0] 已依据阶级原型声明式生成 {len(all_pop_items)} 个微观群体节点 (Swarm Scaling & Perturbation):")
     else:
@@ -259,6 +291,8 @@ def main():
         "run_id": run_id,
         "version": args.version,
         "trial": args.trial,
+        "mode": args.mode,
+        "seed": effective_seed,
         "scenario_name": sim_config["scenario"].get("name", "未命名实验"),
         "county": sim_config["scenario"].get("county", "通用县域"),
         "start_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -379,8 +413,23 @@ def main():
                 obs["突发灵光一闪 (变异探索)"] = f"【你脑中闪现打破死局的边缘探索计策】: {innov['title']}——{innov['description']}。如果你决定采纳，可将行动选为 {innov['action_name']}！"
                 print(f"  ✨ [{ag.role_name}]: 脑中闪现灵光一闪 [{innov['title']}]！")
 
-            # 认知决策 (调用配置的真实模型心智)
-            decision_resp = ag.decide(world_state, agent_state, obs, "")
+            if args.mode == "dice":
+                # 零心智等概率均匀随机抽样对照基线 (Null Model Baseline)
+                cand_list = ROLE_DICE_ACTIONS.get(ag.role_id, ["PAY_TAX_IN_FULL", "SEEK_CLERK_MERCY"])
+                chosen_act = random.choice(cand_list)
+                decision_resp = {
+                    "action": {
+                        "action_type": chosen_act,
+                        "public_speech": "（零心智对照基线，无声学信号）",
+                        "inner_monologue": f"（Null Model 零心智均匀随机抽取: 从 {cand_list} 随机选定 {chosen_act}）",
+                        "parameters": {}
+                    },
+                    "prompt_used": "DICE_BASELINE_NULL_MODEL",
+                    "raw_response": chosen_act
+                }
+            else:
+                # 认知决策 (调用配置的真实模型心智)
+                decision_resp = ag.decide(world_state, agent_state, obs, "")
             act_obj = decision_resp["action"]
             
             # 若 action 本身包含嵌套字典，先展开
@@ -458,6 +507,9 @@ def main():
                     else:
                         mono_str = str(inner_mono)
                     clean_mono = mono_str.replace("\n", " ").strip()
+                    c_warns = check_state_consistency(agent_state, clean_mono)
+                    if c_warns:
+                        clean_mono += f" ⚠️ [{'; '.join(c_warns)}]"
                     print(f"    🧠 [真实心智 (是什么)]: {clean_mono[:120]}...")
                 
                 if action_type == "ABSCOND_WITH_FUNDS":
@@ -517,6 +569,37 @@ def main():
                     "status": "REJECTED",
                     "error": str(e)
                 })
+
+        # 当季决策执行完毕后，重新从 Rust 物理引擎抓取最新世界状态与个体状态，彻底修复宏观账本断层
+        post_world_json = engine.get_world_state_json()
+        post_world_state = json.loads(post_world_json)
+
+        all_agent_states_post = [json.loads(engine.get_agent_state_json(ag.agent_id)) for ag in agents]
+        peasant_agents_post = [ag for ag in all_agent_states_post if ag.get("role_type") == "peasant"]
+        fled_peasant_count = sum(1 for ag in peasant_agents_post if ag.get("survival_status") in ["FLED", "DEAD"])
+        fled_ratio = (fled_peasant_count / len(peasant_agents_post) * 100.0) if peasant_agents_post else 0.0
+
+        rust_abandoned = post_world_state.get("abandoned_land_mu", 0.0)
+        macro_abandoned = post_world_state.get("county_abandoned_land_mu", 0.0)
+        total_abandoned = max(rust_abandoned, macro_abandoned)
+
+        unrest_score = post_world_state.get("unrest_risk_score", 0.0)
+        if unrest_score >= 0.60:
+            unrest_regime = "CRITICAL"
+        elif unrest_score >= 0.40:
+            unrest_regime = "WARNING"
+        else:
+            unrest_regime = "SAFE"
+
+        tick_record["macro_state"] = {
+            "treasury_silver": post_world_state.get("treasury_silver", 0.0),
+            "grain_price": post_world_state.get("grain_price_silver", grain_price),
+            "abandoned_land": total_abandoned,
+            "flee_ratio": fled_ratio,
+            "unrest_risk": unrest_score,
+            "unrest_regime": unrest_regime,
+            "system_entropy": post_world_state.get("system_entropy", 0.0)
+        }
 
         report_data["ticks"].append(tick_record)
 
