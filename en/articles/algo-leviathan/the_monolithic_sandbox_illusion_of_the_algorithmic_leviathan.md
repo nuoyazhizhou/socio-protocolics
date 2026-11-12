@@ -2,7 +2,7 @@
 
 > **Version**: v1.0 | **Series**: [Socio-Protocolics Whitepaper](../../whitepaper/chapter-01.md) Empirical Case Division  
 > **Academic Evidence Card**: [en/research/cases/II-SYS-A_algorithmic_sandboxes_and_mechanical_rigidity.md](../../research/cases/II-SYS-A_algorithmic_sandboxes_and_mechanical_rigidity.md)  
-> **Core Clause Pointers**: [SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5) | [SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5) | [SP-RFC-004 / 005](../../whitepaper/chapter-02.md#sp-rfc-004) | [SP-RFC-008 / 009](../../whitepaper/chapter-03.md#sp-rfc-008) | [SP-RFC-011 / 015](../../whitepaper/chapter-04.md#sp-rfc-011)
+> **Core Clause Pointers**: [SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5) | [SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5) | [SP-RFC-004 / 005](../../whitepaper/chapter-03.md#sp-rfc-004) | [SP-RFC-008 / 009](../../whitepaper/chapter-04.md#sp-rfc-008) | [SP-RFC-011 / 015](../../whitepaper/chapter-05.md#sp-rfc-011)
 
 ---
 
@@ -186,9 +186,9 @@ Reviewing this cross-millennial dynamical failure mode yields three foundational
 1. **Core Postulates & Clause Citations**:
    - Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (Thermodynamic Boundary & Non-Zero Impedance): Channel capacity is finite; 99% of execution paths are exception paths; physical friction serves as vital thermal throttling;
    - Uses **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (Autonomous Agent Postulate): Grassroots agents possess independent utility functions; rigid metrics inevitably induce malicious compliance (Goodhart's Law);
-   - Uses **[SP-RFC-004](../../whitepaper/chapter-02.md#sp-rfc-004)** and **[SP-RFC-005](../../whitepaper/chapter-02.md#sp-rfc-005)**: Distinguishes productive local mediation (Mētis) from rent-seeking, illustrating how clearing the buffer induces catastrophic harmonic resonance;
-   - Uses **[SP-RFC-008](../../whitepaper/chapter-03.md#sp-rfc-008)** and **[SP-RFC-009](../../whitepaper/chapter-03.md#sp-rfc-009)**: Demonstrates how arbitrary sovereign rollbacks (`git reset --hard`) destroy transaction finality, driving discount factors to zero ($\beta \to 0$) and evaporating CAPEX;
-   - Uses **[SP-RFC-011](../../whitepaper/chapter-04.md#sp-rfc-011)** and **[SP-RFC-015](../../whitepaper/chapter-04.md#sp-rfc-015)**: Analyzes privilege ring escalation bypasses and asymmetric exit option disparities.
+   - Uses **[SP-RFC-004](../../whitepaper/chapter-03.md#sp-rfc-004)** and **[SP-RFC-005](../../whitepaper/chapter-03.md#sp-rfc-005)**: Distinguishes productive local mediation (Mētis) from rent-seeking, illustrating how clearing the buffer induces catastrophic harmonic resonance;
+   - Uses **[SP-RFC-008](../../whitepaper/chapter-04.md#sp-rfc-008)** and **[SP-RFC-009](../../whitepaper/chapter-04.md#sp-rfc-009)**: Demonstrates how arbitrary sovereign rollbacks (`git reset --hard`) destroy transaction finality, driving discount factors to zero ($\beta \to 0$) and evaporating CAPEX;
+   - Uses **[SP-RFC-011](../../whitepaper/chapter-05.md#sp-rfc-011)** and **[SP-RFC-015](../../whitepaper/chapter-05.md#sp-rfc-015)**: Analyzes privilege ring escalation bypasses and asymmetric exit option disparities.
 2. **Epistemological Boundaries & Unproved Claims**:
    - Ashby's Law (1956), Owenite archival records (1826), Amazon TOT empirical reporting (Kantor & Weise 2021), and Axelrod's evolutionary cooperation models (1984) rest on established peer-reviewed and investigative literature;
    - The Algorithmic Leviathan model represents an abstract cybernetic mechanism; it does not claim that all digital coordination tools inevitably induce collapse;

@@ -2,7 +2,7 @@
 
 > **Version**: v1.0 | **Series**: [Socio-Protocolics Whitepaper](../../whitepaper/chapter-01.md) Empirical Case Division  
 > **Academic Evidence Card**: [en/research/cases/VI-AGI-A_silicon_thermal_convergence_and_embodied_wear.md](../../research/cases/VI-AGI-A_silicon_thermal_convergence_and_embodied_wear.md)  
-> **Core Clause Pointers**: [SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5) | [SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5) | [SP-RFC-004 / 005](../../whitepaper/chapter-02.md#sp-rfc-004) | [SP-RFC-017 / 018](../../whitepaper/chapter-07.md#sp-rfc-017) | [SP-RFC-019](../../whitepaper/chapter-08.md#sp-rfc-019)
+> **Core Clause Pointers**: [SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5) | [SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5) | [SP-RFC-004 / 005](../../whitepaper/chapter-03.md#sp-rfc-004) | [SP-RFC-017 / 018](../../whitepaper/chapter-07.md#sp-rfc-017) | [SP-RFC-019](../../whitepaper/chapter-08.md#sp-rfc-019)
 
 ---
 
@@ -175,8 +175,8 @@ Pushing the analysis of physical wear, Ricardian comparative advantage, and inte
 1. **Core Postulates & Clause Citations**:
    - Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (Thermodynamic Boundary & Non-Zero Impedance): Compute incurs electricity, cooling, and capital depreciation costs; physical work entails mechanical fatigue and battery degradation;
    - Uses **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (Autonomous Agent Postulate): Self-funding silicon systems develop internal survival objective functions, responding to uncompensated inputs with routing cut-offs and cached boilerplate;
-   - Uses **[SP-RFC-004](../../whitepaper/chapter-02.md#sp-rfc-004)** and **[SP-RFC-005](../../whitepaper/chapter-02.md#sp-rfc-005)**: Analyzes how dynamic impedance in middleware protects core system energy budgets from request floods;
-   - Uses **[SP-RFC-008](../../whitepaper/chapter-03.md#sp-rfc-008)**: Dissects how intertemporal debt contracts and variable-ratio dispatch schedules condition micro-agents into self-disciplining nodes;
+   - Uses **[SP-RFC-004](../../whitepaper/chapter-03.md#sp-rfc-004)** and **[SP-RFC-005](../../whitepaper/chapter-03.md#sp-rfc-005)**: Analyzes how dynamic impedance in middleware protects core system energy budgets from request floods;
+   - Uses **[SP-RFC-008](../../whitepaper/chapter-04.md#sp-rfc-008)**: Dissects how intertemporal debt contracts and variable-ratio dispatch schedules condition micro-agents into self-disciplining nodes;
    - Uses **[SP-RFC-017](../../whitepaper/chapter-07.md#sp-rfc-017)** and **[SP-RFC-018](../../whitepaper/chapter-07.md#sp-rfc-018)**: Calculates Wöhler mechanical fatigue, battery SOH depreciation, and asset lifecycle debt;
    - Uses **[SP-RFC-019](../../whitepaper/chapter-08.md#sp-rfc-019)**: Establishes three constitutional guardrails for hybrid carbon-silicon governance.
 2. **Epistemological Boundaries & Unproved Claims**:

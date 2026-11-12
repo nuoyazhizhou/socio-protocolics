@@ -98,11 +98,14 @@ plugins:
                 - Algorithmic Leviathan & Zero-Friction Abyss · sources & receipt: en/articles/algo-leviathan/source_notes.md
                 - Silicon Convergence & Bureaucratic AGI · essay: en/articles/silicon-convergence/why_agi_will_inevitably_develop_the_disposition_of_a_bureaucratic_clerk.md
                 - Silicon Convergence & Bureaucratic AGI · sources & receipt: en/articles/silicon-convergence/source_notes.md
+                - Tripartite Decoupling & Institutional Attractor · essay: en/articles/say-do-be/what_is_said_what_is_done_what_one_is_are_three_different_things.md
+                - Tripartite Decoupling & Institutional Attractor · sources & receipt: en/articles/say-do-be/source_notes.md
             - Open Research:
                 - Framework & case index: en/framework_and_case_index.md
                 - v11.1 numbering concordance: en/v11.1_numbering_concordance.md
                 - Research questions that can be taken up: en/research/README.md
                 - Open Evidence Wishlist: en/research/OPEN_EVIDENCE_WISHLIST.md
+                - I-ATT-A · Tripartite Decoupling & Institutional Attractor Card: en/research/cases/I-ATT-A_tripartite_separation_and_institutional_attractor_card.md
                 - H01 — Expression & understanding cost: en/research/H01_expression_and_understanding_cost.md
                 - H02 — Formal status & adoption: en/research/H02_formal_status_and_adoption.md
                 - H03 — Rules & actual migration: en/research/H03_rules_and_actual_migration.md
@@ -200,9 +203,12 @@ nav:
       - 算法利维坦与零摩擦深渊 · 来源与回执: articles/algo-leviathan/source_notes.md
       - AGI趋同演化与老吏嘴脸 · 正文: articles/silicon-convergence/AGI为什么必然会长出老吏的嘴脸.md
       - AGI趋同演化与老吏嘴脸 · 来源与回执: articles/silicon-convergence/source_notes.md
+      - 三态分离与制度引力场 · 正文: articles/say-do-be/说什么做什么是什么是三件事.md
+      - 三态分离与制度引力场 · 来源与回执: articles/say-do-be/来源说明.md
   - 开放研究:
       - 研究库: research/README.md
       - 待补充文献与证据众包清单: research/待补充文献与证据众包清单.md
+      - I-ATT-A · 三态分离与制度吸引子立项卡: research/cases/I-ATT-A_三态分离与制度吸引子立项卡.md
       - I-BIO-A · 天演启发式与碳硅混编立项卡: research/cases/I-BIO-A_天演启发式与碳硅混编博弈立项卡.md
       - II-SYS-A · 算法单机沙盒与零摩擦脆断立项卡: research/cases/II-SYS-A_算法单机沙盒与零摩擦脆断立项卡.md
       - VI-AGI-A · 硅基热力学趋同与具身成本不对称立项卡: research/cases/VI-AGI-A_硅基热力学趋同与具身成本不对称立项卡.md

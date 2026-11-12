@@ -202,7 +202,7 @@ Respect the 20-watt brain, protect legitimate userland aspirations in `Ring-3`, 
 1. **Core Postulates & Clause Citations**:
    - Uses **[SP-POSTULATE-1](../../whitepaper/chapter-01.md#sec-1-5)** (Thermodynamic Boundary): Human brains operate under a strict ~20W metabolic ceiling; suppression and transmission work are non-zero; 99% of paths are exception paths;
    - Uses **[SP-POSTULATE-2](../../whitepaper/chapter-01.md#sec-1-5)** (Autonomous Agent Postulate): Agents possess private objective functions and strategic defection capacity rather than serving as passive hardware gates;
-   - Uses **[§1.5.1 O1: Agent Extensions](../../whitepaper/chapter-01.md#-04-the-five-foundational-primitives-layer-2-theoretical-primitive-spec)**: Introduces the biological evolutionary priors operator set $\mathcal{H}_{\text{bio}} = \langle \mathcal{L}_{\text{asym}}, T_{\text{throttle}}, \mathcal{R}_{\text{kin}} \rangle$ and the Darwin–Postel Invariant ($\Sigma_{\text{valid}} \cap \mathcal{H}_{\text{bio}} \neq \emptyset$);
+   - Uses **[§1.5.1 O1: Agent Extensions](../../whitepaper/chapter-01.md#sec-1-5)**: Introduces the biological evolutionary priors operator set $\mathcal{H}_{\text{bio}} = \langle \mathcal{L}_{\text{asym}}, T_{\text{throttle}}, \mathcal{R}_{\text{kin}} \rangle$ and the Darwin–Postel Invariant ($\Sigma_{\text{valid}} \cap \mathcal{H}_{\text{bio}} \neq \emptyset$);
    - Uses **[SP-RFC-007](../../whitepaper/chapter-03.md#sp-rfc-007)** (Precept 4: Bio-Compatibility Precept): Forbids protocol designs reliant on zero-self-interest saint assumptions;
    - Uses **[SP-RFC-019](../../whitepaper/chapter-08.md#sp-rfc-019)**: Enforces three constitutional air-gaps for hybrid carbon-silicon governance.
 2. **Epistemological Boundaries & Unproved Claims**:
