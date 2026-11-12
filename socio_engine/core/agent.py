@@ -19,7 +19,8 @@ class RoleAgent:
         model: Optional[str] = None,
         temperature: Optional[float] = None,
         llm_client: Optional[LLMClient] = None,
-        objective_function: Optional[str] = None
+        objective_function: Optional[str] = None,
+        privilege_ring: Optional[int] = None
     ):
         self.agent_id = agent_id
         self.role_def = role_def
@@ -28,7 +29,7 @@ class RoleAgent:
         self.background = background or ""
         self.trait = trait or "NORMAL"
         self.objective_function = objective_function or ""
-        self.privilege_ring = role_def.privilege_ring
+        self.privilege_ring = privilege_ring if privilege_ring is not None else role_def.privilege_ring
         self.model = model or role_def.model
         self.temperature = temperature if temperature is not None else role_def.temperature
         self.llm_client = llm_client or LLMClient()

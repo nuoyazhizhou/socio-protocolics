@@ -12,6 +12,8 @@
 - 📜 [跨朝代通用剧本提示词生成模板 (UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](./docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
 - 📑 [海瑞知县铁腕整肃与中介设租推演实验报告 (docs/EXPERIMENT_REPORT_HAI_RUI.md)](./docs/EXPERIMENT_REPORT_HAI_RUI.md)
 - 📊 [跨版本与多轮次方差对比看板 (scripts/query_experiments.py)](./scripts/query_experiments.py)
+- ⚖️ [跨轮次演化分歧与零心智基线比对工具 (scripts/compare_trials.py)](./scripts/compare_trials.py)
+- 📑 [北宋青苗法三态分离与制度吸引子跨轮次分析报告 (docs/CROSS_TRIAL_COMPARISON_SUMMARY.md)](./docs/CROSS_TRIAL_COMPARISON_SUMMARY.md)
 - ⚙️ [模型网关配置 (config/providers.yaml)](./config/providers.yaml)
 - 🔑 API 密钥环境变量示例 (`.env.example`)
 - 👥 角色配置与 Prompt 注入目录 (`roles/`)
@@ -33,12 +35,30 @@
    - 借鉴 Callwarden 的 SQLite WAL 生产级实践，所有事件、决策、隐秘抽租、篡改账册记录均落入专用数据库（`database/socio_sim.db`）。
 5. **社会依附图论与爆炸半径 (Social Graph & Blast Radius)**：
    - 借鉴 Callwarden `graph.rs` / `impact.rs` 拓扑算法，计算寻租中介卡位度（Chokepoints）与逃荒抗税波及半径。
+6. **三态分离与零心智对照基线 (Say-Do-Be Tripartite & Null Model)**：
+   - **说什么 (Public Speech)**：低阻抗声学控制信号与博弈烟雾弹；
+   - **做什么 (Physical Action)**：高阻抗能量与资产双入账做功；
+   - **是什么 (Ecological Niche)**：不可逾越的法定特权环与抽取链生态位；
+   - **零心智对照基线 (Dice Null Model)**：在完全相同的种子（`--seed 42`）与合法动作空间内进行均匀随机抽取，以对照组击穿“无锚语言漫游”，证明 LLM 决策被底层资产负债表严格支配。
 
 ---
 
 ## 快速运行
 
+### 1. 基础推演与多轮控制
+
 ```powershell
-python socio_engine/run_simulation.py
+# 运行智能体认知推演 (固定种子保证可复现性)
+python socio_engine/run_simulation.py --config config/sim_config_wang_an_shi.yaml --ticks 4 --trial 1 --seed 42
+
+# 运行零心智骰子对照基线 (Null Model Baseline)
+python socio_engine/run_simulation.py --config config/sim_config_wang_an_shi.yaml --ticks 4 --trial 101 --mode dice --seed 42
+```
+
+### 2. 跨轮次审计与比对分析
+
+```powershell
+# 运行跨轮次分歧与引力场收敛分析工具
+python socio_engine/scripts/compare_trials.py
 ```
 详细配置步骤请参阅 [USER_GUIDE.md](./USER_GUIDE.md)。

@@ -61,14 +61,17 @@ cp socio_engine/.env.example socio_engine/.env
 
 ### 4. Run Classic Historical Experiments
 ```powershell
-# Experiment 1: The Hai Rui Institutional Breakthrough (8 quarters)
+# Experiment 1: Northern Song Green Sprouts Reform & Tripartite Decoupling (Fixed Seed 42)
+python socio_engine/run_simulation.py --config config/sim_config_wang_an_shi.yaml --ticks 4 --trial 1 --seed 42
+
+# Experiment 2: Null Model Control Group (Random Dice Baseline, zero cognition)
+python socio_engine/run_simulation.py --config config/sim_config_wang_an_shi.yaml --ticks 4 --trial 101 --mode dice --seed 42
+
+# Run Cross-Trial Divergence and Institutional Attractor Audit
+python socio_engine/scripts/compare_trials.py
+
+# Experiment 3: The Hai Rui Institutional Breakthrough (8 quarters)
 python socio_engine/run_simulation.py --version exp_hai_rui_breakthrough --trial 1 --config config/sim_config_hai_rui.yaml
-
-# Experiment 2: The Conflicting Imperial Mandates (Gu Magistrate, 1575)
-python socio_engine/run_simulation.py --version exp_mandate_conflict --trial 1 --config config/sim_config.yaml
-
-# Inspect experiment results and statistical variance
-python socio_engine/scripts/query_experiments.py --version exp_hai_rui_breakthrough
 ```
 
 ---

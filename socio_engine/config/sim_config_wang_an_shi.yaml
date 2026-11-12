@@ -100,12 +100,12 @@ population_archetypes:
         trait: "METIS_SURVIVOR"
         background: "专司下乡催收锁拿，手黑心狠。深知小民畏威不畏德，不戴铁枷要不来利息，唯独怕夜路遭闷棍。"
 
-  # 4. 一、二等大豪强与商贾掌柜 (Ring-3 上等户: 资本增殖与善名兼求者)
+  # 4. 一、二等大豪强与商贾掌柜 (Ring-2 经济中介与典当特权层: 资本增殖与善名兼求者)
   upper_gentry:
     count: 2
     base_name: "开封城外大姓员外"
     role_type: "gentry"
-    privilege_ring: 3
+    privilege_ring: 2
     model: "deepseek-flash"
     mutation_rate: 0.10
     traits_pool: ["PRAGMATIC_MERCHANT", "PIETIST"]

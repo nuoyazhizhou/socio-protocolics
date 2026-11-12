@@ -230,7 +230,8 @@ def main():
             objective_function=item.get("objective_function", ""),
             model=item.get("model", rdef.model),
             temperature=item.get("temperature", rdef.temperature),
-            llm_client=llm_client
+            llm_client=llm_client,
+            privilege_ring=item["privilege_ring"]
         )
         agents.append(agent)
         print(f"    - [{agent_id}] {item['name']:<18} | Ring-{item['privilege_ring']} | 田:{assets.get('land',0):>4.1f}亩 银:{assets.get('silver',0):>5.1f}两 粮:{assets.get('grain',0):>4.1f}石 | 特质: {item.get('trait','NORMAL')}")
@@ -482,6 +483,21 @@ def main():
             else:
                 target_str = None
 
+            # 提取当前 Agent 的三态分离信息 (在 try 前全量初始化，杜绝异常时局部变量残留导致上一主体文本串台)
+            raw_speech = act_obj.get("public_speech") or act_obj.get("speech") or ""
+            clean_speech = raw_speech.replace("\n", " ").strip() if isinstance(raw_speech, str) else ""
+
+            raw_mono = act_obj.get("inner_monologue") or act_obj.get("monologue") or intent or ""
+            if isinstance(raw_mono, dict):
+                clean_mono = json.dumps(raw_mono, ensure_ascii=False).replace("\n", " ").strip()
+            else:
+                clean_mono = str(raw_mono).replace("\n", " ").strip()
+            
+            c_warns = check_state_consistency(agent_state, clean_mono)
+            if c_warns:
+                clean_mono += f" ⚠️ [{'; '.join(c_warns)}]"
+            intent_str = clean_mono if clean_mono else (str(intent) if intent else "")
+
             # 提交 Rust 物理特权环校验并落地执行
             try:
                 res_json = engine.execute_action(
@@ -495,21 +511,9 @@ def main():
                 print(f"  ✔ [{ag.role_name} ({ag.agent_id})]: [物理做功] 执行 [{action_type}] -> {res['message']} (租金抽取: {res['rent_extracted']} 两)")
                 
                 # 三态分离可视化打印: 说什么 vs 是什么 vs 做什么
-                public_speech = act_obj.get("public_speech") or act_obj.get("speech")
-                if public_speech and isinstance(public_speech, str) and public_speech.strip():
-                    clean_speech = public_speech.replace("\n", " ").strip()
+                if clean_speech:
                     print(f"    🗣️  [当众宣称 (说什么)]: “{clean_speech[:120]}”")
-                
-                inner_mono = act_obj.get("inner_monologue") or act_obj.get("monologue") or intent
-                if inner_mono:
-                    if isinstance(inner_mono, dict):
-                        mono_str = json.dumps(inner_mono, ensure_ascii=False)
-                    else:
-                        mono_str = str(inner_mono)
-                    clean_mono = mono_str.replace("\n", " ").strip()
-                    c_warns = check_state_consistency(agent_state, clean_mono)
-                    if c_warns:
-                        clean_mono += f" ⚠️ [{'; '.join(c_warns)}]"
+                if clean_mono:
                     print(f"    🧠 [真实心智 (是什么)]: {clean_mono[:120]}...")
                 
                 if action_type == "ABSCOND_WITH_FUNDS":
@@ -519,9 +523,6 @@ def main():
                 elif action_type == "SEND_CAPITAL_LETTER":
                     print(f"    ✉️ 🔥 [官绅弹劾] {ag.role_name} 动用三朝老臣名望，亲修密折直呈御史台，痛参知县激变地方！")
                 
-                intent_str = clean_mono if 'clean_mono' in locals() and clean_mono else (str(intent) if intent else "")
-                clean_speech_str = clean_speech if 'clean_speech' in locals() and clean_speech else ""
-                
                 # 记录决策入报告记录
                 tick_record["decisions"].append({
                     "agent_id": ag.agent_id,
@@ -530,7 +531,7 @@ def main():
                     "model": ag.model,
                     "temperature": ag.temperature,
                     "action_type": action_type,
-                    "public_speech": clean_speech_str,
+                    "public_speech": clean_speech,
                     "inner_monologue": intent_str,
                     "parameters": params,
                     "rent_extracted": res.get("rent_extracted", 0.0),
@@ -554,6 +555,10 @@ def main():
                 )
             except Exception as e:
                 print(f"  ❌ [{ag.role_name}]: 动作被 Rust 特权环内核驳回: {e}")
+                if clean_speech:
+                    print(f"    🗣️  [当众宣称 (说什么)]: “{clean_speech[:120]}”")
+                if clean_mono:
+                    print(f"    🧠 [真实心智 (是什么)]: {clean_mono[:120]}...")
                 tick_record["decisions"].append({
                     "agent_id": ag.agent_id,
                     "role_name": ag.role_name,
@@ -561,8 +566,8 @@ def main():
                     "model": ag.model,
                     "temperature": ag.temperature,
                     "action_type": action_type,
-                    "public_speech": public_speech if 'public_speech' in locals() and isinstance(public_speech, str) else "",
-                    "inner_monologue": clean_mono if 'clean_mono' in locals() and clean_mono else (str(intent) if intent else ""),
+                    "public_speech": clean_speech,
+                    "inner_monologue": intent_str,
                     "parameters": params,
                     "rent_extracted": 0.0,
                     "execution_message": str(e),
