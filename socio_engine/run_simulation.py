@@ -110,6 +110,7 @@ def main():
             instance_name=item["name"],
             background=item.get("background", ""),
             trait=item.get("trait", "NORMAL"),
+            objective_function=item.get("objective_function", ""),
             model=item.get("model", rdef.model),
             temperature=item.get("temperature", rdef.temperature),
             llm_client=llm_client

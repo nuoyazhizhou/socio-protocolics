@@ -18,7 +18,8 @@ class RoleAgent:
         trait: Optional[str] = None,
         model: Optional[str] = None,
         temperature: Optional[float] = None,
-        llm_client: Optional[LLMClient] = None
+        llm_client: Optional[LLMClient] = None,
+        objective_function: Optional[str] = None
     ):
         self.agent_id = agent_id
         self.role_def = role_def
@@ -26,6 +27,7 @@ class RoleAgent:
         self.role_name = instance_name or role_def.role_name
         self.background = background or ""
         self.trait = trait or "NORMAL"
+        self.objective_function = objective_function or ""
         self.privilege_ring = role_def.privilege_ring
         self.model = model or role_def.model
         self.temperature = temperature if temperature is not None else role_def.temperature
@@ -39,6 +41,8 @@ class RoleAgent:
         context = f"=== 当前年份/季度: 第 {world_state.get('tick_index', 1)} 季度 ===\n"
         context += f"【你的姓名与身份】: {self.role_name} (ID: {self.agent_id})\n"
         context += f"【法定特权环等级】: Ring-{self.privilege_ring}\n"
+        if self.objective_function:
+            context += f"【你的毕生正道执念与阶级目标函数 (Objective Function)】: {self.objective_function}\n"
         if self.background:
             context += f"【你的生计处境与宗族宿命】: {self.background}\n"
         if self.trait:

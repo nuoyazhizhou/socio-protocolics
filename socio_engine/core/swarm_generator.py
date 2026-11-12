@@ -23,6 +23,7 @@ class SwarmPopulationGenerator:
             asset_dist = group_cfg.get("assets_distribution", {})
             traits_pool = group_cfg.get("traits_pool", ["NORMAL"])
             background_template = group_cfg.get("background_template", "")
+            objective_function = group_cfg.get("objective_function", "")
             mutation_rate = group_cfg.get("mutation_rate", 0.08)
 
             for i in range(1, count + 1):
@@ -51,6 +52,7 @@ class SwarmPopulationGenerator:
                     "model": group_cfg.get("model", "deepseek-flash"),
                     "temperature": temp,
                     "trait": trait,
+                    "objective_function": objective_function,
                     "mutation_rate": mutation_rate,
                     "background": bg,
                     "initial_assets": {

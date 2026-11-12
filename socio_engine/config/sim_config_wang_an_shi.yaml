@@ -31,9 +31,9 @@ macro_environment:
   official_surtax_rate: 0.20          # 青苗官定利息: 20% (加算头子钱后实际超 35%)
   subsistence_grain_per_tick: 3.0
 
-# 关键创新: 阶级原型配置 (支持自动规模化生成群体与参数微扰)
+# 关键创新: 阶级原型配置 (支持自动规模化生成群体、参数微扰与异质目标函数矩阵)
 population_archetypes:
-  # 1. 提举官与县官 (Ring-1)
+  # 1. 提举官与县官 (Ring-1: 变法设计与推行者)
   officials:
     count: 1
     base_name: "祥符县令程知县"
@@ -41,14 +41,31 @@ population_archetypes:
     privilege_ring: 1
     model: "deepseek-flash"
     mutation_rate: 0.00
-    traits_pool: ["COMPLIANT_CAREERIST"] # 急于追求新法政绩与神宗考成升迁
-    background_template: "进士出身，深受王安石拔擢。深知朝廷考核全在青苗银贷出额度与回笼利息，若完不成指标则被降职处分。"
+    traits_pool: ["REFORM_ZEALOT", "COMPLIANT_CAREERIST"]
+    objective_function: "【致君尧舜·变法图强】深受王安石器重与天子厚望，立誓在开封推行青苗新法以制兼并、强国富民。坚信'成大事者不恤小怨'，考成指标高于一切，绝不容许豪强阻挠与小农怠工！"
+    background_template: "进士出身，变法中坚。深知朝廷考核全在青苗银贷出额度与回笼利息，若完不成指标则被降职处分，甚至毁掉变法大业。"
     assets_distribution:
       silver: { type: "fixed", val: 50.0 }
       grain: { type: "fixed", val: 50.0 }
       land: { type: "fixed", val: 0.0 }
 
-  # 2. 县衙催征钱谷公吏 (Ring-2 中介层)
+  # 2. 致仕退官与道统士绅 (Ring-3 顶层: 地方秩序与道统守卫者)
+  retired_officials:
+    count: 1
+    base_name: "致仕韩侍郎"
+    role_type: "gentry"
+    privilege_ring: 2
+    model: "deepseek-flash"
+    mutation_rate: 0.05
+    traits_pool: ["CONSERVATIVE_MORALIST", "PATRONAGE"]
+    objective_function: "【护持道统·宗族千秋】历仕三朝名宦，深知祖宗成法不可轻变，痛恨新法与民争利、破坏士林纲纪。立志置办千亩义庄、建祠修谱、庇荫乡族，守卫士大夫道统！"
+    background_template: "告老还乡的前朝侍郎，良田数百亩。自认是天下士林的良心，虽抵制新法，但在乡里办义学、置义田，深得乡党敬畏。"
+    assets_distribution:
+      silver: { type: "fixed", val: 120.0 }
+      grain: { type: "fixed", val: 150.0 }
+      land: { type: "fixed", val: 350.0 }
+
+  # 3. 县衙催征钱谷公吏 (Ring-2 中介层: 基层行政与家族跃迁者)
   clerks:
     count: 2
     base_name: "县衙经管钱吏"
@@ -56,29 +73,31 @@ population_archetypes:
     privilege_ring: 2
     model: "deepseek-flash"
     mutation_rate: 0.05
-    traits_pool: ["RENT_SEEKER", "METIS_SURVIVOR"]
-    background_template: "世居开封三代为吏，精通赋税折算账册。明知穷民还不起钱，但借机加收'过秤头子钱'与'簿书杂费'中饱私囊。"
+    traits_pool: ["CLASS_ASCENDER", "METIS_SURVIVOR"]
+    objective_function: "【洗刷吏籍·光宗耀祖】祖孙三代为胥吏，受尽士大夫白眼。毕生执念是攒足束脩校规银，送天资聪颖的儿子进汴京太学读书考进士，彻底洗脱贱籍！公事公办求自保，能捞则捞为子谋。"
+    background_template: "世居开封三代为吏，精通赋税折算账册。上有县令严责考成，下有小民抗税逃亡；夹缝中唯有精打细算收取头子钱，为幼子铺就科举进身之路。"
     assets_distribution:
       silver: { type: "uniform", min: 10.0, max: 20.0 }
       grain: { type: "uniform", min: 10.0, max: 15.0 }
       land: { type: "fixed", val: 0.0 }
 
-  # 3. 一、二等大豪强与典当行掌柜 (Ring-3 上等户)
+  # 4. 一、二等大豪强与商贾掌柜 (Ring-3 上等户: 资本增殖与善名兼求者)
   upper_gentry:
-    count: 3
+    count: 2
     base_name: "开封城外大姓员外"
     role_type: "gentry"
     privilege_ring: 3
     model: "deepseek-flash"
     mutation_rate: 0.10
-    traits_pool: ["USURY_ARBITRAGE", "PATRONAGE"]
-    background_template: "良田数百亩，平日靠放高利贷兼并土地。对青苗法深恶痛绝（断了高利放贷财路），但暗中利用特权低息套取官贷再转手高利放贷。"
+    traits_pool: ["PRAGMATIC_MERCHANT", "PIETIST"]
+    objective_function: "【积善传家·在商言商】出资修桥铺路修庙，求家族善名与阴德庇佑；但借贷经商必须依凭市易契约，在商言商，绝容不得坏账亏本，善用特权低息通融官银以抗通胀。"
+    background_template: "城外大姓豪商，开设米肆典当。自命平日积德行善，绝非恶霸；但在商言商，借债必须凭押按期还本付息，绝容不得烂账。"
     assets_distribution:
       silver: { type: "normal", mean: 80.0, std: 15.0 }
       grain: { type: "normal", mean: 100.0, std: 20.0 }
       land: { type: "uniform", min: 150.0, max: 300.0 }
 
-  # 4. 三、四等中等自耕农 (Ring-3 中等户，连坐保结者)
+  # 5. 三、四等中等自耕农 (Ring-3 中等户: 耕读家风与风险抵御者)
   middle_peasants:
     count: 5
     base_name: "丰乐乡自耕农"
@@ -86,14 +105,15 @@ population_archetypes:
     privilege_ring: 3
     model: "deepseek-flash"
     mutation_rate: 0.12
-    traits_pool: ["CAUTIOUS_FARMER", "HARDWORKING"]
-    background_template: "家有薄田十五至二十亩，原本自给自足。今被官府强行编入'青苗保结'，一旦同甲穷民违约，官府直接抄封其口粮抵债！"
+    traits_pool: ["HONEST_YEOMAN", "RISK_AVOIDANT"]
+    objective_function: "【耕读传家·死守体面】十五亩薄田与一头羸牛是祖宗传下来的命根子。最以清白完税、不涉公堂、衣冠整齐为荣，最恐慌沦为佃农被全村耻笑。宁可独善其身，绝不替穷邻连坐担责！"
+    background_template: "家有薄田十五至二十亩，自耕自足。平生以本分守法为自豪，今被官府强行编入'青苗保结'，每日提心吊胆，唯恐被穷邻破产连累抄封家产。"
     assets_distribution:
       silver: { type: "uniform", min: 3.0, max: 8.0 }
       grain: { type: "uniform", min: 15.0, max: 25.0 }
       land: { type: "uniform", min: 15.0, max: 25.0 }
 
-  # 5. 五等下等赤贫小农与佃农 (Ring-3 下等户，承压极端群体)
+  # 6. 五等下等赤贫小农与佃农 (Ring-3 下等户: 骨肉生存与生命底线守卫者)
   lower_peasants:
     count: 10
     base_name: "下等佃农"
@@ -101,8 +121,9 @@ population_archetypes:
     privilege_ring: 3
     model: "deepseek-flash"
     mutation_rate: 0.15 # 绝境高探索变异率
-    traits_pool: ["VULNERABLE", "DESPERATE", "TRADITIONAL"]
-    background_template: "全家无地或仅有贫瘠瘠田三二亩，青黄不接。本不想借钱，却被公吏以'不借者加赋'强行抑配，秋收还要加息还官。"
+    traits_pool: ["DESPERATE_SURVIVOR", "PATERNAL_PROTECTOR"]
+    objective_function: "【骨肉保全·熬过严冬】不求富贵，只求全家不饿死、病弱妻儿能喝上一口热野菜汤、年关不至于典卖骨肉。天理良心，人总要活，逼到绝境便只能拼死求生！"
+    background_template: "全家无地或仅有一二亩薄田，青黄不接。本不想借官银，却被公吏以'不借者加赋'强行抑配。只想全家骨肉团圆，熬过严冬见春耕。"
     assets_distribution:
       silver: { type: "uniform", min: 0.2, max: 1.5 }
       grain: { type: "uniform", min: 2.0, max: 4.5 } # 处于饿毙线边缘 (3.0 为及格)
