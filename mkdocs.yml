@@ -169,6 +169,7 @@ nav:
       - 跨朝代剧本生成模板: socio_engine/docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md
       - 真实历史档案基准 (明代徽州): socio_engine/docs/HISTORICAL_BASELINE.md
       - 海瑞与中介设租推演报告: socio_engine/docs/EXPERIMENT_REPORT_HAI_RUI.md
+      - 王安石青苗法四季度全景推演报告: socio_engine/docs/EXPERIMENT_REPORT_WANG_AN_SHI.md
       - 北宋青苗法三态分离比对报告: socio_engine/docs/CROSS_TRIAL_COMPARISON_SUMMARY.md
   - 白皮书:
       - 第一章 · 研究定位与建模基础: chapters/chapter-01.md

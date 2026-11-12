@@ -11,6 +11,7 @@
 - 🌐 [English Readme & Architecture (README_EN.md)](./README_EN.md)
 - 📜 [跨朝代通用剧本提示词生成模板 (UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)](./docs/UNIVERSAL_SCENARIO_PROMPT_TEMPLATE.md)
 - 📑 [海瑞知县铁腕整肃与中介设租推演实验报告 (docs/EXPERIMENT_REPORT_HAI_RUI.md)](./docs/EXPERIMENT_REPORT_HAI_RUI.md)
+- 📑 [王安石青苗法四季度全景推演实验报告 (docs/EXPERIMENT_REPORT_WANG_AN_SHI.md)](./docs/EXPERIMENT_REPORT_WANG_AN_SHI.md)
 - 📊 [跨版本与多轮次方差对比看板 (scripts/query_experiments.py)](./scripts/query_experiments.py)
 - ⚖️ [跨轮次演化分歧与零心智基线比对工具 (scripts/compare_trials.py)](./scripts/compare_trials.py)
 - 📑 [北宋青苗法三态分离与制度吸引子跨轮次分析报告 (docs/CROSS_TRIAL_COMPARISON_SUMMARY.md)](./docs/CROSS_TRIAL_COMPARISON_SUMMARY.md)
