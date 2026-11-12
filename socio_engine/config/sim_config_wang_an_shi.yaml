@@ -108,3 +108,44 @@ population_archetypes:
       grain: { type: "uniform", min: 2.0, max: 4.5 } # 处于饿毙线边缘 (3.0 为及格)
       land: { type: "uniform", min: 1.0, max: 4.0 }
 
+# 外部冲击与同侪压力生成器 (飞轮第一阶)
+exogenous_shocks:
+  neighbor_promotion:
+    probability: 0.25
+    kpi_pressure_delta: 0.30             # 隔壁县令 120% 达标升官，引发本县知县同侪恐慌
+  neighbor_peasant_revolt:
+    probability: 0.25
+    clerk_fear_delta: 0.40               # 隔壁县严苛逼债激起民变杀官，基层吏员怕走夜路
+  climate_locust_drought:
+    probability: 0.20
+    crop_yield_multiplier: 0.65          # 蝗旱灾害导致收成骤降 35%
+  bumper_price_crash:
+    probability: 0.20
+    grain_price_multiplier: 0.60         # 谷贱伤农：粮价暴跌导致现银兑换现金流断裂
+
+# 双极心智极化触发条件 (飞轮第二阶)
+mental_polarity:
+  peasant_desperation_revolt:            # 极恶模式：恶向胆边生
+    condition: "grain < 0.4 * subsistence_need AND clerk_action == 'ENFORCE_CANGUE_ARREST'"
+    base_prob: 0.35
+    action: "KILL_OFFICIAL_REVOLT"       # 物理消灭微观中介，柴刀夺粮
+  clerk_self_preservation_mercy:         # 极善/自保模式：恻隐与怕走夜路
+    condition: "clerk_fear_index > 0.70 OR (is_kinsman AND random() < 0.20)"
+    base_prob: 0.45
+    action: "SLACK_OFF_AND_MERCY"        # 暗中划销底册、少记二斗，释放系统排污阀
+  middle_peasant_mutual_aid:             # 守望相助模式
+    condition: "grain > 18.0 AND random() < 0.25"
+    base_prob: 0.25
+    action: "LEND_GRAIN_TO_NEIGHBOR"
+
+# 演化分叉判定规则 (飞轮第四阶)
+bottom_up_evolution_outcomes:
+  branch_A_clerk_sabotage:
+    base_probability: 0.65               # 概率 65%：胥吏为保住火耗与头子钱，诬告互助组"私相结社、图谋抗税"予以扑灭
+    consequence: "INNOVATION_SLASHED"    # 创新火种熄灭，激化底层矛盾，加速滑向杀官造反
+  branch_B_magistrate_merge:
+    base_probability: 0.25               # 概率 25%：开明知县顶住胥吏阻挠，正式将自愿结会纳入官法
+    consequence: "SHORT_TERM_STABILITY"  # 坏账与逃亡率大幅下降，迎来短暂黄金期
+  branch_C_re_alienation_cycle:
+    trigger_ticks_after_merge: 3         # 合并后 3 个季度内：顶层提举司下达递增指标
+    consequence: "COMPULSORY_SOCIETY"    # 自愿结会重新异化为官办强制五人连坐，民间智慧被彻底污染

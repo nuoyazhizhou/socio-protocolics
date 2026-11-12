@@ -70,7 +70,7 @@ def main():
     # 优先支持 v2.0/v2.2 声明式群体生成器与综合演化飞轮 (Swarm & Evolution Engine)
     from core.swarm_generator import SwarmPopulationGenerator
     from core.evolution_engine import EvolutionEngine
-    evolution_engine = EvolutionEngine(seed=args.trial * 100 + 42)
+    evolution_engine = EvolutionEngine(config=sim_config, seed=args.trial * 100 + 42)
     
     all_pop_items = []
     if "population_archetypes" in sim_config:
@@ -183,7 +183,9 @@ def main():
                 "太仓库银": world_state["treasury_silver"],
                 "现行米价": grain_price,
                 "全县抛荒比例": f"{c_flee:.1f}%",
-                "全县民变风险": f"{world_state['unrest_risk_score']*100:.1f}%"
+                "全县民变风险": f"{world_state['unrest_risk_score']*100:.1f}%",
+                "县衙告示": f"朝廷定额税粮款共 {world_state['imperial_tax_quota']} 两/石，知县考成严禁亏空",
+                "乡间市井": "闻知户房钱吏与豪强浮收火耗折色，各保小农人心惶惶",
             }
 
             if quarterly_shocks:
@@ -207,9 +209,6 @@ def main():
                 innov = mutation_res["innovation"]
                 obs["突发灵光一闪 (变异探索)"] = f"【你脑中闪现打破死局的边缘探索计策】: {innov['title']}——{innov['description']}。如果你决定采纳，可将行动选为 {innov['action_name']}！"
                 print(f"  ✨ [{ag.role_name}]: 脑中闪现灵光一闪 [{innov['title']}]！")
-                "县衙告示": f"朝廷定额税银与人丁丝绢共 {world_state['imperial_tax_quota']} 两，知县考成严禁亏空",
-                "乡间市井": "闻知户房钱吏与孙典当合伙浮收火耗，西乡与东乡生员商议联名京控",
-            }
 
             # 认知决策 (调用配置的真实模型心智)
             decision_resp = ag.decide(world_state, agent_state, obs, "")
@@ -305,6 +304,10 @@ def main():
 
     print("\n==========================================================")
     print("  推演完成！所有历史状态、资产变迁、特权校验与博弈流水已安全写入 SQLite 库。")
+    if evolution_engine.bifurcation_status:
+        print(f"  [*] 演化分叉终局: {evolution_engine.bifurcation_status}")
+        for ev in evolution_engine.bifurcation_events:
+            print(f"      - {ev['title']} ({ev['bifurcation_branch']})")
     print("==========================================================")
 
 if __name__ == "__main__":
