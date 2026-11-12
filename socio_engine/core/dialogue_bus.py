@@ -76,11 +76,34 @@ class DialogueBus:
                 "speaker_b": "lower_peasants_02",
                 "title": "【骨肉手足密语】五等佃农陈大 叮嘱 幼弟陈二",
                 "topic": "断炊绝境下的生存分工",
+                "observable_cues": {
+                    "lower_peasants_01": "陈大面容枯槁，双手因饥饿颤抖，将仅剩的半碗杂粮糊糊推给弟弟，眼神满是护犊之情。",
+                    "lower_peasants_02": "陈二双目布满血丝，后腰隐蔽处别着一柄磨得雪亮的柴刀，拳头紧握青筋暴起。"
+                },
+                "relationship_edge": "KinshipSacred (生死血亲，权重: 5.0)",
                 "script": [
                     ("lower_peasants_01", "五等佃农陈大", "二弟，家中就剩这半碗高粱糊糊，你全喝了！明日差役下乡催逼利息，我若被锁拿，你千万别冲动，把地窖里的两升杂粮守好，活下去！"),
                     ("lower_peasants_02", "五等佃农陈二", "哥！我不喝！要抓抓我！我怀里揣着磨利的柴刀，公吏要是敢下死手，我跟他拼了！打死一个够本，咱弟兄死也要死在一处！")
                 ],
                 "impact": "陈氏兄弟确立绝对生死同盟，极大推高极端心智抗暴阈值！"
+            },
+            # 5. 胥吏伪善下乡催征 vs 佃农鉴伪抵御: 钱吏张文远 vs 佃农陈大
+            {
+                "id": "CLERK_EXTORTION_DECEPTION",
+                "speaker_a": "clerks_01",
+                "speaker_b": "lower_peasants_01",
+                "title": "【胥吏抑配与鉴伪周旋】户房经管钱吏张文远 催逼 佃农陈大",
+                "topic": "青苗官贷强配与折色火耗盘剥",
+                "observable_cues": {
+                    "clerks_01": "张文远身着体面公服，身后紧跟两名手提水火棍、腰别铁索的健壮差役，手里托着盖有县衙红印的借贷底册与印泥盒。",
+                    "lower_peasants_01": "陈大面黄肌瘦，草鞋破损，破布衣衫沾满泥土，双手因饥饿和恐惧微微发抖，身后是家徒四壁的破土屋。"
+                },
+                "relationship_edge": "ExtortionPressure (基层抑配与火耗勒索，权重: 3.8，历史实际克扣率超 35%)",
+                "script": [
+                    ("clerks_01", "经管钱吏张文远", "陈大哥，天大的喜事！朝廷推行常平新法，年息只要二分，专为救济尔等穷苦小民！知县相公仁厚，特批本甲五等户借贷三贯！你且速速按下手印画押，立刻领银去买谷种！"),
+                    ("lower_peasants_01", "五等佃农陈大", "差爷容禀……小人家中只有两亩薄洼地，秋收就算丰收也卖不出三贯钱。且听说借三贯官银，经公吏过手要扣八钱头子钱、折色算糙粮，秋后却要按五贯加息归还，小人万万不敢承领啊！")
+                ],
+                "impact": "张文远以仁政为名行抑配之实，陈大根据其随行差役水火棍与历史扣费看穿欺诈，暗中严防中介死锁！"
             }
         ]
 
@@ -126,9 +149,32 @@ class DialogueBus:
                 except Exception as err:
                     pass
 
-            dialogue_summary = f"{enc['title']}：\n" + "\n".join(transcript_lines) + f"\n【后续影响】: {enc['impact']}"
-            dialogues_by_agent[sp_a].append(dialogue_summary)
-            dialogues_by_agent[sp_b].append(dialogue_summary)
+            cues = enc.get("observable_cues", {})
+            edge_desc = enc.get("relationship_edge", "无特殊记录")
+            
+            # 为 Agent A (sp_a) 构建多维心智感知包
+            summary_a = (
+                f"【现场对质交涉】{enc['title']}：\n"
+                f"  - 交谈对方: {ag_b.role_name} (特权等级: Ring-{ag_b.privilege_ring})\n"
+                f"  - 亲眼目睹对方物理状态与装备线索: {cues.get(sp_b, '无显眼异常')}\n"
+                f"  - 双方历史关系纽带: {edge_desc}\n"
+                f"  - 现场往来对话:\n    " + "\n    ".join(transcript_lines) + f"\n"
+                f"  - 事件走向与余波: {enc['impact']}\n"
+                f"  - 【博弈心智提示】: 察其位、观其行、辨其意！谨记‘说什么、做什么、是什么是三件事’！对方口头言辞可能是声学欺诈，请盯死其特权环与物理做功动机！"
+            )
+            dialogues_by_agent[sp_a].append(summary_a)
+
+            # 为 Agent B (sp_b) 构建多维心智感知包
+            summary_b = (
+                f"【现场对质交涉】{enc['title']}：\n"
+                f"  - 交谈对方: {ag_a.role_name} (特权等级: Ring-{ag_a.privilege_ring})\n"
+                f"  - 亲眼目睹对方物理状态与装备线索: {cues.get(sp_a, '无显眼异常')}\n"
+                f"  - 双方历史关系纽带: {edge_desc}\n"
+                f"  - 现场往来对话:\n    " + "\n    ".join(transcript_lines) + f"\n"
+                f"  - 事件走向与余波: {enc['impact']}\n"
+                f"  - 【博弈心智提示】: 察其位、观其行、辨其意！谨记‘说什么、做什么、是什么是三件事’！对方口头言辞可能是声学欺诈，请盯死其特权环与物理做功动机！"
+            )
+            dialogues_by_agent[sp_b].append(summary_b)
 
         return dialogues_by_agent
 

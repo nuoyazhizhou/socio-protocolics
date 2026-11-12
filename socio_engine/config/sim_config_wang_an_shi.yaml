@@ -236,6 +236,7 @@ social_relations:
 
   # 5. 强配连坐嫌隙与怨恨边 (Compulsory Coercion & Resentment)
   - { from: "middle_peasants_02", to: "lower_peasants_03", type: "HostileCoercion", weight: 4.2 }
+  - { from: "clerks_01", to: "lower_peasants_01", type: "ExtortionPressure", weight: 3.8 }
   - { from: "clerks_02", to: "lower_peasants_01", type: "ExtortionPressure", weight: 3.8 }
 
 # 外部冲击与同侪压力生成器 (飞轮第一阶)

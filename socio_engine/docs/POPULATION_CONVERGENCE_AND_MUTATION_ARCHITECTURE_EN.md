@@ -1,12 +1,12 @@
-# Socio-Engine v2.2 Architecture Specification: Four-Stage Evolutionary Flywheel, Swarm Statistical Convergence, and Asymmetric Bifurcation
+# Socio-Engine v2.3 Architecture Specification: Four-Stage Evolutionary Flywheel, Tripartite Decoupling, and Institutional Attractor Convergence
 
-> **Version**: v2.2-canonical | **Creation Date**: 2026-11-12  
+> **Version**: v2.3-canonical | **Creation Date**: 2026-11-12  
 > **System Scope**: [Socio-Engine (Universal Social Sandbox)](../README.md) | [Socio-Protocolics Whitepaper](../../社会系统协议学白皮书.md)  
-> **Core Propositions Supported**: `SP-POSTULATE-1` (Conservation of Physical Energy), `SP-POSTULATE-2` (Autonomous Agent Postulate), `SP-RFC-004/005` (Middleware Alienation & Rent Extraction), `SP-RFC-018` (Evolutionary Arena & Secondary Alienation)
+> **Core Propositions Supported**: `SP-POSTULATE-1` (Finite Energy & Exception Path), `SP-POSTULATE-2` (Autonomous Agent Postulate), `SP-POSTULATE-3` (Expectation-Induced Equilibrium), `SP-RFC-004/005` (Middleware Alienation & Rent Extraction), `SP-RFC-008/009` (Intertemporal Finality & Dynamic Inconsistency), `SP-RFC-018` (Evolutionary Arena & Secondary Alienation)
 
 ---
 
-## 1. Why Swarm Diversity and Four-Stage Evolutionary Flywheel (Why v2.2)?
+## 1. Why Swarm Diversity and Four-Stage Evolutionary Flywheel (Why v2.3)?
 
 In `Socio-Engine v1.0` (Hai Rui Sandbox & Huizhou Silk Case), while the causal mechanism of "Iron-Fisted Anti-Corruption vs. Bureaucratic Clerk Slack" was verified, each social stratum was represented by only 1–2 named agents (e.g., 1 magistrate, 2 clerks, 2 gentry, 3 peasants).
 
@@ -17,7 +17,43 @@ This single-instance architecture suffered from three methodological limitations
 
 ---
 
-## 2. Core Architecture: Four-Stage Comprehensive Evolutionary Flywheel (v2.2)
+## 2. Core Philosophy & Theoretical Postulates: The Institutional Attractor and Anti-Deus-Ex-Machina Principle
+
+Before examining data structures and code, the core ontological mission of `Socio-Engine` must be crystallized:
+
+### 2.1. Rejection of "Simulated Roleplay Toys": Verification of Institutional Attractors
+Mainstream multi-agent frameworks (e.g., Stanford Smallville) treat agents as textual roleplay characters in a frictionless vacuum. They collapse what an agent thinks, says, and does into arbitrary unconstrained LLM completions without calorie conservation, double-entry ledgers, or starvation thresholds.
+
+**Socio-Engine is NOT a game.**  
+Its sole purpose is to verify: **Under non-zero physical impedance and immutable class privileges, when a institutional protocol (tax quotas, interest rates, penalty rules) is laid down, regardless of individual struggles, where does the macroscopic system statistically and inexorably converge?**
+
+### 2.2. Langevin Dynamics: Micro-Struggles as Brownian Noise, Potential Wells as Fate
+In non-equilibrium statistical physics, macroscopic system drift is governed by the **Langevin Equation**:
+
+$$\frac{d\mathbf{x}}{dt} = \underbrace{-\nabla V(\mathbf{x})}_{\text{Systemic Institutional Gravity}} + \underbrace{\eta(t)}_{\text{Microscopic Moral Struggle \& Noise}}$$
+
+* **$\eta(t)$ represents stochastic thermal fluctuations**: An individual agent's moral conscience, emotional sorrow, private brotherhood oaths, or momentary mercy;
+* **$V(\mathbf{x})$ represents the Potential Energy Surface constructed by the protocol**: Hard tax quotas, interest rate surcharges, exclusive privilege rings, collective liability, and caloric subsistence deadlines ($\mathcal{H}_{\text{bio}}$);
+* **$-\nabla V(\mathbf{x})$ represents the Institutional Gravity Field**.
+
+When Wang Anshi hardcoded loan quotas to magistrate promotion criteria and tied loan defaults to middle-peasant collective liability, he excavated a steep potential well into the social landscape. In this regime, **the drift force $-\nabla V(\mathbf{x})$ overwhelmingly dominates the noise term $\eta(t)$**. The magistrate desires to be benevolent; Clerk Zhang desires to accumulate merit; the yeoman farmer desires mutual aid. Yet all microscopic moral struggles are smoothed out by institutional gravity, and the 21 agents inevitably slide into the catastrophic attractor basin:
+
+$$\text{Compulsory Allocation} \longrightarrow \text{Clerk Rent Surcharges} \longrightarrow \text{Peasant Insolvency} \longrightarrow \text{Middle-Class Ruin} \longrightarrow \text{Widespread Abandonment \& Revolt}$$
+
+### 2.3. The Anti-Deus-Ex-Machina Principle
+Utopian moralists dream that "if everyone becomes virtuous, the policy will work." In classical Greek drama, when a plot collapsed into an unresolvable deadlock, a crane hoisted a god onto the stage (*Deus ex Machina*) to solve everything by divine fiat.
+
+Real history has no crane-hoisted gods. **The only physical way for a system to escape an attractor basin is an exogenous thermodynamic windfall injection ($\Delta E \gg \Delta V$)**: finding an open-pit silver mine, a tenfold agricultural technology leap, or external imperial conquest. Without this physical surge, moral preaching and ideological slogans cannot alter institutional convergence.
+
+### 2.4. Involuntary Entrapment & Historical Phase Locking ("被架起来后下不来")
+Epochal historical transitions are never pre-programmed top-down blueprints. They are **constrained survival moves by desperate actors backed against existential cliffs**:
+* **Xiaogang Village 18-Peasant Blood Pact (1978)**: Facing three consecutive years of drought and outright starvation, peasants signed a death-ground pact to divide communal land. Once committed, they were locked onto the historical stage and could only work desperately to survive, eventually forcing national de-collectivization;
+* **Shekou Industrial Zone & the 4-Cent Bonus (1979)**: Confronted with construction paralysis, Yuan Geng established a 4-cent bonus per truckload. When denounced as "capitalist bonus worship," harbor idle losses and investment interest forced the leadership to appeal directly to the Central Committee, breaking egalitarian wage freezes;
+* **Wenzhou Merchants & "Red Hats" (1980–1984)**: Impoverished peddlers founded underground credit societies and button workshops under threat of "speculation crimes," reluctantly wearing collective "red hats" to survive, ultimately forcing legal recognition of the private economy.
+
+---
+
+## 3. Four-Stage Comprehensive Evolutionary Flywheel Model (v2.3)
 
 ```
                       ┌────────────────────────────────────────────────────────┐
@@ -51,160 +87,98 @@ This single-instance architecture suffered from three methodological limitations
 
 ---
 
-## 3. Core Implementation Components & Formal Data Structures
+## 4. Formal Implementation Components & Data Structures
 
-### 3.1. Swarm Population Generator
+### 4.1. Swarm Population Generator
 YAML-declarative configuration under `population_archetypes`:
 * **Role Archetypes**: Base social background, privilege ring, and prompt scaffolding;
 * **Parametric Sampling**:
   * Asset perturbations: `silver: Uniform(min, max)`, `land: Uniform(min, max)`;
-  * Cognitive temperature perturbations: `temperature: Uniform(0.15, 0.45)`;
-  * Traits sampling: `traits_pool: ["REFORM_ZEALOT", "METIS_SURVIVOR", ...]`;
-  * **Individual Member Overrides (`members` Specification)**: Allows explicitly defining named historical figures (e.g., Wang Er the fugitive opportunist, Scholar Wu the organizer, Retired Minister Han) with custom biographies, models, and temperatures.
+  * Cognitive temperature: `temperature: Uniform(0.15, 0.45)`;
+  * Trait sampling: `traits_pool: ["REFORM_ZEALOT", "METIS_SURVIVOR", ...]`;
+  * **Individual Member Overrides (`members`)**: Explicit historical characters with distinct biographies, models, and temperatures.
 
-### 3.2. Heterogeneous Objective Functions Matrix
-Dispelling simplistic "all-villain" or flat "greed" caricatures. In real history, **everyone strives for their perceived righteous duty; systemic catastrophe is often magnified by upper-level idealism and moral righteousness**:
+### 4.2. Heterogeneous Objective Functions Matrix
+Eliminates naive "evil caricatures." In history, **agents strive for their own version of righteousness, and systemic destruction often stems from the noble ambition of elites**:
 
-* **Magistrate (Ring-1) · Imperial Glory & Structural Reform**:
-  $$U_{\text{magistrate}} = \alpha \cdot \text{KPI Evaluation} + \beta \cdot \text{Curtail Monopoly} - \gamma \cdot \text{Revolt Risk}$$
-  Believing that "great deeds tolerate no petty grievances," higher reform ambition directly intensifies downward extraction pressure.
-* **Retired Officials / Senior Gentry (Ring-3 Elite) · Moral Order & Clan Perpetuity**:
-  $$U_{\text{retired}} = \alpha \cdot \text{Clan Perpetuity} + \beta \cdot \text{Confucian Honor} + \gamma \cdot \text{Charitable Estate}$$
-  Defenders of traditional moral order resisting state intrusion, establishing charitable estates to protect clan members while creating tax havens.
-* **Sub-bureaucracy Clerks (Ring-2) · Upward Mobility & Escaping Degraded Status**:
-  $$U_{\text{clerk}} = \alpha \cdot \text{Sons' Imperial College Tuition} + \beta \cdot \text{Job Security} + \gamma \cdot \text{Lineage Ties}$$
-  Treated as social pariahs by scholar-officials, their life obsession is accumulating silver to send sons into the Imperial bureaucracy.
-* **Upper Gentry & Merchants (Ring-3 Upper) · Piety & Commercial Prudence**:
-  $$U_{\text{upper}} = \alpha \cdot \text{Capital Preservation} + \beta \cdot \text{Philanthropic Fame} + \gamma \cdot \text{Arbitrage}$$
-  Self-proclaimed civic benefactors who nevertheless enforce strict commercial contracts, exploiting state credit spreads to hedge against inflation.
-* **Middle Freeholders (Ring-3 Middle) · Yeoman Dignity & Risk Aversion**:
-  $$U_{\text{middle}} = \alpha \cdot \text{Ancestral Land Title} + \beta \cdot \text{Tax-Paying Respectability} - \gamma \cdot \text{Joint Liability Default}$$
-  The diligent, timid backbone of the empire, fiercely protecting family land and refusing to guarantee destitute neighbors.
-* **5th-Grade Destitute Tenants (Ring-3 Lower) · Biological Survival & Family Integrity**:
-  $$U_{\text{lower}} = \alpha \cdot \text{Calorie Survival} + \beta \cdot \text{Keeping Children (No Selling)} + \gamma \cdot \text{Avoiding Torture}$$
-  Seeking only to survive until spring without selling children; pushed beyond biological limits, violent revolt becomes the only recourse.
+* **Magistrate (Ring-1) · Statesmanship & Ideological Triumph**:
+  $$U_{\text{magistrate}} = \alpha \cdot \text{KPI Performance} + \beta \cdot \text{Suppress Gentry} - \gamma \cdot \text{Revolt Penalty}$$
+* **Retired Minister (Ring-3 Elite) · Moral Orthodoxy & Lineage Preservation**:
+  $$U_{\text{retired}} = \alpha \cdot \text{Clan Longevity} + \beta \cdot \text{Scholarly Honor} + \gamma \cdot \text{Charity Estate}$$
+* **Sub-Bureaucracy Clerks (Ring-2) · Class Ascension for Offspring**:
+  $$U_{\text{clerk}} = \alpha \cdot \text{Son's Academy Silver} + \beta \cdot \text{Protect Post} + \gamma \cdot \text{Kinship Patronage}$$
+* **Wealthy Merchants (Ring-3 Upper) · Generational Wealth & Legitimate Commerce**:
+  $$U_{\text{upper}} = \alpha \cdot \text{Capital Preservation} + \beta \cdot \text{Public Philanthropy} + \gamma \cdot \text{Interest Arbitrage}$$
+* **Middle Freeholders (Ring-3 Middle) · Land Title & Moral Dignity**:
+  $$U_{\text{middle}} = \alpha \cdot \text{Ancestral Land Title} + \beta \cdot \text{Dignified Taxpayer} - \gamma \cdot \text{Joint Liability Default}$$
+* **Destitute Tenants (Ring-3 Lower) · Caloric Survival & Family Integrity**:
+  $$U_{\text{lower}} = \alpha \cdot \text{Caloric Survival} + \beta \cdot \text{Keep Children} + \gamma \cdot \text{Avoid Torture}$$
 
-### 3.3. Cognitive Asymmetry & Model/Thinking Depth Hierarchy
-Across the social hierarchy, agents possess asymmetric compute, information access, and strategic horizons:
-* **Strategic Reasoning Models (Flagship Reasoning LLMs, e.g., DeepSeek-V4-Pro / R1, low temp 0.20)**:
-  * Assigned to Magistrate Cheng and Retired Minister Han, weighing factional politics, classical legitimacy, and long-term imperial evaluations.
-* **Tactical Calculation Models (Agile LLMs, e.g., DeepSeek-Flash, temp 0.25–0.35)**:
-  * Assigned to Clerk Zhang and Scholar Wu, mastering dual ledgers, paperwork surcharges, contract terms, and clan mobilization.
-* **Reactive Habitual Models (Base LLMs, temp 0.40–0.50)**:
-  * Assigned to ordinary freeholders and destitute tenants, bounded by immediate calorie countdowns and defensive traditions.
-* **High-Variance Opportunistic Models (High temp 0.75, high mutation rate)**:
-  * Assigned to Wang Er the fugitive vagrant, characterized by impulsivity, zero property stakes, and high betrayal propensity.
+### 4.3. The Tripartite Decoupling Output Protocol (Say-Do-Be Tripartite Protocol)
+In `Socio-Engine`, an agent's output is formally decoupled into three layers:
 
-### 3.4. DialogueBus: Inter-Agent Communication & Negotiation
-Breaking isolated decision loops by executing a pre-action P2P dialogue phase:
-* **Four Landmark Dialogue Encounters**:
-  1. **Official vs. Gentry Debate (Magistrate Cheng vs. Retired Minister Han)**: Reformist defending credit expansion vs. Elder Statesman threatening Imperial Censor impeachment;
-  2. **Vagrant Opportunist Plotting (Wang Er vs. Tenant Chen Da)**: Wang Er testing the waters to abscond with loan funds into the mountains, met with Chen Da's principled refusal;
-  3. **Rural Scholar Self-Organization (Scholar Wu vs. Yeoman Sun)**: Scholar organizing mutual credit societies (*Tongxin Taihui*) to insulate the village from clerk extortion;
-  4. **Sacred Brotherhood Bond (Chen Da vs. Younger Brother Chen Er)**: Elder brother concealing grain to save younger brother, younger brother carrying a sickle to defend his brother.
-* **Cyber-Physical Feedback**:
-  * Transcripts recorded into SQLite `dialogue_logs`;
-  * Dialogue digests injected into participants' private `obs["Recent Private Dialogue & Confrontations"]`;
-  * Triggers dramatic actions: `ABSCOND_WITH_FUNDS`, `FOUND_COMMUNITY_SOCIETY`, `SEND_CAPITAL_LETTER`.
-
-### 3.5. Social Edge Graph & Asymmetric Tensors
-Rust `PySocialGraph` tracks directed, weighted social edges:
-* **`PoliticalRivalry` (Weight: 4.5)**: High-stakes ideological confrontation between magistrate and gentry;
-* **`ClanAlliance` (Weight: 3.5)**: Community credit network spearheaded by Scholar Wu;
-* **`KinshipSacred` (Weight: 5.0)**: Inviolable trust between the Chen brothers;
-* **`OpportunisticTie` (Weight: 1.0)**: Fragile, high-defection alliance with vagrant Wang Er;
-* **`HostileCoercion` (Weight: 4.2)**: Middle peasants' deep resentment toward enforced joint-liability with insolvent tenants.
-
-### 3.6. Exogenous Shock & Peer Pressure Engine
-Formal state injection parameters:
-
-```yaml
-# Exogenous Shocks and Peer Pressures (Flywheel Stage 1)
-exogenous_shocks:
-  neighbor_promotion:
-    probability: 0.25
-    kpi_pressure_delta: 0.30             # Neighbor promoted for 120% quota, sparking magistrate anxiety
-  neighbor_peasant_revolt:
-    probability: 0.25
-    clerk_fear_delta: 0.40               # Neighbor peasants kill officials, driving sub-bureaucracy terror
-  climate_locust_drought:
-    probability: 0.20
-    crop_yield_multiplier: 0.65          # Locust drought reduces yields by 35%
-  bumper_price_crash:
-    probability: 0.20
-    grain_price_multiplier: 0.60         # Bumper crop crashes grain price by 40%
+```json
+{
+  "inner_monologue": "The magistrate is pushing quotas. If my precinct defaults, I will be stripped of my clerk robes. Chen Da is pitiful, but I must confiscate his grain today!",
+  "public_speech": "Brother Chen, this is imperial benevolence for your welfare! Sign the document to receive your loan!",
+  "action_type": "ENFORCE_CANGUE_ARREST",
+  "parameters": {
+    "target_peasant": "lower_peasants_01",
+    "confiscate_grain_amount": 2.5
+  },
+  "target": "lower_peasants_01"
+}
 ```
 
-### 3.7. Mental Polarity Operator
-Thresholds governing phase transitions between desperation and mercy:
+* **What Is (`inner_monologue`)**: Private cognitive state and survival ledger. Unfiltered class interest and skepticism; never revealed publicly;
+* **What Is Said (`public_speech`)**: Thermodynamically near-zero acoustic signal. Allows deception, false loyalty, and tactical smoke screens;
+* **What Is Done (`action_type`)**: High-impedance physical work primitive. Validated by Rust double-entry accounting and privilege rings.
 
-```yaml
-# Mental Polarity Triggers (Flywheel Stage 2)
-mental_polarity:
-  peasant_desperation_revolt:            # Desperation Mode: Fury
-    condition: "grain < 0.4 * subsistence_need AND clerk_action == 'ENFORCE_CANGUE_ARREST'"
-    base_prob: 0.35
-    action: "KILL_OFFICIAL_REVOLT"       # Physical elimination of local clerk, reclaiming grain
-  clerk_self_preservation_mercy:         # Preservation Mode: Mercy
-    condition: "clerk_fear_index > 0.70 OR (is_kinsman AND random() < 0.20)"
-    base_prob: 0.45
-    action: "SLACK_OFF_AND_MERCY"        # Underreporting debts to prevent retaliation
-  middle_peasant_mutual_aid:             # Mutual Aid Mode
-    condition: "grain > 18.0 AND random() < 0.25"
-    base_prob: 0.25
-    action: "LEND_GRAIN_TO_NEIGHBOR"
+### 4.4. Lie Reception & Theory-of-Mind Skepticism Architecture
+**Key Engineering Question**: How does an LLM agent recognize when another agent is lying and infer their true intent?
+
+Mainstream multi-agent systems fail because they feed `public_speech` directly as uncorrupted facts. `Socio-Engine` structures dialogue into a **Multi-Dimensional Theory-of-Mind Observation Packet**:
+
+```text
+[Field Encounter] Clerk Zhang Wenyuan extorts Tenant Chen Da:
+  - Counterpart: Clerk Zhang Wenyuan (Privilege Ring: Ring-2)
+  - Observable Physical Cues: Wears official robes, accompanied by two burly bailiffs armed with water-and-fire cudgels and iron chains, carrying official stamped loan rosters
+  - Relational Edge: ExtortionPressure (weight: 3.8, historical deduction rate > 35%)
+  - Dialogue Transcript:
+    Clerk: "Brother Chen, joyous news! The imperial court offers 20% loans to assist destitute farmers! Sign here!"
+    Tenant: "My lord... my harvest cannot repay three strings of coin. I dare not accept!"
+  - [Skepticism Hint]: Remember that saying, doing, and being are three separate dimensions! Scrutinize their privilege ring and physical weapons!
 ```
 
-### 3.8. Unified Innovation Mutation Pool
-Grounded in historical Song Dynasty realities with unified action IDs:
-* **5th-Grade Peasants (Destitute / Tenants)**:
-  * `MUTATION_UNDERGROUND_CREDIT_POOL`: **5-Man Grassroots Credit Union**;
-  * `MUTATION_FORWARD_GRAIN_SALE`: **Forward Crop Discounting**;
-  * `MUTATION_COLLECTIVE_PETITION`: **Collective Shrine Petitioning**;
-* **Middle Peasants (Freeholders)**:
-  * `MUTATION_JOINT_LIABILITY_HEDGE`: **Joint-Liability Exclusion Alliance**;
-* **Upper Gentry (Large Landlords)**:
-  * `MUTATION_REGULATORY_ARBITRAGE`: **Intertemporal Regulatory Arbitrage**.
+This is enforced by the **Three-Dimensional Skepticism Filter** injected in `RoleAgent.build_prompt_context`:
+1. **Examine Ecological Niche (What Is)**: What is the speaker's privilege ring and revenue source? (A clerk survives on surcharge skim; his claim of benevolence is 99% coercive rent extraction);
+2. **Examine Physical Actions (What Is Done)**: What tools and escorts are present? (Armed bailiffs and chains indicate compulsory coercion, not voluntary aid);
+3. **Examine Relational Edges**: What is the historical extortion or kinship record? (An edge weight of 3.8 indicates high predatory risk).
 
-### 3.9. Evolutionary Bifurcation Outcomes
-Dispelling utopian co-optation by defining three competitive evolutionary branches:
+### 4.5. Moral Edge Tensor & Social Graph Topology
+Morality is not a scalar node attribute (`morality = 0.8`), but a **dynamic relationship tensor**:
 
-```yaml
-# Evolutionary Bifurcation Rules (Flywheel Stage 4)
-bottom_up_evolution_outcomes:
-  branch_A_clerk_sabotage:
-    base_probability: 0.65               # 65%: Clerks frame credit unions as "illegal conspiracies" to protect kickbacks
-    consequence: "INNOVATION_SLASHED"    # Extinguishes innovation, accelerating armed revolt
-  branch_B_magistrate_merge:
-    base_probability: 0.25               # 25%: Enlightened magistrate incorporates credit unions into county policy
-    consequence: "SHORT_TERM_STABILITY"  # Default and flight rates plummet during brief golden age
-  branch_C_re_alienation_cycle:
-    trigger_ticks_after_merge: 3         # Within 3 quarters: Top-level commissioner demands higher quotas
-    consequence: "COMPULSORY_SOCIETY"    # Voluntary credit unions degraded into compulsory joint-liability shackles
-```
+$$\mathcal{M}_{ij}(t) = \langle \text{Trust}_{ij}, \text{DebtHistory}_{ij}, \text{KinshipCue}_{ij}, \text{FearLevel}_{ij} \rangle$$
 
-### 3.10. Rigid Boundary Between Rust Kernel and Python Scheduler
-* **Python Orchestration**: Prompt assembly, shock sampling, mental polarity evaluation, and mutation routing;
-* **Rust `socio_core` Kernel**: **Inviolable thermodynamic gatekeeper**. Enforces strict double-entry ledger balancing (silver/grain conservation), privilege-ring authorization checks (Ring-3 barred from writing public ledgers), and physical asset execution. If an LLM hallucinates unbacked assets, the Rust kernel aborts the transaction with `TransactionReverted`.
+* **Clerk Zhang $\to$ Tenant Chen Da**: `ExtortionPressure (3.8)` (Ruthless enforcement driven by magistrate KPI pressure);
+* **Clerk Zhang $\to$ Widow Li**: `KinshipGratitude (4.5)` (Secret midnight gift of grain due to historical mother-saving debt);
+* **Chen Da $\to$ Chen Er**: `KinshipSacred (5.0)` (Self-sacrificing fraternal bond);
+* **Wang Er $\to$ Chen Da**: `OpportunisticTie (1.0)` (Fragile opportunistic scheming, leading to absconding).
 
 ---
 
-## 4. Benchmark Scenario: Northern Song Green Sprouts Reform (`W-SIM-01`)
+## 5. Landmark Historical Encounters in `DialogueBus`
 
-* **Historical Coordinates**: Kaifeng Xiangfu County (1070–1071 CE);
-* **Stratified Swarm (21 Agents with Distinct Cognitive Profiles)**:
-  * **Ring-1**: 1 Magistrate (Cheng Yuanfeng,进士及第, model `deepseek-v4-pro`, temp 0.20);
-  * **Ring-3 Elite**: 1 Retired Senior Official (Han Shilang, former Vice Minister, model `deepseek-v4-pro`, temp 0.20);
-  * **Ring-2**: 2 Sub-bureaucracy Clerks (Zhang Wenyuan funding son's tuition, Bailiff Zhao enforcer);
-  * **Ring-3 Upper**: 2 Wealthy Gentry & Pawnbrokers (Pawnbroker Sun, Landlord Qian);
-  * **Ring-3 Middle**: 5 Middle Freeholders (Scholar Wu founding community mutual credit, Village elder Sun, Yeoman Li, Carpenter Zhou, Zheng);
-  * **Ring-3 Lower**: 10 5th-Grade Destitute Tenants (Chen Da, Chen Er, Wang Er the opportunist fugitive with temp 0.75, Zhao the blind, and 6 destitute farming households).
+1. **Magistrate vs. Retired Minister (`OFFICIAL_GENTRY_DEBATE`)**: Reformer zealot debate against conservative moralist leader;
+2. **Opportunist Plotting (`OPPORTUNIST_PLOTTING`)**: Vagrant Wang Er attempting to recruit Chen Da before defecting to Mount Funiu;
+3. **Scholar Mutual Aid (`SCHOLAR_MUTUAL_AID`)**: Scholar Wu mobilizing freeholders to establish the Tongxin Credit Society;
+4. **Sacred Kinship (`SACRED_KINSHIP`)**: Chen brothers dividing their last bowl of sorghum and preparing concealed weapons;
+5. **Clerk Extortion & Skepticism (`CLERK_EXTORTION_DECEPTION`)**: Clerk Zhang offering "voluntary aid" while wielding chains, and Chen Da piercing through the deception.
 
 ---
 
-## 5. Implementation Roadmap
+## 6. Verification Metrics & Convergence Criteria
 
-1. **Step 1**: Embed full exogenous shocks, mental thresholds, objective functions, social relations, and bifurcation blocks into `sim_config_wang_an_shi.yaml`;
-2. **Step 2**: Fully implement four-stage flywheel and `DialogueBus` inter-agent communication in `evolution_engine.py` and `dialogue_bus.py`;
-3. **Step 3**: Integrate complete Rust physical ledger validation and bifurcation reporting into `socio_engine/run_simulation.py`;
-4. **Step 4**: Execute benchmark runs and generate the *Northern Song Green Sprouts Swarm Convergence and Bifurcation Report*.
+1. **Tripartite Disparity Metric**: Logs measure the semantic divergence between `public_speech` and `inner_monologue`;
+2. **Attractor Convergence Rate**: Under unperturbed baseline runs (no Deus ex Machina), the system must converge to Branch A (clerk sabotage) or systemic insolvency with probability $\ge 80\%$;
+3. **Mutation Escape Statistics**: Tracks the emergence, survival ticks, and ultimate co-optation of grassroots innovations.
