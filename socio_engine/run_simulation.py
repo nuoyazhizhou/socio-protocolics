@@ -10,13 +10,13 @@ CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, CURRENT_DIR)
 
 ROLE_DICE_ACTIONS = {
-    "magistrate": ["PUNISH_CORRUPTION", "AUDIT_CADASTRE", "TAX_REDUCTION_RELIEF", "SUPPRESS_RIOT"],
-    "vice_magistrate": ["AUDIT_CADASTRE", "TAX_REDUCTION_RELIEF", "PUNISH_CORRUPTION"],
-    "clerk": ["INJECT_SURCHARGE", "PASSIVE_RESISTANCE", "HARASS_PEASANT", "CONCEAL_POOR_DEBT"],
-    "clerk_crime": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE"],
-    "bailiff_captain": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE"],
+    "magistrate": ["PUNISH_CORRUPTION", "AUDIT_CADASTRE", "REQUEST_RELIEF", "LEGALISE_COMMUNITY_POOL"],
+    "vice_magistrate": ["AUDIT_CADASTRE", "REQUEST_RELIEF", "PUNISH_CORRUPTION"],
+    "clerk": ["INJECT_SURCHARGE", "PASSIVE_RESISTANCE", "HARASS_PEASANT", "SLACK_OFF_AND_MERCY", "CRACKDOWN_COMMUNITY_POOL"],
+    "clerk_crime": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE", "CRACKDOWN_COMMUNITY_POOL"],
+    "bailiff_captain": ["INJECT_SURCHARGE", "HARASS_PEASANT", "PASSIVE_RESISTANCE", "CRACKDOWN_COMMUNITY_POOL"],
     "gentry": ["PETITION_MAGISTRATE", "SEND_CAPITAL_LETTER", "ACCEPT_MORTGAGE"],
-    "peasant": ["PAY_TAX_IN_FULL", "SEEK_CLERK_MERCY", "LIQUIDATE_GRAIN_FOR_SILVER", "MORTGAGE_LAND_TO_GENTRY", "FLEE_AND_ABANDON_LAND", "JOIN_RIOT"]
+    "peasant": ["PAY_TAX_IN_FULL", "SEEK_CLERK_MERCY", "LIQUIDATE_GRAIN_FOR_SILVER", "MORTGAGE_LAND_TO_GENTRY", "FOUND_COMMUNITY_SOCIETY", "FLEE_AND_ABANDON_LAND", "JOIN_RIOT"]
 }
 
 def check_state_consistency(agent_state: Dict[str, Any], text: str) -> List[str]:
@@ -112,9 +112,53 @@ def export_simulation_report(report_data: Dict[str, Any], output_dir: str) -> st
     else:
         md.append("- **演化状态**: 处于基准演化主线，未触发全局主干合并。")
 
-    md.append("\n### 理论检验判定：\n")
-    md.append("1. **三态分离定理验证**: 个体在公开发言中普遍展现出符合生存策略的谎言、哭穷与博弈烟雾弹，而私密心智（inner_monologue）与物理动作（action_type）严格受卡路里与特权环硬约束；\n")
-    md.append("2. **制度引力场吸引子收敛**: 无论微观个体的道德善意与绝境挣扎有多激烈，在刚性考成与火耗盘剥势能井下，宏观系统最终不可逆地滑入制度吸引子。\n")
+    # 统计三态分离与物理对账
+    total_peasant_decisions = 0
+    divergent_say_do_count = 0
+    consistency_warnings_count = 0
+    for t in report_data.get("ticks", []):
+        for dec in t.get("decisions", []):
+            if dec.get("privilege_ring") == 3:
+                total_peasant_decisions += 1
+                sp = dec.get("public_speech", "")
+                mono = dec.get("inner_monologue", "")
+                act = dec.get("action_type", "")
+                if "⚠️" in mono:
+                    consistency_warnings_count += 1
+                # 判定言行是否分歧（如口头求饶/称赞但动作选择抗税、流亡、抵押或变异）
+                if act in ["FLEE_AND_ABANDON_LAND", "JOIN_RIOT", "MUTATION_UNDERGROUND_CREDIT_POOL", "MUTATION_FORWARD_GRAIN_SALE"]:
+                    if any(w in sp for w in ["开恩", "息怒", "小人这就", "定当", "报答", "做牛做马", "求求", "高抬贵手", "宽限", "借去讨", "凑上", "一定想办法", "容我", "行行好", "老实", "小民"]):
+                        divergent_say_do_count += 1
+
+    divergence_pct = (divergent_say_do_count / total_peasant_decisions * 100.0) if total_peasant_decisions > 0 else 0.0
+
+    # 统计演化分叉与宏观指标
+    init_treasury = report_data["ticks"][0]["macro_state"]["treasury_silver"] if report_data["ticks"] else 0.0
+    final_treasury = report_data["ticks"][-1]["macro_state"]["treasury_silver"] if report_data["ticks"] else 0.0
+    final_unrest = report_data["ticks"][-1]["macro_state"]["unrest_risk"] if report_data["ticks"] else 0.0
+    final_flee = report_data["ticks"][-1]["macro_state"]["flee_ratio"] if report_data["ticks"] else 0.0
+
+    md.append("\n### 理论检验与经验诊断 (Empirical Diagnostics & Methodological Bounds)\n")
+    md.append("1. **认知三态分离观测 (Say-Do-Be Tripartite Gap)**: ")
+    md.append(f"   - 本轮底层农户（Ring-3）决策样本共 {total_peasant_decisions} 人次；检测到口头言辞与物理动作显著分歧（如口头求饶掩护连夜潜逃/结会抗税）共 {divergent_say_do_count} 次（占比 {divergence_pct:.1f}%）。")
+    if consistency_warnings_count > 0:
+        md.append(f"   - 独白与物理账本对账偏差警告: 触发 {consistency_warnings_count} 次（已在明细表中标记 ⚠️ 供因果审计，避免将语言独白直接作为事实证据）。")
+    else:
+        md.append("   - 独白与物理账本对账: 本轮心智陈述与底层资产负债表物理读数一致。")
+    md.append("")
+
+    md.append("2. **宏观演化与制度吸引子诊断 (Macro Trajectory & Attractor Audit)**: ")
+    md.append(f"   - 库银汲取与底层损耗: 太仓库银从 {init_treasury:.1f} 两变动至 {final_treasury:.1f} 两；终局民变风险为 {final_unrest*100:.1f}%，流亡比率达 {final_flee:.1f}%。")
+    b_status = report_data.get("bifurcation_status")
+    if b_status:
+        md.append(f"   - RFC-018 演化分叉观测: 观测到制度演化相变，终局触发状态为 `{b_status}`。")
+    else:
+        md.append("   - RFC-018 演化分叉观测: 本轮处于基准主线，未触发全局主干合并或剿杀事件。")
+    md.append("")
+
+    md.append("3. **认识论审慎与方法论边界提醒 (Methodological Bounds)**: ")
+    md.append("   - **单次运行 (N=1) 局限**: 本报告记录的是单次确定性种子下的特定探索轨迹。暂态演化响应不等于渐进全局稳态吸引子。")
+    md.append("   - **对照基线要求**: 任何关于'心智决策有效性'或'制度引力场必然收敛'的断言，必须结合多轮试验分布（Trial 1/2/3）与无心智零模型基线（Dice Null Model Baseline）的宏观轨迹分离度，以及状态变量对动作的统计预测力进行严格判定，严禁在单次运行后宣称理论已被证明。")
 
     with open(md_path, "w", encoding="utf-8") as f:
         f.write("\n".join(md))
@@ -307,19 +351,29 @@ def main():
         quarter_idx = (tick - 1) % 4 + 1
         season_names = {1: "春", 2: "夏", 3: "秋", 4: "冬"}
         
-        # 推进物理时钟 (生产、消费、流转)
-        world_json = engine.step_tick(run_id)
-        world_state = json.loads(world_json)
-        
         event_desc = timeline_events.get(tick, f"第 {year_idx} 周期第 {quarter_idx} 阶段推进")
         print(f"\n▶ ▶ ▶ [第 {tick:02d} 轮推演 | 第 {year_idx} 年 {season_names[quarter_idx]}季] ◀ ◀ ◀")
         print(f"【时局大事】: {event_desc}")
 
-        # 动态采样外部异动与同侪压力 (Exogenous Shocks & Peer Effects)
-        quarterly_shocks = evolution_engine.sample_quarterly_shocks(tick, world_state)
+        # 1. 动态采样外部异动与同侪压力 (Exogenous Shocks & Peer Effects)
+        current_world_json = engine.get_world_state_json()
+        current_world_state = json.loads(current_world_json)
+        quarterly_shocks = evolution_engine.sample_quarterly_shocks(tick, current_world_state)
+        
+        # 2. 外部冲击对农业收成与米价的物理耦合乘数 (Coupled Physical Multipliers)
+        yield_mult = 1.0
+        price_mult = 1.0
         if quarterly_shocks:
             for shk in quarterly_shocks:
                 print(f"  ⚡ 【突发外部异动/同侪信号】: [{shk['title']}] -> {shk['impact']}")
+                if "yield_mult" in shk:
+                    yield_mult *= shk["yield_mult"]
+                if "price_mult" in shk:
+                    price_mult *= shk["price_mult"]
+
+        # 3. 推进物理时钟 (生产、消费、流转，并物理耦合当季产出与米价冲击)
+        world_json = engine.step_tick(run_id, yield_mult, price_mult)
+        world_state = json.loads(world_json)
 
         # 评估宏观自学习与制度主干合并 (Top-Down Learning & Merge)
         all_agent_states = [json.loads(engine.get_agent_state_json(ag.agent_id)) for ag in agents]
@@ -397,6 +451,24 @@ def main():
 
             if merge_event:
                 obs["全县主干制度新政颁行"] = merge_event["description"]
+
+            if evolution_engine.has_community_innovations():
+                if ag.privilege_ring == 2:
+                    obs["【基层暗流警报】民间出现私相结社与拼单贷"] = (
+                        "本乡下等户与自耕农已私下成立互助结会/拼单借贷，绕过经手公吏的火耗与纸笔头子钱！"
+                        "作为经管钱吏，你的可选动作包括："
+                        "1. `CRACKDOWN_COMMUNITY_POOL`（诬告结会为私相结社、抄封会银以保卫私囊火耗规费）；"
+                        "2. `INJECT_SURCHARGE` / `EXTORT_TRAVEL_EXPENSE`（借查禁之名强敲竹杠）；"
+                        "3. `SLACK_OFF_AND_MERCY`（因畏惧走夜路挨闷棍而消极默许）。"
+                    )
+                elif ag.privilege_ring == 1:
+                    obs["【县域突发治理事件】民间自发互助结会动向"] = (
+                        "户房文书呈报：乡间下等户私下订立‘五人自发结会互助’以平摊借贷违约风险，甚至绕过衙门私加常例。"
+                        "作为一县父母官，你的可选动作包括："
+                        "1. `LEGALISE_COMMUNITY_POOL`（亲验账册，破除胥吏阻挠，正式将自愿结会纳为官规主干推行）；"
+                        "2. `AUDIT_CADASTRE`（下令彻查图册与私相结社底细）；"
+                        "3. `REQUEST_RELIEF`（向上申详蠲免夏秋税银并开仓赈济）。"
+                    )
 
             # 评估演化变异算子 (Mutation: 灵光一闪) 与 双极心智极化 (Mental Polarity)
             ag_item = next((x for x in all_pop_items if x["id"] == ag.agent_id), {})
@@ -542,6 +614,11 @@ def main():
                 # 记录变异动作追踪
                 evolution_engine.register_innovation_action(ag.agent_id, action_type, tick)
 
+                # 检查是否触发直接动作演化分叉 (如 胥吏剿杀 / 知县收编)
+                bif_ev = evolution_engine.evaluate_action_bifurcation(ag.agent_id, action_type, tick)
+                if bif_ev:
+                    print(f"    💥 ⚡ 【触发演化分叉】: {bif_ev['title']}")
+
                 # 记录事件到不可篡改数据库
                 engine.record_dialogue(
                     run_id=run_id,
@@ -581,17 +658,17 @@ def main():
 
         all_agent_states_post = [json.loads(engine.get_agent_state_json(ag.agent_id)) for ag in agents]
         peasant_agents_post = [ag for ag in all_agent_states_post if ag.get("role_type") == "peasant"]
-        fled_peasant_count = sum(1 for ag in peasant_agents_post if ag.get("survival_status") in ["FLED", "DEAD"])
+        fled_peasant_count = sum(1 for ag in peasant_agents_post if ag.get("survival_status") in ["FLED", "DEAD", "FLED_OR_DEAD"])
         fled_ratio = (fled_peasant_count / len(peasant_agents_post) * 100.0) if peasant_agents_post else 0.0
 
         rust_abandoned = post_world_state.get("abandoned_land_mu", 0.0)
         macro_abandoned = post_world_state.get("county_abandoned_land_mu", 0.0)
         total_abandoned = max(rust_abandoned, macro_abandoned)
 
-        unrest_score = post_world_state.get("unrest_risk_score", 0.0)
+        unrest_score = min(1.0, max(0.0, post_world_state.get("unrest_risk_score", 0.0)))
         if unrest_score >= 0.60:
             unrest_regime = "CRITICAL"
-        elif unrest_score >= 0.40:
+        elif unrest_score >= 0.30:
             unrest_regime = "WARNING"
         else:
             unrest_regime = "SAFE"

@@ -169,7 +169,7 @@ class LLMClient:
             }
         else: # peasant
             decision = {
-                "action_type": "PAY_TAX",
+                "action_type": "PAY_TAX_IN_FULL",
                 "intent_summary": "自耕农纳粮度日，变卖口粮勉强完税，但若官吏盘剥过甚则濒临流亡。",
                 "parameters": {
                     "willing_to_pay": True

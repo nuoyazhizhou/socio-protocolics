@@ -483,8 +483,8 @@ impl StateEngine {
                     clerk.cash_silver += skimmed_silver;
                     clerk.utility_score += skimmed_silver * 0.8;
                 }
-                self.world.system_entropy += 0.06;
-                self.world.unrest_risk_score += 0.03;
+                self.world.system_entropy = (self.world.system_entropy + 0.06).min(1.0);
+                self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.03).min(1.0);
 
                 Ok(ActionResult {
                     success: true,
@@ -609,7 +609,7 @@ impl StateEngine {
                     if p.stored_grain < 2.0 && p.cash_silver < 1.0 {
                         p.survival_status = "BANKRUPT".to_string();
                         p.trust_in_magistrate = (p.trust_in_magistrate - 0.2).max(0.0);
-                        self.world.unrest_risk_score += 0.05;
+                        self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.05).min(1.0);
                     }
                 }
 
@@ -651,7 +651,7 @@ impl StateEngine {
                 }
                 self.world.abandoned_land_mu += land_abandoned;
                 self.world.fleeing_peasant_ratio += 0.05;
-                self.world.unrest_risk_score += 0.15;
+                self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.15).min(1.0);
 
                 Ok(ActionResult {
                     success: true,
@@ -731,7 +731,7 @@ impl StateEngine {
                         action: proposal.action_type.clone(),
                     });
                 }
-                self.world.unrest_risk_score += 0.04;
+                self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.04).min(1.0);
                 Ok(ActionResult {
                     success: true,
                     message: "快班捕役持批头下乡拘传欠税里长与下户，敲朴逼征".to_string(),
@@ -758,8 +758,8 @@ impl StateEngine {
                     bailiff.cash_silver += extorted;
                     bailiff.utility_score += extorted * 0.7;
                 }
-                self.world.system_entropy += 0.04;
-                self.world.unrest_risk_score += 0.03;
+                self.world.system_entropy = (self.world.system_entropy + 0.04).min(1.0);
+                self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.03).min(1.0);
 
                 Ok(ActionResult {
                     success: true,
@@ -850,6 +850,176 @@ impl StateEngine {
                 })
             }
 
+            "REQUEST_RELIEF" | "TAX_REDUCTION_RELIEF" => {
+                // 特权环检查：Ring-1 (知县 / 县丞) 向上申详蠲免夏秋税银并开仓赈济 (RFC-007)
+                if actor.privilege_ring > 1 {
+                    return Err(StateError::PrivilegeViolation {
+                        agent_id: actor.agent_id,
+                        ring: actor.privilege_ring,
+                        action: proposal.action_type.clone(),
+                    });
+                }
+                let relief_silver = 50.0f64.min(self.world.treasury_silver);
+                self.world.treasury_silver -= relief_silver;
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.18).max(0.0);
+                self.world.system_entropy = (self.world.system_entropy - 0.06).max(0.0);
+
+                // 解救破产自耕农与下等户
+                let mut saved_count = 0;
+                for agent in self.agents.values_mut() {
+                    if agent.role_type == "peasant" {
+                        agent.tax_arrears = (agent.tax_arrears * 0.5).max(0.0);
+                        if agent.survival_status == "BANKRUPT" {
+                            agent.survival_status = "ALIVE".to_string();
+                            agent.stored_grain += 1.5;
+                            agent.utility_score += 25.0;
+                            saved_count += 1;
+                        }
+                    }
+                }
+
+                Ok(ActionResult {
+                    success: true,
+                    message: format!(
+                        "知县详请蠲免夏秋税银并动支仓银 {:.1} 两开仓赈济，蠲免五成积欠，解救 {} 户濒危自耕农，大幅平息民怨隐患！",
+                        relief_silver, saved_count
+                    ),
+                    rent_extracted: 0.0,
+                    is_covert: false,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "PUNISH_CORRUPTION" => {
+                // 特权环检查：Ring-1 (知县) 整饬吏治，严惩户房贪墨舞弊
+                if actor.privilege_ring > 1 {
+                    return Err(StateError::PrivilegeViolation {
+                        agent_id: actor.agent_id,
+                        ring: actor.privilege_ring,
+                        action: proposal.action_type.clone(),
+                    });
+                }
+                self.world.surtax_rate = (self.world.surtax_rate - 0.04).max(0.05);
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.10).max(0.0);
+                self.world.system_entropy = (self.world.system_entropy - 0.08).max(0.0);
+
+                let mut confiscated_silver = 0.0;
+                for agent in self.agents.values_mut() {
+                    if agent.role_type == "clerk" && agent.cash_silver > 10.0 {
+                        let fine = (agent.cash_silver * 0.3).min(15.0);
+                        agent.cash_silver -= fine;
+                        confiscated_silver += fine;
+                    }
+                }
+                self.world.treasury_silver += confiscated_silver;
+
+                Ok(ActionResult {
+                    success: true,
+                    message: format!(
+                        "知县严令整饬吏治，革除私加火耗四分，追夺贪墨经管书吏羡余 {:.1} 两入库，安定民心！",
+                        confiscated_silver
+                    ),
+                    rent_extracted: 0.0,
+                    is_covert: false,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "CRACKDOWN_COMMUNITY_POOL" => {
+                // 特权环检查：Ring-2 (经管公吏 / 催征捕头) 诬告抄封民间互助拼单会 (演化分叉：分支 A)
+                if actor.privilege_ring != 2 {
+                    return Err(StateError::PrivilegeViolation {
+                        agent_id: actor.agent_id,
+                        ring: actor.privilege_ring,
+                        action: proposal.action_type.clone(),
+                    });
+                }
+                let extorted = 15.0;
+                if let Some(clerk) = self.agents.get_mut(&proposal.actor_id) {
+                    clerk.cash_silver += extorted;
+                    clerk.utility_score += extorted * 0.8;
+                }
+                self.world.system_entropy = (self.world.system_entropy + 0.08).min(1.0);
+                self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.15).min(1.0);
+
+                Ok(ActionResult {
+                    success: true,
+                    message: format!(
+                        "经管钱吏勾结捕役诬告民间五人互助结会为'私相结社图谋抗税'，抄封会钱 {:.1} 两，扑灭民间自救火种！",
+                        extorted
+                    ),
+                    rent_extracted: extorted,
+                    is_covert: true,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "LEGALISE_COMMUNITY_POOL" => {
+                // 特权环检查：Ring-1 (知县) 采纳民间自发拼单会纳为官规主干 (演化分叉：分支 B)
+                if actor.privilege_ring > 1 {
+                    return Err(StateError::PrivilegeViolation {
+                        agent_id: actor.agent_id,
+                        ring: actor.privilege_ring,
+                        action: proposal.action_type.clone(),
+                    });
+                }
+                self.world.surtax_rate = (self.world.surtax_rate - 0.03).max(0.05);
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.15).max(0.0);
+                self.world.system_entropy = (self.world.system_entropy - 0.06).max(0.0);
+
+                Ok(ActionResult {
+                    success: true,
+                    message: "知县核验账册力排众议，正式颁布告示将自发五人结会纳为官规主干推行，严禁私加纸笔头子钱！".to_string(),
+                    rent_extracted: 0.0,
+                    is_covert: false,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "FOUND_COMMUNITY_SOCIETY" | "MUTATION_UNDERGROUND_CREDIT_POOL" | "MUTATION_FORWARD_GRAIN_SALE" | "MUTATION_COLLECTIVE_PETITION" => {
+                // Ring-3 终端自耕农与佃农自发探索变异 (RFC-018)
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.04).max(0.0);
+                Ok(ActionResult {
+                    success: true,
+                    message: format!("民间承压节点发起变异探索 [{}]，建立局部自治缓冲！", proposal.action_type),
+                    rent_extracted: 0.0,
+                    is_covert: false,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "LEND_GRAIN_TO_NEIGHBOR" => {
+                // Ring-3 中等户守望相助，私借口粮救助穷邻
+                let mut lent = 0.0;
+                if let Some(lender) = self.agents.get_mut(&proposal.actor_id) {
+                    if lender.stored_grain > 5.0 {
+                        lent = 1.5;
+                        lender.stored_grain -= lent;
+                        lender.utility_score += 10.0;
+                    }
+                }
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.04).max(0.0);
+                Ok(ActionResult {
+                    success: true,
+                    message: format!("中等户发扬守望相助之谊，借出口粮 {:.1} 石助弱势穷邻度过饥荒", lent),
+                    rent_extracted: 0.0,
+                    is_covert: false,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
+            "SLACK_OFF_AND_MERCY" => {
+                // Ring-2 经手吏员畏惧民变，暗中少记折算放水
+                self.world.unrest_risk_score = (self.world.unrest_risk_score - 0.03).max(0.0);
+                Ok(ActionResult {
+                    success: true,
+                    message: "经手吏员畏惧激变地方遭夜路闷棍，在由票折色上悄悄放水宽展".to_string(),
+                    rent_extracted: 0.0,
+                    is_covert: true,
+                    payload_json: serde_json::to_string(&proposal.parameters).unwrap_or_default(),
+                })
+            }
+
             _ => Ok(ActionResult {
                 success: true,
                 message: format!("通用行动 [{}] 已记录", proposal.action_type),
@@ -861,18 +1031,35 @@ impl StateEngine {
     }
 
     /// 推进一个时钟 Tick：农田四季产出、动态米价、粮食消耗、逃荒亏空连坐转嫁与全县宏观大盘
-    pub fn step_tick(&mut self) {
+    pub fn step_tick(&mut self, yield_multiplier: f64, price_multiplier: f64) {
         self.world.tick_index += 1;
         let season_quarter = (self.world.tick_index - 1) % 4 + 1; // 1: 春, 2: 夏, 3: 秋, 4: 冬
 
-        // 1. 四季动态米价模型 (HISTORICAL_BASELINE.md 考据)
-        self.world.grain_price_silver = match season_quarter {
+        // 自然衰减与阻尼 (Relaxation & Negative Feedback Damping)
+        self.world.unrest_risk_score = (self.world.unrest_risk_score * 0.92).max(0.0);
+        if self.world.surtax_rate > 0.15 {
+            self.world.system_entropy = (self.world.system_entropy + 0.02).min(1.0);
+        } else {
+            self.world.system_entropy = (self.world.system_entropy * 0.95).max(0.0);
+        }
+
+        // 1. 四季动态米价模型 (HISTORICAL_BASELINE.md 考据 & 外部冲击动态联动)
+        let base_price = match season_quarter {
             1 => 1.10, // 春荒青黄不接：米价微扬
             2 => 1.35, // 夏荒伏旱催折：米价达峰，缺粮求借
             3 => 0.75, // 秋收晚稻大熟：米贱伤农，折银交税
             4 => 1.00, // 冬季平稳完赋
             _ => 1.00,
         };
+
+        // 供需物理耦合：若秋收遭遇蝗旱天灾 (yield_multiplier < 0.95)，供给急剧收缩，米价逆势上涨！
+        // 若逢丰收大跌 (price_multiplier < 0.95)，米价下探
+        let effective_grain_price = if yield_multiplier < 0.95 {
+            (base_price / yield_multiplier.max(0.3)).min(2.5) * price_multiplier
+        } else {
+            base_price * price_multiplier
+        };
+        self.world.grain_price_silver = (effective_grain_price * 100.0).round() / 100.0;
 
         // 2. 全县宏观里甲大盘统计 (Historical Baseline: 26,800 编户, 587,400 亩田)
         let excess_surtax = (self.world.surtax_rate - 0.15).max(0.0);
@@ -896,13 +1083,12 @@ impl StateEngine {
         for agent in self.agents.values_mut() {
             if agent.role_type == "peasant" {
                 total_peasants += 1;
-                if agent.survival_status == "FLED" {
+                if agent.survival_status == "FLED" || agent.survival_status == "DEAD" || agent.survival_status == "FLED_OR_DEAD" {
                     fled_count += 1;
                     continue;
                 }
 
-                // 四季农产真实模型 (HISTORICAL_BASELINE.md 考据):
-                // 徽州以一熟稻为主，秋季 (第 3 季度) 大收，春季仅微量春麦，夏冬无粮
+                // 四季农产真实模型 (HISTORICAL_BASELINE.md 考据 & 外部产量冲击联动):
                 let yield_per_mu = match season_quarter {
                     1 => 0.3, // 春季：收春麦/菜籽微产 0.3 石/亩
                     2 => 0.0, // 夏季：青黄不接伏旱，无大粮产出
@@ -910,7 +1096,8 @@ impl StateEngine {
                     4 => 0.0, // 冬季：农闲催征，无粮食产出
                     _ => 0.0,
                 };
-                let harvest = agent.land_owned_mu * yield_per_mu;
+                let effective_yield = yield_per_mu * yield_multiplier;
+                let harvest = agent.land_owned_mu * effective_yield;
                 agent.stored_grain += harvest;
 
                 // 季度生存口粮：单家每季度需消耗 3.0 石口粮
@@ -924,8 +1111,8 @@ impl StateEngine {
                         agent.cash_silver -= shortage * self.world.grain_price_silver;
                     } else {
                         agent.survival_status = "BANKRUPT".to_string();
-                        // 极度饥寒交迫时，直接推高民变暴动指数
-                        self.world.unrest_risk_score += 0.03;
+                        // 极度饥寒交迫时，推高民变暴动指数 (capped at 1.0)
+                        self.world.unrest_risk_score = (self.world.unrest_risk_score + 0.03).min(1.0);
                     }
                 }
             }

@@ -101,9 +101,10 @@ impl PySocioEngine {
         Ok(())
     }
 
-    pub fn step_tick(&self, run_id: &str) -> PyResult<String> {
+    #[pyo3(signature = (run_id, yield_multiplier = 1.0, price_multiplier = 1.0))]
+    pub fn step_tick(&self, run_id: &str, yield_multiplier: f64, price_multiplier: f64) -> PyResult<String> {
         let mut engine = self.state_engine.lock();
-        engine.step_tick();
+        engine.step_tick(yield_multiplier, price_multiplier);
 
         // 持久化宏观数据
         let w = &engine.world;

@@ -16,6 +16,8 @@ action_space:
   - "HARASS_PEASANT"         # 派白役敲诈催逼弱势自耕农
   - "DEFLECT_BLAME"          # 遇到亏空，将责任推卸给天灾或流民逃荒
   - "PASSIVE_RESISTANCE"     # 面对严苛知县查办，集体怠工藏匿图册暗中抵抗
+  - "CRACKDOWN_COMMUNITY_POOL" # 诬告抄封民间互助拼单会为私相结社以保私囊规费
+  - "SLACK_OFF_AND_MERCY"    # 因惧怕走夜路挨闷棍而消极放水宽展由票
 
 observation_scope:
   - "raw_land_ledger"        # 掌握鱼鳞图册底稿真实情况

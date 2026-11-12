@@ -15,6 +15,7 @@ action_space:
   - "DISPATCH_RUNNERS"       # 派差役强制催征
   - "PUNISH_CORRUPTION"      # 查处劣吏贪墨
   - "REQUEST_RELIEF"         # 向上级巡抚告灾请免
+  - "LEGALISE_COMMUNITY_POOL"# 将民间自发五人互助结会纳为官规主干推行
 
 observation_scope:
   - "treasury_balance"       # 只能看到太仓报表 (存在被胥吏做账可能)

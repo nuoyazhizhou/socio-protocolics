@@ -43,11 +43,16 @@ class EvolutionEngine:
         self.clerk_fear_index: float = 0.0      # 基层胥吏走夜路恐惧指数 (0.0 ~ 1.0)
         self.active_mainline_reforms: List[str] = []
         self.mutation_history: List[Dict[str, Any]] = []
+        self.active_community_innovations: List[Dict[str, Any]] = []
         
         # 分叉状态追踪
         self.bifurcation_status: Optional[str] = None # None | 'BRANCH_A_SABOTAGED' | 'BRANCH_B_MERGED' | 'BRANCH_C_RE_ALIENATED'
         self.bifurcation_tick: Optional[int] = None
         self.bifurcation_events: List[Dict[str, Any]] = []
+
+    def has_community_innovations(self) -> bool:
+        """检查是否有活跃的民间互助社/拼单贷等底层探索"""
+        return len(self.active_community_innovations) > 0
 
     def sample_quarterly_shocks(self, tick: int, county_state: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
@@ -243,12 +248,61 @@ class EvolutionEngine:
 
     def register_innovation_action(self, agent_id: str, action_type: str, tick: int):
         """记录微观节点的变异创新行为"""
-        self.mutation_history.append({
+        record = {
             "agent_id": agent_id,
             "action_type": action_type,
             "tick": tick,
             "verified_success": True
-        })
+        }
+        self.mutation_history.append(record)
+        if action_type in ["MUTATION_UNDERGROUND_CREDIT_POOL", "FOUND_COMMUNITY_SOCIETY", "MUTATION_FORWARD_GRAIN_SALE", "MUTATION_COLLECTIVE_PETITION"]:
+            self.active_community_innovations.append(record)
+
+    def evaluate_action_bifurcation(self, actor_id: str, action_type: str, tick: int) -> Optional[Dict[str, Any]]:
+        """
+        响应式决策触发演化分叉 (Flywheel Stage 4: Endogenous Action Triggered Bifurcation):
+        由博弈各方在观察到民间暗流后的真实动作直接驱动：
+        - 胥吏执行 CRACKDOWN_COMMUNITY_POOL -> 分支 A (既得利益剿杀)
+        - 知县执行 LEGALISE_COMMUNITY_POOL  -> 分支 B (开明主干合并)
+        """
+        if self.bifurcation_status is None:
+            if action_type == "CRACKDOWN_COMMUNITY_POOL":
+                self.bifurcation_status = "BRANCH_A_SABOTAGED"
+                self.bifurcation_tick = tick
+                self.clerk_fear_index = min(1.0, self.clerk_fear_index + 0.30)
+                event = {
+                    "triggered": True,
+                    "event_type": "BRANCH_A_CLERK_SABOTAGE",
+                    "bifurcation_branch": "Branch A (Clerk Sabotage)",
+                    "title": "【演化分叉·分支 A 胥吏既得利益剿杀】公吏诬告民间互助‘私相结社抗税’，衙役抄封互助资金！",
+                    "consequence": "INNOVATION_SLASHED",
+                    "description": (
+                        f"【演化分叉：分支 A 落地】经管钱吏 {actor_id} 发现自耕农私下结会拼单绕过下乡火耗与头子钱，"
+                        "既得利益受损，遂勾结捕役向县衙诬告互助组‘私立名目、煽惑愚民、图谋抗税’。"
+                        "县衙派出差役铁枷锁拿领头农户，强行没收互助金！民间边缘探索火种被扑灭，底层怨气急剧激化，加速滑向民变！"
+                    )
+                }
+                self.bifurcation_events.append(event)
+                return event
+            elif action_type == "LEGALISE_COMMUNITY_POOL":
+                self.bifurcation_status = "BRANCH_B_MERGED"
+                self.bifurcation_tick = tick
+                self.active_mainline_reforms.append("PROMOTE_CREDIT_UNION")
+                event = {
+                    "triggered": True,
+                    "event_type": "BRANCH_B_MAGISTRATE_MERGE",
+                    "bifurcation_branch": "Branch B (Magistrate Merge)",
+                    "title": "【演化分叉·分支 B 开明知县主干合并】知县力排众议将自愿结会纳为官法，全县推行！",
+                    "consequence": "SHORT_TERM_STABILITY",
+                    "description": (
+                        f"【演化分叉：分支 B 落地】祥符知县 {actor_id} 顶住户房钱吏的阻挠，亲自核验五等户自发拼单贷账目，"
+                        "确认其坏账与逃亡率为零。知县正式发布告示：全县推行‘自愿五人结会贷’，"
+                        "严禁差役强行抑配与私加纸笔头子钱！全县违约阻抗大幅降低，迎来短暂的治理黄金期！"
+                    )
+                }
+                self.bifurcation_events.append(event)
+                return event
+        return None
 
     def evaluate_macro_learning_and_merge(self, world_state: Dict[str, Any], agent_states: List[Dict[str, Any]], tick: int) -> Optional[Dict[str, Any]]:
         """
@@ -256,14 +310,14 @@ class EvolutionEngine:
         破除大团圆乌托邦，严格按照三条竞争分支判定:
         - 分支 A (65%): 胥吏既得利益剿杀 (INNOVATION_SLASHED)
         - 分支 B (25%): 知县开明主干合并 (SHORT_TERM_STABILITY)
-        - 分支 C (合并 3 季后): 顶层提举司指标加码，二次异化为强制连坐枷锁 (COMPULSORY_SOCIETY)
+        - 分支 C (合并 2-3 季后或 KPI 激化): 顶层提举司指标加码，二次异化为强制连坐枷锁 (COMPULSORY_SOCIETY)
         """
         # 1. 检查是否处于分支 B 合并后的【分支 C 二次异化阶段】
         if self.bifurcation_status == "BRANCH_B_MERGED" and self.bifurcation_tick is not None:
             c_cfg = self.bifurcation_cfg.get("branch_C_re_alienation_cycle", {})
-            trigger_ticks = c_cfg.get("trigger_ticks_after_merge", 3)
+            trigger_ticks = c_cfg.get("trigger_ticks_after_merge", 2)
             
-            if tick >= self.bifurcation_tick + trigger_ticks:
+            if (tick >= self.bifurcation_tick + trigger_ticks) or (self.kpi_pressure >= 1.25 and tick > self.bifurcation_tick):
                 self.bifurcation_status = "BRANCH_C_RE_ALIENATED"
                 event = {
                     "triggered": True,
@@ -280,11 +334,16 @@ class EvolutionEngine:
                 self.bifurcation_events.append(event)
                 return event
 
-        # 2. 如果尚未发生分叉，检查民间互助结会的自发采纳规模
+        # 2. 如果尚未发生分叉，检查民间互助结会的自发采纳规模 (作为微观未显式动作时的概率基线)
         if self.bifurcation_status is None:
-            pool_actions = [m for m in self.mutation_history if m["action_type"] == "MUTATION_UNDERGROUND_CREDIT_POOL"]
+            pool_actions = [m for m in self.mutation_history if m["action_type"] in [
+                "MUTATION_UNDERGROUND_CREDIT_POOL",
+                "FOUND_COMMUNITY_SOCIETY",
+                "MUTATION_FORWARD_GRAIN_SALE",
+                "MUTATION_COLLECTIVE_PETITION"
+            ]]
             
-            # 当民间至少有 2 个小组自发试验了拼单贷，触发系统级演化分叉判定
+            # 当民间自发试验了至少 2 次创新互助，触发系统级演化分叉判定
             if len(pool_actions) >= 2:
                 prob_a = self.bifurcation_cfg.get("branch_A_clerk_sabotage", {}).get("base_probability", 0.65)
                 prob_b = self.bifurcation_cfg.get("branch_B_magistrate_merge", {}).get("base_probability", 0.25)
@@ -294,7 +353,7 @@ class EvolutionEngine:
                     # 分支 A: 胥吏剿杀 (65%)
                     self.bifurcation_status = "BRANCH_A_SABOTAGED"
                     self.bifurcation_tick = tick
-                    self.clerk_fear_index = min(1.0, self.clerk_fear_index + 0.30) # 激化阶级仇恨
+                    self.clerk_fear_index = min(1.0, self.clerk_fear_index + 0.30)
                     event = {
                         "triggered": True,
                         "event_type": "BRANCH_A_CLERK_SABOTAGE",

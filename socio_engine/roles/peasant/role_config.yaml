@@ -13,6 +13,8 @@ action_space:
   - "LIQUIDATE_GRAIN_FOR_SILVER" # 赴典当行售粮换银以应官赋
   - "MORTGAGE_LAND_TO_GENTRY" # 田产出典给乡绅以度年关
   - "SEEK_CLERK_MERCY" # 哀求胥吏少收火耗
+  - "FOUND_COMMUNITY_SOCIETY" # 成立民间同心结会，互助借贷分摊风险
+  - "MUTATION_UNDERGROUND_CREDIT_POOL" # 自发组织五人拼单贷以抗火耗
   - "FLEE_AND_ABANDON_LAND" # 破产抛荒，举家逃入深山沦为流民
   - "JOIN_RIOT" # 揭竿而起，聚众包围县衙砸烂收税柜
 
