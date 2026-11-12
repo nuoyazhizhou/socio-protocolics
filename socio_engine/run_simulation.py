@@ -66,14 +66,22 @@ def main():
     # 5. 根据真实人口谱系生成具体的 Agent 群落 (Population Generation)
     llm_client = LLMClient(os.path.join(CURRENT_DIR, "config", "providers.yaml"))
     agents = []
-    pop_cfg = sim_config.get("population", {})
-
+    
+    # 优先支持 v2.0 声明式群体生成器 (SwarmPopulationGenerator)
+    from core.swarm_generator import SwarmPopulationGenerator, MutationEngine
+    mutation_engine = MutationEngine()
+    
     all_pop_items = []
-    for category in ["magistrates", "clerks", "gentry", "peasants"]:
-        for item in pop_cfg.get(category, []):
-            all_pop_items.append(item)
-
-    print(f"\n[*] 正在根据明代户籍底册实例化 {len(all_pop_items)} 个真实村落节点 (Agent-as-Data):")
+    if "population_archetypes" in sim_config:
+        pop_gen = SwarmPopulationGenerator(seed=args.trial * 100 + 42)
+        all_pop_items = pop_gen.generate_population(sim_config["population_archetypes"])
+        print(f"\n[*] [Socio-Engine v2.0] 已依据阶级原型声明式生成 {len(all_pop_items)} 个微观群体节点 (Swarm Scaling & Perturbation):")
+    else:
+        pop_cfg = sim_config.get("population", {})
+        for category in ["magistrates", "clerks", "gentry", "peasants"]:
+            for item in pop_cfg.get(category, []):
+                all_pop_items.append(item)
+        print(f"\n[*] 正在根据明代户籍底册实例化 {len(all_pop_items)} 个真实村落节点 (Agent-as-Data):")
     for item in all_pop_items:
         role_type = item["role_type"]
         rdef = loaded_roles[role_type]
@@ -158,6 +166,20 @@ def main():
 
             obs = {
                 "当季朝局大事": event_desc,
+                "太仓库银": world_state["treasury_silver"],
+                "现行米价": grain_price,
+                "全县抛荒比例": f"{c_flee:.1f}%",
+                "全县民变风险": f"{world_state['unrest_risk_score']*100:.1f}%"
+            }
+
+            # 评估演化变异算子 (Mutation: 灵光一闪)
+            # 找到对应节点的配置
+            ag_item = next((x for x in all_pop_items if x["id"] == ag.agent_id), {})
+            mutation_res = mutation_engine.evaluate_mutation(agent_state, ag_item)
+            if mutation_res["triggered"]:
+                innov = mutation_res["innovation"]
+                obs["突发灵光一闪 (变异探索)"] = f"【你脑中闪现打破死局的边缘探索计策】: {innov['title']}——{innov['description']}。如果你决定采纳，可将行动选为 {innov['action_name']}！"
+                print(f"  ✨ [{ag.role_name}]: 脑中闪现灵光一闪 [{innov['title']}]！")
                 "县衙告示": f"朝廷定额税银与人丁丝绢共 {world_state['imperial_tax_quota']} 两，知县考成严禁亏空",
                 "乡间市井": "闻知户房钱吏与孙典当合伙浮收火耗，西乡与东乡生员商议联名京控",
             }

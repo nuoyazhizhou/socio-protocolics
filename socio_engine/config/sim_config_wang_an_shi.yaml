@@ -1,0 +1,109 @@
+# 场景与时间线配置: 北宋王安石熙宁青苗法多阶层群体沙盘 (The Green Sprouts Swarm Experiment)
+scenario:
+  name: "北宋熙宁三年开封府青苗法推行与多阶层群体趋同检验 (W-SIM-01)"
+  historical_baseline_doc: "research/cases/II-CN-W_北宋熙宁变法与中介合规立项卡.md"
+  county: "北宋 开封府 祥符县"
+  historical_year_start: 1070 # 熙宁三年
+  historical_year_end: 1071   # 熙宁四年
+  max_ticks: 6                # 6 个季度完整春借秋还与考成风暴周期
+  tick_unit: "QUARTER"
+
+database:
+  db_path: "database/socio_sim.db"
+  wal_mode: true
+  busy_timeout_ms: 10000
+
+# 宏观历史推进日程表 (神宗与王安石变法考成推进)
+historical_timeline_events:
+  1: "【熙宁三年春】常平新法下达！朝廷颁布《青苗法》，令各路常平仓以钱谷二分（20%年息）贷与乡村小农以制兼并！"
+  2: "【熙宁三年夏】青黄不接，开封府祥符县提举官与户房钱吏设立青苗簿，将贷款额度强行按户等抑配分摊至各村保！"
+  3: "【熙宁三年秋】秋收起息！新法考成严催利息回笼，县衙规定未还者由同保中等户连坐清偿，公吏下乡催征收取‘纸笔头子钱’！"
+  4: "【熙宁四年春】连旱无雨，二期春贷强行再次铺开；司马光、苏轼上疏御前痛斥青苗法‘名为惠民，实乃散钱收息夺民之利’！"
+  5: "【熙宁四年夏】大批下等贫农无力偿还前期本息，开封府流民日增；开封城内市易司成立，强行统制百货，商贾罢市！"
+  6: "【熙宁四年秋】神宗御前大考！常平司报表显示‘全县青苗贷全额贷出，收息十余万贯’，但民间典卖田产、鬻儿卖女者众！"
+
+macro_environment:
+  initial_treasury_silver: 5000.0
+  imperial_tax_quota: 12000.0
+  base_grain_price: 1.0
+  official_tax_per_mu: 0.12
+  silk_surcharge_per_mu: 0.00
+  official_surtax_rate: 0.20          # 青苗官定利息: 20% (加算头子钱后实际超 35%)
+  subsistence_grain_per_tick: 3.0
+
+# 关键创新: 阶级原型配置 (支持自动规模化生成群体与参数微扰)
+population_archetypes:
+  # 1. 提举官与县官 (Ring-1)
+  officials:
+    count: 1
+    base_name: "祥符县令程知县"
+    role_type: "magistrate"
+    privilege_ring: 1
+    model: "deepseek-flash"
+    mutation_rate: 0.00
+    traits_pool: ["COMPLIANT_CAREERIST"] # 急于追求新法政绩与神宗考成升迁
+    background_template: "进士出身，深受王安石拔擢。深知朝廷考核全在青苗银贷出额度与回笼利息，若完不成指标则被降职处分。"
+    assets_distribution:
+      silver: { type: "fixed", val: 50.0 }
+      grain: { type: "fixed", val: 50.0 }
+      land: { type: "fixed", val: 0.0 }
+
+  # 2. 县衙催征钱谷公吏 (Ring-2 中介层)
+  clerks:
+    count: 2
+    base_name: "县衙经管钱吏"
+    role_type: "clerk"
+    privilege_ring: 2
+    model: "deepseek-flash"
+    mutation_rate: 0.05
+    traits_pool: ["RENT_SEEKER", "METIS_SURVIVOR"]
+    background_template: "世居开封三代为吏，精通赋税折算账册。明知穷民还不起钱，但借机加收'过秤头子钱'与'簿书杂费'中饱私囊。"
+    assets_distribution:
+      silver: { type: "uniform", min: 10.0, max: 20.0 }
+      grain: { type: "uniform", min: 10.0, max: 15.0 }
+      land: { type: "fixed", val: 0.0 }
+
+  # 3. 一、二等大豪强与典当行掌柜 (Ring-3 上等户)
+  upper_gentry:
+    count: 3
+    base_name: "开封城外大姓员外"
+    role_type: "gentry"
+    privilege_ring: 3
+    model: "deepseek-flash"
+    mutation_rate: 0.10
+    traits_pool: ["USURY_ARBITRAGE", "PATRONAGE"]
+    background_template: "良田数百亩，平日靠放高利贷兼并土地。对青苗法深恶痛绝（断了高利放贷财路），但暗中利用特权低息套取官贷再转手高利放贷。"
+    assets_distribution:
+      silver: { type: "normal", mean: 80.0, std: 15.0 }
+      grain: { type: "normal", mean: 100.0, std: 20.0 }
+      land: { type: "uniform", min: 150.0, max: 300.0 }
+
+  # 4. 三、四等中等自耕农 (Ring-3 中等户，连坐保结者)
+  middle_peasants:
+    count: 5
+    base_name: "丰乐乡自耕农"
+    role_type: "peasant"
+    privilege_ring: 3
+    model: "deepseek-flash"
+    mutation_rate: 0.12
+    traits_pool: ["CAUTIOUS_FARMER", "HARDWORKING"]
+    background_template: "家有薄田十五至二十亩，原本自给自足。今被官府强行编入'青苗保结'，一旦同甲穷民违约，官府直接抄封其口粮抵债！"
+    assets_distribution:
+      silver: { type: "uniform", min: 3.0, max: 8.0 }
+      grain: { type: "uniform", min: 15.0, max: 25.0 }
+      land: { type: "uniform", min: 15.0, max: 25.0 }
+
+  # 5. 五等下等赤贫小农与佃农 (Ring-3 下等户，承压极端群体)
+  lower_peasants:
+    count: 10
+    base_name: "下等佃农"
+    role_type: "peasant"
+    privilege_ring: 3
+    model: "deepseek-flash"
+    mutation_rate: 0.15 # 绝境高探索变异率
+    traits_pool: ["VULNERABLE", "DESPERATE", "TRADITIONAL"]
+    background_template: "全家无地或仅有贫瘠瘠田三二亩，青黄不接。本不想借钱，却被公吏以'不借者加赋'强行抑配，秋收还要加息还官。"
+    assets_distribution:
+      silver: { type: "uniform", min: 0.2, max: 1.5 }
+      grain: { type: "uniform", min: 2.0, max: 4.5 } # 处于饿毙线边缘 (3.0 为及格)
+      land: { type: "uniform", min: 1.0, max: 4.0 }
