@@ -212,6 +212,7 @@
     "socio_engine/roles/vice_magistrate/system_prompt.md",
     "socio_engine/run_simulation.py",
     "socio_engine/scripts/analyze_results.py",
+    "socio_engine/scripts/compare_trials.py",
     "socio_engine/scripts/inspect_hai_rui.py",
     "socio_engine/scripts/query_experiments.py",
     "socio_engine/scripts/read_hai_dialogue.py",

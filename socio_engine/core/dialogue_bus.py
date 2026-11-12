@@ -13,6 +13,10 @@ class DialogueBus:
     def __init__(self, llm_client: Any = None):
         self.llm_client = llm_client
         self.dialogue_history: List[Dict[str, Any]] = []
+        self.last_quarter_encounters: List[Dict[str, Any]] = []
+
+    def get_last_quarter_encounters(self) -> List[Dict[str, Any]]:
+        return self.last_quarter_encounters
 
     def run_quarterly_dialogues(
         self,
@@ -28,6 +32,7 @@ class DialogueBus:
         """
         agent_map = {ag.agent_id: ag for ag in agents}
         dialogues_by_agent: Dict[str, List[str]] = {ag.agent_id: [] for ag in agents}
+        self.last_quarter_encounters = []
 
         encounters = [
             # 1. 官绅道统对弈: 程知县 vs 致仕韩侍郎
@@ -151,6 +156,20 @@ class DialogueBus:
 
             cues = enc.get("observable_cues", {})
             edge_desc = enc.get("relationship_edge", "无特殊记录")
+            
+            self.last_quarter_encounters.append({
+                "id": enc["id"],
+                "title": enc["title"],
+                "topic": enc["topic"],
+                "speaker_a": sp_a,
+                "speaker_b": sp_b,
+                "name_a": ag_a.role_name,
+                "name_b": ag_b.role_name,
+                "script": enc["script"],
+                "impact": enc["impact"],
+                "observable_cues": cues,
+                "relationship_edge": edge_desc
+            })
             
             # 为 Agent A (sp_a) 构建多维心智感知包
             summary_a = (

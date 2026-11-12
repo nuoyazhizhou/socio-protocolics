@@ -40,3 +40,5 @@
 **/*.tmp
 **/*.log
 **/*.pyc
+socio_engine/reports/
+
