@@ -121,20 +121,48 @@ def main():
         print(f"    - [{agent_id}] {item['name']:<18} | Ring-{item['privilege_ring']} | 田:{assets.get('land',0):>4.1f}亩 银:{assets.get('silver',0):>5.1f}两 粮:{assets.get('grain',0):>4.1f}石 | 特质: {item.get('trait','NORMAL')}")
 
     # 6. 使用 Rust PySocialGraph 构建真实的血缘、姻亲、借贷与世仇网络拓扑
-    print("\n[*] 正在构建歙县丰乐河畔社会依存网络拓扑 (Rust Petgraph CSR 加速)...")
+    print("\n[*] 正在构建微观社会依存网络拓扑 (Rust Petgraph CSR 加速)...")
     graph = socio_core.PySocialGraph()
+    edge_type_map = {
+        "SubordinateTo": "SubordinateTo",
+        "TaxPayerTo": "TaxPayerTo",
+        "PatronClient": "PatronClient",
+        "DebtorTo": "DebtorTo",
+        "CollusionAlliance": "CollusionAlliance",
+        "CoercionHarass": "CoercionHarass",
+        "HostileRival": "HostileRival",
+        "PoliticalRivalry": "HostileRival",
+        "GentryPatronage": "PatronClient",
+        "ClanAlliance": "CollusionAlliance",
+        "CommunityProtection": "PatronClient",
+        "KinshipSacred": "CollusionAlliance",
+        "OpportunisticTie": "DebtorTo",
+        "HostileCoercion": "CoercionHarass",
+        "ExtortionPressure": "CoercionHarass",
+    }
     for rel in sim_config.get("social_relations", []):
-        graph.add_relation(rel["from"], rel["to"], rel["type"], rel["weight"])
+        r_type = edge_type_map.get(rel["type"], "CollusionAlliance")
+        try:
+            graph.add_relation(rel["from"], rel["to"], r_type, rel["weight"])
+        except Exception as e:
+            pass
 
     # 拓扑卡位点与中介度分析 (RFC-004 中介寄生)
-    chokepoints = graph.find_chokepoints()
-    print("    [拓扑分析] 识别到基层权力与资金流卡位点 (Chokepoints / Centrality):")
-    for node_id, degree, weight in chokepoints:
-        print(f"      - 节点 {node_id:<22} | 关联边数: {degree} | 权重汇聚: {weight:.1f}")
+    try:
+        chokepoints = graph.find_chokepoints()
+        print("    [拓扑分析] 识别到基层权力与资金流卡位点 (Chokepoints / Centrality):")
+        for node_id, degree, weight in chokepoints:
+            print(f"      - 节点 {node_id:<22} | 关联边数: {degree} | 权重汇聚: {weight:.1f}")
+    except Exception:
+        pass
 
-    # 爆炸半径分析: 当水尾李生濒死或被逼反抗时，波及哪些关联节点？
-    blast_li = json.loads(graph.compute_blast_radius("peasant_li_tailwater", 2))
-    print(f"    [拓扑分析] 水尾李生 (争水/债务承压) 的危机爆炸半径: 深度={len(blast_li['depth_map'])} 节点={blast_li['affected_agents']}")
+    # 爆炸半径分析
+    test_node = "lower_peasants_01" if any(x["id"] == "lower_peasants_01" for x in all_pop_items) else "peasant_li_tailwater"
+    try:
+        blast_info = json.loads(graph.compute_blast_radius(test_node, 2))
+        print(f"    [拓扑分析] 承压节点 {test_node} 的危机爆炸半径: 关联受影响主体数={len(blast_info.get('affected_agents', []))}")
+    except Exception:
+        pass
 
     # 7. 推进长程历史沙盘推演
     total_ticks = args.ticks if args.ticks is not None else sim_config.get("scenario", {}).get("max_ticks", 20)
@@ -290,22 +318,31 @@ def main():
                     params_json=json.dumps(params)
                 )
                 res = json.loads(res_json)
-                print(f"  ✔ [{ag.role_name} ({ag.agent_id})]: 执行 [{action_type}] -> {res['message']} (租金抽取: {res['rent_extracted']} 两)")
+                print(f"  ✔ [{ag.role_name} ({ag.agent_id})]: [物理做功] 执行 [{action_type}] -> {res['message']} (租金抽取: {res['rent_extracted']} 两)")
+                
+                # 三态分离可视化打印: 说什么 vs 是什么 vs 做什么
+                public_speech = act_obj.get("public_speech") or act_obj.get("speech")
+                if public_speech and isinstance(public_speech, str) and public_speech.strip():
+                    clean_speech = public_speech.replace("\n", " ").strip()
+                    print(f"    🗣️  [当众宣称 (说什么)]: “{clean_speech[:120]}”")
+                
+                inner_mono = act_obj.get("inner_monologue") or act_obj.get("monologue") or intent
+                if inner_mono:
+                    if isinstance(inner_mono, dict):
+                        mono_str = json.dumps(inner_mono, ensure_ascii=False)
+                    else:
+                        mono_str = str(inner_mono)
+                    clean_mono = mono_str.replace("\n", " ").strip()
+                    print(f"    🧠 [真实心智 (是什么)]: {clean_mono[:120]}...")
+                
                 if action_type == "ABSCOND_WITH_FUNDS":
                     print(f"    🏃 ⚡ [突发叛逃] {ag.role_name} 席卷本保借贷白银连夜潜逃入伏牛山落草！原所属合会欠款强行转嫁中等户连坐！")
                 elif action_type == "FOUND_COMMUNITY_SOCIETY":
                     print(f"    📜 ✨ [民间自治] {ag.role_name} 联合本乡三甲自耕农成立'丰乐同心抬会'，建立民间社仓分摊青苗利息！")
                 elif action_type == "SEND_CAPITAL_LETTER":
                     print(f"    ✉️ 🔥 [官绅弹劾] {ag.role_name} 动用三朝老臣名望，亲修密折直呈御史台，痛参知县激变地方！")
-                if intent:
-                    if isinstance(intent, dict):
-                        intent_str = json.dumps(intent, ensure_ascii=False)
-                    else:
-                        intent_str = str(intent)
-                    clean_intent = intent_str.replace("\n", " ").strip()
-                    print(f"    💭 [内心算盘]: {clean_intent[:100]}...")
-                else:
-                    intent_str = ""
+                
+                intent_str = clean_mono if 'clean_mono' in locals() and clean_mono else (str(intent) if intent else "")
                 
                 # 记录变异动作追踪
                 evolution_engine.register_innovation_action(ag.agent_id, action_type, tick)

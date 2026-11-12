@@ -13,6 +13,7 @@
 | 碳基 20W 演化 Agent、达尔文-波斯特不变量与碳硅混编治理 | [人是 20 瓦的演化 Agent，不是逻辑计算器 v0.1](bio-agent/人是20瓦的演化Agent_不是逻辑计算器.md) | [来源说明与命题回执](bio-agent/来源说明.md) · [立项卡](../research/cases/I-BIO-A_天演启发式与碳硅混编博弈立项卡.md) | [修订说明](bio-agent/修订说明.md) |
 | 算法单机沙盒、零摩擦刚性脆断与终局性粉碎 | [算法利维坦的单机幻觉与零摩擦深渊 v1.0](algo-leviathan/算法利维坦的单机幻觉与零摩擦深渊.md) | [来源说明与命题回执](algo-leviathan/source_notes.md) · [立项卡](../research/cases/II-SYS-A_算法单机沙盒与零摩擦脆断立项卡.md) | 待单列 |
 | 硅基热力学趋同、物理折旧与莫拉维克经济壁垒 | [AGI 为什么必然会长出老吏的嘴脸 v1.0](silicon-convergence/AGI为什么必然会长出老吏的嘴脸.md) | [来源说明与命题回执](silicon-convergence/source_notes.md) · [立项卡](../research/cases/VI-AGI-A_硅基热力学趋同与具身成本不对称立项卡.md) | 待单列 |
+| 三态分离、制度引力场与吸引子收敛 | [说什么，做什么，是什么是三件事 v0.1](say-do-be/说什么做什么是什么是三件事.md) | [来源说明与命题回执](say-do-be/来源说明.md) · [立项卡](../research/cases/I-ATT-A_三态分离与制度吸引子立项卡.md) | [修订说明](say-do-be/修订说明.md) |
 
 所有新稿与既有稿续写须遵守[案例驱动写作与命题检验](../docs/案例驱动写作与命题检验.md)：真实主案展开，核对真实反向材料或有据竞争解释，交具体子主张裁决；概念样章不计T3通过。
 

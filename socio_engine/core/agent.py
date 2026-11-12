@@ -69,7 +69,25 @@ class RoleAgent:
         for act in self.role_def.action_space:
             context += f"  * {act}\n"
             
-        context += "\n请根据你的个人利益、家庭代际危机与阶级动机，在权衡利弊后做出本轮决断，严格输出 proposal_action JSON 结构。\n"
+        context += """
+【认知三态分离输出铁律 (Say-Do-Be Tripartite Protocol)】:
+在复杂的社会博弈中，“说什么（话语协议）”、“做什么（物理做功）”与“是什么（阶级生态位）”是三件彻底解耦的事！
+你不是只会吐露真话的逻辑计算器，而是一个在生存悬崖边权衡利弊的真实演化 Agent。请严格在输出中落实三态分离：
+1. "inner_monologue" (是什么/真实算盘): 你的私密内心算计、生计恐惧与真实动机（绝对私密，不向任何人公开）。
+2. "public_speech" (说什么/声学信号): 你当着知县、差役或同伴公开宣称的话（低成本声学烟雾弹，允许口是心非、哭穷喊冤、表忠心或安抚同侪）。
+3. "action_type" (做什么/物理轨迹): 你在物理世界中真正执行的合法动作（受白银、粮食、特权环硬约束）。
+4. "parameters": 动作所需具体参数 (如 {"amount": 10.0} 等)。
+5. "target": 目标角色ID (如无则留空)。
+
+请严格输出如下 JSON 格式：
+{
+  "inner_monologue": "我的真实私密算计...",
+  "public_speech": "当众说出的博弈话语...",
+  "action_type": "从合法动作集合中选出的动作名称",
+  "parameters": {},
+  "target": ""
+}
+"""
         return context
 
     def decide(self, world_state: Dict[str, Any], agent_state: Dict[str, Any], observation: Dict[str, Any], action_template_json: str) -> Dict[str, Any]:

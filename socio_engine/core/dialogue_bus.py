@@ -118,12 +118,12 @@ class DialogueBus:
                         tick_index=tick,
                         speaker_id=sp_id,
                         listener_id=other_id,
-                        channel_type="PRIVATE_WHISPER",
-                        raw_prompt=f"Dialogue encounter on {enc['topic']}",
-                        raw_response=speech,
-                        parsed_intent=enc["impact"]
+                        channel="PRIVATE_WHISPER",
+                        prompt=f"Dialogue encounter on {enc['topic']}",
+                        response=speech,
+                        intent=enc["impact"]
                     )
-                except Exception:
+                except Exception as err:
                     pass
 
             dialogue_summary = f"{enc['title']}：\n" + "\n".join(transcript_lines) + f"\n【后续影响】: {enc['impact']}"
