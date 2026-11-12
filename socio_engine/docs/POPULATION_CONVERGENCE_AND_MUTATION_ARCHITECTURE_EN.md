@@ -60,7 +60,7 @@ YAML-declarative configuration under `population_archetypes`:
   * Asset perturbations: `silver: Uniform(min, max)`, `land: Uniform(min, max)`;
   * Cognitive temperature perturbations: `temperature: Uniform(0.15, 0.45)`;
   * Traits sampling: `traits_pool: ["REFORM_ZEALOT", "METIS_SURVIVOR", ...]`;
-  * **Heterogeneous Objective Function Injection**: Each stratum bound to incommensurable moral missions and utility functions $U_i$.
+  * **Individual Member Overrides (`members` Specification)**: Allows explicitly defining named historical figures (e.g., Wang Er the fugitive opportunist, Scholar Wu the organizer, Retired Minister Han) with custom biographies, models, and temperatures.
 
 ### 3.2. Heterogeneous Objective Functions Matrix
 Dispelling simplistic "all-villain" or flat "greed" caricatures. In real history, **everyone strives for their perceived righteous duty; systemic catastrophe is often magnified by upper-level idealism and moral righteousness**:
@@ -84,7 +84,38 @@ Dispelling simplistic "all-villain" or flat "greed" caricatures. In real history
   $$U_{\text{lower}} = \alpha \cdot \text{Calorie Survival} + \beta \cdot \text{Keeping Children (No Selling)} + \gamma \cdot \text{Avoiding Torture}$$
   Seeking only to survive until spring without selling children; pushed beyond biological limits, violent revolt becomes the only recourse.
 
-### 3.3. Exogenous Shock & Peer Pressure Engine
+### 3.3. Cognitive Asymmetry & Model/Thinking Depth Hierarchy
+Across the social hierarchy, agents possess asymmetric compute, information access, and strategic horizons:
+* **Strategic Reasoning Models (Flagship Reasoning LLMs, e.g., DeepSeek-V4-Pro / R1, low temp 0.20)**:
+  * Assigned to Magistrate Cheng and Retired Minister Han, weighing factional politics, classical legitimacy, and long-term imperial evaluations.
+* **Tactical Calculation Models (Agile LLMs, e.g., DeepSeek-Flash, temp 0.25–0.35)**:
+  * Assigned to Clerk Zhang and Scholar Wu, mastering dual ledgers, paperwork surcharges, contract terms, and clan mobilization.
+* **Reactive Habitual Models (Base LLMs, temp 0.40–0.50)**:
+  * Assigned to ordinary freeholders and destitute tenants, bounded by immediate calorie countdowns and defensive traditions.
+* **High-Variance Opportunistic Models (High temp 0.75, high mutation rate)**:
+  * Assigned to Wang Er the fugitive vagrant, characterized by impulsivity, zero property stakes, and high betrayal propensity.
+
+### 3.4. DialogueBus: Inter-Agent Communication & Negotiation
+Breaking isolated decision loops by executing a pre-action P2P dialogue phase:
+* **Four Landmark Dialogue Encounters**:
+  1. **Official vs. Gentry Debate (Magistrate Cheng vs. Retired Minister Han)**: Reformist defending credit expansion vs. Elder Statesman threatening Imperial Censor impeachment;
+  2. **Vagrant Opportunist Plotting (Wang Er vs. Tenant Chen Da)**: Wang Er testing the waters to abscond with loan funds into the mountains, met with Chen Da's principled refusal;
+  3. **Rural Scholar Self-Organization (Scholar Wu vs. Yeoman Sun)**: Scholar organizing mutual credit societies (*Tongxin Taihui*) to insulate the village from clerk extortion;
+  4. **Sacred Brotherhood Bond (Chen Da vs. Younger Brother Chen Er)**: Elder brother concealing grain to save younger brother, younger brother carrying a sickle to defend his brother.
+* **Cyber-Physical Feedback**:
+  * Transcripts recorded into SQLite `dialogue_logs`;
+  * Dialogue digests injected into participants' private `obs["Recent Private Dialogue & Confrontations"]`;
+  * Triggers dramatic actions: `ABSCOND_WITH_FUNDS`, `FOUND_COMMUNITY_SOCIETY`, `SEND_CAPITAL_LETTER`.
+
+### 3.5. Social Edge Graph & Asymmetric Tensors
+Rust `PySocialGraph` tracks directed, weighted social edges:
+* **`PoliticalRivalry` (Weight: 4.5)**: High-stakes ideological confrontation between magistrate and gentry;
+* **`ClanAlliance` (Weight: 3.5)**: Community credit network spearheaded by Scholar Wu;
+* **`KinshipSacred` (Weight: 5.0)**: Inviolable trust between the Chen brothers;
+* **`OpportunisticTie` (Weight: 1.0)**: Fragile, high-defection alliance with vagrant Wang Er;
+* **`HostileCoercion` (Weight: 4.2)**: Middle peasants' deep resentment toward enforced joint-liability with insolvent tenants.
+
+### 3.6. Exogenous Shock & Peer Pressure Engine
 Formal state injection parameters:
 
 ```yaml
@@ -104,7 +135,7 @@ exogenous_shocks:
     grain_price_multiplier: 0.60         # Bumper crop crashes grain price by 40%
 ```
 
-### 3.4. Mental Polarity Operator
+### 3.7. Mental Polarity Operator
 Thresholds governing phase transitions between desperation and mercy:
 
 ```yaml
@@ -124,18 +155,18 @@ mental_polarity:
     action: "LEND_GRAIN_TO_NEIGHBOR"
 ```
 
-### 3.5. Unified Innovation Mutation Pool
+### 3.8. Unified Innovation Mutation Pool
 Grounded in historical Song Dynasty realities with unified action IDs:
 * **5th-Grade Peasants (Destitute / Tenants)**:
-  * `MUTATION_UNDERGROUND_CREDIT_POOL`: **5-Man Grassroots Credit Union** (informal rotating savings and credit association);
-  * `MUTATION_FORWARD_GRAIN_SALE`: **Forward Crop Discounting** (selling future autumn yields at a discount during spring hunger to obtain immediate silver);
-  * `MUTATION_COLLECTIVE_PETITION`: **Collective Shrine Petitioning** (appealing against uncodified surcharge fees);
+  * `MUTATION_UNDERGROUND_CREDIT_POOL`: **5-Man Grassroots Credit Union**;
+  * `MUTATION_FORWARD_GRAIN_SALE`: **Forward Crop Discounting**;
+  * `MUTATION_COLLECTIVE_PETITION`: **Collective Shrine Petitioning**;
 * **Middle Peasants (Freeholders)**:
-  * `MUTATION_JOINT_LIABILITY_HEDGE`: **Joint-Liability Exclusion Alliance** (refusing to guarantee unknown migrants);
+  * `MUTATION_JOINT_LIABILITY_HEDGE`: **Joint-Liability Exclusion Alliance**;
 * **Upper Gentry (Large Landlords)**:
-  * `MUTATION_REGULATORY_ARBITRAGE`: **Intertemporal Regulatory Arbitrage** (borrowing official credit at 20% and relending at 50%+).
+  * `MUTATION_REGULATORY_ARBITRAGE`: **Intertemporal Regulatory Arbitrage**.
 
-### 3.6. Evolutionary Bifurcation Outcomes
+### 3.9. Evolutionary Bifurcation Outcomes
 Dispelling utopian co-optation by defining three competitive evolutionary branches:
 
 ```yaml
@@ -152,7 +183,7 @@ bottom_up_evolution_outcomes:
     consequence: "COMPULSORY_SOCIETY"    # Voluntary credit unions degraded into compulsory joint-liability shackles
 ```
 
-### 3.7. Rigid Boundary Between Rust Kernel and Python Scheduler
+### 3.10. Rigid Boundary Between Rust Kernel and Python Scheduler
 * **Python Orchestration**: Prompt assembly, shock sampling, mental polarity evaluation, and mutation routing;
 * **Rust `socio_core` Kernel**: **Inviolable thermodynamic gatekeeper**. Enforces strict double-entry ledger balancing (silver/grain conservation), privilege-ring authorization checks (Ring-3 barred from writing public ledgers), and physical asset execution. If an LLM hallucinates unbacked assets, the Rust kernel aborts the transaction with `TransactionReverted`.
 
@@ -161,19 +192,19 @@ bottom_up_evolution_outcomes:
 ## 4. Benchmark Scenario: Northern Song Green Sprouts Reform (`W-SIM-01`)
 
 * **Historical Coordinates**: Kaifeng Xiangfu County (1070–1071 CE);
-* **Stratified Swarm (21 Agents with Heterogeneous Objective Functions)**:
-  * **Ring-1**: 1 Magistrate (Cheng Yuanfeng,进士出身, reformist zealot under intense quota pressure);
-  * **Ring-3 Elite**: 1 Retired Senior Official (Han Shilang, former Vice Minister, defending Confucian moral order);
-  * **Ring-2**: 2 Sub-bureaucracy Clerks (Zhang Wenyuan, extracting surcharges to fund sons' Imperial College entry);
-  * **Ring-3 Upper**: 2 Wealthy Gentry & Pawnbrokers (philanthropic merchants hedging capital);
-  * **Ring-3 Middle**: 5 Middle Freeholders (15–20 mu, protecting ancestral titles and yeoman respectability);
-  * **Ring-3 Lower**: 10 5th-Grade Destitute Peasants (subsistence grain near starvation, fighting for survival).
+* **Stratified Swarm (21 Agents with Distinct Cognitive Profiles)**:
+  * **Ring-1**: 1 Magistrate (Cheng Yuanfeng,进士及第, model `deepseek-v4-pro`, temp 0.20);
+  * **Ring-3 Elite**: 1 Retired Senior Official (Han Shilang, former Vice Minister, model `deepseek-v4-pro`, temp 0.20);
+  * **Ring-2**: 2 Sub-bureaucracy Clerks (Zhang Wenyuan funding son's tuition, Bailiff Zhao enforcer);
+  * **Ring-3 Upper**: 2 Wealthy Gentry & Pawnbrokers (Pawnbroker Sun, Landlord Qian);
+  * **Ring-3 Middle**: 5 Middle Freeholders (Scholar Wu founding community mutual credit, Village elder Sun, Yeoman Li, Carpenter Zhou, Zheng);
+  * **Ring-3 Lower**: 10 5th-Grade Destitute Tenants (Chen Da, Chen Er, Wang Er the opportunist fugitive with temp 0.75, Zhao the blind, and 6 destitute farming households).
 
 ---
 
 ## 5. Implementation Roadmap
 
-1. **Step 1**: Embed full exogenous shocks, mental thresholds, objective functions, and bifurcation blocks into `sim_config_wang_an_shi.yaml`;
-2. **Step 2**: Fully implement the four-stage flywheel and bifurcation logic in `socio_engine/core/evolution_engine.py`;
+1. **Step 1**: Embed full exogenous shocks, mental thresholds, objective functions, social relations, and bifurcation blocks into `sim_config_wang_an_shi.yaml`;
+2. **Step 2**: Fully implement four-stage flywheel and `DialogueBus` inter-agent communication in `evolution_engine.py` and `dialogue_bus.py`;
 3. **Step 3**: Integrate complete Rust physical ledger validation and bifurcation reporting into `socio_engine/run_simulation.py`;
 4. **Step 4**: Execute benchmark runs and generate the *Northern Song Green Sprouts Swarm Convergence and Bifurcation Report*.
