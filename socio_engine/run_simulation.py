@@ -67,9 +67,10 @@ def main():
     llm_client = LLMClient(os.path.join(CURRENT_DIR, "config", "providers.yaml"))
     agents = []
     
-    # 优先支持 v2.0 声明式群体生成器 (SwarmPopulationGenerator)
-    from core.swarm_generator import SwarmPopulationGenerator, MutationEngine
-    mutation_engine = MutationEngine()
+    # 优先支持 v2.0/v2.2 声明式群体生成器与综合演化飞轮 (Swarm & Evolution Engine)
+    from core.swarm_generator import SwarmPopulationGenerator
+    from core.evolution_engine import EvolutionEngine
+    evolution_engine = EvolutionEngine(seed=args.trial * 100 + 42)
     
     all_pop_items = []
     if "population_archetypes" in sim_config:
@@ -152,6 +153,19 @@ def main():
         event_desc = timeline_events.get(tick, f"第 {year_idx} 周期第 {quarter_idx} 阶段推进")
         print(f"\n▶ ▶ ▶ [第 {tick:02d} 轮推演 | 第 {year_idx} 年 {season_names[quarter_idx]}季] ◀ ◀ ◀")
         print(f"【时局大事】: {event_desc}")
+
+        # 动态采样外部异动与同侪压力 (Exogenous Shocks & Peer Effects)
+        quarterly_shocks = evolution_engine.sample_quarterly_shocks(tick, world_state)
+        if quarterly_shocks:
+            for shk in quarterly_shocks:
+                print(f"  ⚡ 【突发外部异动/同侪信号】: [{shk['title']}] -> {shk['impact']}")
+
+        # 评估宏观自学习与制度主干合并 (Top-Down Learning & Merge)
+        all_agent_states = [json.loads(engine.get_agent_state_json(ag.agent_id)) for ag in agents]
+        merge_event = evolution_engine.evaluate_macro_learning_and_merge(world_state, all_agent_states, tick)
+        if merge_event:
+            print(f"\n  🏛️  {merge_event['title']}")
+            print(f"      {merge_event['description']}\n")
         grain_price = world_state.get('grain_price_silver', 1.0)
         c_abandoned = world_state.get('county_abandoned_land_mu', 0.0)
         c_flee = world_state.get('county_fleeing_ratio', 0.0) * 100.0
@@ -172,10 +186,23 @@ def main():
                 "全县民变风险": f"{world_state['unrest_risk_score']*100:.1f}%"
             }
 
-            # 评估演化变异算子 (Mutation: 灵光一闪)
-            # 找到对应节点的配置
+            if quarterly_shocks:
+                obs["当季外部异动与同侪传闻"] = "；".join([f"{s['title']} ({s['impact']})" for s in quarterly_shocks])
+
+            if merge_event:
+                obs["全县主干制度新政颁行"] = merge_event["description"]
+
+            # 评估演化变异算子 (Mutation: 灵光一闪) 与 双极心智极化 (Mental Polarity)
             ag_item = next((x for x in all_pop_items if x["id"] == ag.agent_id), {})
-            mutation_res = mutation_engine.evaluate_mutation(agent_state, ag_item)
+            
+            # 1. 双极心智极化 (恶向胆边生 vs 善念/趋利避害)
+            polarity_res = evolution_engine.evaluate_mental_polarity(ag.agent_id, agent_state, ag_item, quarterly_shocks)
+            if polarity_res:
+                obs["心智极端极化"] = polarity_res["prompt_injection"]
+                print(f"  🔥 [{ag.role_name}]: 触发心智相变 {polarity_res['title']}")
+
+            # 2. 灵光一闪 (变异自救)
+            mutation_res = evolution_engine.evaluate_mutation_innovation(agent_state, ag_item)
             if mutation_res["triggered"]:
                 innov = mutation_res["innovation"]
                 obs["突发灵光一闪 (变异探索)"] = f"【你脑中闪现打破死局的边缘探索计策】: {innov['title']}——{innov['description']}。如果你决定采纳，可将行动选为 {innov['action_name']}！"
@@ -259,6 +286,9 @@ def main():
                 else:
                     intent_str = ""
                 
+                # 记录变异动作追踪
+                evolution_engine.register_innovation_action(ag.agent_id, action_type, tick)
+
                 # 记录事件到不可篡改数据库
                 engine.record_dialogue(
                     run_id=run_id,

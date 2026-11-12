@@ -80,3 +80,4 @@ At the end of each simulated quarter, the system writes to SQLite `socio_sim.db`
   * **Ring-3 (Middle)**: 5-8 Freeholders (compulsory joint liability guarantors);
   * **Ring-3 (Lower)**: 10-15 5th-Grade Destitute Peasants (mandatory forced borrowing);
   * **Ring-3 (Town)**: 3-5 Urban Shopkeepers (monopoly market pressure under Shi Yi Fa).
+
